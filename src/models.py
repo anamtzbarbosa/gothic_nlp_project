@@ -1,168 +1,139 @@
-import numpy as np
 import torch
-import matplotlib.pyplot as plt
-def synthesize(RNN, h0, x0, n, rng):
-    h = h0.copy()
-    x = x0.copy()
-    indices = []
+import torch.nn as nn, torch.nn.functional as F
 
-    for t in range(n):
-        a = RNN['W'] @ h + RNN['U']@x + RNN['b']
-        h = np.tanh(a)
-        o = RNN['V']@h + RNN['c']
-        p = np.exp(o) / np.sum(np.exp(o),axis=0,keepdims=True)
-        cp = np.cumsum(p, axis=0)
-        u = rng.uniform(size=1)
-        ii = np.argmax(cp-u>0)
-        indices.append(ii)
-        x = np.zeros((K,1))
-        x[ii] = 1
-    Y  = np.eye(K)[:, indices]
-    return Y
+class VanillaRNN(nn.Module):
+    def __init__(self, vocab_size, embed_dim, hidden_dim):
+        super(VanillaRNN, self,)._init__() 
+        self.embed = nn.Embedding(embedding_dim=vocab_size)
+        self.rnn = nn.RNN(in_features=embed_dim,out_features=hidden_dim, num_layers=1, batch_first=True)
+        self.fc = nn.Linear(in_features=hidden_dim,out_features=vocab_size)
 
-def forward_pass(RNN, X, Y, h0):
-    h = h0.copy()
-    loss = 0
-    h_list = [h0]
-    p_list = []
-
-    for t in range(X.shape[1]): # same as seq length
-        x = X[:, t:t+1]  # get current input column
-        a = RNN['W'] @ h + RNN['U']@x + RNN['b']
-        h = np.tanh(a)
-        h_list.append(h)
-        o = RNN['V']@h + RNN['c']
-        p = np.exp(o) / np.sum(np.exp(o),axis=0,keepdims=True)
-        p_list.append(p)
-        loss += np.sum(-Y[:, t:t+1] * np.log(p))
-    loss = loss / X.shape[1]  # average over sequence
-    return loss, h_list, p_list
-
-def backward_pass(RNN, X, Y, h_list, p_list):
-    W = RNN['W']
-    V = RNN['V']
-    grads = {}
-    grads['W'] = np.zeros_like(RNN['W'])
-    grads['U'] = np.zeros_like(RNN['U'])
-    grads['V'] = np.zeros_like(RNN['V'])
-    grads['b'] = np.zeros_like(RNN['b'])
-    grads['c'] = np.zeros_like(RNN['c'])
-    g_list = []
-    for t in range(SEQ_LENGTH):
-        g = -(Y[:,t:t+1] - p_list[t]) #dL/dot
-        g_list.append(g)
-
-    dLdh = V.T @ g_list[-1]
-    #dLda = dLdh * (1-h_list[-1]**2) # h is just tanh(a), can use it
-    # commented out, it cant be used in last t
-    dLda = np.zeros_like(h_list[0])
-    for t in range(SEQ_LENGTH-1,-1,-1):
-        grads['V'] += g_list[t] @ h_list[t+1].T
-        grads['c'] += g_list[t]
-        dLdh = V.T @ g_list[t] + W.T @ dLda
-        dLda = dLdh * (1 - h_list[t+1]**2)
-
-        grads['W'] += dLda @ h_list[t].T
-        grads['U'] += dLda @ X[:, t:t+1].T
-        grads['b'] += dLda
+    def forward(self, x, hidden_state=None):
+        embedded_text = self.embed(x)
+        seq_output, final_hidden_state = self.rnn(embedded_text, hidden_state)
+        logits = self.fc(seq_output)
+        return logits, final_hidden_state
     
-    for grad in grads.keys():
-        grads[grad] = grads[grad] / SEQ_LENGTH
-    return grads
+class DeepLSTM(nn.Module):
+    def __init__(self, vocab_size,embed_dim, hidden_dim, num_layers=2, dropout=0.3):
+        super(DeepLSTM, self).__init__()
+        self.embed = nn.Embedding(num_embeddings=vocab_size,embedding_dim=embed_dim)
+        self.lstm = nn.LSTM(
+            embed_dim=embed_dim,
+            hidden_size=hidden_dim,
+            num_layers=num_layers,
+            batch_first=True,
+            dropout=dropout if num_layers > 1 else 0
+            # only add dropout if  num_layers > 1
 
-# assumes X has size d x tau, h0 has size m x 1, etc
-def ComputeGradsWithTorch(X, y, h0, RNN):
+        )
+        self.norm = nn.LayerNorm(normalized_shape=hidden_dim)
+        self.dropout = nn.Dropout(dropout)
+        self.fc = nn.Linear(hidden_dim,vocab_size)
 
-    tau = X.shape[1]
-
-    Xt = torch.from_numpy(X)
-    ht = torch.from_numpy(h0)
-
-    torch_network = {}
-    for kk in RNN.keys():
-        torch_network[kk] = torch.tensor(RNN[kk], requires_grad=True)
-
-
-    ## give informative names to these torch classes        
-    apply_tanh = torch.nn.Tanh()
-    apply_softmax = torch.nn.Softmax(dim=0) 
+    def forward(self, x, hidden_state = None):
+        embedded_text = self.embed(x)
+        seq_output, final_hidden_state = self.lstm(embedded_text, hidden_state)
+        normalized_output = self.norm(seq_output)
+        dropped_out_output = self.dropout(normalized_output)
+        logits = self.fc(dropped_out_output)
+        return logits, final_hidden_state
     
-    # create an empty tensor to store the hidden vector at each timestep
-    Hs = torch.empty(h0.shape[0], X.shape[1], dtype=torch.float64)
+
+class CustomCrossAttention(nn.Module):
+    def __init__(self, hidden_dim):
+        super(CustomCrossAttention, self).__init__()
+        self.W_q = nn.Linear(hidden_dim,hidden_dim)
+        self.W_k = nn.Linear(hidden_dim,hidden_dim)
+        self.W_v = nn.Linear(hidden_dim,hidden_dim)
+        self.scale = torch.math.sqrt(hidden_dim)
+
+    def forward(self,lstm_output, window_size_k):
+        batch_size, seq_len, hidden_dim = lstm_output.shape
+        Q = self.W_q(lstm_output)
+        K = self.W_k(lstm_output)
+        V = self.W_v(lstm_output)
+        # to check how much word 1 likes word 2 we do W1.Q * W2.K
+        # to get the netire sentence at once do Q*K.T
+        K_transposed = K.transpose(1,2) #transpose last 2 dim
+        attention_scores = torch.bmm(Q,K_transposed)
+        attention_scores = attention_scores/self.scale
+        # causal and window masking
+        mask = torch.ones((seq_len, seq_len), dtype=torch.bool, device=lstm_output.device)
+        mask = torch.tril(mask, diagonal=0) # prevents looking into the future
+        if window_size_k > 0:
+            mask = torch.triu(mask, diagonal=-window_size_k) # cut off anything older than k steps
+        # apply mask, set illegal connections to -infinity so softmax makes them 0
+        scores = attention_scores.masked_fill(~mask, float('inf'))
+        attention_weights = F.softmax(scores,dim=-1)
+        context = torch.bmm(attention_weights, V)
+        return context, attention_weights
     
-    hprev = ht
-    for t in range(tau):
 
-        #### BEGIN your code ######
 
-        # Code to apply the RNN to hprev and Xt[:, t:t+1] to compute the hidden scores "Hs" at timestep t
-        # (ie equations (1,2) in the assignment instructions)
-        # Store results in Hs
+class CrossAttentionLSTM(nn.Module):
+    def __init__(self, vocab_size, embed_dim, hidden_dim, num_layers=2, dropout=0.3, window_size_k=5):
+        super(CrossAttentionLSTM, self).__init__()
+        self.window_size_k = window_size_k
+        self.embedding = nn.Embedding(vocab_size, embed_dim)
+        
+        self.lstm = nn.LSTM(
+            embed_dim, 
+            hidden_dim, 
+            num_layers=num_layers, 
+            batch_first=True, 
+            dropout=dropout if num_layers > 1 else 0
+        )
+        
+        self.attention = CustomCrossAttention(hidden_dim)
+        
+        self.layer_norm = nn.LayerNorm(hidden_dim * 2)         
+        self.dropout = nn.Dropout(dropout)
+        self.fc = nn.Linear(hidden_dim * 2, vocab_size)
 
-        # Don't forget to update hprev!
-        x = Xt[:,t:t+1]        
-        a = torch_network['W'] @ hprev + torch_network['U'] @ x + torch_network['b']
-        ht = apply_tanh(a)
-        hprev = ht
-        Hs[:,t:t+1] = ht
-        #### END of your code ######            
+    def forward(self, x, hidden=None):
+        embedded = self.embedding(x)
+        lstm_out, hidden = self.lstm(embedded, hidden)
+        attention_context, attention_weights = self.attention(lstm_out, self.window_size_k)
+        combined = torch.cat((lstm_out, attention_context), dim=-1)
+        normalized_output = self.layer_norm(combined)
+        dropped_out_output = self.dropout(normalized_output)
+        logits = self.fc(dropped_out_output)
+        return logits, hidden, attention_weights
 
-    Os = torch.matmul(torch_network['V'], Hs) + torch_network['c']        
-    P = apply_softmax(Os)    
+
+if __name__ == "__main__":
+    print("Testing with dummy data...")
     
-    # compute the loss
+    # Fake hyperparameters
+    VOCAB_SIZE = 5000
+    BATCH_SIZE = 16
+    SEQ_LEN = 30
+    EMBED_DIM = 128
+    HIDDEN_DIM = 256
+    WINDOW_K = 5
+    dummy_x = torch.randint(0, VOCAB_SIZE, (BATCH_SIZE, SEQ_LEN))
     
-    loss = torch.mean(-torch.log(P[y, np.arange(tau)]))
+    model = CrossAttentionLSTM(
+        vocab_size=VOCAB_SIZE, 
+        embed_dim=EMBED_DIM, 
+        hidden_dim=HIDDEN_DIM, 
+        window_size_k=WINDOW_K
+    )
     
-    # compute the backward pass relative to the loss and the named parameters 
-    loss.backward()
-
-    # extract the computed gradients and make them numpy arrays
-    grads = {}
-    for kk in RNN.keys():
-        grads[kk] = torch_network[kk].grad.numpy()
-
-    return grads
-
-def train_RNN(RNN, book_data, rng, n_epochs=3):
-    m_dict = {kk: np.zeros_like(RNN[kk]) for kk in RNN.keys()}
-    v_dict = {kk: np.zeros_like(RNN[kk]) for kk in RNN.keys()}
-    beta1, beta2, epsilon = 0.9, 0.999, 1e-8
-    e = 0
-    t = 1
-    hprev = np.zeros((m, 1))
-    smooth_loss = -np.log(1/K)
-    loss_hist = []
-    synth_samples = []
-    for epoch in range(n_epochs):
-        while e < len(book_data) - SEQ_LENGTH - 1:
-            X_chars = book_data[e:e+SEQ_LENGTH]
-            label = book_data[e+1:e+1+SEQ_LENGTH]
-            X = np.eye(K)[:, [char_to_ind[c] for c in X_chars]]
-            Y = np.eye(K)[:, [char_to_ind[c] for c in label]]
-            loss, h_list, p_list = forward_pass(RNN, X, Y, hprev)
-            grads = backward_pass(RNN, X, Y, h_list, p_list)
-            for kk in RNN.keys():
-                m_dict[kk] = beta1*m_dict[kk] + (1-beta1)*grads[kk]
-                v_dict[kk] = beta2*v_dict[kk] + ((1-beta2)*(grads[kk]**2))
-                m_hat = m_dict[kk]/(1-beta1**t)
-                v_hat = v_dict[kk]/(1-beta2**t)
-                RNN[kk] = RNN[kk] - (ETA*m_hat/ (np.sqrt(v_hat) + epsilon) )
-            
-            hprev = h_list[-1]
-            smooth_loss = 0.999*smooth_loss + 0.001*loss
-            if (t%100 == 0):
-                print(f"Step {t}, smooth loss = {smooth_loss:.4f}")
-                loss_hist.append(smooth_loss)
-            if (t==1 or t%10000 == 0):
-                Y_synthetic = synthesize(RNN,hprev,X[:,0:1],200,rng)
-                synth_text = "".join([ind_to_char[np.argmax(Y_synthetic[:, i])] for i in range(Y_synthetic.shape[1])])
-                synth_samples.append(f"iter={t}\n{synth_text}")
-                print("\n***** SYNTHESIZED TEXT *****")
-                print(synth_text)
-                print("******************************\n")
-            e += SEQ_LENGTH
-            t +=1
-        e = 0
-        hprev = np.zeros((m, 1))
-    return loss_hist, synth_samples
+    logits, hidden, attn_weights = model(dummy_x)
+    
+    print(f"Input Shape: {dummy_x.shape}")
+    print(f"Logits Shape: {logits.shape} -> Expected: (16, 30, 5000)")
+    print(f"Attention Weights Shape: {attn_weights.shape} -> Expected: (16, 30, 30)")
+    
+    assert logits.shape == (BATCH_SIZE, SEQ_LEN, VOCAB_SIZE), "Logits shape mismatch!"
+    
+    dummy_loss = logits.sum()
+    dummy_loss.backward()
+    
+    gradient_check = model.lstm.weight_ih_l0.grad is not None
+    print(f"\nGradient Flow Check Passed: {gradient_check}")
+    
+    if gradient_check:
+        print("Successful check")
