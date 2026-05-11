@@ -65,3 +65,5 @@ if __name__ == "__main__":
     with open('data/corpus_clean.txt', 'w', encoding='utf-8') as f:
         f.write(corpus)
     print('done')
+
+    
