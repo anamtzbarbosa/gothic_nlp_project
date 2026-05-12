@@ -1,5 +1,8 @@
 import math
-from dataclasses import dataclass
+import os
+import time
+import random
+from dataclasses import dataclass, asdict
 
 import torch
 import torch.nn as nn
@@ -13,7 +16,8 @@ from models import VanillaRNN, DeepLSTM, CrossAttentionLSTM
 class TrainConfig:
     # Paths
     tokenized_path: str = "data/corpus_tokenized.pkl"
-    checkpoint_path: str = "best_model.pt"
+    checkpoint_dir: str = "checkpoints"
+    checkpoint_name: str = "best_lstm.pt"
 
     # Model choice: "rnn", "lstm", or "attention_lstm"
     model_name: str = "lstm"
@@ -34,6 +38,25 @@ class TrainConfig:
     learning_rate: float = 1e-3
     num_epochs: int = 10
     grad_clip: float = 1.0
+    seed: int = 42
+
+
+def set_seed(seed):
+    random.seed(seed)
+    torch.manual_seed(seed)
+
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+
+
+def get_device():
+    if torch.cuda.is_available():
+        return torch.device("cuda")
+
+    if torch.backends.mps.is_available():
+        return torch.device("mps")
+
+    return torch.device("cpu")
 
 
 def build_model(config: TrainConfig):
@@ -117,43 +140,60 @@ def evaluate(model, data_loader, criterion, device):
             total_loss += loss.item()
 
     avg_loss = total_loss / len(data_loader)
-    perplexity = math.exp(avg_loss)
+
+    try:
+        perplexity = math.exp(avg_loss)
+    except OverflowError:
+        perplexity = float("inf")
 
     return avg_loss, perplexity
 
 
-def save_checkpoint(model, optimizer, config, val_loss):
+def save_checkpoint(model, optimizer, config, val_loss, epoch):
+    os.makedirs(config.checkpoint_dir, exist_ok=True)
+
+    checkpoint_path = os.path.join(config.checkpoint_dir, config.checkpoint_name)
+
     torch.save(
         {
+            "epoch": epoch,
             "model_name": config.model_name,
             "model_state_dict": model.state_dict(),
             "optimizer_state_dict": optimizer.state_dict(),
-            "vocab_size": config.vocab_size,
-            "seq_length": config.seq_length,
-            "embed_dim": config.embed_dim,
-            "hidden_dim": config.hidden_dim,
-            "num_layers": config.num_layers,
-            "dropout": config.dropout,
-            "window_size_k": config.window_size_k,
+            "config": asdict(config),
             "val_loss": val_loss,
         },
-        config.checkpoint_path,
+        checkpoint_path,
     )
+
+    return checkpoint_path
+
+
+def load_best_checkpoint(model, config, device):
+    checkpoint_path = os.path.join(config.checkpoint_dir, config.checkpoint_name)
+
+    checkpoint = torch.load(checkpoint_path, map_location=device)
+    model.load_state_dict(checkpoint["model_state_dict"])
+
+    return checkpoint
 
 
 def main():
     config = TrainConfig(
         model_name="lstm",
-        checkpoint_path="best_lstm.pt",
+        checkpoint_name="best_lstm.pt",
         num_epochs=10,
         batch_size=64,
         seq_length=100,
         learning_rate=1e-3,
     )
 
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    set_seed(config.seed)
+
+    device = get_device()
     print(f"Using device: {device}")
     print(f"Training model: {config.model_name}")
+    print(f"Config: {config}")
 
     train_loader, val_loader, test_loader = get_dataloaders(
         path=config.tokenized_path,
@@ -167,8 +207,11 @@ def main():
     optimizer = Adam(model.parameters(), lr=config.learning_rate)
 
     best_val_loss = float("inf")
+    history = []
 
     for epoch in range(1, config.num_epochs + 1):
+        start_time = time.time()
+
         train_loss = train_one_epoch(
             model=model,
             train_loader=train_loader,
@@ -185,17 +228,39 @@ def main():
             device=device,
         )
 
+        epoch_time = time.time() - start_time
+
+        history.append(
+            {
+                "epoch": epoch,
+                "train_loss": train_loss,
+                "val_loss": val_loss,
+                "val_ppl": val_ppl,
+                "epoch_time": epoch_time,
+            }
+        )
+
         print(
             f"Epoch {epoch}/{config.num_epochs} | "
             f"Train Loss: {train_loss:.4f} | "
             f"Val Loss: {val_loss:.4f} | "
-            f"Val PPL: {val_ppl:.2f}"
+            f"Val PPL: {val_ppl:.2f} | "
+            f"Time: {epoch_time:.1f}s"
         )
 
         if val_loss < best_val_loss:
             best_val_loss = val_loss
-            save_checkpoint(model, optimizer, config, val_loss)
-            print(f"Saved best model to {config.checkpoint_path}")
+            checkpoint_path = save_checkpoint(
+                model=model,
+                optimizer=optimizer,
+                config=config,
+                val_loss=val_loss,
+                epoch=epoch,
+            )
+            print(f"Saved best model to {checkpoint_path}")
+
+    print("Loading best checkpoint before final test...")
+    best_checkpoint = load_best_checkpoint(model, config, device)
 
     test_loss, test_ppl = evaluate(
         model=model,
@@ -204,8 +269,14 @@ def main():
         device=device,
     )
 
+    print("\nTraining finished.")
+    print(f"Best validation loss: {best_checkpoint['val_loss']:.4f}")
     print(f"Final Test Loss: {test_loss:.4f}")
     print(f"Final Test Perplexity: {test_ppl:.2f}")
+
+    print("\nTraining history:")
+    for row in history:
+        print(row)
 
 
 if __name__ == "__main__":
