@@ -3,10 +3,10 @@ import torch.nn as nn, torch.nn.functional as F
 
 class VanillaRNN(nn.Module):
     def __init__(self, vocab_size, embed_dim, hidden_dim):
-        super(VanillaRNN, self,)._init__() 
-        self.embed = nn.Embedding(embedding_dim=vocab_size)
-        self.rnn = nn.RNN(in_features=embed_dim,out_features=hidden_dim, num_layers=1, batch_first=True)
-        self.fc = nn.Linear(in_features=hidden_dim,out_features=vocab_size)
+        super(VanillaRNN, self).__init__() 
+        self.embed = nn.Embedding(num_embeddings=vocab_size, embedding_dim=embed_dim)
+        self.rnn = nn.RNN(input_size=embed_dim, hidden_size=hidden_dim, num_layers=1, batch_first=True)
+        self.fc = nn.Linear(in_features=hidden_dim, out_features=vocab_size)
 
     def forward(self, x, hidden_state=None):
         embedded_text = self.embed(x)
