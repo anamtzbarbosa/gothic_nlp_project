@@ -101,8 +101,9 @@ def compute_loss(logits, targets, criterion):
 def train_one_epoch(model, train_loader, criterion, optimizer, device, config):
     model.train()
     total_loss = 0.0
+    log_every = 100
 
-    for x, y in train_loader:
+    for batch_idx, (x, y) in enumerate(train_loader, start=1):
         x = x.to(device)
         y = y.to(device)
 
@@ -120,6 +121,13 @@ def train_one_epoch(model, train_loader, criterion, optimizer, device, config):
         optimizer.step()
 
         total_loss += loss.item()
+
+        if batch_idx % log_every == 0:
+            avg_loss_so_far = total_loss / batch_idx
+            print(
+                f"  Batch {batch_idx}/{len(train_loader)} | "
+                f"Avg Train Loss: {avg_loss_so_far:.4f}"
+            )
 
     return total_loss / len(train_loader)
 
@@ -182,7 +190,7 @@ def main():
     config = TrainConfig(
         model_name="lstm",
         checkpoint_name="best_lstm.pt",
-        num_epochs=10,
+        num_epochs=1,
         batch_size=64,
         seq_length=100,
         learning_rate=1e-3,

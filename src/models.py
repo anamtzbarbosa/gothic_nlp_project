@@ -15,30 +15,33 @@ class VanillaRNN(nn.Module):
         return logits, final_hidden_state
     
 class DeepLSTM(nn.Module):
-    def __init__(self, vocab_size,embed_dim, hidden_dim, num_layers=2, dropout=0.3):
+    def __init__(self, vocab_size, embed_dim, hidden_dim, num_layers=2, dropout=0.3):
         super(DeepLSTM, self).__init__()
-        self.embed = nn.Embedding(num_embeddings=vocab_size,embedding_dim=embed_dim)
+
+        self.embed = nn.Embedding(
+            num_embeddings=vocab_size,
+            embedding_dim=embed_dim
+        )
+
         self.lstm = nn.LSTM(
-            embed_dim=embed_dim,
+            input_size=embed_dim,
             hidden_size=hidden_dim,
             num_layers=num_layers,
             batch_first=True,
             dropout=dropout if num_layers > 1 else 0
-            # only add dropout if  num_layers > 1
-
         )
+
         self.norm = nn.LayerNorm(normalized_shape=hidden_dim)
         self.dropout = nn.Dropout(dropout)
-        self.fc = nn.Linear(hidden_dim,vocab_size)
+        self.fc = nn.Linear(hidden_dim, vocab_size)
 
-    def forward(self, x, hidden_state = None):
+    def forward(self, x, hidden_state=None):
         embedded_text = self.embed(x)
         seq_output, final_hidden_state = self.lstm(embedded_text, hidden_state)
         normalized_output = self.norm(seq_output)
         dropped_out_output = self.dropout(normalized_output)
         logits = self.fc(dropped_out_output)
         return logits, final_hidden_state
-    
 
 class CustomCrossAttention(nn.Module):
     def __init__(self, hidden_dim):
