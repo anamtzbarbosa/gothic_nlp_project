@@ -8,6 +8,14 @@ import torch
 import torch.nn as nn
 from torch.optim import Adam
 
+from evaluate_generation import (
+    collect_generation_pairs,
+    compute_all_metrics,
+    save_metrics_and_examples,
+)
+from tokenizer import GothicBPE
+import json
+
 from dataset import get_dataloaders
 from models import VanillaRNN, DeepLSTM, CrossAttentionLSTM
 
@@ -39,6 +47,15 @@ class TrainConfig:
     num_epochs: int = 10
     grad_clip: float = 1.0
     seed: int = 42
+
+    # Generation evaluation
+    run_generation_eval: bool = True
+    tokenizer_path: str = "data/gothic_tokenizer.json"
+    generation_num_samples: int = 50
+    generation_prompt_length: int = 30
+    generation_temperature: float = 0.8
+    generation_top_p: float = 0.9
+    generation_output_path: str = "results/generation_metrics"
 
 
 def set_seed(seed):
@@ -87,6 +104,60 @@ def build_model(config: TrainConfig):
         )
 
     raise ValueError(f"Unknown model name: {config.model_name}")
+
+
+def load_bpe_tokenizer(tokenizer_path):
+    tokenizer = GothicBPE()
+
+    with open(tokenizer_path, "r", encoding="utf-8") as f:
+        tokenizer_data = json.load(f)
+
+    tokenizer.merges = {
+        tuple(map(int, pair.split(","))): merge_id
+        for pair, merge_id in tokenizer_data["merges"].items()
+    }
+
+    tokenizer.vocab = tokenizer.build_vocab()
+    return tokenizer
+
+
+def run_generation_evaluation_after_training(model, test_loader, config, device, log_path):
+    log("\nRunning generation evaluation on test set...", log_path)
+
+    tokenizer = load_bpe_tokenizer(config.tokenizer_path)
+
+    # model_config = asdict(config)
+
+    generated_texts, reference_texts = collect_generation_pairs(
+        model=model,
+        tokenizer=tokenizer,
+        test_loader=test_loader,
+        seq_length=config.seq_length,
+        num_samples=config.generation_num_samples,
+        prompt_length=config.generation_prompt_length,
+        temperature=config.generation_temperature,
+        top_p=config.generation_top_p,
+        device=device,
+    )
+
+    metrics = compute_all_metrics(
+        generated_texts=generated_texts,
+        reference_texts=reference_texts,
+    )
+
+    log("\nGeneration metrics:", log_path)
+    for key, value in metrics.items():
+        log(f"{key}: {value}", log_path)
+
+    txt_path, json_path = save_metrics_and_examples(
+        metrics=metrics,
+        generated_texts=generated_texts,
+        reference_texts=reference_texts,
+        output_prefix=config.generation_output_path,
+    )
+
+    log(f"Saved generation metrics txt to: {txt_path}", log_path)
+    log(f"Saved generation metrics json to: {json_path}", log_path)
 
 
 def compute_loss(logits, targets, criterion):
@@ -286,9 +357,9 @@ def main():
                 val_loss=val_loss,
                 epoch=epoch,
             )
-            print(f"Saved best model to {checkpoint_path}")
+            log(f"Saved best model to {checkpoint_path}", log_path)
 
-    print("Loading best checkpoint before final test...")
+    log("Loading best checkpoint before final test...", log_path)
     best_checkpoint = load_best_checkpoint(model, config, device)
 
     test_loss, test_ppl = evaluate(
@@ -298,14 +369,23 @@ def main():
         device=device,
     )
 
-    print("\nTraining finished.")
-    print(f"Best validation loss: {best_checkpoint['val_loss']:.4f}")
-    print(f"Final Test Loss: {test_loss:.4f}")
-    print(f"Final Test Perplexity: {test_ppl:.2f}")
+    log("\nTraining finished.", log_path)
+    log(f"Best validation loss: {best_checkpoint['val_loss']:.4f}", log_path)
+    log(f"Final Test Loss: {test_loss:.4f}", log_path)
+    log(f"Final Test Perplexity: {test_ppl:.2f}", log_path)
 
-    print("\nTraining history:")
+    if config.run_generation_eval:
+        run_generation_evaluation_after_training(
+            model=model,
+            test_loader=test_loader,
+            config=config,
+            device=device,
+            log_path=log_path,
+        )
+
+    log("\nTraining history:", log_path)
     for row in history:
-        print(row)
+        log(str(row), log_path)
 
 
 if __name__ == "__main__":
