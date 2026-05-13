@@ -67,7 +67,7 @@ class CustomCrossAttention(nn.Module):
         if window_size_k > 0:
             mask = torch.triu(mask, diagonal=-window_size_k) # cut off anything older than k steps
         # apply mask, set illegal connections to -infinity so softmax makes them 0
-        scores = attention_scores.masked_fill(~mask, float('inf'))
+        scores = attention_scores.masked_fill(~mask, float('-inf'))
         attention_weights = F.softmax(scores,dim=-1)
         context = torch.bmm(attention_weights, V)
         return context, attention_weights
@@ -81,10 +81,10 @@ class CrossAttentionLSTM(nn.Module):
         self.embedding = nn.Embedding(vocab_size, embed_dim)
         
         self.lstm = nn.LSTM(
-            embed_dim, 
-            hidden_dim, 
-            num_layers=num_layers, 
-            batch_first=True, 
+            input_size=embed_dim,
+            hidden_size=hidden_dim,
+            num_layers=num_layers,
+            batch_first=True,
             dropout=dropout if num_layers > 1 else 0
         )
         
