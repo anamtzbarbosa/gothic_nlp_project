@@ -98,7 +98,7 @@ def compute_loss(logits, targets, criterion):
     return criterion(logits, targets)
 
 
-def train_one_epoch(model, train_loader, criterion, optimizer, device, config):
+def train_one_epoch(model, train_loader, criterion, optimizer, device, config, log_path):
     model.train()
     total_loss = 0.0
     log_every = 100
@@ -124,9 +124,10 @@ def train_one_epoch(model, train_loader, criterion, optimizer, device, config):
 
         if batch_idx % log_every == 0:
             avg_loss_so_far = total_loss / batch_idx
-            print(
+            log(
                 f"  Batch {batch_idx}/{len(train_loader)} | "
-                f"Avg Train Loss: {avg_loss_so_far:.4f}"
+                f"Avg Train Loss: {avg_loss_so_far:.4f}",
+                log_path
             )
 
     return total_loss / len(train_loader)
@@ -185,6 +186,18 @@ def load_best_checkpoint(model, config, device):
 
     return checkpoint
 
+def get_log_path(config):
+    os.makedirs(config.checkpoint_dir, exist_ok=True)
+
+    base_name = config.checkpoint_name.replace(".pt", "")
+    return os.path.join(config.checkpoint_dir, f"{base_name}_training_log.txt")
+
+
+def log(message, log_path):
+    print(message)
+
+    with open(log_path, "a", encoding="utf-8") as f:
+        f.write(message + "\n")
 
 def main():
     config = TrainConfig(
@@ -198,10 +211,16 @@ def main():
 
     set_seed(config.seed)
 
+    log_path = get_log_path(config)
+
+    with open(log_path, "w", encoding="utf-8") as f:
+        f.write("Training log\n")
+        f.write("=" * 80 + "\n")
+
     device = get_device()
-    print(f"Using device: {device}")
-    print(f"Training model: {config.model_name}")
-    print(f"Config: {config}")
+    log(f"Using device: {device}", log_path)
+    log(f"Training model: {config.model_name}", log_path)
+    log(f"Config: {config}", log_path)
 
     train_loader, val_loader, test_loader = get_dataloaders(
         path=config.tokenized_path,
@@ -227,6 +246,7 @@ def main():
             optimizer=optimizer,
             device=device,
             config=config,
+            log_path=log_path,
         )
 
         val_loss, val_ppl = evaluate(
@@ -248,12 +268,13 @@ def main():
             }
         )
 
-        print(
+        log(
             f"Epoch {epoch}/{config.num_epochs} | "
             f"Train Loss: {train_loss:.4f} | "
             f"Val Loss: {val_loss:.4f} | "
             f"Val PPL: {val_ppl:.2f} | "
-            f"Time: {epoch_time:.1f}s"
+            f"Time: {epoch_time:.1f}s",
+            log_path
         )
 
         if val_loss < best_val_loss:
