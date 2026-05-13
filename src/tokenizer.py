@@ -91,7 +91,7 @@ class GothicBPE:
     def decode(self, ids):
         """ From numers to text"""
         tokens = b"".join(self.vocab[idx] for idx in ids)
-        return tokens.decode("utf-8") 
+        return tokens.decode("utf-8", errors="replace")
 
     def save_model(self, path):
         """Saves the merge rules """

@@ -18,7 +18,7 @@ from generate import (
 
 
 def tokenize_words(text):
-    return re.findall(r"[A-Za-z]+(?:'[A-Za-z]+)?", text.lower())
+    return re.findall(r"[a-z]+(?:['-][a-z]+)*", text.lower())
 
 
 def make_ngrams(tokens, n):
