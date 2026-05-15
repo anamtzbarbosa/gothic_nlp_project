@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.5919697748365123e-10
+bigram_overlap: 0.0
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0010000000000000009
+spelling_accuracy: 0.8866117997318785
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+ish. The two of the fashion and oppressions that both your face and perceive my heart's memory may have realized." "I am not truth and faithful, no funeral that good natures or not he would ish not; and if he can make again anything on so much less than that you can't see it! ..." "I don't know him," she answer
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+is quite right, and wave it. All your hand-hated my power was in trouble. My young girls have been fatished. The last is he should be done in the house, but he endeavoured to outhimself on his hand to lie down again, and determined some sick hour to resister by ourselves. During the great interest of London-is a very conct 
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+ach of the fierce of ancestor, in plan had run away them? Good! You said I'm not not merely night, Miss to pay only any other and unhappy one. She was there would give a good work to let her have become friends-in we can learn to him, her, even a sisterle for one's 
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+le. Haven sparise, my faith-many of Mortonifies, you didn't, Erik! Rend my Angel of Music!" And, going Muham. "Poe! she is incapable of no bad jalas! setalas! she is no suffering." "There is much 
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+s burning from their eyes. The tries, and the successs of the whole scordingly he found his hat and despondure in all to sound of a characters, he suddenly up to me. The Persian, who was almost as if he were, and he could never be a difference. I hope I say I make you." Here I interrupted, once c
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

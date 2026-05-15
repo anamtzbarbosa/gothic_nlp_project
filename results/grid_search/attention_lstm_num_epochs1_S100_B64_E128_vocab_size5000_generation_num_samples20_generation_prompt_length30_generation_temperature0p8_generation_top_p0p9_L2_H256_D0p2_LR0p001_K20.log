@@ -1,0 +1,180 @@
+Grid Search Run: attention_lstm_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_L2_H256_D0p2_LR0p001_K20
+================================================================================
+run=attention_lstm_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_L2_H256_D0p2_LR0p001_K20
+config=TrainConfig(tokenized_path='data/corpus_tokenized.pkl', checkpoint_dir='checkpoints/grid_search', checkpoint_name='attention_lstm_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_L2_H256_D0p2_LR0p001_K20.pt', model_name='attention_lstm', vocab_size=5000, seq_length=100, batch_size=64, embed_dim=128, hidden_dim=256, num_layers=2, dropout=0.2, window_size_k=20, learning_rate=0.001, num_epochs=1, grad_clip=1.0, seed=42, run_generation_eval=False, tokenizer_path='data/gothic_tokenizer.json', generation_num_samples=20, generation_prompt_length=30, generation_temperature=0.8, generation_top_p=0.9, generation_output_path='results/generation_metrics')
+  Batch 100/12186 | Avg Train Loss: 7.7747
+  Batch 200/12186 | Avg Train Loss: 7.3005
+  Batch 300/12186 | Avg Train Loss: 6.9056
+  Batch 400/12186 | Avg Train Loss: 6.6228
+  Batch 500/12186 | Avg Train Loss: 6.4124
+  Batch 600/12186 | Avg Train Loss: 6.2476
+  Batch 700/12186 | Avg Train Loss: 6.1151
+  Batch 800/12186 | Avg Train Loss: 6.0042
+  Batch 900/12186 | Avg Train Loss: 5.9102
+  Batch 1000/12186 | Avg Train Loss: 5.8293
+  Batch 1100/12186 | Avg Train Loss: 5.7589
+  Batch 1200/12186 | Avg Train Loss: 5.6973
+  Batch 1300/12186 | Avg Train Loss: 5.6418
+  Batch 1400/12186 | Avg Train Loss: 5.5924
+  Batch 1500/12186 | Avg Train Loss: 5.5474
+  Batch 1600/12186 | Avg Train Loss: 5.5061
+  Batch 1700/12186 | Avg Train Loss: 5.4679
+  Batch 1800/12186 | Avg Train Loss: 5.4332
+  Batch 1900/12186 | Avg Train Loss: 5.4009
+  Batch 2000/12186 | Avg Train Loss: 5.3713
+  Batch 2100/12186 | Avg Train Loss: 5.3431
+  Batch 2200/12186 | Avg Train Loss: 5.3170
+  Batch 2300/12186 | Avg Train Loss: 5.2926
+  Batch 2400/12186 | Avg Train Loss: 5.2695
+  Batch 2500/12186 | Avg Train Loss: 5.2476
+  Batch 2600/12186 | Avg Train Loss: 5.2272
+  Batch 2700/12186 | Avg Train Loss: 5.2077
+  Batch 2800/12186 | Avg Train Loss: 5.1893
+  Batch 2900/12186 | Avg Train Loss: 5.1716
+  Batch 3000/12186 | Avg Train Loss: 5.1548
+  Batch 3100/12186 | Avg Train Loss: 5.1390
+  Batch 3200/12186 | Avg Train Loss: 5.1239
+  Batch 3300/12186 | Avg Train Loss: 5.1093
+  Batch 3400/12186 | Avg Train Loss: 5.0952
+  Batch 3500/12186 | Avg Train Loss: 5.0820
+  Batch 3600/12186 | Avg Train Loss: 5.0693
+  Batch 3700/12186 | Avg Train Loss: 5.0569
+  Batch 3800/12186 | Avg Train Loss: 5.0452
+  Batch 3900/12186 | Avg Train Loss: 5.0340
+  Batch 4000/12186 | Avg Train Loss: 5.0232
+  Batch 4100/12186 | Avg Train Loss: 5.0127
+  Batch 4200/12186 | Avg Train Loss: 5.0025
+  Batch 4300/12186 | Avg Train Loss: 4.9929
+  Batch 4400/12186 | Avg Train Loss: 4.9833
+  Batch 4500/12186 | Avg Train Loss: 4.9741
+  Batch 4600/12186 | Avg Train Loss: 4.9652
+  Batch 4700/12186 | Avg Train Loss: 4.9567
+  Batch 4800/12186 | Avg Train Loss: 4.9483
+  Batch 4900/12186 | Avg Train Loss: 4.9404
+  Batch 5000/12186 | Avg Train Loss: 4.9327
+  Batch 5100/12186 | Avg Train Loss: 4.9252
+  Batch 5200/12186 | Avg Train Loss: 4.9179
+  Batch 5300/12186 | Avg Train Loss: 4.9107
+  Batch 5400/12186 | Avg Train Loss: 4.9038
+  Batch 5500/12186 | Avg Train Loss: 4.8970
+  Batch 5600/12186 | Avg Train Loss: 4.8905
+  Batch 5700/12186 | Avg Train Loss: 4.8840
+  Batch 5800/12186 | Avg Train Loss: 4.8778
+  Batch 5900/12186 | Avg Train Loss: 4.8717
+  Batch 6000/12186 | Avg Train Loss: 4.8656
+  Batch 6100/12186 | Avg Train Loss: 4.8597
+  Batch 6200/12186 | Avg Train Loss: 4.8541
+  Batch 6300/12186 | Avg Train Loss: 4.8486
+  Batch 6400/12186 | Avg Train Loss: 4.8432
+  Batch 6500/12186 | Avg Train Loss: 4.8378
+  Batch 6600/12186 | Avg Train Loss: 4.8325
+  Batch 6700/12186 | Avg Train Loss: 4.8275
+  Batch 6800/12186 | Avg Train Loss: 4.8226
+  Batch 6900/12186 | Avg Train Loss: 4.8176
+  Batch 7000/12186 | Avg Train Loss: 4.8129
+  Batch 7100/12186 | Avg Train Loss: 4.8084
+  Batch 7200/12186 | Avg Train Loss: 4.8038
+  Batch 7300/12186 | Avg Train Loss: 4.7994
+  Batch 7400/12186 | Avg Train Loss: 4.7952
+  Batch 7500/12186 | Avg Train Loss: 4.7909
+  Batch 7600/12186 | Avg Train Loss: 4.7867
+  Batch 7700/12186 | Avg Train Loss: 4.7825
+  Batch 7800/12186 | Avg Train Loss: 4.7784
+  Batch 7900/12186 | Avg Train Loss: 4.7745
+  Batch 8000/12186 | Avg Train Loss: 4.7707
+  Batch 8100/12186 | Avg Train Loss: 4.7668
+  Batch 8200/12186 | Avg Train Loss: 4.7631
+  Batch 8300/12186 | Avg Train Loss: 4.7594
+  Batch 8400/12186 | Avg Train Loss: 4.7557
+  Batch 8500/12186 | Avg Train Loss: 4.7522
+  Batch 8600/12186 | Avg Train Loss: 4.7487
+  Batch 8700/12186 | Avg Train Loss: 4.7453
+  Batch 8800/12186 | Avg Train Loss: 4.7420
+  Batch 8900/12186 | Avg Train Loss: 4.7387
+  Batch 9000/12186 | Avg Train Loss: 4.7355
+  Batch 9100/12186 | Avg Train Loss: 4.7323
+  Batch 9200/12186 | Avg Train Loss: 4.7291
+  Batch 9300/12186 | Avg Train Loss: 4.7260
+  Batch 9400/12186 | Avg Train Loss: 4.7230
+  Batch 9500/12186 | Avg Train Loss: 4.7200
+  Batch 9600/12186 | Avg Train Loss: 4.7170
+  Batch 9700/12186 | Avg Train Loss: 4.7140
+  Batch 9800/12186 | Avg Train Loss: 4.7111
+  Batch 9900/12186 | Avg Train Loss: 4.7083
+  Batch 10000/12186 | Avg Train Loss: 4.7055
+  Batch 10100/12186 | Avg Train Loss: 4.7028
+  Batch 10200/12186 | Avg Train Loss: 4.7001
+  Batch 10300/12186 | Avg Train Loss: 4.6973
+  Batch 10400/12186 | Avg Train Loss: 4.6947
+  Batch 10500/12186 | Avg Train Loss: 4.6920
+  Batch 10600/12186 | Avg Train Loss: 4.6895
+  Batch 10700/12186 | Avg Train Loss: 4.6870
+  Batch 10800/12186 | Avg Train Loss: 4.6845
+  Batch 10900/12186 | Avg Train Loss: 4.6821
+  Batch 11000/12186 | Avg Train Loss: 4.6796
+  Batch 11100/12186 | Avg Train Loss: 4.6773
+  Batch 11200/12186 | Avg Train Loss: 4.6749
+  Batch 11300/12186 | Avg Train Loss: 4.6725
+  Batch 11400/12186 | Avg Train Loss: 4.6701
+  Batch 11500/12186 | Avg Train Loss: 4.6679
+  Batch 11600/12186 | Avg Train Loss: 4.6656
+  Batch 11700/12186 | Avg Train Loss: 4.6634
+  Batch 11800/12186 | Avg Train Loss: 4.6612
+  Batch 11900/12186 | Avg Train Loss: 4.6591
+  Batch 12000/12186 | Avg Train Loss: 4.6569
+  Batch 12100/12186 | Avg Train Loss: 4.6548
+epoch=1/1 train_loss=4.6530 val_loss=5.8220 val_ppl=337.64 time=2745.7s
+saved_best=checkpoints/grid_search/attention_lstm_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_L2_H256_D0p2_LR0p001_K20.pt
+
+final_result:
+{
+  "run_name": "attention_lstm_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_L2_H256_D0p2_LR0p001_K20",
+  "model_name": "attention_lstm",
+  "checkpoint_name": "attention_lstm_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_L2_H256_D0p2_LR0p001_K20.pt",
+  "num_layers": 2,
+  "embed_dim": 128,
+  "hidden_dim": 256,
+  "dropout": 0.2,
+  "learning_rate": 0.001,
+  "batch_size": 64,
+  "seq_length": 100,
+  "window_size_k": 20,
+  "best_epoch": 1,
+  "last_train_loss": 4.653024589567374,
+  "best_val_loss": 5.821990161885977,
+  "last_val_ppl": 337.6433503408397,
+  "test_loss": 5.782569420330041,
+  "test_ppl": 324.59213349532564,
+  "num_samples": 20,
+  "bleu": 3.4979537146689276e-10,
+  "bigram_overlap": 0.0,
+  "trigram_overlap": 0.0,
+  "trigram_repetition_rate": 0.0018181818181818188,
+  "spelling_accuracy": 0.873659273010511,
+  "total_time_seconds": 2868.285048007965,
+  "config": {
+    "tokenized_path": "data/corpus_tokenized.pkl",
+    "checkpoint_dir": "checkpoints/grid_search",
+    "checkpoint_name": "attention_lstm_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_L2_H256_D0p2_LR0p001_K20.pt",
+    "model_name": "attention_lstm",
+    "vocab_size": 5000,
+    "seq_length": 100,
+    "batch_size": 64,
+    "embed_dim": 128,
+    "hidden_dim": 256,
+    "num_layers": 2,
+    "dropout": 0.2,
+    "window_size_k": 20,
+    "learning_rate": 0.001,
+    "num_epochs": 1,
+    "grad_clip": 1.0,
+    "seed": 42,
+    "run_generation_eval": false,
+    "tokenizer_path": "data/gothic_tokenizer.json",
+    "generation_num_samples": 20,
+    "generation_prompt_length": 30,
+    "generation_temperature": 0.8,
+    "generation_top_p": 0.9,
+    "generation_output_path": "results/generation_metrics"
+  }
+}

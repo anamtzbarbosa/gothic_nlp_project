@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.560173658208008e-10
+bigram_overlap: 0.0
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.004807692307692307
+spelling_accuracy: 0.893101085612912
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+ing gay, which they have so very good witnesses: as teachers come to anguish the inspector. "Who is your husband?" he said, by an excellent hand of it, which were filled up with joy and delightful earnestness; and when I was afraid a whole place in a hide would be double frame. "Why do you that 
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+is quite unhappy here, and did not seem to be prepared in a long time; and it is no fire and difficulty; but I shan't be in such a wretched kindness." "The monster is his house of you than honey." I had ever been the Count was wonderful to him, and the light of the verse of my soul and then I saw her at Perrot's mind, and 
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+al-night: I had never seen him; and while he had threading back against them she said: "Night and not know the night. So I was a dog of triumph you both hand and now; but now that you shall not change my only nurse for her to be decay and fearful: not that seemed to him any more." When I 
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+le-baset of its blood, determined to see that the Mano had disappeared, and was rousing his, and from which they would have been worse on the inventory of mind delight to himself that he was impossible, indeed, neither wish to bring him nor it were as I had done with no reception, as you had been made him the 
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+t stuff treasure. I obeyed my tears, like those arries, had a traying for my protection. I said whether I could see him; I did not think, he had a right to deviate lunatics, of time (I did not notice my forehead had taken a parks, a room, a barrigy with which once c
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

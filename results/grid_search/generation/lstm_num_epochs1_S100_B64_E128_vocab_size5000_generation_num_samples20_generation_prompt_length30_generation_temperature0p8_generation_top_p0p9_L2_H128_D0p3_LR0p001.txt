@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.4839911900812883e-10
+bigram_overlap: 0.0
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0
+spelling_accuracy: 0.8909870706040961
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+utues, the men of your life of fire was absolutely felt on the stage-manager's brother's plores in a month. "How do you come, A-" "Tell you like to know you. I was as out and grief is well in love on the nicony on an early insolence of the hazen short, Miss Eyre
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+is quite fond of your own too soon your hand, and hatened?" "You should be better soon and make me, who in sad by sleepy of The happiness has never been macy?" "It does not know and let me see you to the house, another moments." "Take you, assure you what happened is a safety! Wh
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+achman night: Mrs. Reed a strange and moder, and said to him. Then the voice of the knittle she seemed to return a point and said over the orders; the one mistress gave me for death, and like a week and was a master-Byrent a fire of his death and cares, and put out upon her, well-confirmed with fresh that 
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+pation. I knew how he had triumph: "She would not be destroyed you?" "Because you didn't take a field from which they really knew how I do for nothing to this divine from the six that had but not a mining tour from your hands with her sister, and will be nine o'clock. I could not know you who before him the 
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+s in his heart. The Knight's children, wherein, and a good fear of the trouble of incident had once noticed to be questions into a dreadful, and she kept him, and told the gentleman without despatching at the western short, battle. He felt that part of his candle now was in the commonplace with Hally in 
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.3178309577746747e-10
+bigram_overlap: 0.0
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0008928571428571452
+spelling_accuracy: 0.8622168795357574
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+ute peoples, she walked in one or two of the bedroom, and the rain was compressed plenty and attempted, finding no doubt, except your person were nobody through how that I had been left out and went on: quite a curious dry nicon. I had regretted even to accompany me so-excited) "G
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+is previous to each them. I felt something long, well-known understood for us at such as the day asking what she is to appear in your duties. And yet he said, after himself on his own to myself and watch the Count was wonderful authority. I have lived in my little soul and then I feel that if I were wrongless her mind to my 
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+x-night; but this school was her cousin and dispositions that followed her with its insurgy airs not had the chain of cragging which we were near, waking them into a chairs and flowers required from a trent a fire in September, and when he heard him out of a Christian Sign, were wept 
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+le. Heathcliff passed here and there in my own house as I got in the direction of the delirious of books or waiting, with which they have killed his assistant, go, and having spoken to with that he was imposed to that from the misfortune, the whole letters were as I had never received quietly take me, to have done better the 
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+s stretched into the way; and when I found at the door, exaggerated solitude, which he found he was free, all the keens Catherine from the scorpions are always heard: he was not going to advised the season and arrangement to battlemently with park, and rose, now was lying on my knees, and once c
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

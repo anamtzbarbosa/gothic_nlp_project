@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.5452323465352487e-10
+bigram_overlap: 0.0
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0009259259259259244
+spelling_accuracy: 0.8934806796812425
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+ishing the men, the men who certainly wished to him a double and so many boats is always been nearer scene of labours over him and me: no answer, how that I had been left him some time I met him from him a holiday; he was conceiving in my dispine-fashioned. And then she 
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+is quite right, and waked up on the your hand-shelf in the fold, like her, and after she got up upon me if she could see that she laughed like a ghost and wild civility to say another place and its contents, sitting at the hands of Turk, as though she said: "Mercier. I now come this 
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+achman? They are, I believe, her cousin and recollecting Isabella and my father, half she would permit a certain explanation. This time she was all right, and laid her hand like a hand and was trembled. She may wake her a double of his city-cases, and put out his hands, and in his mouth. I could see no pla
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+pation. I shall tell you whether you in my poverty, that I've left him into no further, and you neg or waiting, whilst he could not have again incapable of time she seemed to know me in my hand to Mamma Valerius and putting her hand to her eyes, and said to Joseph's voice, leaning round a whole bo
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+t stuff." "That's the viscount, do you me that she is you going?" "Come, Mifroid would have another? Where are you going?" "I have done he sent him say Mr. Heathcliff dedy of me and several favourite from that had taken that parallelder, and are you assured him for your life
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

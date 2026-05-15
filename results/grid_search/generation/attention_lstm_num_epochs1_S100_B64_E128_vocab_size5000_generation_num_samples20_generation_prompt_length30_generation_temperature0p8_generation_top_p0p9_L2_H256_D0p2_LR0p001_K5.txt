@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.778117633512028e-10
+bigram_overlap: 0.0
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0
+spelling_accuracy: 0.8739145281905657
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+ing gaiety, and fierce with the same remorse of the imperfect propries. After breakfast she put it out  "Don't touch the poor girls by all you. I was about him background for Arthur; and while he not nine on so much of life and raption Jerome; then he isn't his 
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+is quite uneasy to go down again and it begin to-night." "And then I can tell you of the person school who has offended your servicised for the principality of Oliver." Cannine was finished and sitting at the hands. Fortunately, I passed upstairs, and only closed. Then by himself at 
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+x; still being something of an antipathy or deigns of her own room, got backward and pointing to me. "I am glad to you, my dear Madam Mina," he said, Lady Narborough, changed'a long master to myself a fire as much as though the patrs of Lowood seemed to him a sparle for close 
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+ping upon a rest, its idiot-limbs heaving up up, crossing the road and black medy chill and brave into ourselves would have spoken for a vesties." "What to do?" "Certainly, Withyour cousin! How can I get hold myself? Harry, I did you have done better the 
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+, as very nearly as nervously. "A little," said Theodore, "you don't repeat my friend in love," he said. "I won't do to speak to us on any account; he won't have leave this Mr. Hindley resignation. "I don't care what to say! ... And what it is that we are not going away." Here he got up and went to bed ... He 
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

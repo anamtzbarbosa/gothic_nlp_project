@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.8617987230929987e-10
+bigram_overlap: 0.0
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0
+spelling_accuracy: 0.8816586721728816
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+ing down, and walked round and walked fast as his lorder of the iron tree from a whole minutes in her hand, put it away in the dark, American's kneeling cracked his basstalain flattered and unseen a holiday; when I console was the laugh and startled up to the middles of 
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+is quite unhappy here?" "No; you must be intrated in my questions about for a menfields!" she exclaimed, in sad by movement, and stood up and down his eyes flashed nervous thought and watching anxious wondering. He moved over my own child, I supported her, and what happened where he had lived by himself, and 
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+ax night through this hour, and my moaned. Lucy Debienne and Poligny, then not had the oceany, she desolated with the next moment, almost impossible to see what she had been found out to myself a fire celetischievous: not that seemed to me any more. But he would not 
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+ent I have a pleasure and defers, my can aught of the bitter unnified you for a long, Jane! Really the adacious vines." The whole clay in my hands of Miss. Fell. "Take it out our hands, I have done for life I had done with our life should but their worse than you he 
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+! He would repent the flowers. You might have some exhausted to traverse in the foliage affair. I said it was to herself to him crying on an affliction and reveniently got to Carfax, like a wooden box, suddenly literally, "I took place in the morning a week, and once direct
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

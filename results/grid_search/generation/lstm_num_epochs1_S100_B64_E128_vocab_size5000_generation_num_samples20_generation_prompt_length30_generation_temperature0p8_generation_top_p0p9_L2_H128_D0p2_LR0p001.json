@@ -1,0 +1,34 @@
+{
+  "metrics": {
+    "num_samples": 20,
+    "bleu": 3.714014633682774e-10,
+    "bigram_overlap": 0.0,
+    "trigram_overlap": 0.0,
+    "trigram_repetition_rate": 0.0009615384615384637,
+    "spelling_accuracy": 0.8664860071758123
+  },
+  "generated_examples": [
+    "utuous which a couple was a boy of the letter of the books, Listem's Rue Some Mary has a terrible loud nor spoke's officer's crast aliat and lashed and delighted and unrequireded herself, on an early insolence of the habits of an indoor-cand",
+    "is quite stringing in each side or much many dreadful, I believed that he was at least that I am as though she looked at each other. They was evidently sleeping his time has never enough it out a most handkerchief and shaking in the little house, tedious as a dreams of little souls. Miss I carried myself from the kitchen and all at ",
+    "aken night; but this hour, and my eyes; and while he had taken the rick of Stle Draculas join over the passage. Mr. Heathcliff was walking the Princess her unconscious of this as now after school to you, Mrs. Heathcliff was simply that night will carry him, to spatter in his head. I cannot introduce ",
+    "p. Heathcliff usually laughing in my neck: \"She would not be cautiously to fill him, and walked out of the room and profpider at afraid, as if if she seemed to know the good woman who could sympathide her voice, from the reaves!\" \"What the abreet's caner's foreignity for the acle, and he ",
+    "s stretched into the way, till I believe still my exhausted you quietly, \"he is beginning that morning are prays now to sick before him.\" \"Get your own good!\" \"Oh, dam!' (I has not be too nail for one I will remain for I are right! Such is the ghost?\" demand",
+    "before his feet. \"I don't mean to be better than myself? She's sure-very propriety for the servant; I have together, as my friend! Yet is one great fresh.\" I recommire me.\" \"Then you have not us. He will you understand that the other room for your brother the nam of a desolous heart! How do you know that",
+    "her head. I did sleep a sillularly alarmed. \"Good-evening, Come, let us be surely. A sleve avenily, with my own white sake of ourselves with regular things of the place, I could feel out. If a letters.\" \"Are you see you now to come,\" broke it of natural face,\" I said nothing and I turn",
+    "unted and laid in at Lowood and gave it the family have taint a hundred scarme of he looked out on the envelope of a spendent of which it seemed to remain off a stile in my heart and convulsing his red escy and deep-girl, two eagerly like him laughter, every most of Strope was ",
+    "its laid in the room was delivered into great as were fise in his face, and returned ate was that other indignation, but the Vinogy, and said: \"Every Julith is not thinking at first! ... He seemed to make it myself the first longs this tomb and point he had no matter of munkes, your equal",
+    " and flow which situations, controlled into the dining-room to stretched on and brute could not have some surrounded modest and his sisters and longing to hear me like a mirinss of fatigues for her children on the grey managers to be came forward, and would not have some care of arbits is we desi"
+  ],
+  "reference_examples": [
+    "e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend.\" \"Don't you feel hungry, Adele?\" \"Mais oui, mademoiselle: voila cinq ou six heures que ",
+    "coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend.\" \"Don't you feel hungry, Adele?\" \"Mais oui, mademoiselle: voila cinq ou six heures que n",
+    "iffer et habiller les dames, et c'etait si amusant: comme cela on apprend.\" \"Don't you feel hungry, Adele?\" \"Mais oui, mademoiselle: voila cinq ou six heures que nous ",
+    "ffer et habiller les dames, et c'etait si amusant: comme cela on apprend.\" \"Don't you feel hungry, Adele?\" \"Mais oui, mademoiselle: voila cinq ou six heures que nous n",
+    "er et habiller les dames, et c'etait si amusant: comme cela on apprend.\" \"Don't you feel hungry, Adele?\" \"Mais oui, mademoiselle: voila cinq ou six heures que nous n'",
+    "et habiller les dames, et c'etait si amusant: comme cela on apprend.\" \"Don't you feel hungry, Adele?\" \"Mais oui, mademoiselle: voila cinq ou six heures que nous n'a",
+    "habiller les dames, et c'etait si amusant: comme cela on apprend.\" \"Don't you feel hungry, Adele?\" \"Mais oui, mademoiselle: voila cinq ou six heures que nous n'av",
+    "biller les dames, et c'etait si amusant: comme cela on apprend.\" \"Don't you feel hungry, Adele?\" \"Mais oui, mademoiselle: voila cinq ou six heures que nous n'avon",
+    "iller les dames, et c'etait si amusant: comme cela on apprend.\" \"Don't you feel hungry, Adele?\" \"Mais oui, mademoiselle: voila cinq ou six heures que nous n'avons ",
+    "er les dames, et c'etait si amusant: comme cela on apprend.\" \"Don't you feel hungry, Adele?\" \"Mais oui, mademoiselle: voila cinq ou six heures que nous n'avons pa"
+  ]
+}

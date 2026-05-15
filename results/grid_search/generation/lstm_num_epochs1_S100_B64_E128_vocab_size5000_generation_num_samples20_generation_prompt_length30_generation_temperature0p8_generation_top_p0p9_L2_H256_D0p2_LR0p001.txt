@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.7511465378825476e-10
+bigram_overlap: 0.0
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0
+spelling_accuracy: 0.8416907216209919
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+eter, and which a few words in good genials of rapture of complained of my exposition with French-houses, as you can see, but she was the higher stops out and women: where; and yet he not yet hope you do not know me? Yes, I can't see it; I come as if one might not be 
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+which sorry wave and pain much apprehensions of business for joy to me to go to her to make her conscience my heart beat." "The monster would marry the little thinges." It was the place and not to be some small hours after arching my association. The carriage was still there; till the 
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+ach of the churchyard (and pale, spread his death, and glanced at the door, half looking for me, Cathy. "She has done my aid in the individual service you do it. She was to be obliged to know, depth. You know, dear!" We were his fear and line of his and confirmed for him 
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+le, and hastened to the scene, in my neck-boxes as he sawed down and tried to cross the idea of the hall door and rushed over the balcony, and, as usual, separated with its inattments followed by her image, and its owner was fastened; like his cheeks, who, quietly the scene was over them the 
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+-rooms, treasure, and one moves, and the hug-room. The sunch had fallen to the rooms of the plores and grim to source; its he said:  "But not now," he said, "for your sisters are more tibly." "It is well." "It is always happy: for I are you?" "I guess a question, and your letter
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

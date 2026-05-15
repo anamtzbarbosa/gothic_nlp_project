@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 6.396035841428e-08
+bigram_overlap: 0.0009259259259259259
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0
+spelling_accuracy: 0.8832848467827302
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+ing Harker's heart and walked in Whitby, arrested. I told him what you did to do?" asked the dress of disposition Agathas, Nah! that I had been here out and went on: he was quite in love on the nicony one truing to accompany and fro-fashioned against the remov
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+is quite unhappy living dead; how your intimaction, I believed since I loved her that I am so greatly believe, that you should have taken my countrys and knowing it out, and Mr. St. John and let me see in the world we shall never be no perceive of a mile of living order? How, if it cannot help you! Don't 
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+xet? They are, I believe, her cousin, as though they was then my departure of Frederic, I ave to not very treasure the one of her walks with the door and unconscious it as soon as the root was at the Grange: the fire of his death and in realise in his box of bloom and confirmed myself in a 
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+le. Heathcliff is there, to its man's subject for kindness, and Managerias, and repeated his forehead, waiting, with which they would have been working him, for natural pupil and sympathy. I found that had something had given into us the vower had made her sentiments in receiving the reception and set me before him the 
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+s very beautiful brushes in the house, whereholding like those things: but it really still a little dreadful tore in full questions Catherine and the scorpions are always worn to be good to you." "The girls are more two has not bed, and in what has happened lest he might not tell what it should be? Let your c
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

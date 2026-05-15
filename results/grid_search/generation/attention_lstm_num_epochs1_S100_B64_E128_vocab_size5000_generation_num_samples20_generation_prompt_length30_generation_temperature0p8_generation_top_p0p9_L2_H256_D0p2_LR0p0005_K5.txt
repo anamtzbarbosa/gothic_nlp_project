@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.7245605436824414e-10
+bigram_overlap: 0.0
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0008474576271186418
+spelling_accuracy: 0.8981860941259289
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+ute! What did mean to going to  a character or growns into the house of the lake, the Persian has not told him that he would say a word to understand a word to bring her back to it. He could see no one in English night-white. The room was onless, and even to accused, like little reception of Miss S
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+is quite unable to see him; when I got up in a way, I could see no fire and long of the person slap of the inspection by sentiments of horror of my physialtal little sensations of an unendurance in the resemblance: a passionate grief, he seemed, gazing from the vap of the rug-master's flies
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+ach of the fierce me." "That will do me the evening in rimthious temporary point as she regretted my tremble, in a dream, waving merely down in the most personal to create the only state of existence-caffed and put out his hand, and wished him to his double for half-
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+p, and definite words its face of the house and passing on his hands to were her, and should not separate him on either side of the worlds so many vinite, and not likely to believe that I went to open the door: I would not ask this questions before he hasened everything to remove it to this unusual gloom 
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+s burning from their nose for ores, and the successs of the arrids of the house against method of Catherine's blessing all one, I shall not die." Manfred, certainly, turned to me in Christine's voice with a name, who saw his hold from his eye; though I didn't thought that I should carry it; though 
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.568927899723681e-10
+bigram_overlap: 0.0
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0
+spelling_accuracy: 0.8661366705841141
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+utally, and it seemed as if they passed like him, they think he so good come to anguish the helpless of your eyes; she wore a little girl in our hands. Mr. O MY COPET TO MUR TONTING OF THUT FOR 
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+is quite wetch, and clung to me with longer, I believe: and then she had told him that the Professor had said, "infinite by facting himself, from a pain and despair. He looked at it again, but she suddenly watched the quarter, and when I laughed a light of the castle, and said, threw up. "That you are not fit in going," he said at last
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+xet? Silence! This was the means that this is something in France, before his head is gone by my eyes of March and your deathst, when he looked out and uncertain, and would have been with deferent in that work to let her have become officious, we can eat out with their occupations of the parality. R
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+le." "Because I not hear them, determined to be my cousin, my friends! ... My father had better been waited! ... Why came over a greater habit of Moncharmin which, in case was unless to free himself into his town, heavy clouds and were as in an agony of despairing no doubt for the union of much 
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+s very nearly together, as I really believe the things of good genius. The Angel of MusicMusic is in London to MAS HRHOF FORED BOSE ESMHAMTTEEEY FORISST RIS'
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

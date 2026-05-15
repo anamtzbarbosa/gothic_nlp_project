@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.788073578228432e-10
+bigram_overlap: 0.0
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0
+spelling_accuracy: 0.8518481692617847
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+ating fur, and put on her and talk a moacup and the voice of Mr. Rochester's comes, they had stopped. Sh, the terrible things meeting its own great distant wings where I was concerned, less abstracted entirely as a crib. The heads were lit by the blow was full of plain on the water, and rocks their 
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+with them, and they made the minutes, and the two lips were hidden under door, went on of the inrater, but believed her to himself: "It is to be married for the one. It looks like. I believe she did frequently remembered some distance of the hour to punish him with sexhaustion. For a few moments I heard hydroge
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+ach of the owner and information that her was said that he should get a superstitious dreams that I know the merely bows." "I don't understand how to live to dwell!" "No, now, my dear cousin to please her a necturned whirling silence, falling back before his wife's laborator
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+um. Hnress had not been my son: it would not be for the unned prigris or else believes him for these avals; but no more than all things which I added to them that Earnshaw had doubtless, hardly a Jew-like as purgates as a soft voice, as though we knew Mr. Rochester
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+-a movement to the bottom of the house, where the vision of the arricounty little figure in horror, for the escape of the was thrilled with his far rather than any other gentleman in the "owling-and a bag, Heally, then, has just part of death. You snatch of thy own house where all t
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

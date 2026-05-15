@@ -1,0 +1,180 @@
+Grid Search Run: rnn_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_H256_LR0p0005_D0p0_L1
+================================================================================
+run=rnn_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_H256_LR0p0005_D0p0_L1
+config=TrainConfig(tokenized_path='data/corpus_tokenized.pkl', checkpoint_dir='checkpoints/grid_search', checkpoint_name='rnn_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_H256_LR0p0005_D0p0_L1.pt', model_name='rnn', vocab_size=5000, seq_length=100, batch_size=64, embed_dim=128, hidden_dim=256, num_layers=1, dropout=0.0, window_size_k=5, learning_rate=0.0005, num_epochs=1, grad_clip=1.0, seed=42, run_generation_eval=False, tokenizer_path='data/gothic_tokenizer.json', generation_num_samples=20, generation_prompt_length=30, generation_temperature=0.8, generation_top_p=0.9, generation_output_path='results/generation_metrics')
+  Batch 100/12186 | Avg Train Loss: 7.9124
+  Batch 200/12186 | Avg Train Loss: 7.7984
+  Batch 300/12186 | Avg Train Loss: 7.6919
+  Batch 400/12186 | Avg Train Loss: 7.5514
+  Batch 500/12186 | Avg Train Loss: 7.3991
+  Batch 600/12186 | Avg Train Loss: 7.2519
+  Batch 700/12186 | Avg Train Loss: 7.1164
+  Batch 800/12186 | Avg Train Loss: 6.9918
+  Batch 900/12186 | Avg Train Loss: 6.8788
+  Batch 1000/12186 | Avg Train Loss: 6.7768
+  Batch 1100/12186 | Avg Train Loss: 6.6845
+  Batch 1200/12186 | Avg Train Loss: 6.5998
+  Batch 1300/12186 | Avg Train Loss: 6.5222
+  Batch 1400/12186 | Avg Train Loss: 6.4508
+  Batch 1500/12186 | Avg Train Loss: 6.3846
+  Batch 1600/12186 | Avg Train Loss: 6.3230
+  Batch 1700/12186 | Avg Train Loss: 6.2658
+  Batch 1800/12186 | Avg Train Loss: 6.2125
+  Batch 1900/12186 | Avg Train Loss: 6.1626
+  Batch 2000/12186 | Avg Train Loss: 6.1153
+  Batch 2100/12186 | Avg Train Loss: 6.0707
+  Batch 2200/12186 | Avg Train Loss: 6.0287
+  Batch 2300/12186 | Avg Train Loss: 5.9888
+  Batch 2400/12186 | Avg Train Loss: 5.9508
+  Batch 2500/12186 | Avg Train Loss: 5.9147
+  Batch 2600/12186 | Avg Train Loss: 5.8802
+  Batch 2700/12186 | Avg Train Loss: 5.8473
+  Batch 2800/12186 | Avg Train Loss: 5.8157
+  Batch 2900/12186 | Avg Train Loss: 5.7854
+  Batch 3000/12186 | Avg Train Loss: 5.7565
+  Batch 3100/12186 | Avg Train Loss: 5.7286
+  Batch 3200/12186 | Avg Train Loss: 5.7017
+  Batch 3300/12186 | Avg Train Loss: 5.6757
+  Batch 3400/12186 | Avg Train Loss: 5.6506
+  Batch 3500/12186 | Avg Train Loss: 5.6265
+  Batch 3600/12186 | Avg Train Loss: 5.6030
+  Batch 3700/12186 | Avg Train Loss: 5.5804
+  Batch 3800/12186 | Avg Train Loss: 5.5586
+  Batch 3900/12186 | Avg Train Loss: 5.5372
+  Batch 4000/12186 | Avg Train Loss: 5.5164
+  Batch 4100/12186 | Avg Train Loss: 5.4963
+  Batch 4200/12186 | Avg Train Loss: 5.4767
+  Batch 4300/12186 | Avg Train Loss: 5.4578
+  Batch 4400/12186 | Avg Train Loss: 5.4394
+  Batch 4500/12186 | Avg Train Loss: 5.4212
+  Batch 4600/12186 | Avg Train Loss: 5.4037
+  Batch 4700/12186 | Avg Train Loss: 5.3866
+  Batch 4800/12186 | Avg Train Loss: 5.3700
+  Batch 4900/12186 | Avg Train Loss: 5.3536
+  Batch 5000/12186 | Avg Train Loss: 5.3377
+  Batch 5100/12186 | Avg Train Loss: 5.3221
+  Batch 5200/12186 | Avg Train Loss: 5.3067
+  Batch 5300/12186 | Avg Train Loss: 5.2918
+  Batch 5400/12186 | Avg Train Loss: 5.2771
+  Batch 5500/12186 | Avg Train Loss: 5.2628
+  Batch 5600/12186 | Avg Train Loss: 5.2488
+  Batch 5700/12186 | Avg Train Loss: 5.2350
+  Batch 5800/12186 | Avg Train Loss: 5.2215
+  Batch 5900/12186 | Avg Train Loss: 5.2082
+  Batch 6000/12186 | Avg Train Loss: 5.1952
+  Batch 6100/12186 | Avg Train Loss: 5.1822
+  Batch 6200/12186 | Avg Train Loss: 5.1697
+  Batch 6300/12186 | Avg Train Loss: 5.1574
+  Batch 6400/12186 | Avg Train Loss: 5.1453
+  Batch 6500/12186 | Avg Train Loss: 5.1334
+  Batch 6600/12186 | Avg Train Loss: 5.1217
+  Batch 6700/12186 | Avg Train Loss: 5.1102
+  Batch 6800/12186 | Avg Train Loss: 5.0989
+  Batch 6900/12186 | Avg Train Loss: 5.0878
+  Batch 7000/12186 | Avg Train Loss: 5.0767
+  Batch 7100/12186 | Avg Train Loss: 5.0658
+  Batch 7200/12186 | Avg Train Loss: 5.0552
+  Batch 7300/12186 | Avg Train Loss: 5.0446
+  Batch 7400/12186 | Avg Train Loss: 5.0343
+  Batch 7500/12186 | Avg Train Loss: 5.0242
+  Batch 7600/12186 | Avg Train Loss: 5.0142
+  Batch 7700/12186 | Avg Train Loss: 5.0042
+  Batch 7800/12186 | Avg Train Loss: 4.9944
+  Batch 7900/12186 | Avg Train Loss: 4.9847
+  Batch 8000/12186 | Avg Train Loss: 4.9752
+  Batch 8100/12186 | Avg Train Loss: 4.9657
+  Batch 8200/12186 | Avg Train Loss: 4.9565
+  Batch 8300/12186 | Avg Train Loss: 4.9473
+  Batch 8400/12186 | Avg Train Loss: 4.9383
+  Batch 8500/12186 | Avg Train Loss: 4.9293
+  Batch 8600/12186 | Avg Train Loss: 4.9205
+  Batch 8700/12186 | Avg Train Loss: 4.9118
+  Batch 8800/12186 | Avg Train Loss: 4.9032
+  Batch 8900/12186 | Avg Train Loss: 4.8947
+  Batch 9000/12186 | Avg Train Loss: 4.8863
+  Batch 9100/12186 | Avg Train Loss: 4.8780
+  Batch 9200/12186 | Avg Train Loss: 4.8698
+  Batch 9300/12186 | Avg Train Loss: 4.8616
+  Batch 9400/12186 | Avg Train Loss: 4.8536
+  Batch 9500/12186 | Avg Train Loss: 4.8456
+  Batch 9600/12186 | Avg Train Loss: 4.8377
+  Batch 9700/12186 | Avg Train Loss: 4.8299
+  Batch 9800/12186 | Avg Train Loss: 4.8222
+  Batch 9900/12186 | Avg Train Loss: 4.8146
+  Batch 10000/12186 | Avg Train Loss: 4.8071
+  Batch 10100/12186 | Avg Train Loss: 4.7996
+  Batch 10200/12186 | Avg Train Loss: 4.7922
+  Batch 10300/12186 | Avg Train Loss: 4.7849
+  Batch 10400/12186 | Avg Train Loss: 4.7777
+  Batch 10500/12186 | Avg Train Loss: 4.7706
+  Batch 10600/12186 | Avg Train Loss: 4.7634
+  Batch 10700/12186 | Avg Train Loss: 4.7564
+  Batch 10800/12186 | Avg Train Loss: 4.7494
+  Batch 10900/12186 | Avg Train Loss: 4.7424
+  Batch 11000/12186 | Avg Train Loss: 4.7356
+  Batch 11100/12186 | Avg Train Loss: 4.7289
+  Batch 11200/12186 | Avg Train Loss: 4.7222
+  Batch 11300/12186 | Avg Train Loss: 4.7155
+  Batch 11400/12186 | Avg Train Loss: 4.7089
+  Batch 11500/12186 | Avg Train Loss: 4.7024
+  Batch 11600/12186 | Avg Train Loss: 4.6959
+  Batch 11700/12186 | Avg Train Loss: 4.6895
+  Batch 11800/12186 | Avg Train Loss: 4.6831
+  Batch 11900/12186 | Avg Train Loss: 4.6767
+  Batch 12000/12186 | Avg Train Loss: 4.6704
+  Batch 12100/12186 | Avg Train Loss: 4.6642
+epoch=1/1 train_loss=4.6589 val_loss=5.9482 val_ppl=383.06 time=1223.0s
+saved_best=checkpoints/grid_search/rnn_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_H256_LR0p0005_D0p0_L1.pt
+
+final_result:
+{
+  "run_name": "rnn_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_H256_LR0p0005_D0p0_L1",
+  "model_name": "rnn",
+  "checkpoint_name": "rnn_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_H256_LR0p0005_D0p0_L1.pt",
+  "num_layers": 1,
+  "embed_dim": 128,
+  "hidden_dim": 256,
+  "dropout": 0.0,
+  "learning_rate": 0.0005,
+  "batch_size": 64,
+  "seq_length": 100,
+  "window_size_k": null,
+  "best_epoch": 1,
+  "last_train_loss": 4.6588543832703175,
+  "best_val_loss": 5.9481913247679685,
+  "last_val_ppl": 383.05988121060466,
+  "test_loss": 5.909170500824346,
+  "test_ppl": 368.40044076993644,
+  "num_samples": 20,
+  "bleu": 3.591884418278315e-10,
+  "bigram_overlap": 0.0,
+  "trigram_overlap": 0.0,
+  "trigram_repetition_rate": 0.0,
+  "spelling_accuracy": 0.8711347187683272,
+  "total_time_seconds": 1291.3916690349579,
+  "config": {
+    "tokenized_path": "data/corpus_tokenized.pkl",
+    "checkpoint_dir": "checkpoints/grid_search",
+    "checkpoint_name": "rnn_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_H256_LR0p0005_D0p0_L1.pt",
+    "model_name": "rnn",
+    "vocab_size": 5000,
+    "seq_length": 100,
+    "batch_size": 64,
+    "embed_dim": 128,
+    "hidden_dim": 256,
+    "num_layers": 1,
+    "dropout": 0.0,
+    "window_size_k": 5,
+    "learning_rate": 0.0005,
+    "num_epochs": 1,
+    "grad_clip": 1.0,
+    "seed": 42,
+    "run_generation_eval": false,
+    "tokenizer_path": "data/gothic_tokenizer.json",
+    "generation_num_samples": 20,
+    "generation_prompt_length": 30,
+    "generation_temperature": 0.8,
+    "generation_top_p": 0.9,
+    "generation_output_path": "results/generation_metrics"
+  }
+}

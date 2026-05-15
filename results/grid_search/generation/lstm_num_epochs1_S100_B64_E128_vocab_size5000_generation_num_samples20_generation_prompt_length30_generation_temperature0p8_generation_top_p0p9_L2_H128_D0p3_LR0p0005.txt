@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.776677467472944e-10
+bigram_overlap: 0.0
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0
+spelling_accuracy: 0.8657200427263667
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+ishing the Count, and made him to leave him how it felt when as tossed a mad minutes of my hands, and there was no resolution; she lung again:  "Tell you have, you. I was always out and grief from what night, an nicony, you know that he shall get out of your dishase, on the sake, remov
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+is quite doer teach money your hands of an angel?" "There's this of the seas!" she exclaimed, indignant to sleep, and laughing. And yet he said to be as it was. I believe she should be my love was some of them, tear for which you had now been sitting up, and, as if I will try to have discovered: I 
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+ach-night: I am very glad to moder, and said. Lucy Mr. Kirle Cavgger-points me over the passage! Believe me ... for Lady Isabella had hurt now; would let me know, Mrs. Harker, Raoul, you must give me you in England, and put out upon you, drive the youth, and mak
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+cal sound of the rests; in my neck: "She would not be destroyed into how, crossing how mistress, and if she knew all really knew how I do for you to this fory, in my hands of Missimelly injustice our hand!" "Will you have as I had never can tell you that my forehead who set me from him the 
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+s stretch of alarming every one movements of the exhausture of the sudden fortunuin had passed glanced questions into a little scorpation of my whole fellow burst from Buquet girls are more two has not had too much of a peace and parkes, "I are you are and Miss. Meant
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.7436296237356643e-10
+bigram_overlap: 0.0
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0
+spelling_accuracy: 0.8978761911291718
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+utey, which are been very so; and when he had an endure that that time she lives," the box descended, while Christine did not hear of him, your head and eyes with him of him that up to returns out and enjoying the gatory, I believes combined. It seems to me that his heart was disordered to frame; there is a ne
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+is bats of living dead; how can you wish to forget how my poor girl was at least that I am so greatly interesting this last moment, I'll make the clergyman has happened since I left me from Bessie? Did I laugh at your permission to displeasure." "Or our dying year! Ex
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+al-bridle; and slept well; and while he will be decentrious laws in secret youth relief." "It's no very pleasant one else is most easy in my affairs," he said, "since you do!" "Have you lived here he ... And, will you tell him, I suppose?" "If you told have you long with my diary
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+pation. I shall think you hear them! and aught I know; we shall soon be satisfied. Dr. Seward and if she had gone over me. I returned to him if she is my brother," I replied. "You should have something more horribly, all These three days present at others this aframe of mind I loved him." "Oh, yes, 
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+, as you ascended noon for lifting him from the light till I dread it in the foliage after here that was almost peculiarly of being dragging he burden and she's altogether, beyond the field, in a wooden nap over the glass was engaged I took upon it by that we were allowing 
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

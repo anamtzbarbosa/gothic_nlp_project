@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.4957393124954766e-10
+bigram_overlap: 0.0
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0
+spelling_accuracy: 0.8876722394771687
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+ing your thoughts should be noticed! To be a benevolent disengaged out the comfort in his appearance of lowness, he gave me in my life. You should be reader the perseverion in her room and its seven of the harbour, who appeared heates and canviciency crease to her father, but as if she is 
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+Mrs. Dean's coachman, which had sought it the primon of shiills together; and the iculseverity to watch over to the bitter hours in the calmers: and only is the mother of you, sir." "How do you doubt his Lady Isabella of his topic to add to in another room, and despise me: her conduct of his heart, and still 
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+rode 22 May. Krempe would be surrendered by averses were of spacence, which at least self-and-faded over-but gold part of my soul which experienced for it in Thipool of hellish, and more aware acles; and then she approached away at night
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+er, so well as early; he might not what I bestowed only to cheer de me with a feeble further, and when we heard a policem I knew him and Mrs. Linton exercised yourself to lose the other friend and blood come, unless he spoke to an angel and M. Poligny had I but habituously. "He 
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+, on sort of every idea that being sunsatisfied. I was like it." Heathcliff was her hand into dressing, and made a rest of fashionable peoples no shape away, and I know it as the other. I was not nearly quite good at present. Lucy is very soon, whenever I grew quite my partial with terror; yet naked 
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

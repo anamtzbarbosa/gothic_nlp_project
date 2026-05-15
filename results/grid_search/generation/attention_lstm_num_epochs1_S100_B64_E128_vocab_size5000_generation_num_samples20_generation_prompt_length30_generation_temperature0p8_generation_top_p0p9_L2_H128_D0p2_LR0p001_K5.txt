@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 6.966173525561258e-08
+bigram_overlap: 0.0009433962264150943
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0008196721311475419
+spelling_accuracy: 0.8691290895581757
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+ing Harker's heart, Moncharmon when he first your face and so good commissary is; but he was incomprehensible for the terror of taking a great ship of silence, and that I had been left out and lake. He went in round and nicated him; when I saw even to talk the hazen treasure-key
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+is quite unhappy your own; nor you must not wish to forget him." "Alas! I suppose it will do better than you feel a indignant than he should be safer a mender, accomplishments by kinding about their manner mediid for dreams of Jonathan Harker's orders, as we is to be a very man of 
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+ach of the churchth who consoured to her pudder had givens my knittle entree an inticate: the next day, which was looked solicitor. He looked out and uncertained. She was acquainted. Miss Miller's voice was enough that certainly had affirmed. "Heral, ma'am," said the young 
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+le. Heathcliff is there? Felix can aught coarse of Norris, 178, 15 July, the Count is falvitive Opera and wondering what happened you to have me injustice our story!" "What the devil," said she: "She has not been take me, to me from him the 
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+s more asserally than we can mes; and I want like him that you going!" "But a snow! You have nothing to do questions now to swelled farther." When I obeyed drined. I was quite onent to him in the wood, lest it did that I reached the candle in her eyes, and when she stood for him, and once in 
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------

@@ -1,0 +1,54 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 6.710738964756765e-08
+bigram_overlap: 0.0009090909090909091
+trigram_overlap: 0.0
+trigram_repetition_rate: 0.0
+spelling_accuracy: 0.8513969106513949
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+es around me and death and walked in one or two of the chorrow so good one of those who is; but he would do it; but I was now; it was hardly again to go, I must tell me you. I was as if I will tell you my duty to what you not yet depart him; I have conceived your brother and life dependan in such a quence 
+
+Reference:
+e coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+is quite uneasy; a monster has not forgotten him; and it is no inventory; you are so, what infernal for an intellectual circumstances? I believed you." Mr. Brocklehurst was about to the house, another the light of the room, now she might come up, and again only closed. I could come it
+
+Reference:
+coiffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que n
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+xuries: Mrs. Reed for the effect of her cousin and dispet with horrors were before his head of the Nars entered over the creations, sost thou do how he did you do it as now; would let me know, Mrs. Harker. You know, become the decay of your first time of being alone. I cannot introgone to 
+
+Reference:
+iffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+le, and based with her class of the house up, coar-sort, crossing by the fire, waiting, with pour trea. I returned in my arms, darking from the attoms of the window, which had evidently forming again some hands, fastened like his side afraid at tea-time, to keep him out the 
+
+Reference:
+ffer et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+s very nearly. The nose was bees, and the hugs of the whole domian, which he found had once as he said sos for his old and he kept himself, and told the little pang, were edged a bag, and he could never come the kitchen with pargares, "I are what it be done for him? And he 
+
+Reference:
+er et habiller les dames, et c'etait si amusant: comme cela on apprend." "Don't you feel hungry, Adele?" "Mais oui, mademoiselle: voila cinq ou six heures que nous n'
+--------------------------------------------------------------------------------
