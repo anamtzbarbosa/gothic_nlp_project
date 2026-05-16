@@ -17,13 +17,36 @@ from train import (
     load_best_checkpoint,
     run_generation_evaluation_after_training,
     log,
+    load_bpe_tokenizer,
 )
 
 from dataset import get_dataloaders
+from run_generation_eval import get_fixed_samples, TOKENIZER_PATH, NUM_SAMPLES
 
 
 FINAL_CHECKPOINT_DIR = "checkpoints/final_models"
 FINAL_RESULTS_DIR = "results/final_models"
+EVAL_SAMPLES_PATH = "data/eval_samples.json"
+
+
+def save_eval_samples():
+    tokenizer = load_bpe_tokenizer(TOKENIZER_PATH)
+    samples = get_fixed_samples(tokenizer)
+
+    data = {
+        "num_samples": NUM_SAMPLES,
+        "samples": [
+            {"prompt_ids": prompt_ids, "reference_text": ref_text}
+            for prompt_ids, ref_text in samples
+        ],
+    }
+
+    with open(EVAL_SAMPLES_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+
+    print(f"Saved {NUM_SAMPLES} eval samples to {EVAL_SAMPLES_PATH}")
+    for i, (_, ref_text) in enumerate(samples):
+        print(f"  [{i}] {ref_text[:60].replace(chr(10), ' ')}")
 
 
 def final_runs(num_epochs=4):
@@ -33,7 +56,7 @@ def final_runs(num_epochs=4):
         "seq_length": 100,
         "embed_dim": 128,
         "vocab_size": 5000,
-        "run_generation_eval": True,
+        "run_generation_eval": False,
         "generation_num_samples": 50,
         "generation_prompt_length": 30,
         "generation_temperature": 0.8,
@@ -258,6 +281,9 @@ def save_final_summary(results):
 def main():
     device = get_device()
     print(f"Using device: {device}")
+
+    print("\nSaving fixed eval samples before training...")
+    save_eval_samples()
 
     runs = final_runs(num_epochs=4)
     results = []
