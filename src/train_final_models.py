@@ -22,6 +22,7 @@ from train import (
 
 from dataset import get_dataloaders
 from run_generation_eval import get_fixed_samples, TOKENIZER_PATH, NUM_SAMPLES
+from plot_results import plot_training_curves, plot_model_comparison
 
 
 FINAL_CHECKPOINT_DIR = "checkpoints/final_models"
@@ -248,6 +249,9 @@ def train_one_final_model(run, device):
             log_path=log_path,
         )
 
+    print(f"\nSaving plots for {label}...")
+    plot_training_curves(result["history"], label)
+
     return result
 
 
@@ -299,6 +303,9 @@ def main():
         save_final_summary(results)
 
     save_final_summary(results)
+
+    print("\nSaving comparison plots across all models...")
+    plot_model_comparison(results)
 
 
 if __name__ == "__main__":
