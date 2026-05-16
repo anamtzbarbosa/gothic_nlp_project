@@ -1,7 +1,7 @@
-Grid Search Run: rnn_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_H128_LR0p0005_D0p0_L1
+Final training run: final_rnn_h128_lr0p0005
 ================================================================================
-run=rnn_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_H128_LR0p0005_D0p0_L1
-config=TrainConfig(tokenized_path='data/corpus_tokenized.pkl', checkpoint_dir='checkpoints/grid_search', checkpoint_name='rnn_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_H128_LR0p0005_D0p0_L1.pt', model_name='rnn', vocab_size=5000, seq_length=100, batch_size=64, embed_dim=128, hidden_dim=128, num_layers=1, dropout=0.0, window_size_k=5, learning_rate=0.0005, num_epochs=1, grad_clip=1.0, seed=42, run_generation_eval=False, tokenizer_path='data/gothic_tokenizer.json', generation_num_samples=20, generation_prompt_length=30, generation_temperature=0.8, generation_top_p=0.9, generation_output_path='results/generation_metrics')
+Run: final_rnn_h128_lr0p0005
+Config: TrainConfig(tokenized_path='data/corpus_tokenized.pkl', checkpoint_dir='checkpoints/final_models', checkpoint_name='final_rnn_h128_lr0p0005.pt', model_name='rnn', vocab_size=5000, seq_length=100, batch_size=64, embed_dim=128, hidden_dim=128, num_layers=1, dropout=0.0, window_size_k=5, learning_rate=0.0005, num_epochs=4, grad_clip=1.0, seed=42, run_generation_eval=True, tokenizer_path='data/gothic_tokenizer.json', generation_num_samples=50, generation_prompt_length=30, generation_temperature=0.8, generation_top_p=0.9, generation_output_path='results/final_models/final_rnn_h128_lr0p0005_generation')
   Batch 100/12186 | Avg Train Loss: 8.0385
   Batch 200/12186 | Avg Train Loss: 7.8868
   Batch 300/12186 | Avg Train Loss: 7.8121
@@ -113,55 +113,3 @@ config=TrainConfig(tokenized_path='data/corpus_tokenized.pkl', checkpoint_dir='c
   Batch 10900/12186 | Avg Train Loss: 5.2573
   Batch 11000/12186 | Avg Train Loss: 5.2520
   Batch 11100/12186 | Avg Train Loss: 5.2468
-  Batch 11200/12186 | Avg Train Loss: 5.2416
-  Batch 11300/12186 | Avg Train Loss: 5.2366
-  Batch 11400/12186 | Avg Train Loss: 5.2315
-  Batch 11500/12186 | Avg Train Loss: 5.2266
-  Batch 11600/12186 | Avg Train Loss: 5.2217
-  Batch 11700/12186 | Avg Train Loss: 5.2168
-  Batch 11800/12186 | Avg Train Loss: 5.2119
-  Batch 11900/12186 | Avg Train Loss: 5.2071
-  Batch 12000/12186 | Avg Train Loss: 5.2024
-  Batch 12100/12186 | Avg Train Loss: 5.1978
-epoch=1/1 train_loss=5.1938 val_loss=5.5851 val_ppl=266.43 time=877.1s
-saved_best=checkpoints/grid_search/rnn_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_H128_LR0p0005_D0p0_L1.pt
-
-final_result:
-{
-  "run_name": "rnn_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_H128_LR0p0005_D0p0_L1",
-  "model_name": "rnn",
-  "checkpoint_name": "rnn_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_H128_LR0p0005_D0p0_L1.pt",
-  "num_layers": 1,
-  "embed_dim": 128,
-  "hidden_dim": 128,
-  "dropout": 0.0,
-  "learning_rate": 0.0005,
-  "batch_size": 64,
-  "seq_length": 100,
-  "window_size_k": null,
-  "best_epoch": 1,
-  "last_train_loss": 5.193827685123395,
-  "best_val_loss": 5.585092998788114,
-  "last_val_ppl": 266.42505879496696,
-  "test_loss": 5.554930825022685,
-  "test_ppl": 258.50908154220235,
-  "total_time_seconds": 937.9693689346313,
-  "config": {
-    "tokenized_path": "data/corpus_tokenized.pkl",
-    "checkpoint_dir": "checkpoints/grid_search",
-    "checkpoint_name": "rnn_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_H128_LR0p0005_D0p0_L1.pt",
-    "model_name": "rnn",
-    "vocab_size": 5000,
-    "seq_length": 100,
-    "batch_size": 64,
-    "embed_dim": 128,
-    "hidden_dim": 128,
-    "num_layers": 1,
-    "dropout": 0.0,
-    "window_size_k": 5,
-    "learning_rate": 0.0005,
-    "num_epochs": 1,
-    "grad_clip": 1.0,
-    "seed": 42
-  }
-}

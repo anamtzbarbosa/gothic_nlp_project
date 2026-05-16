@@ -8,11 +8,6 @@ import torch.nn as nn
 from torch.optim import Adam
 
 from dataset import get_dataloaders
-from evaluate_generation import (
-    collect_generation_pairs,
-    compute_all_metrics,
-    save_metrics_and_examples,
-)
 from train import (
     TrainConfig,
     set_seed,
@@ -22,7 +17,6 @@ from train import (
     evaluate,
     save_checkpoint,
     load_best_checkpoint,
-    load_bpe_tokenizer,
 )
 
 
@@ -45,7 +39,7 @@ def make_run_name(model_name, params):
     parts = [model_name]
 
     for key, value in params.items():
-        if key in ["model_name", "checkpoint_name", "run_generation_eval"]:
+        if key in ["model_name", "checkpoint_name"]:
             continue
 
         short_key = {
@@ -72,7 +66,6 @@ def add_run(runs, model_name, params):
         model_name=model_name,
         checkpoint_dir=CHECKPOINT_DIR,
         checkpoint_name=f"{run_name}.pt",
-        run_generation_eval=False,
         **params,
     )
 
@@ -93,10 +86,6 @@ def create_grid():
         "batch_size": 64,
         "embed_dim": 128,
         "vocab_size": 5000,
-        "generation_num_samples": 20,
-        "generation_prompt_length": 30,
-        "generation_temperature": 0.8,
-        "generation_top_p": 0.9,
     }
 
     for hidden_dim in [128, 256]:
@@ -159,35 +148,6 @@ def save_json(path, data):
 
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
-
-
-def evaluate_generated_text(model, test_loader, config, run_name, device):
-    tokenizer = load_bpe_tokenizer(config.tokenizer_path)
-
-    generated_texts, reference_texts = collect_generation_pairs(
-        model=model,
-        tokenizer=tokenizer,
-        test_loader=test_loader,
-        seq_length=config.seq_length,
-        num_samples=config.generation_num_samples,
-        prompt_length=config.generation_prompt_length,
-        temperature=config.generation_temperature,
-        top_p=config.generation_top_p,
-        device=device,
-    )
-
-    metrics = compute_all_metrics(generated_texts, reference_texts)
-
-    output_prefix = os.path.join(RESULT_DIR, "generation", run_name)
-
-    save_metrics_and_examples(
-        metrics=metrics,
-        generated_texts=generated_texts,
-        reference_texts=reference_texts,
-        output_prefix=output_prefix,
-    )
-
-    return metrics
 
 
 def run_training_loop(model, loaders, config, device, log_file):
@@ -314,14 +274,6 @@ def run_one_experiment(run, device):
         device=device,
     )
 
-    generation_result = evaluate_generated_text(
-        model=model,
-        test_loader=test_loader,
-        config=config,
-        run_name=run_name,
-        device=device,
-    )
-
     final_result = {
         "run_name": run_name,
         "model_name": config.model_name,
@@ -336,7 +288,6 @@ def run_one_experiment(run, device):
         "window_size_k": config.window_size_k if config.model_name == "attention_lstm" else None,
         **train_result,
         **test_result,
-        **generation_result,
         "total_time_seconds": time.time() - started,
         "config": asdict(config),
     }
@@ -372,11 +323,6 @@ def save_results_table(results):
         "last_val_ppl",
         "test_loss",
         "test_ppl",
-        "bleu",
-        "bigram_overlap",
-        "trigram_overlap",
-        "trigram_repetition_rate",
-        "spelling_accuracy",
         "total_time_seconds",
         "checkpoint_name",
     ]
@@ -402,11 +348,7 @@ def save_results_table(results):
                 f"model={result['model_name']} | "
                 f"val={result['best_val_loss']:.4f} | "
                 f"test={result['test_loss']:.4f} | "
-                f"ppl={result['test_ppl']:.2f} | "
-                f"bleu={result['bleu']} | "
-                f"bigram={result['bigram_overlap']} | "
-                f"trigram={result['trigram_overlap']} | "
-                f"spell={result['spelling_accuracy']}\n"
+                f"ppl={result['test_ppl']:.2f}\n"
             )
 
     print(f"\nSaved: {json_path}")

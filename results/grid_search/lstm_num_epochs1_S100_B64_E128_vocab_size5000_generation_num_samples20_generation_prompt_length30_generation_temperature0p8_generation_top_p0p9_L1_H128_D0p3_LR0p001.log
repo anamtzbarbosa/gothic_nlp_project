@@ -145,12 +145,6 @@ final_result:
   "last_val_ppl": 212.72802566117042,
   "test_loss": 5.327816485136767,
   "test_ppl": 205.98770553441318,
-  "num_samples": 20,
-  "bleu": 3.8106165804524294e-10,
-  "bigram_overlap": 0.0,
-  "trigram_overlap": 0.0,
-  "trigram_repetition_rate": 0.0,
-  "spelling_accuracy": 0.9076775735244411,
   "total_time_seconds": 902.843355178833,
   "config": {
     "tokenized_path": "data/corpus_tokenized.pkl",
@@ -168,13 +162,6 @@ final_result:
     "learning_rate": 0.001,
     "num_epochs": 1,
     "grad_clip": 1.0,
-    "seed": 42,
-    "run_generation_eval": false,
-    "tokenizer_path": "data/gothic_tokenizer.json",
-    "generation_num_samples": 20,
-    "generation_prompt_length": 30,
-    "generation_temperature": 0.8,
-    "generation_top_p": 0.9,
-    "generation_output_path": "results/generation_metrics"
+    "seed": 42
   }
 }
