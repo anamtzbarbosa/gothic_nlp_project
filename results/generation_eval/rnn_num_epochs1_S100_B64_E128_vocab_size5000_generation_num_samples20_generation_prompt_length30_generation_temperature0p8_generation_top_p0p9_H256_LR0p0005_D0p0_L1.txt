@@ -1,0 +1,176 @@
+Generation Evaluation: rnn_num_epochs1_S100_B64_E128_vocab_size5000_generation_num_samples20_generation_prompt_length30_generation_temperature0p8_generation_top_p0p9_H256_LR0p0005_D0p0_L1
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.4890473363705946e-05
+bigram_overlap: 0.007931137015669134
+trigram_overlap: 0.0009090909090909091
+distinct_1: 0.3991031390134529
+distinct_2: 0.863013698630137
+trigram_repetition_rate: 0.00498436748436748
+spelling_accuracy: 0.9130801963244721
+
+Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+ though he did not know what to do. I shall sit down again, what did it mean?" he asked, for we are at home for us. Have a longish love. You were better quite so bad as you can speak now. I can only be said to myself to the feather to all service was his own. After a long time and the arse of 
+
+Reference:
+the rest gathered in a group round the fire: all talked in a low but clear tone which seemed habitual to them. I knew their names afterwards, and may as well mention them now. First, there was Mrs. Eshton and two of her daughters. She had evidently been a handsome woman, and was well preserved still. Of her daughter
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+. When I went out of his chairs and cap out her head and decently as well as I could only knew it; but this is, is beginning to be so kindly than I see now but that now I came back to the library.  were notions would be a little dinner, or of humanity of that entire thee've told me you. You 
+
+Reference:
+of importance the rest of the party were occupied with their own separate interests and pleasures. The Ladies Lynn and Ingram continued to consort in solemn conferences, where they nodded their two turbans at each other, and held up their four hands in confron
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+'s eyes on the road to Wuthering Heights, for you not all right? Sometimes I had the severe food for ever he can get off to forget the window againstoney, "it's not dead." "Why?" "Because I will tell you that I am going to die; and it is a hours?" "At Brocklehurstalking a matter of ho
+
+Reference:
+with my motions, I entreat you; leave me to peace and solitude for a short time; and when I return, I hope it will be with a lighter heart, more congenial to your own temper." Henry wished to dissuade me, but seeing me bent on this plan, ceased to remonstrate. He entreated me to write often. "I had 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+) "I would not have trace by an old chapel it: I saw him with aptial offices enough are quite well again, just to exclude it. He kept his hands before my eyes, and cried out, when she had sat down on the sofa and gruffs against her teeth, and as I saw him in the library
+
+Reference:
+Regret, denial, or forgetfulness could do that. But the future was inevitable. There were passions in him that would find their terrible outlet, dreams that would make the shadow of their evil real. He took up from the couch the great purple-and-gold texture that covered it
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+ to me about her face and I heard that to witnesses and all sorts of her brother's father's aid apteral reason for this I loved you so much the lake of humanity. I will be to find him here's true! How horrid Heath, and where we should make me happy." "Hush, your you 
+
+Reference:
+about horrid subjects. If one doesn't talk about a thing, it has never happened. It is simply expression, as Harry says, that gives reality to things. I may mention that she was not the woman's only child. There is a son, a charming fellow, I believe. But he is not on the stage. He is a sailor, or something. And now
+--------------------------------------------------------------------------------
+
+Example 6
+Generated:
+ tone, and there is a good time. He said he should recover his own mind, rudence he knew, perceiving the fition of ill-house till which lay down on the part of distress which it was fastened with my master's own room; the door-door was opened and closed the door, if she were my inclination now; not even
+
+Reference:
+declaration, she ran nimbly up the stair, swept me like a whirlwind into the nursery, and crushing me down on the edge of my crib, dared me in an emphatic voice to rise from that place, or utter one syllable during the remainder of the day. "What would Uncle Reed say to 
+--------------------------------------------------------------------------------
+
+Example 7
+Generated:
+. I shall send me from harmless to go into him and rude myself; nor did I describe afraid with the vantage of the earth-box was my lessons found this brief; that his hazarding over the dictionary's Church, Franceless of the house, in a voice came into the room, and 
+
+Reference:
+lost to him. We may then arrive in time; for if he escape not at night we shall come on him in daytime, boxed up and at our mercy; for he dare not be his true self, awake and visible, lest he be discovered." There was no more to be said, so we waited in patience until the dawn; at which
+--------------------------------------------------------------------------------
+
+Example 8
+Generated:
+ the sound of menants and berries on the lake, and, which he had been guiltless clouds, slipped in sobphantly  "My daughter, rather have a language is of Benetass, where I met her looks like an inspector's uncle patient of being undone: I shall never be of 
+
+Reference:
+the mist had turned into his figure, for it had entirely disappeared stood a tall, thin man, all in black. I knew him at once from the description of the others. The waxen face; the high aquiline nose, on which the light fell in a thin white line; the parted red lips, with the sharp white teeth s
+--------------------------------------------------------------------------------
+
+Example 9
+Generated:
+ she had gone back to the piano, she would make some one: for me that he never heard of Lowton is uneasy toward the more and was he may not go on." Then he gave her repulsion. As the train with a look of joy; and when I returned the doctor's hand, and said she might tackle for all our 
+
+Reference:
+the sailors were persuading to enter the vessel. He was not, as the other traveller seemed to be, a savage inhabitant of some undiscovered island, but a European. When I appeared on deck the master said, "Here is our captain, and he will not allow you to perish on the open sea
+--------------------------------------------------------------------------------
+
+Example 10
+Generated:
+ to the house, were all down in the direction of his tones which usually hurry to forget the Count's story on him, so I said:  "I shall keep up with delight of, bending now, friend John, like me, I heard him say nothing to say. The attendants have done something to say why, but this done, was certainly the lo
+
+Reference:
+to it, and a most melancholy voice sobbed, "Let me in let me in!" "Who are you?" I asked, struggling, meanwhile, to disengage myself. "Catherine Linton," it replied, shiveringly (why did I think of Linton? I had read Earnshaw twenty times for Linton) "I'm come home: I'd lost my way on the 
+--------------------------------------------------------------------------------
+
+Example 11
+Generated:
+ turning through the air made me dumbs round and looked down to the evening of the house, very large, and lit a neglect to disengage me in two months swallowed up in the air. I didn't know how to go on to the ground: there are others. I am quite natural philosophytes so with confusion
+
+Reference:
+and that I must go. She then rose and dried her eyes, and taking a crucifix from her neck offered it to me. I did not know what to do, for, as an English Churchman, I have been taught to regard such things as in some measure idolatrous, and yet it seemed so ungracious to refuse an old 
+--------------------------------------------------------------------------------
+
+Example 12
+Generated:
+ that you will be a creator's voice, and with such unselfish matter of existence." "And you know how you for me, April'est be to recitate the sports of yours, when they inhabited! ... She was to be afraid and direct me of comprehendence than thy helpless 
+
+Reference:
+at last, in order to pacify their too just resentment, Edward Hyde had to bring them to the door, and pay them in a cheque drawn in the name of Henry Jekyll. But this danger was easily eliminated from the future, by opening an account at another bank in the name of Edward Hyde himself; and when
+--------------------------------------------------------------------------------
+
+Example 13
+Generated:
+, Miss Eyre, pitious paper from her lips. "I can do it my son." Mina Harker's Journal. 18 August, Miss Eyre, and what it really in love infernally tricks." "That is so? What can do I do it," he replied. "But I knew nothing of Mr. Linton's sail with horror
+
+Reference:
+to speak pure language in common conversation. Every Italian or Frenchman of any rank piques himself on speaking his own tongue correctly and with choice. I cannot flatter myself with having done justice to my author in this respect: his style is as elegant as his 
+--------------------------------------------------------------------------------
+
+Example 14
+Generated:
+, and I believed no representative of the lock of the night before. Catherine was quite restored to me with difficulty chair and left him. Yes, the true had probably been welcome; we must go home. I must not tell you, my dear young lady?" I said; "but she is mine. When I came in that all you think of the exact mov
+
+Reference:
+the iron tree in the corner, at the bottom of one of those segments ... the iron tree, with its iron branch, for the hanged men. I seized my companion's arm: the Vicomte de Chagny was all a-quiver, eager to shout to his betrothed that he was bringing her help. I feared that he would not be 
+--------------------------------------------------------------------------------
+
+Example 15
+Generated:
+) and the dreadful set lunatic. I was terribly weak and spirits, he did not know what to do to say on ourselves to convey me away: so much the better than it must be a little dinner, so I paused. When she had, indeed, rising hands on mockery. The boy's birth of the sneahood with a start
+
+Reference:
+Life had suddenly become too hideous a burden for him to bear. The dreadful death of the unlucky beater, shot in the thicket like a wild animal, had seemed to him to pre-figure death for himself also. He had nearly swooned at what Lord Henry had said in a chance mood of cynical 
+--------------------------------------------------------------------------------
+
+Example 16
+Generated:
+ all I hardly know what to do to say something, and seeing himself down out any particular of beings together in away, I am sures come to me. You have and reason to get out! you don't know what to do?" "From ILL BACKWARD'S DIARY 30 July
+
+Reference:
+he handed me his glasses and pointed. The snow was now falling more heavily, and swirled about fiercely, for a high wind was beginning to blow. However, there were times when there were pauses between the snow flurries and I could see a long way round. From the height where we were it was possible to see a great distance
+--------------------------------------------------------------------------------
+
+Example 17
+Generated:
+ throwing, and, with great engagements. When I came in earnest and drank me and quitted it with a pencil, starting him, and the horror was made my speech which she had understood the picture of my friends around me. I went to her room to him in a wonderful friend John. I do not know how to do." "My dear Harry, I will tell you all about it." She 
+
+Reference:
+and I want to go to bed early." "Do stay. You have never played so well as to-night. There was something in your touch that was wonderful. It had more expression than I had ever heard from it before." "It is because I am going to be good," he answered, smiling. "I am a little changed already." "You cannot change to me, Dorian," said Lord Henry. "You and I will always be friends." "
+--------------------------------------------------------------------------------
+
+Example 18
+Generated:
+! You're a fool?" This was note by our usual plait." "Oh! ye're wrong? "No! I'll have nothing to do for yourself, and you shall have a key in the afternoon of the dæmon which was so frankly as "triel, one afternoon she had occasionally watched him in his bag
+
+Reference:
+from Mrs. Dean's bitter herbs; and firstly, let me beware of the fascination that lurks in Catherine Heathcliff's brilliant eyes. I should be in a curious taking if I surrendered my heart to that young person, and the daughter turned out a second edition of the mother. Another week over and I am so many days nearer health
+--------------------------------------------------------------------------------
+
+Example 19
+Generated:
+. Untin" they reached the Heights, I did not refuse the portion of blood-like chine turned round and looked at him and the most light was very fully to my idea that could see that the egnuffness was about to say that the managers had taken place in the room, and standing over and over again, and struck him on the kne
+
+Reference:
+her to your apartment." "Tell me where she is," said the Prince; "I do not want to know where she has been." "My good Lord," says Hippolita, "your daughter tells you the truth: Isabella left us by your command, and has not returned since;-but, my good Lord, compose yourself: retire to your rest: this dis
+--------------------------------------------------------------------------------
+
+Example 20
+Generated:
+ and Missis of Vicomte de Chagny! It is alive and catch the stage and the coolness; I turned my face against its pavement, yet it were, he sat down again, and placing in a corner of the room. The clouds of his eyes, and the rising of clip of the room. The crag which I had had already 
+
+Reference:
+Or would you like hock-and-seltzer? I always take hock-and-seltzer myself. There is sure to be some in the next room." "Thanks, I won't have anything more," said the painter, taking his cap and coat off and throwing them on the 
+--------------------------------------------------------------------------------

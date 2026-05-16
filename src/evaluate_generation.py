@@ -44,6 +44,16 @@ def compute_ngram_overlap(generated_text, reference_text, n):
     return matches / len(generated_ngrams)
 
 
+def compute_distinct_n(generated_texts, n):
+    all_ngrams = []
+    for text in generated_texts:
+        tokens = tokenize_words(text)
+        all_ngrams.extend(make_ngrams(tokens, n))
+    if not all_ngrams:
+        return 0.0
+    return len(set(all_ngrams)) / len(all_ngrams)
+
+
 def compute_repetition_rate(text, n=3):
     tokens = tokenize_words(text)
     ngrams = make_ngrams(tokens, n)
@@ -202,8 +212,15 @@ def collect_generation_pairs(
 
             full_sequence = x[i].tolist()
 
-            prompt_ids = full_sequence[:prompt_length]
-            reference_ids = full_sequence[prompt_length:]
+            full_text = tokenizer.decode(full_sequence)
+            approx_boundary = len(tokenizer.decode(full_sequence[:prompt_length]))
+            split_pos = full_text.find(' ', approx_boundary)
+            if split_pos == -1:
+                split_pos = approx_boundary
+
+            prompt_text = full_text[:split_pos]
+            reference_text = full_text[split_pos:].lstrip()
+            prompt_ids = tokenizer.encode(prompt_text)
 
             generated_ids = generate_continuation(
                 model=model,
@@ -215,10 +232,7 @@ def collect_generation_pairs(
                 device=device,
             )
 
-            generated_continuation_ids = generated_ids[prompt_length:]
-
-            generated_text = tokenizer.decode(generated_continuation_ids)
-            reference_text = tokenizer.decode(reference_ids)
+            generated_text = tokenizer.decode(generated_ids[len(prompt_ids):])
 
             generated_texts.append(generated_text)
             reference_texts.append(reference_text)
@@ -266,6 +280,8 @@ def compute_all_metrics(generated_texts, reference_texts):
         "bleu": bleu,
         "bigram_overlap": average(bigram_overlaps),
         "trigram_overlap": average(trigram_overlaps),
+        "distinct_1": compute_distinct_n(generated_texts, 1),
+        "distinct_2": compute_distinct_n(generated_texts, 2),
         "trigram_repetition_rate": average(repetition_rates),
         "spelling_accuracy": average(spelling_scores) if spelling_scores else None,
     }
