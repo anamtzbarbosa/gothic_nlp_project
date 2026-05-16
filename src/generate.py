@@ -107,7 +107,7 @@ def apply_nucleus_sampling(probs, top_p):
     sorted_probs, sorted_indices = torch.sort(probs, descending=True, dim=-1)
     cumulative_probs = torch.cumsum(sorted_probs, dim=-1)
 
-    remove_mask = cumulative_probs > top_p
+    remove_mask = (cumulative_probs - sorted_probs) >= top_p
     remove_mask[..., 0] = False
 
     sorted_probs = sorted_probs.masked_fill(remove_mask, 0.0)
