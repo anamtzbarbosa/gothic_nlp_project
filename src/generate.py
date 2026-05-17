@@ -98,11 +98,11 @@ def load_model_from_checkpoint(checkpoint_path, device):
 
 
 def apply_nucleus_sampling(probs, top_p):
-    if top_p is None or top_p >= 1.0:
+    if top_p is None or top_p == 1.0:
         return probs
 
-    if top_p <= 0.0:
-        raise ValueError("top_p must be greater than 0.")
+    if not (0.0 < top_p < 1.0):
+        raise ValueError("top_p must be in (0.0, 1.0]")
 
     sorted_probs, sorted_indices = torch.sort(probs, descending=True, dim=-1)
     cumulative_probs = torch.cumsum(sorted_probs, dim=-1)

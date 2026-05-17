@@ -1,0 +1,262 @@
+[
+  {
+    "label": "final_rnn_h128_lr0p0005",
+    "model_name": "rnn",
+    "checkpoint_name": "final_rnn_h128_lr0p0005.pt",
+    "best_epoch": 1,
+    "best_val_loss": 5.585093001537335,
+    "test_loss": 5.554930893753218,
+    "test_ppl": 258.50909930966975,
+    "total_time_seconds": 5498.859341144562,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 5.1938277116143485,
+        "val_loss": 5.585093001537335,
+        "val_ppl": 266.4250595274284,
+        "epoch_time": 1369.079213142395
+      },
+      {
+        "epoch": 2,
+        "train_loss": 4.473769333020975,
+        "val_loss": 5.784607837171145,
+        "val_ppl": 325.2544623885785,
+        "epoch_time": 1322.6680641174316
+      },
+      {
+        "epoch": 3,
+        "train_loss": 4.280799523844579,
+        "val_loss": 5.976533316099666,
+        "val_ppl": 394.0718748349127,
+        "epoch_time": 1463.0790143013
+      },
+      {
+        "epoch": 4,
+        "train_loss": 4.166591688308265,
+        "val_loss": 6.132055698947063,
+        "val_ppl": 460.3815945424423,
+        "epoch_time": 1271.9229729175568
+      }
+    ],
+    "config": {
+      "tokenized_path": "data/corpus_tokenized.pkl",
+      "checkpoint_dir": "checkpoints/final_models",
+      "checkpoint_name": "final_rnn_h128_lr0p0005.pt",
+      "model_name": "rnn",
+      "vocab_size": 5000,
+      "seq_length": 100,
+      "batch_size": 64,
+      "embed_dim": 128,
+      "hidden_dim": 128,
+      "num_layers": 1,
+      "dropout": 0.0,
+      "window_size_k": 5,
+      "learning_rate": 0.0005,
+      "num_epochs": 4,
+      "grad_clip": 1.0,
+      "seed": 42,
+      "run_generation_eval": false,
+      "tokenizer_path": "data/gothic_tokenizer.json",
+      "generation_num_samples": 50,
+      "generation_prompt_length": 30,
+      "generation_temperature": 0.8,
+      "generation_top_p": 0.9,
+      "generation_output_path": "results/final_models/final_rnn_h128_lr0p0005_generation"
+    }
+  },
+  {
+    "label": "final_lstm_l1_h128_d0p3_lr0p0005",
+    "model_name": "lstm",
+    "checkpoint_name": "final_lstm_l1_h128_d0p3_lr0p0005.pt",
+    "best_epoch": 1,
+    "best_val_loss": 5.32589515885201,
+    "test_loss": 5.304395937751608,
+    "test_ppl": 201.21941664146934,
+    "total_time_seconds": 4239.804315805435,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 5.301387986036508,
+        "val_loss": 5.32589515885201,
+        "val_ppl": 205.59231589931403,
+        "epoch_time": 1061.0081777572632
+      },
+      {
+        "epoch": 2,
+        "train_loss": 4.720798652629517,
+        "val_loss": 5.354416308381633,
+        "val_ppl": 211.54046591349737,
+        "epoch_time": 1036.6429080963135
+      },
+      {
+        "epoch": 3,
+        "train_loss": 4.540474532802136,
+        "val_loss": 5.437835216827686,
+        "val_ppl": 229.9438656692848,
+        "epoch_time": 1036.5568540096283
+      },
+      {
+        "epoch": 4,
+        "train_loss": 4.412697554965061,
+        "val_loss": 5.538489648121279,
+        "val_ppl": 254.29363639840466,
+        "epoch_time": 1046.0447869300842
+      }
+    ],
+    "config": {
+      "tokenized_path": "data/corpus_tokenized.pkl",
+      "checkpoint_dir": "checkpoints/final_models",
+      "checkpoint_name": "final_lstm_l1_h128_d0p3_lr0p0005.pt",
+      "model_name": "lstm",
+      "vocab_size": 5000,
+      "seq_length": 100,
+      "batch_size": 64,
+      "embed_dim": 128,
+      "hidden_dim": 128,
+      "num_layers": 1,
+      "dropout": 0.3,
+      "window_size_k": 5,
+      "learning_rate": 0.0005,
+      "num_epochs": 4,
+      "grad_clip": 1.0,
+      "seed": 42,
+      "run_generation_eval": false,
+      "tokenizer_path": "data/gothic_tokenizer.json",
+      "generation_num_samples": 50,
+      "generation_prompt_length": 30,
+      "generation_temperature": 0.8,
+      "generation_top_p": 0.9,
+      "generation_output_path": "results/final_models/final_lstm_l1_h128_d0p3_lr0p0005_generation"
+    }
+  },
+  {
+    "label": "final_lstm_l2_h256_d0p3_lr0p001",
+    "model_name": "lstm",
+    "checkpoint_name": "final_lstm_l2_h256_d0p3_lr0p001.pt",
+    "best_epoch": 1,
+    "best_val_loss": 5.493227681924257,
+    "test_loss": 5.467405390388151,
+    "test_ppl": 236.8448748626574,
+    "total_time_seconds": 7494.8372049331665,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 5.157283563048856,
+        "val_loss": 5.493227681924257,
+        "val_ppl": 243.0403993337121,
+        "epoch_time": 1846.6733510494232
+      },
+      {
+        "epoch": 2,
+        "train_loss": 4.8689443854183745,
+        "val_loss": 5.500308676150882,
+        "val_ppl": 244.76747448646506,
+        "epoch_time": 1844.3113358020782
+      },
+      {
+        "epoch": 3,
+        "train_loss": 4.809776240727124,
+        "val_loss": 5.504756151598895,
+        "val_ppl": 245.85849616741498,
+        "epoch_time": 1843.8762271404266
+      },
+      {
+        "epoch": 4,
+        "train_loss": 4.782147864999588,
+        "val_loss": 5.510680210277257,
+        "val_ppl": 247.3192989939428,
+        "epoch_time": 1843.8458697795868
+      }
+    ],
+    "config": {
+      "tokenized_path": "data/corpus_tokenized.pkl",
+      "checkpoint_dir": "checkpoints/final_models",
+      "checkpoint_name": "final_lstm_l2_h256_d0p3_lr0p001.pt",
+      "model_name": "lstm",
+      "vocab_size": 5000,
+      "seq_length": 100,
+      "batch_size": 64,
+      "embed_dim": 128,
+      "hidden_dim": 256,
+      "num_layers": 2,
+      "dropout": 0.3,
+      "window_size_k": 5,
+      "learning_rate": 0.001,
+      "num_epochs": 4,
+      "grad_clip": 1.0,
+      "seed": 42,
+      "run_generation_eval": false,
+      "tokenizer_path": "data/gothic_tokenizer.json",
+      "generation_num_samples": 50,
+      "generation_prompt_length": 30,
+      "generation_temperature": 0.8,
+      "generation_top_p": 0.9,
+      "generation_output_path": "results/final_models/final_lstm_l2_h256_d0p3_lr0p001_generation"
+    }
+  },
+  {
+    "label": "final_attention_lstm_l2_h128_d0p3_lr0p001_k20",
+    "model_name": "attention_lstm",
+    "checkpoint_name": "final_attention_lstm_l2_h128_d0p3_lr0p001_k20.pt",
+    "best_epoch": 4,
+    "best_val_loss": 5.5095861332298925,
+    "test_loss": 5.488033410755967,
+    "test_ppl": 241.7812545953522,
+    "total_time_seconds": 6193.388935804367,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 5.487710024010229,
+        "val_loss": 5.564569536193222,
+        "val_ppl": 261.0128229501939,
+        "epoch_time": 1525.1404101848602
+      },
+      {
+        "epoch": 2,
+        "train_loss": 5.22823220533474,
+        "val_loss": 5.5292195950006535,
+        "val_ppl": 251.947213416676,
+        "epoch_time": 1526.6805880069733
+      },
+      {
+        "epoch": 3,
+        "train_loss": 5.174943741526526,
+        "val_loss": 5.516175687656732,
+        "val_ppl": 248.68217801253923,
+        "epoch_time": 1524.2709188461304
+      },
+      {
+        "epoch": 4,
+        "train_loss": 5.144419260101719,
+        "val_loss": 5.5095861332298925,
+        "val_ppl": 247.0488605927434,
+        "epoch_time": 1520.6833128929138
+      }
+    ],
+    "config": {
+      "tokenized_path": "data/corpus_tokenized.pkl",
+      "checkpoint_dir": "checkpoints/final_models",
+      "checkpoint_name": "final_attention_lstm_l2_h128_d0p3_lr0p001_k20.pt",
+      "model_name": "attention_lstm",
+      "vocab_size": 5000,
+      "seq_length": 100,
+      "batch_size": 64,
+      "embed_dim": 128,
+      "hidden_dim": 128,
+      "num_layers": 2,
+      "dropout": 0.3,
+      "window_size_k": 20,
+      "learning_rate": 0.001,
+      "num_epochs": 4,
+      "grad_clip": 1.0,
+      "seed": 42,
+      "run_generation_eval": false,
+      "tokenizer_path": "data/gothic_tokenizer.json",
+      "generation_num_samples": 50,
+      "generation_prompt_length": 30,
+      "generation_temperature": 0.8,
+      "generation_top_p": 0.9,
+      "generation_output_path": "results/final_models/final_attention_lstm_l2_h128_d0p3_lr0p001_k20_generation"
+    }
+  }
+]

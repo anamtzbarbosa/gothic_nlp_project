@@ -1,7 +1,7 @@
 Final training run: final_rnn_h128_lr0p0005
 ================================================================================
 Run: final_rnn_h128_lr0p0005
-Config: TrainConfig(tokenized_path='data/corpus_tokenized.pkl', checkpoint_dir='checkpoints/final_models', checkpoint_name='final_rnn_h128_lr0p0005.pt', model_name='rnn', vocab_size=5000, seq_length=100, batch_size=64, embed_dim=128, hidden_dim=128, num_layers=1, dropout=0.0, window_size_k=5, learning_rate=0.0005, num_epochs=4, grad_clip=1.0, seed=42, run_generation_eval=True, tokenizer_path='data/gothic_tokenizer.json', generation_num_samples=50, generation_prompt_length=30, generation_temperature=0.8, generation_top_p=0.9, generation_output_path='results/final_models/final_rnn_h128_lr0p0005_generation')
+Config: TrainConfig(tokenized_path='data/corpus_tokenized.pkl', checkpoint_dir='checkpoints/final_models', checkpoint_name='final_rnn_h128_lr0p0005.pt', model_name='rnn', vocab_size=5000, seq_length=100, batch_size=64, embed_dim=128, hidden_dim=128, num_layers=1, dropout=0.0, window_size_k=5, learning_rate=0.0005, num_epochs=4, grad_clip=1.0, seed=42, run_generation_eval=False, tokenizer_path='data/gothic_tokenizer.json', generation_num_samples=50, generation_prompt_length=30, generation_temperature=0.8, generation_top_p=0.9, generation_output_path='results/final_models/final_rnn_h128_lr0p0005_generation')
   Batch 100/12186 | Avg Train Loss: 8.0385
   Batch 200/12186 | Avg Train Loss: 7.8868
   Batch 300/12186 | Avg Train Loss: 7.8121
@@ -113,3 +113,449 @@ Config: TrainConfig(tokenized_path='data/corpus_tokenized.pkl', checkpoint_dir='
   Batch 10900/12186 | Avg Train Loss: 5.2573
   Batch 11000/12186 | Avg Train Loss: 5.2520
   Batch 11100/12186 | Avg Train Loss: 5.2468
+  Batch 11200/12186 | Avg Train Loss: 5.2416
+  Batch 11300/12186 | Avg Train Loss: 5.2366
+  Batch 11400/12186 | Avg Train Loss: 5.2315
+  Batch 11500/12186 | Avg Train Loss: 5.2266
+  Batch 11600/12186 | Avg Train Loss: 5.2217
+  Batch 11700/12186 | Avg Train Loss: 5.2168
+  Batch 11800/12186 | Avg Train Loss: 5.2119
+  Batch 11900/12186 | Avg Train Loss: 5.2071
+  Batch 12000/12186 | Avg Train Loss: 5.2024
+  Batch 12100/12186 | Avg Train Loss: 5.1978
+Epoch 1/4 | Train Loss: 5.1938 | Val Loss: 5.5851 | Val PPL: 266.43 | Time: 1369.1s
+Saved best checkpoint to checkpoints/final_models/final_rnn_h128_lr0p0005.pt
+  Batch 100/12186 | Avg Train Loss: 4.6239
+  Batch 200/12186 | Avg Train Loss: 4.6203
+  Batch 300/12186 | Avg Train Loss: 4.6183
+  Batch 400/12186 | Avg Train Loss: 4.6182
+  Batch 500/12186 | Avg Train Loss: 4.6164
+  Batch 600/12186 | Avg Train Loss: 4.6157
+  Batch 700/12186 | Avg Train Loss: 4.6140
+  Batch 800/12186 | Avg Train Loss: 4.6125
+  Batch 900/12186 | Avg Train Loss: 4.6107
+  Batch 1000/12186 | Avg Train Loss: 4.6087
+  Batch 1100/12186 | Avg Train Loss: 4.6073
+  Batch 1200/12186 | Avg Train Loss: 4.6053
+  Batch 1300/12186 | Avg Train Loss: 4.6037
+  Batch 1400/12186 | Avg Train Loss: 4.6023
+  Batch 1500/12186 | Avg Train Loss: 4.6010
+  Batch 1600/12186 | Avg Train Loss: 4.5996
+  Batch 1700/12186 | Avg Train Loss: 4.5977
+  Batch 1800/12186 | Avg Train Loss: 4.5965
+  Batch 1900/12186 | Avg Train Loss: 4.5951
+  Batch 2000/12186 | Avg Train Loss: 4.5932
+  Batch 2100/12186 | Avg Train Loss: 4.5917
+  Batch 2200/12186 | Avg Train Loss: 4.5902
+  Batch 2300/12186 | Avg Train Loss: 4.5889
+  Batch 2400/12186 | Avg Train Loss: 4.5875
+  Batch 2500/12186 | Avg Train Loss: 4.5859
+  Batch 2600/12186 | Avg Train Loss: 4.5844
+  Batch 2700/12186 | Avg Train Loss: 4.5832
+  Batch 2800/12186 | Avg Train Loss: 4.5819
+  Batch 2900/12186 | Avg Train Loss: 4.5805
+  Batch 3000/12186 | Avg Train Loss: 4.5790
+  Batch 3100/12186 | Avg Train Loss: 4.5779
+  Batch 3200/12186 | Avg Train Loss: 4.5764
+  Batch 3300/12186 | Avg Train Loss: 4.5748
+  Batch 3400/12186 | Avg Train Loss: 4.5734
+  Batch 3500/12186 | Avg Train Loss: 4.5720
+  Batch 3600/12186 | Avg Train Loss: 4.5708
+  Batch 3700/12186 | Avg Train Loss: 4.5693
+  Batch 3800/12186 | Avg Train Loss: 4.5680
+  Batch 3900/12186 | Avg Train Loss: 4.5666
+  Batch 4000/12186 | Avg Train Loss: 4.5653
+  Batch 4100/12186 | Avg Train Loss: 4.5639
+  Batch 4200/12186 | Avg Train Loss: 4.5626
+  Batch 4300/12186 | Avg Train Loss: 4.5613
+  Batch 4400/12186 | Avg Train Loss: 4.5601
+  Batch 4500/12186 | Avg Train Loss: 4.5587
+  Batch 4600/12186 | Avg Train Loss: 4.5574
+  Batch 4700/12186 | Avg Train Loss: 4.5561
+  Batch 4800/12186 | Avg Train Loss: 4.5549
+  Batch 4900/12186 | Avg Train Loss: 4.5535
+  Batch 5000/12186 | Avg Train Loss: 4.5523
+  Batch 5100/12186 | Avg Train Loss: 4.5508
+  Batch 5200/12186 | Avg Train Loss: 4.5497
+  Batch 5300/12186 | Avg Train Loss: 4.5483
+  Batch 5400/12186 | Avg Train Loss: 4.5471
+  Batch 5500/12186 | Avg Train Loss: 4.5458
+  Batch 5600/12186 | Avg Train Loss: 4.5445
+  Batch 5700/12186 | Avg Train Loss: 4.5433
+  Batch 5800/12186 | Avg Train Loss: 4.5421
+  Batch 5900/12186 | Avg Train Loss: 4.5409
+  Batch 6000/12186 | Avg Train Loss: 4.5396
+  Batch 6100/12186 | Avg Train Loss: 4.5384
+  Batch 6200/12186 | Avg Train Loss: 4.5371
+  Batch 6300/12186 | Avg Train Loss: 4.5360
+  Batch 6400/12186 | Avg Train Loss: 4.5347
+  Batch 6500/12186 | Avg Train Loss: 4.5336
+  Batch 6600/12186 | Avg Train Loss: 4.5324
+  Batch 6700/12186 | Avg Train Loss: 4.5311
+  Batch 6800/12186 | Avg Train Loss: 4.5300
+  Batch 6900/12186 | Avg Train Loss: 4.5289
+  Batch 7000/12186 | Avg Train Loss: 4.5276
+  Batch 7100/12186 | Avg Train Loss: 4.5265
+  Batch 7200/12186 | Avg Train Loss: 4.5254
+  Batch 7300/12186 | Avg Train Loss: 4.5243
+  Batch 7400/12186 | Avg Train Loss: 4.5232
+  Batch 7500/12186 | Avg Train Loss: 4.5221
+  Batch 7600/12186 | Avg Train Loss: 4.5210
+  Batch 7700/12186 | Avg Train Loss: 4.5199
+  Batch 7800/12186 | Avg Train Loss: 4.5187
+  Batch 7900/12186 | Avg Train Loss: 4.5176
+  Batch 8000/12186 | Avg Train Loss: 4.5164
+  Batch 8100/12186 | Avg Train Loss: 4.5153
+  Batch 8200/12186 | Avg Train Loss: 4.5142
+  Batch 8300/12186 | Avg Train Loss: 4.5131
+  Batch 8400/12186 | Avg Train Loss: 4.5121
+  Batch 8500/12186 | Avg Train Loss: 4.5110
+  Batch 8600/12186 | Avg Train Loss: 4.5099
+  Batch 8700/12186 | Avg Train Loss: 4.5088
+  Batch 8800/12186 | Avg Train Loss: 4.5078
+  Batch 8900/12186 | Avg Train Loss: 4.5068
+  Batch 9000/12186 | Avg Train Loss: 4.5056
+  Batch 9100/12186 | Avg Train Loss: 4.5046
+  Batch 9200/12186 | Avg Train Loss: 4.5035
+  Batch 9300/12186 | Avg Train Loss: 4.5025
+  Batch 9400/12186 | Avg Train Loss: 4.5014
+  Batch 9500/12186 | Avg Train Loss: 4.5004
+  Batch 9600/12186 | Avg Train Loss: 4.4993
+  Batch 9700/12186 | Avg Train Loss: 4.4983
+  Batch 9800/12186 | Avg Train Loss: 4.4972
+  Batch 9900/12186 | Avg Train Loss: 4.4963
+  Batch 10000/12186 | Avg Train Loss: 4.4952
+  Batch 10100/12186 | Avg Train Loss: 4.4943
+  Batch 10200/12186 | Avg Train Loss: 4.4933
+  Batch 10300/12186 | Avg Train Loss: 4.4922
+  Batch 10400/12186 | Avg Train Loss: 4.4911
+  Batch 10500/12186 | Avg Train Loss: 4.4901
+  Batch 10600/12186 | Avg Train Loss: 4.4892
+  Batch 10700/12186 | Avg Train Loss: 4.4882
+  Batch 10800/12186 | Avg Train Loss: 4.4872
+  Batch 10900/12186 | Avg Train Loss: 4.4862
+  Batch 11000/12186 | Avg Train Loss: 4.4851
+  Batch 11100/12186 | Avg Train Loss: 4.4842
+  Batch 11200/12186 | Avg Train Loss: 4.4832
+  Batch 11300/12186 | Avg Train Loss: 4.4823
+  Batch 11400/12186 | Avg Train Loss: 4.4813
+  Batch 11500/12186 | Avg Train Loss: 4.4804
+  Batch 11600/12186 | Avg Train Loss: 4.4794
+  Batch 11700/12186 | Avg Train Loss: 4.4785
+  Batch 11800/12186 | Avg Train Loss: 4.4775
+  Batch 11900/12186 | Avg Train Loss: 4.4765
+  Batch 12000/12186 | Avg Train Loss: 4.4756
+  Batch 12100/12186 | Avg Train Loss: 4.4746
+Epoch 2/4 | Train Loss: 4.4738 | Val Loss: 5.7846 | Val PPL: 325.25 | Time: 1322.7s
+  Batch 100/12186 | Avg Train Loss: 4.3471
+  Batch 200/12186 | Avg Train Loss: 4.3503
+  Batch 300/12186 | Avg Train Loss: 4.3519
+  Batch 400/12186 | Avg Train Loss: 4.3518
+  Batch 500/12186 | Avg Train Loss: 4.3507
+  Batch 600/12186 | Avg Train Loss: 4.3490
+  Batch 700/12186 | Avg Train Loss: 4.3485
+  Batch 800/12186 | Avg Train Loss: 4.3475
+  Batch 900/12186 | Avg Train Loss: 4.3461
+  Batch 1000/12186 | Avg Train Loss: 4.3458
+  Batch 1100/12186 | Avg Train Loss: 4.3451
+  Batch 1200/12186 | Avg Train Loss: 4.3447
+  Batch 1300/12186 | Avg Train Loss: 4.3443
+  Batch 1400/12186 | Avg Train Loss: 4.3436
+  Batch 1500/12186 | Avg Train Loss: 4.3430
+  Batch 1600/12186 | Avg Train Loss: 4.3422
+  Batch 1700/12186 | Avg Train Loss: 4.3415
+  Batch 1800/12186 | Avg Train Loss: 4.3408
+  Batch 1900/12186 | Avg Train Loss: 4.3400
+  Batch 2000/12186 | Avg Train Loss: 4.3398
+  Batch 2100/12186 | Avg Train Loss: 4.3391
+  Batch 2200/12186 | Avg Train Loss: 4.3382
+  Batch 2300/12186 | Avg Train Loss: 4.3376
+  Batch 2400/12186 | Avg Train Loss: 4.3370
+  Batch 2500/12186 | Avg Train Loss: 4.3363
+  Batch 2600/12186 | Avg Train Loss: 4.3356
+  Batch 2700/12186 | Avg Train Loss: 4.3351
+  Batch 2800/12186 | Avg Train Loss: 4.3343
+  Batch 2900/12186 | Avg Train Loss: 4.3338
+  Batch 3000/12186 | Avg Train Loss: 4.3330
+  Batch 3100/12186 | Avg Train Loss: 4.3323
+  Batch 3200/12186 | Avg Train Loss: 4.3315
+  Batch 3300/12186 | Avg Train Loss: 4.3310
+  Batch 3400/12186 | Avg Train Loss: 4.3307
+  Batch 3500/12186 | Avg Train Loss: 4.3303
+  Batch 3600/12186 | Avg Train Loss: 4.3295
+  Batch 3700/12186 | Avg Train Loss: 4.3290
+  Batch 3800/12186 | Avg Train Loss: 4.3284
+  Batch 3900/12186 | Avg Train Loss: 4.3277
+  Batch 4000/12186 | Avg Train Loss: 4.3271
+  Batch 4100/12186 | Avg Train Loss: 4.3266
+  Batch 4200/12186 | Avg Train Loss: 4.3260
+  Batch 4300/12186 | Avg Train Loss: 4.3253
+  Batch 4400/12186 | Avg Train Loss: 4.3245
+  Batch 4500/12186 | Avg Train Loss: 4.3239
+  Batch 4600/12186 | Avg Train Loss: 4.3232
+  Batch 4700/12186 | Avg Train Loss: 4.3227
+  Batch 4800/12186 | Avg Train Loss: 4.3220
+  Batch 4900/12186 | Avg Train Loss: 4.3215
+  Batch 5000/12186 | Avg Train Loss: 4.3208
+  Batch 5100/12186 | Avg Train Loss: 4.3203
+  Batch 5200/12186 | Avg Train Loss: 4.3196
+  Batch 5300/12186 | Avg Train Loss: 4.3190
+  Batch 5400/12186 | Avg Train Loss: 4.3184
+  Batch 5500/12186 | Avg Train Loss: 4.3179
+  Batch 5600/12186 | Avg Train Loss: 4.3174
+  Batch 5700/12186 | Avg Train Loss: 4.3168
+  Batch 5800/12186 | Avg Train Loss: 4.3162
+  Batch 5900/12186 | Avg Train Loss: 4.3156
+  Batch 6000/12186 | Avg Train Loss: 4.3151
+  Batch 6100/12186 | Avg Train Loss: 4.3146
+  Batch 6200/12186 | Avg Train Loss: 4.3140
+  Batch 6300/12186 | Avg Train Loss: 4.3134
+  Batch 6400/12186 | Avg Train Loss: 4.3129
+  Batch 6500/12186 | Avg Train Loss: 4.3123
+  Batch 6600/12186 | Avg Train Loss: 4.3118
+  Batch 6700/12186 | Avg Train Loss: 4.3111
+  Batch 6800/12186 | Avg Train Loss: 4.3106
+  Batch 6900/12186 | Avg Train Loss: 4.3100
+  Batch 7000/12186 | Avg Train Loss: 4.3093
+  Batch 7100/12186 | Avg Train Loss: 4.3088
+  Batch 7200/12186 | Avg Train Loss: 4.3082
+  Batch 7300/12186 | Avg Train Loss: 4.3076
+  Batch 7400/12186 | Avg Train Loss: 4.3070
+  Batch 7500/12186 | Avg Train Loss: 4.3064
+  Batch 7600/12186 | Avg Train Loss: 4.3058
+  Batch 7700/12186 | Avg Train Loss: 4.3052
+  Batch 7800/12186 | Avg Train Loss: 4.3046
+  Batch 7900/12186 | Avg Train Loss: 4.3041
+  Batch 8000/12186 | Avg Train Loss: 4.3036
+  Batch 8100/12186 | Avg Train Loss: 4.3030
+  Batch 8200/12186 | Avg Train Loss: 4.3024
+  Batch 8300/12186 | Avg Train Loss: 4.3019
+  Batch 8400/12186 | Avg Train Loss: 4.3014
+  Batch 8500/12186 | Avg Train Loss: 4.3009
+  Batch 8600/12186 | Avg Train Loss: 4.3004
+  Batch 8700/12186 | Avg Train Loss: 4.2999
+  Batch 8800/12186 | Avg Train Loss: 4.2993
+  Batch 8900/12186 | Avg Train Loss: 4.2987
+  Batch 9000/12186 | Avg Train Loss: 4.2982
+  Batch 9100/12186 | Avg Train Loss: 4.2977
+  Batch 9200/12186 | Avg Train Loss: 4.2971
+  Batch 9300/12186 | Avg Train Loss: 4.2965
+  Batch 9400/12186 | Avg Train Loss: 4.2959
+  Batch 9500/12186 | Avg Train Loss: 4.2953
+  Batch 9600/12186 | Avg Train Loss: 4.2947
+  Batch 9700/12186 | Avg Train Loss: 4.2942
+  Batch 9800/12186 | Avg Train Loss: 4.2937
+  Batch 9900/12186 | Avg Train Loss: 4.2931
+  Batch 10000/12186 | Avg Train Loss: 4.2926
+  Batch 10100/12186 | Avg Train Loss: 4.2921
+  Batch 10200/12186 | Avg Train Loss: 4.2915
+  Batch 10300/12186 | Avg Train Loss: 4.2910
+  Batch 10400/12186 | Avg Train Loss: 4.2905
+  Batch 10500/12186 | Avg Train Loss: 4.2899
+  Batch 10600/12186 | Avg Train Loss: 4.2894
+  Batch 10700/12186 | Avg Train Loss: 4.2889
+  Batch 10800/12186 | Avg Train Loss: 4.2883
+  Batch 10900/12186 | Avg Train Loss: 4.2879
+  Batch 11000/12186 | Avg Train Loss: 4.2873
+  Batch 11100/12186 | Avg Train Loss: 4.2867
+  Batch 11200/12186 | Avg Train Loss: 4.2862
+  Batch 11300/12186 | Avg Train Loss: 4.2856
+  Batch 11400/12186 | Avg Train Loss: 4.2851
+  Batch 11500/12186 | Avg Train Loss: 4.2845
+  Batch 11600/12186 | Avg Train Loss: 4.2840
+  Batch 11700/12186 | Avg Train Loss: 4.2834
+  Batch 11800/12186 | Avg Train Loss: 4.2829
+  Batch 11900/12186 | Avg Train Loss: 4.2823
+  Batch 12000/12186 | Avg Train Loss: 4.2817
+  Batch 12100/12186 | Avg Train Loss: 4.2812
+Epoch 3/4 | Train Loss: 4.2808 | Val Loss: 5.9765 | Val PPL: 394.07 | Time: 1463.1s
+  Batch 100/12186 | Avg Train Loss: 4.2057
+  Batch 200/12186 | Avg Train Loss: 4.2054
+  Batch 300/12186 | Avg Train Loss: 4.2054
+  Batch 400/12186 | Avg Train Loss: 4.2058
+  Batch 500/12186 | Avg Train Loss: 4.2064
+  Batch 600/12186 | Avg Train Loss: 4.2076
+  Batch 700/12186 | Avg Train Loss: 4.2075
+  Batch 800/12186 | Avg Train Loss: 4.2066
+  Batch 900/12186 | Avg Train Loss: 4.2062
+  Batch 1000/12186 | Avg Train Loss: 4.2058
+  Batch 1100/12186 | Avg Train Loss: 4.2052
+  Batch 1200/12186 | Avg Train Loss: 4.2050
+  Batch 1300/12186 | Avg Train Loss: 4.2049
+  Batch 1400/12186 | Avg Train Loss: 4.2042
+  Batch 1500/12186 | Avg Train Loss: 4.2037
+  Batch 1600/12186 | Avg Train Loss: 4.2035
+  Batch 1700/12186 | Avg Train Loss: 4.2034
+  Batch 1800/12186 | Avg Train Loss: 4.2034
+  Batch 1900/12186 | Avg Train Loss: 4.2033
+  Batch 2000/12186 | Avg Train Loss: 4.2031
+  Batch 2100/12186 | Avg Train Loss: 4.2028
+  Batch 2200/12186 | Avg Train Loss: 4.2023
+  Batch 2300/12186 | Avg Train Loss: 4.2021
+  Batch 2400/12186 | Avg Train Loss: 4.2018
+  Batch 2500/12186 | Avg Train Loss: 4.2017
+  Batch 2600/12186 | Avg Train Loss: 4.2016
+  Batch 2700/12186 | Avg Train Loss: 4.2013
+  Batch 2800/12186 | Avg Train Loss: 4.2009
+  Batch 2900/12186 | Avg Train Loss: 4.2003
+  Batch 3000/12186 | Avg Train Loss: 4.1999
+  Batch 3100/12186 | Avg Train Loss: 4.1996
+  Batch 3200/12186 | Avg Train Loss: 4.1992
+  Batch 3300/12186 | Avg Train Loss: 4.1987
+  Batch 3400/12186 | Avg Train Loss: 4.1984
+  Batch 3500/12186 | Avg Train Loss: 4.1981
+  Batch 3600/12186 | Avg Train Loss: 4.1975
+  Batch 3700/12186 | Avg Train Loss: 4.1972
+  Batch 3800/12186 | Avg Train Loss: 4.1967
+  Batch 3900/12186 | Avg Train Loss: 4.1963
+  Batch 4000/12186 | Avg Train Loss: 4.1960
+  Batch 4100/12186 | Avg Train Loss: 4.1956
+  Batch 4200/12186 | Avg Train Loss: 4.1953
+  Batch 4300/12186 | Avg Train Loss: 4.1948
+  Batch 4400/12186 | Avg Train Loss: 4.1945
+  Batch 4500/12186 | Avg Train Loss: 4.1942
+  Batch 4600/12186 | Avg Train Loss: 4.1938
+  Batch 4700/12186 | Avg Train Loss: 4.1935
+  Batch 4800/12186 | Avg Train Loss: 4.1932
+  Batch 4900/12186 | Avg Train Loss: 4.1927
+  Batch 5000/12186 | Avg Train Loss: 4.1924
+  Batch 5100/12186 | Avg Train Loss: 4.1919
+  Batch 5200/12186 | Avg Train Loss: 4.1916
+  Batch 5300/12186 | Avg Train Loss: 4.1912
+  Batch 5400/12186 | Avg Train Loss: 4.1908
+  Batch 5500/12186 | Avg Train Loss: 4.1905
+  Batch 5600/12186 | Avg Train Loss: 4.1900
+  Batch 5700/12186 | Avg Train Loss: 4.1895
+  Batch 5800/12186 | Avg Train Loss: 4.1893
+  Batch 5900/12186 | Avg Train Loss: 4.1889
+  Batch 6000/12186 | Avg Train Loss: 4.1885
+  Batch 6100/12186 | Avg Train Loss: 4.1882
+  Batch 6200/12186 | Avg Train Loss: 4.1878
+  Batch 6300/12186 | Avg Train Loss: 4.1875
+  Batch 6400/12186 | Avg Train Loss: 4.1872
+  Batch 6500/12186 | Avg Train Loss: 4.1868
+  Batch 6600/12186 | Avg Train Loss: 4.1866
+  Batch 6700/12186 | Avg Train Loss: 4.1862
+  Batch 6800/12186 | Avg Train Loss: 4.1858
+  Batch 6900/12186 | Avg Train Loss: 4.1853
+  Batch 7000/12186 | Avg Train Loss: 4.1849
+  Batch 7100/12186 | Avg Train Loss: 4.1845
+  Batch 7200/12186 | Avg Train Loss: 4.1842
+  Batch 7300/12186 | Avg Train Loss: 4.1838
+  Batch 7400/12186 | Avg Train Loss: 4.1833
+  Batch 7500/12186 | Avg Train Loss: 4.1830
+  Batch 7600/12186 | Avg Train Loss: 4.1826
+  Batch 7700/12186 | Avg Train Loss: 4.1823
+  Batch 7800/12186 | Avg Train Loss: 4.1820
+  Batch 7900/12186 | Avg Train Loss: 4.1817
+  Batch 8000/12186 | Avg Train Loss: 4.1812
+  Batch 8100/12186 | Avg Train Loss: 4.1809
+  Batch 8200/12186 | Avg Train Loss: 4.1804
+  Batch 8300/12186 | Avg Train Loss: 4.1801
+  Batch 8400/12186 | Avg Train Loss: 4.1797
+  Batch 8500/12186 | Avg Train Loss: 4.1795
+  Batch 8600/12186 | Avg Train Loss: 4.1791
+  Batch 8700/12186 | Avg Train Loss: 4.1787
+  Batch 8800/12186 | Avg Train Loss: 4.1783
+  Batch 8900/12186 | Avg Train Loss: 4.1779
+  Batch 9000/12186 | Avg Train Loss: 4.1776
+  Batch 9100/12186 | Avg Train Loss: 4.1772
+  Batch 9200/12186 | Avg Train Loss: 4.1768
+  Batch 9300/12186 | Avg Train Loss: 4.1765
+  Batch 9400/12186 | Avg Train Loss: 4.1762
+  Batch 9500/12186 | Avg Train Loss: 4.1759
+  Batch 9600/12186 | Avg Train Loss: 4.1756
+  Batch 9700/12186 | Avg Train Loss: 4.1753
+  Batch 9800/12186 | Avg Train Loss: 4.1749
+  Batch 9900/12186 | Avg Train Loss: 4.1745
+  Batch 10000/12186 | Avg Train Loss: 4.1741
+  Batch 10100/12186 | Avg Train Loss: 4.1738
+  Batch 10200/12186 | Avg Train Loss: 4.1735
+  Batch 10300/12186 | Avg Train Loss: 4.1732
+  Batch 10400/12186 | Avg Train Loss: 4.1727
+  Batch 10500/12186 | Avg Train Loss: 4.1724
+  Batch 10600/12186 | Avg Train Loss: 4.1720
+  Batch 10700/12186 | Avg Train Loss: 4.1716
+  Batch 10800/12186 | Avg Train Loss: 4.1713
+  Batch 10900/12186 | Avg Train Loss: 4.1710
+  Batch 11000/12186 | Avg Train Loss: 4.1706
+  Batch 11100/12186 | Avg Train Loss: 4.1703
+  Batch 11200/12186 | Avg Train Loss: 4.1699
+  Batch 11300/12186 | Avg Train Loss: 4.1696
+  Batch 11400/12186 | Avg Train Loss: 4.1693
+  Batch 11500/12186 | Avg Train Loss: 4.1689
+  Batch 11600/12186 | Avg Train Loss: 4.1686
+  Batch 11700/12186 | Avg Train Loss: 4.1682
+  Batch 11800/12186 | Avg Train Loss: 4.1678
+  Batch 11900/12186 | Avg Train Loss: 4.1676
+  Batch 12000/12186 | Avg Train Loss: 4.1672
+  Batch 12100/12186 | Avg Train Loss: 4.1669
+Epoch 4/4 | Train Loss: 4.1666 | Val Loss: 6.1321 | Val PPL: 460.38 | Time: 1271.9s
+Loading best checkpoint before final test...
+
+Final test result:
+{
+  "label": "final_rnn_h128_lr0p0005",
+  "model_name": "rnn",
+  "checkpoint_name": "final_rnn_h128_lr0p0005.pt",
+  "best_epoch": 1,
+  "best_val_loss": 5.585093001537335,
+  "test_loss": 5.554930893753218,
+  "test_ppl": 258.50909930966975,
+  "total_time_seconds": 5498.859341144562,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 5.1938277116143485,
+      "val_loss": 5.585093001537335,
+      "val_ppl": 266.4250595274284,
+      "epoch_time": 1369.079213142395
+    },
+    {
+      "epoch": 2,
+      "train_loss": 4.473769333020975,
+      "val_loss": 5.784607837171145,
+      "val_ppl": 325.2544623885785,
+      "epoch_time": 1322.6680641174316
+    },
+    {
+      "epoch": 3,
+      "train_loss": 4.280799523844579,
+      "val_loss": 5.976533316099666,
+      "val_ppl": 394.0718748349127,
+      "epoch_time": 1463.0790143013
+    },
+    {
+      "epoch": 4,
+      "train_loss": 4.166591688308265,
+      "val_loss": 6.132055698947063,
+      "val_ppl": 460.3815945424423,
+      "epoch_time": 1271.9229729175568
+    }
+  ],
+  "config": {
+    "tokenized_path": "data/corpus_tokenized.pkl",
+    "checkpoint_dir": "checkpoints/final_models",
+    "checkpoint_name": "final_rnn_h128_lr0p0005.pt",
+    "model_name": "rnn",
+    "vocab_size": 5000,
+    "seq_length": 100,
+    "batch_size": 64,
+    "embed_dim": 128,
+    "hidden_dim": 128,
+    "num_layers": 1,
+    "dropout": 0.0,
+    "window_size_k": 5,
+    "learning_rate": 0.0005,
+    "num_epochs": 4,
+    "grad_clip": 1.0,
+    "seed": 42,
+    "run_generation_eval": false,
+    "tokenizer_path": "data/gothic_tokenizer.json",
+    "generation_num_samples": 50,
+    "generation_prompt_length": 30,
+    "generation_temperature": 0.8,
+    "generation_top_p": 0.9,
+    "generation_output_path": "results/final_models/final_rnn_h128_lr0p0005_generation"
+  }
+}

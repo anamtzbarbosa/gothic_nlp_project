@@ -1,0 +1,7 @@
+Final Model Training Summary
+================================================================================
+
+final_rnn_h128_lr0p0005 | model=rnn | best_epoch=1 | val_loss=5.5851 | test_loss=5.5549 | test_ppl=258.51
+final_lstm_l1_h128_d0p3_lr0p0005 | model=lstm | best_epoch=1 | val_loss=5.3259 | test_loss=5.3044 | test_ppl=201.22
+final_lstm_l2_h256_d0p3_lr0p001 | model=lstm | best_epoch=1 | val_loss=5.4932 | test_loss=5.4674 | test_ppl=236.84
+final_attention_lstm_l2_h128_d0p3_lr0p001_k20 | model=attention_lstm | best_epoch=4 | val_loss=5.5096 | test_loss=5.4880 | test_ppl=241.78
