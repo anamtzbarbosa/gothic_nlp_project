@@ -82,6 +82,7 @@ def build_model(config: TrainConfig):
             vocab_size=config.vocab_size,
             embed_dim=config.embed_dim,
             hidden_dim=config.hidden_dim,
+            dropout=config.dropout,
         )
 
     if config.model_name == "lstm":

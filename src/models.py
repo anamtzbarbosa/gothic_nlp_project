@@ -2,16 +2,17 @@ import torch
 import torch.nn as nn, torch.nn.functional as F
 
 class VanillaRNN(nn.Module):
-    def __init__(self, vocab_size, embed_dim, hidden_dim):
-        super(VanillaRNN, self).__init__() 
+    def __init__(self, vocab_size, embed_dim, hidden_dim, dropout=0.0):
+        super(VanillaRNN, self).__init__()
         self.embed = nn.Embedding(num_embeddings=vocab_size, embedding_dim=embed_dim)
         self.rnn = nn.RNN(input_size=embed_dim, hidden_size=hidden_dim, num_layers=1, batch_first=True)
+        self.dropout = nn.Dropout(dropout)
         self.fc = nn.Linear(in_features=hidden_dim, out_features=vocab_size)
 
     def forward(self, x, hidden_state=None):
         embedded_text = self.embed(x)
         seq_output, final_hidden_state = self.rnn(embedded_text, hidden_state)
-        logits = self.fc(seq_output)
+        logits = self.fc(self.dropout(seq_output))
         return logits, final_hidden_state
     
 class DeepLSTM(nn.Module):

@@ -60,7 +60,7 @@ def build_model(model_config):
     }
 
     if model_name == "rnn":
-        return VanillaRNN(**common_args)
+        return VanillaRNN(**common_args, dropout=model_config.get("dropout", 0.0))
 
     if model_name == "lstm":
         return DeepLSTM(
