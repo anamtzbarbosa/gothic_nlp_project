@@ -2,43 +2,47 @@ import torch
 import torch.nn as nn, torch.nn.functional as F
 
 class VanillaRNN(nn.Module):
-    def __init__(self, vocab_size, embed_dim, hidden_dim):
-        super(VanillaRNN, self,)._init__() 
-        self.embed = nn.Embedding(embedding_dim=vocab_size)
-        self.rnn = nn.RNN(in_features=embed_dim,out_features=hidden_dim, num_layers=1, batch_first=True)
-        self.fc = nn.Linear(in_features=hidden_dim,out_features=vocab_size)
+    def __init__(self, vocab_size, embed_dim, hidden_dim, dropout=0.0):
+        super(VanillaRNN, self).__init__()
+        self.embed = nn.Embedding(num_embeddings=vocab_size, embedding_dim=embed_dim)
+        self.rnn = nn.RNN(input_size=embed_dim, hidden_size=hidden_dim, num_layers=1, batch_first=True)
+        self.dropout = nn.Dropout(dropout)
+        self.fc = nn.Linear(in_features=hidden_dim, out_features=vocab_size)
 
     def forward(self, x, hidden_state=None):
         embedded_text = self.embed(x)
         seq_output, final_hidden_state = self.rnn(embedded_text, hidden_state)
-        logits = self.fc(seq_output)
+        logits = self.fc(self.dropout(seq_output))
         return logits, final_hidden_state
     
 class DeepLSTM(nn.Module):
-    def __init__(self, vocab_size,embed_dim, hidden_dim, num_layers=2, dropout=0.3):
+    def __init__(self, vocab_size, embed_dim, hidden_dim, num_layers=2, dropout=0.3):
         super(DeepLSTM, self).__init__()
-        self.embed = nn.Embedding(num_embeddings=vocab_size,embedding_dim=embed_dim)
+
+        self.embed = nn.Embedding(
+            num_embeddings=vocab_size,
+            embedding_dim=embed_dim
+        )
+
         self.lstm = nn.LSTM(
-            embed_dim=embed_dim,
+            input_size=embed_dim,
             hidden_size=hidden_dim,
             num_layers=num_layers,
             batch_first=True,
             dropout=dropout if num_layers > 1 else 0
-            # only add dropout if  num_layers > 1
-
         )
+
         self.norm = nn.LayerNorm(normalized_shape=hidden_dim)
         self.dropout = nn.Dropout(dropout)
-        self.fc = nn.Linear(hidden_dim,vocab_size)
+        self.fc = nn.Linear(hidden_dim, vocab_size)
 
-    def forward(self, x, hidden_state = None):
+    def forward(self, x, hidden_state=None):
         embedded_text = self.embed(x)
         seq_output, final_hidden_state = self.lstm(embedded_text, hidden_state)
         normalized_output = self.norm(seq_output)
         dropped_out_output = self.dropout(normalized_output)
         logits = self.fc(dropped_out_output)
         return logits, final_hidden_state
-    
 
 class CustomCrossAttention(nn.Module):
     def __init__(self, hidden_dim):
@@ -64,7 +68,7 @@ class CustomCrossAttention(nn.Module):
         if window_size_k > 0:
             mask = torch.triu(mask, diagonal=-window_size_k) # cut off anything older than k steps
         # apply mask, set illegal connections to -infinity so softmax makes them 0
-        scores = attention_scores.masked_fill(~mask, float('inf'))
+        scores = attention_scores.masked_fill(~mask, float('-inf'))
         attention_weights = F.softmax(scores,dim=-1)
         context = torch.bmm(attention_weights, V)
         return context, attention_weights
@@ -78,10 +82,10 @@ class CrossAttentionLSTM(nn.Module):
         self.embedding = nn.Embedding(vocab_size, embed_dim)
         
         self.lstm = nn.LSTM(
-            embed_dim, 
-            hidden_dim, 
-            num_layers=num_layers, 
-            batch_first=True, 
+            input_size=embed_dim,
+            hidden_size=hidden_dim,
+            num_layers=num_layers,
+            batch_first=True,
             dropout=dropout if num_layers > 1 else 0
         )
         
