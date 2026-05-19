@@ -149,6 +149,7 @@ def save_summary(all_results):
             f.write(
                 f"{r['run_name']} | "
                 f"bleu={r['bleu']:.6f} | "
+                f"bert_score_f1={r['bert_score_f1']:.6f} | "
                 f"bigram={r['bigram_overlap']:.4f} | "
                 f"trigram={r['trigram_overlap']:.4f} | "
                 f"distinct1={r['distinct_1']:.4f} | "
@@ -218,6 +219,7 @@ def main():
 
         print(
             f"  bleu={metrics['bleu']:.6f} | "
+            f"bert score={metrics.get('bert_score_f1')} | "
             f"bigram={metrics['bigram_overlap']:.4f} | "
             f"trigram={metrics['trigram_overlap']:.4f} | "
             f"distinct1={metrics['distinct_1']:.4f} | "
