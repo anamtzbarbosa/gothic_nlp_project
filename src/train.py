@@ -171,11 +171,13 @@ def compute_loss(logits, targets, criterion):
 
 
 def train_one_epoch(model, train_loader, criterion, optimizer, device, config, log_path):
+    from tqdm import tqdm
+
     model.train()
     total_loss = 0.0
-    log_every = 100
 
-    for batch_idx, (x, y) in enumerate(train_loader, start=1):
+    pbar = tqdm(train_loader, desc="  Batches", leave=False, unit="batch")
+    for batch_idx, (x, y) in enumerate(pbar, start=1):
         x = x.to(device)
         y = y.to(device)
 
@@ -193,14 +195,7 @@ def train_one_epoch(model, train_loader, criterion, optimizer, device, config, l
         optimizer.step()
 
         total_loss += loss.item()
-
-        if batch_idx % log_every == 0:
-            avg_loss_so_far = total_loss / batch_idx
-            log(
-                f"  Batch {batch_idx}/{len(train_loader)} | "
-                f"Avg Train Loss: {avg_loss_so_far:.4f}",
-                log_path
-            )
+        pbar.set_postfix(loss=f"{total_loss / batch_idx:.4f}")
 
     return total_loss / len(train_loader)
 

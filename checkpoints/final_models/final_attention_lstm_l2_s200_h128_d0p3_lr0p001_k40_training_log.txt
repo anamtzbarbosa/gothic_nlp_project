@@ -1,0 +1,72 @@
+Final training run: final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40
+================================================================================
+Run: final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40
+Config: TrainConfig(tokenized_path='data/corpus_tokenized.pkl', checkpoint_dir='checkpoints/final_models', checkpoint_name='final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40.pt', model_name='attention_lstm', vocab_size=5000, seq_length=200, batch_size=64, embed_dim=128, hidden_dim=128, num_layers=2, dropout=0.3, window_size_k=40, learning_rate=0.001, num_epochs=5, grad_clip=1.0, seed=42, run_generation_eval=False, tokenizer_path='data/gothic_tokenizer.json', generation_num_samples=50, generation_prompt_length=30, generation_temperature=0.8, generation_top_p=0.9, generation_output_path='results/final_models/final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40_generation')
+Epoch 1/5 | Train Loss: 4.8466 | Val Loss: 4.8088 | Val PPL: 122.59 | Time: 387.5s
+Saved best checkpoint to checkpoints/final_models/final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40.pt
+Epoch 2/5 | Train Loss: 4.4899 | Val Loss: 4.8149 | Val PPL: 123.34 | Time: 385.5s
+No improvement for 1 epoch(s)
+Epoch 3/5 | Train Loss: 4.3925 | Val Loss: 4.8604 | Val PPL: 129.08 | Time: 385.0s
+No improvement for 2 epoch(s)
+Early stopping triggered at epoch 3
+Loading best checkpoint before final test...
+
+Final test result:
+{
+  "label": "final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40",
+  "model_name": "attention_lstm",
+  "checkpoint_name": "final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40.pt",
+  "best_epoch": 1,
+  "best_val_loss": 4.808847489958828,
+  "test_loss": 4.754862695595512,
+  "test_ppl": 116.14770447811574,
+  "total_time_seconds": 1182.1203467845917,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 4.846558572046222,
+      "val_loss": 4.808847489958828,
+      "val_ppl": 122.59024957534159,
+      "epoch_time": 387.45699405670166
+    },
+    {
+      "epoch": 2,
+      "train_loss": 4.489923596683937,
+      "val_loss": 4.814942565427243,
+      "val_ppl": 123.33972814215258,
+      "epoch_time": 385.50372290611267
+    },
+    {
+      "epoch": 3,
+      "train_loss": 4.392463435926271,
+      "val_loss": 4.860421864430881,
+      "val_ppl": 129.0786443117775,
+      "epoch_time": 385.0092182159424
+    }
+  ],
+  "config": {
+    "tokenized_path": "data/corpus_tokenized.pkl",
+    "checkpoint_dir": "checkpoints/final_models",
+    "checkpoint_name": "final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40.pt",
+    "model_name": "attention_lstm",
+    "vocab_size": 5000,
+    "seq_length": 200,
+    "batch_size": 64,
+    "embed_dim": 128,
+    "hidden_dim": 128,
+    "num_layers": 2,
+    "dropout": 0.3,
+    "window_size_k": 40,
+    "learning_rate": 0.001,
+    "num_epochs": 5,
+    "grad_clip": 1.0,
+    "seed": 42,
+    "run_generation_eval": false,
+    "tokenizer_path": "data/gothic_tokenizer.json",
+    "generation_num_samples": 50,
+    "generation_prompt_length": 30,
+    "generation_temperature": 0.8,
+    "generation_top_p": 0.9,
+    "generation_output_path": "results/final_models/final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40_generation"
+  }
+}

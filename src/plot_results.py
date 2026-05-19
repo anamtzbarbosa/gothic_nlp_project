@@ -4,21 +4,27 @@ import matplotlib.pyplot as plt
 PLOT_DIR = "results/final_models/plots"
 
 COLORS = {
-    "final_rnn_h128_lr0p0005": "#e74c3c",
-    "final_lstm_l1_h128_d0p3_lr0p0005": "#3498db",
-    "final_lstm_l2_h256_d0p3_lr0p001": "#2ecc71",
-    "final_attention_lstm_l2_h128_d0p3_lr0p001_k20": "#9b59b6",
+    "final_rnn_s100_h128_lr0p0005": "#e74c3c",
+    "final_lstm_l1_s200_h128_d0p3_lr0p0005": "#3498db",
+    "final_lstm_l2_s200_h128_d0p3_lr0p001": "#2ecc71",
+    "final_lstm_l3_s100_h256_d0p3_lr0p001": "#1a8a4a",
+    "final_attention_lstm_l1_s100_h128_d0p3_lr0p0005_k40": "#9b59b6",
+    "final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40": "#6c3483",
+    "final_attention_lstm_l3_s100_h256_d0p3_lr0p0005_k40": "#d35400",
 }
 
 NAMES = {
-    "final_rnn_h128_lr0p0005": "RNN",
-    "final_lstm_l1_h128_d0p3_lr0p0005": "LSTM (1-layer)",
-    "final_lstm_l2_h256_d0p3_lr0p001": "LSTM (2-layer)",
-    "final_attention_lstm_l2_h128_d0p3_lr0p001_k20": "Attention LSTM",
+    "final_rnn_s100_h128_lr0p0005": "RNN",
+    "final_lstm_l1_s200_h128_d0p3_lr0p0005": "LSTM (1-layer)",
+    "final_lstm_l2_s200_h128_d0p3_lr0p001": "LSTM (2-layer)",
+    "final_lstm_l3_s100_h256_d0p3_lr0p001": "LSTM (3-layer)",
+    "final_attention_lstm_l1_s100_h128_d0p3_lr0p0005_k40": "Attention LSTM (1-layer)",
+    "final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40": "Attention LSTM (2-layer)",
+    "final_attention_lstm_l3_s100_h256_d0p3_lr0p0005_k40": "Attention LSTM (3-layer)",
 }
 
 
-def plot_training_curves(history, label):
+def plot_training_curves(history, label, max_epochs=5, patience=2):
     os.makedirs(PLOT_DIR, exist_ok=True)
 
     epochs = [h["epoch"] for h in history]
@@ -26,15 +32,26 @@ def plot_training_curves(history, label):
     val_losses = [h["val_loss"] for h in history]
     val_ppls = [h["val_ppl"] for h in history]
     best_epoch = min(history, key=lambda h: h["val_loss"])["epoch"]
+    early_stopped = len(history) < max_epochs
 
     name = NAMES.get(label, label)
     color = COLORS.get(label, "#333333")
+
+    def _add_early_stop_marker(ax, y_values):
+        if early_stopped:
+            last_epoch = epochs[-1]
+            ax.axvline(x=last_epoch, color="red", linestyle="--", alpha=0.6,
+                       label=f"Early stop (epoch {last_epoch}, patience={patience})")
+            ax.annotate("early stop", xy=(last_epoch, max(y_values)),
+                        xytext=(last_epoch + 0.1, max(y_values)),
+                        fontsize=8, color="red", va="top")
 
     # train vs val loss
     fig, ax = plt.subplots(figsize=(8, 5))
     ax.plot(epochs, train_losses, label="Train loss", color=color, linestyle="--", marker="o")
     ax.plot(epochs, val_losses, label="Val loss", color=color, linestyle="-", marker="s")
     ax.axvline(x=best_epoch, color="gray", linestyle=":", alpha=0.7, label=f"Best epoch ({best_epoch})")
+    _add_early_stop_marker(ax, train_losses + val_losses)
     ax.set_title(f"{name} — Train vs Validation Loss")
     ax.set_xlabel("Epoch")
     ax.set_ylabel("Loss")
@@ -47,6 +64,7 @@ def plot_training_curves(history, label):
     # val perplexity
     fig, ax = plt.subplots(figsize=(8, 5))
     ax.plot(epochs, val_ppls, label="Val perplexity", color=color, linestyle="-", marker="s")
+    _add_early_stop_marker(ax, val_ppls)
     ax.set_title(f"{name} — Validation Perplexity")
     ax.set_xlabel("Epoch")
     ax.set_ylabel("Perplexity")
@@ -63,7 +81,7 @@ def plot_model_comparison(results):
     os.makedirs(PLOT_DIR, exist_ok=True)
 
     # val loss of all models
-    fig, ax = plt.subplots(figsize=(9, 5))
+    fig, ax = plt.subplots(figsize=(10, 5))
     for r in results:
         epochs = [h["epoch"] for h in r["history"]]
         val_losses = [h["val_loss"] for h in r["history"]]
@@ -72,23 +90,24 @@ def plot_model_comparison(results):
     ax.set_title("Validation Loss — All Models")
     ax.set_xlabel("Epoch")
     ax.set_ylabel("Val Loss")
-    ax.legend()
+    ax.legend(fontsize=8)
     ax.grid(True, alpha=0.3)
     fig.tight_layout()
     fig.savefig(os.path.join(PLOT_DIR, "comparison_val_loss.png"), dpi=150)
     plt.close(fig)
 
     # test perplexity bar chart
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(12, 5))
     names = [NAMES.get(r["label"], r["label"]) for r in results]
     ppls = [r["test_ppl"] for r in results]
     colors = [COLORS.get(r["label"], "#333333") for r in results]
     bars = ax.bar(names, ppls, color=colors, width=0.5, edgecolor="white")
     for bar, ppl in zip(bars, ppls):
         ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.5,
-                f"{ppl:.1f}", ha="center", va="bottom", fontsize=10)
+                f"{ppl:.1f}", ha="center", va="bottom", fontsize=9)
     ax.set_title("Test Perplexity — All Models")
     ax.set_ylabel("Perplexity (lower is better)")
+    ax.tick_params(axis="x", rotation=15)
     ax.grid(True, alpha=0.3, axis="y")
     fig.tight_layout()
     fig.savefig(os.path.join(PLOT_DIR, "comparison_test_ppl.png"), dpi=150)

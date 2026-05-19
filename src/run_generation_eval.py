@@ -18,6 +18,17 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 import pickle
 
+try:
+    from langdetect import detect as _langdetect
+    def _is_english(text):
+        try:
+            return _langdetect(text) == "en"
+        except Exception:
+            return True
+except ImportError:
+    def _is_english(text):
+        return True
+
 from dataset import GothicDataset, split_tokens_by_chunks
 from evaluate_generation import compute_all_metrics, generate_continuation
 from generate import load_bpe_tokenizer, load_model_from_checkpoint
@@ -52,11 +63,18 @@ def get_fixed_samples(tokenizer):
     indices = [(2 * i + 1) * n // (2 * NUM_SAMPLES) for i in range(NUM_SAMPLES)]
 
     samples = []
-    for idx in indices:
+    candidate = 0
+    while len(samples) < NUM_SAMPLES and candidate < n:
+        idx = indices[candidate] if candidate < len(indices) else candidate
+        candidate += 1
+
         x, _ = dataset[idx]
         full_sequence = x.tolist()
 
         full_text = tokenizer.decode(full_sequence)
+        if not _is_english(full_text):
+            continue
+
         approx_boundary = len(tokenizer.decode(full_sequence[:PROMPT_LENGTH]))
         split_pos = full_text.find(' ', approx_boundary)
         if split_pos == -1:

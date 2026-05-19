@@ -20,7 +20,7 @@ from train import (
     load_bpe_tokenizer,
 )
 
-from dataset import get_dataloaders
+from dataset import get_dataloaders, save_splits
 from run_generation_eval import get_fixed_samples, TOKENIZER_PATH, NUM_SAMPLES
 from plot_results import plot_training_curves, plot_model_comparison
 
@@ -28,6 +28,7 @@ from plot_results import plot_training_curves, plot_model_comparison
 FINAL_CHECKPOINT_DIR = "checkpoints/final_models"
 FINAL_RESULTS_DIR = "results/final_models"
 EVAL_SAMPLES_PATH = "data/eval_samples.json"
+EARLY_STOPPING_PATIENCE = 2
 
 
 def save_eval_samples():
@@ -50,11 +51,10 @@ def save_eval_samples():
         print(f"  [{i}] {ref_text[:60].replace(chr(10), ' ')}")
 
 
-def final_runs(num_epochs=4):
+def final_runs(num_epochs=5):
     common = {
         "num_epochs": num_epochs,
         "batch_size": 64,
-        "seq_length": 100,
         "embed_dim": 128,
         "vocab_size": 5000,
         "run_generation_eval": False,
@@ -67,55 +67,103 @@ def final_runs(num_epochs=4):
 
     return [
         {
-            "label": "final_rnn_h128_lr0p0005",
+            "label": "final_rnn_s100_h128_lr0p0005",
             "config": TrainConfig(
                 model_name="rnn",
-                checkpoint_name="final_rnn_h128_lr0p0005.pt",
+                checkpoint_name="final_rnn_s100_h128_lr0p0005.pt",
+                seq_length=100,
                 hidden_dim=128,
                 learning_rate=5e-4,
                 dropout=0.0,
                 num_layers=1,
-                generation_output_path=f"{FINAL_RESULTS_DIR}/final_rnn_h128_lr0p0005_generation",
+                generation_output_path=f"{FINAL_RESULTS_DIR}/final_rnn_s100_h128_lr0p0005_generation",
                 **common,
             ),
         },
         {
-            "label": "final_lstm_l1_h128_d0p3_lr0p0005",
+            "label": "final_lstm_l1_s200_h128_d0p3_lr0p0005",
             "config": TrainConfig(
                 model_name="lstm",
-                checkpoint_name="final_lstm_l1_h128_d0p3_lr0p0005.pt",
+                checkpoint_name="final_lstm_l1_s200_h128_d0p3_lr0p0005.pt",
+                seq_length=200,
                 num_layers=1,
                 hidden_dim=128,
                 dropout=0.3,
                 learning_rate=5e-4,
-                generation_output_path=f"{FINAL_RESULTS_DIR}/final_lstm_l1_h128_d0p3_lr0p0005_generation",
+                generation_output_path=f"{FINAL_RESULTS_DIR}/final_lstm_l1_s200_h128_d0p3_lr0p0005_generation",
                 **common,
             ),
         },
         {
-            "label": "final_lstm_l2_h256_d0p3_lr0p001",
+            "label": "final_lstm_l2_s200_h128_d0p3_lr0p001",
             "config": TrainConfig(
                 model_name="lstm",
-                checkpoint_name="final_lstm_l2_h256_d0p3_lr0p001.pt",
-                num_layers=2,
-                hidden_dim=256,
-                dropout=0.3,
-                learning_rate=1e-3,
-                generation_output_path=f"{FINAL_RESULTS_DIR}/final_lstm_l2_h256_d0p3_lr0p001_generation",
-                **common,
-            ),
-        },
-        {
-            "label": "final_attention_lstm_l2_h128_d0p3_lr0p001_k20",
-            "config": TrainConfig(
-                model_name="attention_lstm",
-                checkpoint_name="final_attention_lstm_l2_h128_d0p3_lr0p001_k20.pt",
+                checkpoint_name="final_lstm_l2_s200_h128_d0p3_lr0p001.pt",
+                seq_length=200,
                 num_layers=2,
                 hidden_dim=128,
                 dropout=0.3,
                 learning_rate=1e-3,
-                window_size_k=20,
-                generation_output_path=f"{FINAL_RESULTS_DIR}/final_attention_lstm_l2_h128_d0p3_lr0p001_k20_generation",
+                generation_output_path=f"{FINAL_RESULTS_DIR}/final_lstm_l2_s200_h128_d0p3_lr0p001_generation",
+                **common,
+            ),
+        },
+        {
+            "label": "final_lstm_l3_s100_h256_d0p3_lr0p001",
+            "config": TrainConfig(
+                model_name="lstm",
+                checkpoint_name="final_lstm_l3_s100_h256_d0p3_lr0p001.pt",
+                seq_length=100,
+                num_layers=3,
+                hidden_dim=256,
+                dropout=0.3,
+                learning_rate=1e-3,
+                generation_output_path=f"{FINAL_RESULTS_DIR}/final_lstm_l3_s100_h256_d0p3_lr0p001_generation",
+                **common,
+            ),
+        },
+        {
+            "label": "final_attention_lstm_l1_s100_h128_d0p3_lr0p0005_k40",
+            "config": TrainConfig(
+                model_name="attention_lstm",
+                checkpoint_name="final_attention_lstm_l1_s100_h128_d0p3_lr0p0005_k40.pt",
+                seq_length=100,
+                num_layers=1,
+                hidden_dim=128,
+                dropout=0.3,
+                learning_rate=5e-4,
+                window_size_k=40,
+                generation_output_path=f"{FINAL_RESULTS_DIR}/final_attention_lstm_l1_s100_h128_d0p3_lr0p0005_k40_generation",
+                **common,
+            ),
+        },
+        {
+            "label": "final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40",
+            "config": TrainConfig(
+                model_name="attention_lstm",
+                checkpoint_name="final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40.pt",
+                seq_length=200,
+                num_layers=2,
+                hidden_dim=128,
+                dropout=0.3,
+                learning_rate=1e-3,
+                window_size_k=40,
+                generation_output_path=f"{FINAL_RESULTS_DIR}/final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40_generation",
+                **common,
+            ),
+        },
+        {
+            "label": "final_attention_lstm_l3_s100_h256_d0p3_lr0p0005_k40",
+            "config": TrainConfig(
+                model_name="attention_lstm",
+                checkpoint_name="final_attention_lstm_l3_s100_h256_d0p3_lr0p0005_k40.pt",
+                seq_length=100,
+                num_layers=3,
+                hidden_dim=256,
+                dropout=0.3,
+                learning_rate=5e-4,
+                window_size_k=40,
+                generation_output_path=f"{FINAL_RESULTS_DIR}/final_attention_lstm_l3_s100_h256_d0p3_lr0p0005_k40_generation",
                 **common,
             ),
         },
@@ -155,6 +203,7 @@ def train_one_final_model(run, device):
 
     best_val_loss = float("inf")
     best_epoch = None
+    epochs_without_improvement = 0
     history = []
 
     start_time = time.time()
@@ -203,6 +252,7 @@ def train_one_final_model(run, device):
         if val_loss < best_val_loss:
             best_val_loss = val_loss
             best_epoch = epoch
+            epochs_without_improvement = 0
 
             checkpoint_path = save_checkpoint(
                 model=model,
@@ -213,6 +263,13 @@ def train_one_final_model(run, device):
             )
 
             log(f"Saved best checkpoint to {checkpoint_path}", log_path)
+        else:
+            epochs_without_improvement += 1
+            log(f"No improvement for {epochs_without_improvement} epoch(s)", log_path)
+
+            if epochs_without_improvement >= EARLY_STOPPING_PATIENCE:
+                log(f"Early stopping triggered at epoch {epoch}", log_path)
+                break
 
     log("Loading best checkpoint before final test...", log_path)
     best_checkpoint = load_best_checkpoint(model, config, device)
@@ -286,15 +343,20 @@ def main():
     device = get_device()
     print(f"Using device: {device}")
 
+    print("\nSaving train/val/test splits...")
+    save_splits()
+
     print("\nSaving fixed eval samples before training...")
     save_eval_samples()
 
-    runs = final_runs(num_epochs=4)
+    runs = final_runs(num_epochs=5)
     results = []
 
-    for run in runs:
+    print(f"\nTraining {len(runs)} final models (max 5 epochs, early stopping patience={EARLY_STOPPING_PATIENCE})")
+
+    for i, run in enumerate(runs, start=1):
         print("\n" + "=" * 80)
-        print(f"Starting final run: {run['label']}")
+        print(f"[{i}/{len(runs)}] Starting final run: {run['label']}")
         print("=" * 80)
 
         result = train_one_final_model(run, device)

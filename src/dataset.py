@@ -68,15 +68,20 @@ def get_dataloaders(path, seq_length, batch_size = 64, train_split=0.8):
     test_loader = DataLoader(test_ds, batch_size=batch_size, shuffle=False)
     return train_loader, val_loader, test_loader
 
+def save_splits(tokenized_path="data/corpus_tokenized.pkl", out_dir="data"):
+    import os
+    with open(tokenized_path, "rb") as f:
+        tokens = pickle.load(f)
+
+    train_tokens, val_tokens, test_tokens = split_tokens_by_chunks(tokens)
+
+    os.makedirs(out_dir, exist_ok=True)
+    for name, split in [("train", train_tokens), ("val", val_tokens), ("test", test_tokens)]:
+        path = os.path.join(out_dir, f"{name}_tokens.pkl")
+        with open(path, "wb") as f:
+            pickle.dump(split, f)
+        print(f"Saved {name}: {len(split):,} tokens → {path}")
+
+
 if __name__ == "__main__":
-    path = 'data/corpus_tokenized.pkl'
-    try:
-        train_loader, val_loader, test_loader = get_dataloaders(path, seq_length=100, batch_size=32)
-        print(f"DataLoaders ready")
-
-        print(f"Batches en Train: {len(train_loader)}")
-        print(f"Batches en Val: {len(val_loader)}")
-        print(f"Batches en Test: {len(test_loader)}")
-
-    except:
-        print("Error")
+    save_splits()

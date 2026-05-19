@@ -1,0 +1,10 @@
+Final Model Training Summary
+================================================================================
+
+final_rnn_s100_h128_lr0p0005 | model=rnn | best_epoch=1 | val_loss=5.3137 | test_loss=5.2530 | test_ppl=191.13
+final_lstm_l1_s200_h128_d0p3_lr0p0005 | model=lstm | best_epoch=1 | val_loss=5.0002 | test_loss=4.9473 | test_ppl=140.80
+final_lstm_l2_s200_h128_d0p3_lr0p001 | model=lstm | best_epoch=2 | val_loss=4.8240 | test_loss=4.7708 | test_ppl=118.02
+final_lstm_l3_s100_h256_d0p3_lr0p001 | model=lstm | best_epoch=1 | val_loss=4.7342 | test_loss=4.6812 | test_ppl=107.90
+final_attention_lstm_l1_s100_h128_d0p3_lr0p0005_k40 | model=attention_lstm | best_epoch=1 | val_loss=5.0466 | test_loss=4.9963 | test_ppl=147.86
+final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40 | model=attention_lstm | best_epoch=1 | val_loss=4.8088 | test_loss=4.7549 | test_ppl=116.15
+final_attention_lstm_l3_s100_h256_d0p3_lr0p0005_k40 | model=attention_lstm | best_epoch=1 | val_loss=4.8095 | test_loss=4.7552 | test_ppl=116.19
