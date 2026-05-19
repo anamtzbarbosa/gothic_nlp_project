@@ -5,6 +5,7 @@ import os
 import re
 from collections import Counter
 from pathlib import Path
+from bert_score import score as bert_score_compute
 
 import torch
 
@@ -252,6 +253,14 @@ def compute_all_metrics(generated_texts, reference_texts):
 
     bleu = compute_corpus_bleu(generated_texts, reference_texts)
 
+    P, R, F1 = bert_score_compute(
+    generated_texts, 
+    reference_texts, 
+    model_type= "bert-base-multilingual-cased",
+    rescale_with_baseline=False)
+
+    mean_bert_score_f1 = F1.mean().item()
+
     bigram_overlaps = []
     trigram_overlaps = []
     repetition_rates = []
@@ -278,6 +287,7 @@ def compute_all_metrics(generated_texts, reference_texts):
     metrics = {
         "num_samples": len(generated_texts),
         "bleu": bleu,
+        "bert_score_f1": mean_bert_score_f1,
         "bigram_overlap": average(bigram_overlaps),
         "trigram_overlap": average(trigram_overlaps),
         "distinct_1": compute_distinct_n(generated_texts, 1),
