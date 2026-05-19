@@ -1,9 +1,0 @@
-Model Comparison Summary
-================================================================================
-
-label | model | layers | K | best_val_loss | test_loss | test_ppl | time_seconds
---------------------------------------------------------------------------------
-vanilla_rnn | rnn | 2 | None | 7.0247 | 7.1970 | 1335.43 | 1368.1
-lstm_1_layer | lstm | 1 | None | 6.3145 | 6.4754 | 648.99 | 1349.1
-lstm_2_layer | lstm | 2 | None | 5.7789 | 5.9050 | 366.88 | 1710.1
-attention_lstm_k10 | attention_lstm | 2 | 10 | 5.9089 | 6.0448 | 421.89 | 2651.0

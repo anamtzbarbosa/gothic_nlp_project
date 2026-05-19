@@ -22,14 +22,12 @@ from train import (
 RESULT_DIR = "results/grid_search_v2"
 CHECKPOINT_DIR = "checkpoints/grid_search_v2"
 
-# Fixed at best values from first grid search
+# Fixed across all runs
 FIXED = {
     "num_epochs": 1,
     "batch_size": 64,
     "embed_dim": 128,
     "vocab_size": 5000,
-    "dropout": 0.3,
-    "learning_rate": 5e-4,
 }
 
 
@@ -78,35 +76,43 @@ def create_grid():
 
     for seq_length in [100, 200]:
         for hidden_dim in [128, 256]:
+            for lr in [5e-4, 1e-3]:
 
-            # RNN — num_layers fixed at 1
-            add_run(runs, model_name="rnn", params={
-                **FIXED,
-                "seq_length": seq_length,
-                "hidden_dim": hidden_dim,
-                "num_layers": 1,
-                "dropout": 0.0,
-            })
-
-            # LSTM — search num_layers 1, 2, 3
-            for num_layers in [1, 2, 3]:
-                add_run(runs, model_name="lstm", params={
+                # RNN — num_layers fixed at 1, no dropout
+                add_run(runs, model_name="rnn", params={
                     **FIXED,
                     "seq_length": seq_length,
                     "hidden_dim": hidden_dim,
-                    "num_layers": num_layers,
+                    "num_layers": 1,
+                    "dropout": 0.0,
+                    "learning_rate": lr,
                 })
 
-            # Attention LSTM — search num_layers 1, 2, 3 and window_size_k scaled with seq_length
-            for num_layers in [1, 2, 3]:
-                for k in [20, 40]:
-                    add_run(runs, model_name="attention_lstm", params={
-                        **FIXED,
-                        "seq_length": seq_length,
-                        "hidden_dim": hidden_dim,
-                        "num_layers": num_layers,
-                        "window_size_k": k,
-                    })
+                # LSTM — search num_layers 1, 2, 3 and dropout
+                for num_layers in [1, 2, 3]:
+                    for dropout in [0.2, 0.3]:
+                        add_run(runs, model_name="lstm", params={
+                            **FIXED,
+                            "seq_length": seq_length,
+                            "hidden_dim": hidden_dim,
+                            "num_layers": num_layers,
+                            "dropout": dropout,
+                            "learning_rate": lr,
+                        })
+
+                # Attention LSTM — search num_layers 1, 2, 3, dropout, and window_size_k
+                for num_layers in [1, 2, 3]:
+                    for dropout in [0.2, 0.3]:
+                        for k in [20, 40]:
+                            add_run(runs, model_name="attention_lstm", params={
+                                **FIXED,
+                                "seq_length": seq_length,
+                                "hidden_dim": hidden_dim,
+                                "num_layers": num_layers,
+                                "dropout": dropout,
+                                "learning_rate": lr,
+                                "window_size_k": k,
+                            })
 
     return runs
 
@@ -280,8 +286,8 @@ def save_results_table(results):
     with open(txt_path, "w", encoding="utf-8") as f:
         f.write("Grid Search V2 Summary\n")
         f.write("=" * 80 + "\n\n")
-        f.write("Searched: seq_length, num_layers, hidden_dim, window_size_k\n")
-        f.write("Fixed: dropout=0.3, lr=5e-4, embed_dim=128\n")
+        f.write("Searched: seq_length, num_layers, hidden_dim, learning_rate, dropout, window_size_k\n")
+        f.write("Fixed: embed_dim=128, batch_size=64, vocab_size=5000\n")
         f.write("Sorted by best validation loss\n")
         f.write("-" * 80 + "\n")
         for result in ranked:
@@ -309,9 +315,11 @@ def main():
     print(f"  seq_length    : [100, 200]")
     print(f"  num_layers    : [1, 2, 3]")
     print(f"  hidden_dim    : [128, 256]")
-    print(f"  window_size_k : [20, 40]  (attention LSTM only)")
+    print(f"  learning_rate : [5e-4, 1e-3]")
+    print(f"  dropout       : [0.2, 0.3]  (LSTM and Attention LSTM only)")
+    print(f"  window_size_k : [20, 40]    (Attention LSTM only)")
     print(f"\nFixed:")
-    print(f"  dropout=0.3, lr=5e-4, embed_dim=128, batch_size=64")
+    print(f"  embed_dim=128, batch_size=64, vocab_size=5000")
 
     for i, run in enumerate(runs, start=1):
         print("\n" + "=" * 80)

@@ -20,9 +20,9 @@ gothic_nlp_project/
 
 | File | Description |
 |------|-------------|
-| `corpus_clean.txt` | Cleaned raw text (~763K words from Gothic novels) |
+| `corpus_clean.txt` | Cleaned raw text (~1.27M words, expanded with 4 new Gothic novels) |
 | `gothic_tokenizer.json` | Trained BPE tokenizer (vocab size 5000) |
-| `corpus_tokenized.pkl` | Full corpus encoded as BPE token IDs (~984K tokens) |
+| `corpus_tokenized.pkl` | Full corpus encoded as BPE token IDs (~1.67M tokens) |
 | `eval_samples.json` | 20 fixed test samples used for generation evaluation |
 
 ---
@@ -37,7 +37,7 @@ gothic_nlp_project/
 | `models.py` | Model definitions: VanillaRNN, DeepLSTM, CrossAttentionLSTM |
 | `train.py` | Training loop, evaluation, checkpointing |
 | `generate.py` | Text generation with temperature and nucleus sampling |
-| `grid_search.py` | Hyperparameter grid search across all model types |
+| `grid_search_v2.py` | Hyperparameter grid search (152 runs, expanded corpus) |
 | `train_final_models.py` | Train the 4 best models found from grid search |
 | `run_generation_eval.py` | Evaluate all grid search checkpoints on fixed test samples |
 | `evaluate_generation.py` | Generation metrics: BLEU, bigram/trigram overlap, distinct-n, spelling |
@@ -69,11 +69,11 @@ The 4 final models:
 
 ```
 results/
-├── grid_search/          # Grid search outputs
-│   ├── summary.txt       # All 44 runs ranked by val loss (start here)
+├── grid_search_v2/       # Grid search results (152 runs, expanded corpus)
+│   ├── summary.txt       # All runs ranked by val loss (start here)
 │   ├── all_results.json  # Full results in JSON
 │   ├── all_results.csv   # Full results in CSV
-│   └── *.log             # Per-run training logs
+│   └── new_grid_logs.txt # Raw Colab output (checkpoints weren't saved — ran on Colab and runtime disconnected)
 │
 ├── final_models/         # Final training outputs
 │   ├── final_training_summary.txt   # Best val loss + test PPL for each model
@@ -90,19 +90,20 @@ results/
 
 ## Grid Search
 
-We ran **44 runs** in total across 4 model types (RNN, LSTM 1-layer, LSTM 2-layer, Attention LSTM), each trained for 1 epoch. The following hyperparameters were searched:
+We ran **152 runs** (`grid_search_v2.py`) on the expanded corpus (~1.67M tokens). We searched:
 
-| Parameter | Values searched |
-|-----------|----------------|
+| Parameter | Values |
+| --------- | ------ |
+| `seq_length` | 100, 200 |
+| `num_layers` | 1, 2, 3 |
 | `hidden_dim` | 128, 256 |
-| `num_layers` | 1, 2 |
 | `learning_rate` | 5e-4, 1e-3 |
 | `dropout` | 0.2, 0.3 |
-| `window_size_k` | 5, 10, 20 (Attention LSTM only) |
+| `window_size_k` | 20, 40 (Attention LSTM only) |
 
-Fixed across all runs: `embed_dim=128`, `seq_length=100`, `batch_size=64`, `vocab_size=5000`.
+> Note: the second grid search ran on Colab and the runtime disconnected before checkpoints could be saved. The results were recovered from the raw Colab output logs (`results/new_grid_logs.txt`) — we don't need the checkpoints since we just use the results to pick the best config for final training.
 
-The best config per model type was selected by **validation loss** and used to train the final models for 4 epochs. See `results/grid_search/summary.txt` for the full ranking.
+See `results/grid_search_v2/summary.txt` for the full ranking.
 
 ---
 
