@@ -1,0 +1,86 @@
+[
+  {
+    "run_name": "final_lstm_l2_s200_h128_d0p3_lr0p001",
+    "num_samples": 20,
+    "bleu": 3.82498105068295e-05,
+    "bert_score_f1": 0.6406954526901245,
+    "bigram_overlap": 0.01348863393927191,
+    "trigram_overlap": 0.0010416666666666667,
+    "distinct_1": 0.38833181403828626,
+    "distinct_2": 0.8913649025069638,
+    "trigram_repetition_rate": 0.004222084751005256,
+    "spelling_accuracy": null
+  },
+  {
+    "run_name": "final_attention_lstm_l3_s100_h256_d0p3_lr0p0005_k40",
+    "num_samples": 20,
+    "bleu": 3.530388680181893e-05,
+    "bert_score_f1": 0.6399310827255249,
+    "bigram_overlap": 0.01173329438468803,
+    "trigram_overlap": 0.0006849315068493151,
+    "distinct_1": 0.37854609929078015,
+    "distinct_2": 0.8610108303249098,
+    "trigram_repetition_rate": 0.004886073411148872,
+    "spelling_accuracy": null
+  },
+  {
+    "run_name": "final_attention_lstm_l1_s100_h128_d0p3_lr0p0005_k40",
+    "num_samples": 20,
+    "bleu": 1.9452318382929343e-07,
+    "bert_score_f1": 0.6392481923103333,
+    "bigram_overlap": 0.008422886170791333,
+    "trigram_overlap": 0.0,
+    "distinct_1": 0.4168987929433612,
+    "distinct_2": 0.9053926206244087,
+    "trigram_repetition_rate": 0.001781250000000001,
+    "spelling_accuracy": null
+  },
+  {
+    "run_name": "final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40",
+    "num_samples": 20,
+    "bleu": 1.9314067230544606e-07,
+    "bert_score_f1": 0.6423746943473816,
+    "bigram_overlap": 0.010541801025932971,
+    "trigram_overlap": 0.0,
+    "distinct_1": 0.3827054794520548,
+    "distinct_2": 0.8850174216027874,
+    "trigram_repetition_rate": 0.0016312997347480095,
+    "spelling_accuracy": null
+  },
+  {
+    "run_name": "final_lstm_l3_s100_h256_d0p3_lr0p001",
+    "num_samples": 20,
+    "bleu": 1.9000524529741712e-07,
+    "bert_score_f1": 0.6394305229187012,
+    "bigram_overlap": 0.009001802807197595,
+    "trigram_overlap": 0.0,
+    "distinct_1": 0.39161462979482603,
+    "distinct_2": 0.8928247048138056,
+    "trigram_repetition_rate": 0.0007462686567164201,
+    "spelling_accuracy": null
+  },
+  {
+    "run_name": "final_lstm_l1_s200_h128_d0p3_lr0p0005",
+    "num_samples": 20,
+    "bleu": 1.8220696757494982e-07,
+    "bert_score_f1": 0.6418412327766418,
+    "bigram_overlap": 0.0060506273603859245,
+    "trigram_overlap": 0.0,
+    "distinct_1": 0.4358974358974359,
+    "distinct_2": 0.9215876089060987,
+    "trigram_repetition_rate": 0.0,
+    "spelling_accuracy": null
+  },
+  {
+    "run_name": "final_rnn_s100_h128_lr0p0005",
+    "num_samples": 20,
+    "bleu": 1.7523629334145338e-07,
+    "bert_score_f1": 0.6297838091850281,
+    "bigram_overlap": 0.006743859828996281,
+    "trigram_overlap": 0.0,
+    "distinct_1": 0.41858325666973323,
+    "distinct_2": 0.8969072164948454,
+    "trigram_repetition_rate": 0.001867865790383949,
+    "spelling_accuracy": null
+  }
+]

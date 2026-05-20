@@ -1,0 +1,41 @@
+import json
+import os
+
+summary_path = os.path.join("results", "generation_eval", "summary.json")
+
+with open(summary_path, "r", encoding="utf-8") as f:
+    results = json.load(f)
+
+# Definimos el formato exacto para la cabecera y las filas por igual
+row_template = "{:<30} | {:<8} | {:<8} | {:<7} | {:<7} | {:<7} | {:<7} | {:<9}"
+
+header = row_template.format(
+    "Model / Run Name", "BLEU", "BERT F1", "Bigram", "Trigram", "Dist-1", "Dist-2", "Spell Acc"
+)
+
+print(header)
+print("-" * len(header))
+
+for r in results:
+    # Si el nombre del modelo es más largo de 30 caracteres, lo corta para que no mueva la tabla
+    name = r.get("run_name", "Unknown")
+    if len(name) > 30:
+        name = name[:27] + "..."
+        
+    bleu = f"{r.get('bleu', 0.0):.4f}"
+    
+    bert = r.get("bert_score_f1", "--")
+    bert_str = f"{bert:.4f}" if isinstance(bert, (int, float)) else "--"
+    
+    bigram = f"{r.get('bigram_overlap', 0.0):.4f}"
+    trigram = f"{r.get('trigram_overlap', 0.0):.4f}"
+    d1 = f"{r.get('distinct_1', 0.0):.4f}"
+    d2 = f"{r.get('distinct_2', 0.0):.4f}"
+    
+    spell = r.get("spelling_accuracy", "--")
+    spell_str = f"{spell:.4f}" if isinstance(spell, (int, float)) else "--"
+    
+    # Imprime usando exactamente la misma plantilla que la cabecera
+    print(row_template.format(name, bleu, bert_str, bigram, trigram, d1, d2, spell_str))
+
+print("-" * len(header) + "\n")

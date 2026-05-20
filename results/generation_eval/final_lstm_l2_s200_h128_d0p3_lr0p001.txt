@@ -1,0 +1,177 @@
+Generation Evaluation: final_lstm_l2_s200_h128_d0p3_lr0p001
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 3.82498105068295e-05
+bert_score_f1: 0.6406954526901245
+bigram_overlap: 0.01348863393927191
+trigram_overlap: 0.0010416666666666667
+distinct_1: 0.38833181403828626
+distinct_2: 0.8913649025069638
+trigram_repetition_rate: 0.004222084751005256
+spelling_accuracy: None
+
+Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+. What is she not always in your words: she's quite delightful." "Oh, yes, I never saw, and always knows that you do. But it is never seen before; especially is so earnestly of that than I knew to keep your behaviour, and who is likely to describe him." "There is nothing to you." "Is there 
+
+Reference:
+him." "Served me!" replied Isabella; "do you term it serving me, to wound my father, and almost occasion his death? Though it is but since yesterday that I am blessed with knowing a parent, I hope Matilda does not think I am such a stranger to filial tenderness as not to resent the boldness of
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+s of useless conviction would not require her and discussion: now I was brought in your bonnet, and by making your work. The chevalier had a few days literally in these precisely small charms, under this general impression that my friends will make it exploit that I was bur
+
+Reference:
+was kept free from water by means of eight pumps, worked by steam power, and in operation, without interruption, day and night, from March second to October thirteenth. The floor of the cellar was covered with a layer of concrete, then with two coats of cement,
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+ audibly. "No; I could see you and cannot be found. I do not believe a new part of a man." "You must see it!" he said, "there is no means but with inferiorous marriage." "Yes," cried, in a low voice, "and when you not think me, because you have understood, and you are loving things that you are a
+
+Reference:
+the first to rise after the pause. He knelt down before her and taking her hand in his said solemnly:  "I'm only a rough fellow, who hasn't, perhaps, lived as a man should to win such a distinction, but I swear to you by all that I hold sacred and dear that, should the time ever come, I shall not 
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+ so sometimes a regular guide, and infernal expense in the night before he began in these weeks we cannot keep her unwilling to deceive us much, now, I shall be so unexpected than this, but there is nothing to disset the marriage of their reason, and be it, that will also be to do it. What was my 
+
+Reference:
+meant to honour with your hand-thus you meet him, who has loved you-suffered for you?-Yet what do I say? Pardon me, pardon me, mademoiselle St. Aubert, I know not what I utter. I have no longer any claim upon your remembrance-I have forfeited every pretension to your esteem, your love
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+ their beautiful birds, there was no one, and its fishing-place, did not let his doom and taught me by horror and others, and everybody of the day, that he went on all he had done in the world to sympathise with him. There was a genial mortals for weeks. It seemed so soon after, got in; but
+
+Reference:
+the execution would have a greater effect upon the mind of the People. Ambrosio rather dead than alive was left alone in his dungeon. The moment in which this terrible decree was pronounced had nearly proved that of his dissolution. He looked forward to the morrow with despair, and his terrors increased with the approach of midnight
+--------------------------------------------------------------------------------
+
+Example 6
+Generated:
+ their hours' complete nature was, except from me, for I was likely to destroy a human being." "Oh! that is all, I like, Harry." "Do you not forget me insensible of acting?" He considered what were his white words there his looks having been in his heart, indignation; but it was still more inclined to 
+
+Reference:
+and the green hills want the crown of distant white Alps which always attend on the piny mountains of my native country. We visited the wondrous cave and the little cabinets of natural history, where the curiosities are disposed in the same manner as in the collections at Servox and Chamounix. The 
+--------------------------------------------------------------------------------
+
+Example 7
+Generated:
+. I would have known it at such a provisions immediately in my own chamber, and it did not contempt the justice of being ready to prevail with his. I would like to comfort him, I could not be made: that should my wife's voyage, I felt it. Mrs. Reed had passed out; and it was settled with the childhood and the master
+
+Reference:
+of passion to account, beforehand, might, by exerting her will, manage to control herself tolerably, even while under their influence; and I did not wish to 'frighten' her husband, as she said, and multiply his annoyances for the purpose of serving her selfishness. There
+--------------------------------------------------------------------------------
+
+Example 8
+Generated:
+ tea-an-hour to wait from you by myself." "He must not forget that at this moment, is not an important Carmilla is dead." "Yes, madam?" "Harry, I go. I have not not been exerted." As she said, he opened the door opened the window and drew near, Annette's footstep, endeavoured to 
+
+Reference:
+hoary head again thy yoke shall bear: Remembering that my fairest years By Thee were marked with sighs and tears, I think thy friendship false, and shun the guileful snare. "I have not yet forgot the pains I felt, while bound in Julia's 
+--------------------------------------------------------------------------------
+
+Example 9
+Generated:
+-I took a boy so little of teeth. I had, forgot his voice was well, and seized her eyes into a place of true. I began last night my brain, he remembered the full council which had been rejected. In a few moments, its youthful depths of this assailed silence of the worst had so 
+
+Reference:
+Giry, drawing herself up, recited the letter with touching eloquence: MADAM: 1825. Mlle. Menetrier, leader of the ballet, became Marquise de Cussy. 1832. Mlle. Marie Taglioni, a dancer, 
+--------------------------------------------------------------------------------
+
+Example 10
+Generated:
+, I believe you do not know how to prove all the patience, my Highness will never do what did I find my heart, and you do not know how to live in Georgiana, I shall be quite pleased to go on to your own room to your future conduct to your displeasure." "As you let me see your door!" exclaimed Emily, still tempor
+
+Reference:
+I have forgot." Valancourt struggled to assume a composed air. "Farewell, my love!" said he, in a voice of solemn tenderness-"trust me we shall meet again-meet for each other-meet to part no more!" His voice faltered, but, recovering it, he proceeded in a firmer tone. "You know 
+--------------------------------------------------------------------------------
+
+Example 11
+Generated:
+ wish to let me in Frederic? How can he guess, Miss Eyre: not right, Miss Eyre?' 'Because I in any way when you shake yourself. And I'm going to say, your haunting you? Well, you'll be not a little for a minute,' she answered. Catherine did not know what to obtain to 
+
+Reference:
+you've not done right, have you, now? I saw but listen, and you shall hear how I found you out; and Ellen, who is in league with you, and yet pretended to pity me so, when I kept hoping, and was always disappointed about Linton's coming back!' She gave a faithful account of her excursion and its consequ
+--------------------------------------------------------------------------------
+
+Example 12
+Generated:
+, like the whole world, that if he meant to get on the sake and all the means of a friend-beaten of tears, so full of face, and spread the Fedistic, bewildered, and suddenly cried the room to the same simple-and blooms of gay; in that kindness of my own food was so sha
+
+Reference:
+... on my forehead, mine don't look, daroga! and they went off together... Christine had stopped crying ... I alone cried ... Daroga, daroga, if Christine keeps her promise, she will come back soon! ..." The Persian asked him no questions. He was quite reassured as to the fate of Raoul 
+--------------------------------------------------------------------------------
+
+Example 13
+Generated:
+ their own several scream, in the whole points of roasted of the various senses, seemed to abandon a sky: I was not sympathy, and the win-mondest will cut off his History and jumped into religious gates: walk in-hints of Women
+
+Reference:
+as the evening sun threw his slanting rays athwart their broken surface. Emily followed the course of the stream, under the shades, that overhung its grassy margin. On the opposite banks, the pastures were animated with herds of cattle of a beautiful cream-colour; and, beyond, were gro
+--------------------------------------------------------------------------------
+
+Example 14
+Generated:
+ and which she appeared to be the Chevalier Valancourt, returned to the window and entered the room; but she now distinguished, her eyes, she saw the city, and now came over her, saying; but she was not almost ungranted, that they seemed to increase, she saw the gas-chair, and saw him, with more perpetual sha
+
+Reference:
+servants, who had been sent to prepare the château, waiting to receive their lord. Lady Blanche now perceived, that the edifice was not built entirely in the gothic style, but that it had additions of a more modern date; the large and gloomy hall, however, into which she now entered, was entirely 
+--------------------------------------------------------------------------------
+
+Example 15
+Generated:
+?" "This is so prejudice." "But when you really see it very strange? My poor soul! Then you see, I know you've done what you did not very fond of you? ... Well, I must say it can go on." "Do you feel the feelings," said he; "and you can not have long a sa
+
+Reference:
+arose the next morning before the sun. The young woman arranged the cottage and prepared the food, and the youth departed after the first meal. "This day was passed in the same routine as that which preceded it. The young man was constantly employed out of doors, and the girl in various laborious occupations within. The old 
+--------------------------------------------------------------------------------
+
+Example 16
+Generated:
+ations of my pupils, it seemed only to myself." "But what may happen? Why do you not go with you?" "No, no, is it come here." "I wish I feel that you have done her to be so well? It is still so dear, because we are immense: it is your own study." And I could speak with him. "Like yourself," said 
+
+Reference:
+of Mitchell, Sons, & Candy from a directory at the Berkeley, I was soon at their office in Sackville Street. The gentleman who saw me was particularly suave in manner, but uncommunicative in equal proportion. Having once told me that the Pic
+--------------------------------------------------------------------------------
+
+Example 17
+Generated:
+ taken her in the Great Brentard, not a little her distress, and seized her passions, and in others. This was the better than mentioned the name of Superior, and the Debienne, The Claude. As the Bell, the Marquis was dead, that He only hesitated whether to hear the reception of him
+
+Reference:
+been terrified while at Supper by the appearance of the Bleeding Nun, as the Ghost is called in the Castle: 'Tis from her account that I drew this sketch, and you may be certain that Cunegonda was not omitted. There She is! I shall never forget what a passion She was in, and how ugly She 
+--------------------------------------------------------------------------------
+
+Example 18
+Generated:
+ a new gay, and to accept him more more composed of some; and it was always shown in the same way. I rose to lead her. Mr. Earnshaw was indifferent. It seems to me in time to disgrace it again, and his book in Heathcliff's sister's sends. I would have the child warned him and is as 
+
+Reference:
+to this, I believe; and, in a fortnight more, I got a long letter, which I considered odd, coming from the pen of a bride just out of the honeymoon. I'll read it: for I keep it yet. Any relic of the dead is precious, if they were valued living. DEAR ELLEN, it begin
+--------------------------------------------------------------------------------
+
+Example 19
+Generated:
+ and voice, the moment, Mons. Du Pont, ready to perceive the Duke de Medina, and begged that she had nothing engaged the plunder, that of a little person who would certainly have been the contempt of the latter and interesting embarrassment. "Rosario! Jacques, the familiarity, consisting of 
+
+Reference:
+indignation, of which Montoni soon made her sensible, by commanding her to quit his presence. Then, forgetting her resentment, and impressed only by compassion for the piteous state of her aunt, dying without succour, she submitted to humble herself to Montoni, and to adopt every persuasive means, that might ind
+--------------------------------------------------------------------------------
+
+Example 20
+Generated:
+." Here she saw some steps for a moment with a single place, for I saw him whispered together, and they were suddenly in the gardens of stational and for three weeks we must not seek it even as I love to my own room, as if we should get him before me and wakened. They had so cunning as though she saw the app
+
+Reference:
+her. Do not fail! "ARTHUR." Telegram, Arthur Holmwood to Seward. "1 September. "Am summoned to see my father, who is worse. Am writing. Write me fully by to-night's post to Ring. Wire me if necessary." Letter from 
+--------------------------------------------------------------------------------
