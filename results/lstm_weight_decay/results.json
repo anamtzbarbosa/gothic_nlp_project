@@ -1,0 +1,71 @@
+[
+  {
+    "label": "lstm_wd_l3_s100_h256_d0p3_lr0p001",
+    "model_name": "lstm",
+    "checkpoint_name": "lstm_wd_l3_s100_h256_d0p3_lr0p001.pt",
+    "best_epoch": 2,
+    "best_val_loss": 4.324990009380765,
+    "test_loss": 4.432849739470982,
+    "test_ppl": 84.17094071000867,
+    "total_time_seconds": 2922.617462158203,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 4.622230705148775,
+        "val_loss": 4.344058845584617,
+        "val_ppl": 77.01951610009885,
+        "lr": 0.001,
+        "epoch_time": 720.5076336860657
+      },
+      {
+        "epoch": 2,
+        "train_loss": 4.338634245976706,
+        "val_loss": 4.324990009380765,
+        "val_ppl": 75.56475791723152,
+        "lr": 0.001,
+        "epoch_time": 719.2079634666443
+      },
+      {
+        "epoch": 3,
+        "train_loss": 4.272989063658754,
+        "val_loss": 4.328803125291997,
+        "val_ppl": 75.85344514711984,
+        "lr": 0.001,
+        "epoch_time": 718.6330425739288
+      },
+      {
+        "epoch": 4,
+        "train_loss": 4.237964765609982,
+        "val_loss": 4.333410397460841,
+        "val_ppl": 76.2037289205761,
+        "lr": 0.001,
+        "epoch_time": 718.3802614212036
+      }
+    ],
+    "config": {
+      "tokenized_path": "data/corpus_tokenized.pkl",
+      "checkpoint_dir": "checkpoints/lstm_weight_decay",
+      "checkpoint_name": "lstm_wd_l3_s100_h256_d0p3_lr0p001.pt",
+      "model_name": "lstm",
+      "vocab_size": 5000,
+      "seq_length": 100,
+      "batch_size": 64,
+      "embed_dim": 128,
+      "hidden_dim": 256,
+      "num_layers": 3,
+      "dropout": 0.3,
+      "window_size_k": 5,
+      "learning_rate": 0.001,
+      "num_epochs": 10,
+      "grad_clip": 1.0,
+      "seed": 42,
+      "run_generation_eval": false,
+      "tokenizer_path": "data/gothic_tokenizer.json",
+      "generation_num_samples": 50,
+      "generation_prompt_length": 30,
+      "generation_temperature": 0.8,
+      "generation_top_p": 0.9,
+      "generation_output_path": "results/lstm_weight_decay/lstm_wd_l3_generation"
+    }
+  }
+]
