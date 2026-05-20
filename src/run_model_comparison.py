@@ -112,8 +112,7 @@ def train_and_test_one_run(run, device):
 
     model = build_model(config).to(device)
     loss_fn = nn.CrossEntropyLoss()
-    optimizer = Adam(model.parameters(), lr=config.learning_rate)
-
+    optimizer = Adam(model.parameters(), lr=config.learning_rate, weight_decay=1e-4)
     best_epoch = None
     best_val_loss = float("inf")
     last_train_loss = None
