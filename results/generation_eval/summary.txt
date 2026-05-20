@@ -1,0 +1,15 @@
+Generation Evaluation Summary
+================================================================================
+Samples per model: 20 (same fixed samples for all models)
+Prompt length: 30 tokens
+Generated length: 70 tokens
+
+Sorted by BLEU (descending)
+--------------------------------------------------------------------------------
+final_lstm_l2_s200_h128_d0p3_lr0p001 | bleu=0.000038 | bert_score_f1=0.640695 | bigram=0.0135 | trigram=0.0010 | distinct1=0.3883 | distinct2=0.8914 | spell=None
+final_attention_lstm_l3_s100_h256_d0p3_lr0p0005_k40 | bleu=0.000035 | bert_score_f1=0.639931 | bigram=0.0117 | trigram=0.0007 | distinct1=0.3785 | distinct2=0.8610 | spell=None
+final_attention_lstm_l1_s100_h128_d0p3_lr0p0005_k40 | bleu=0.000000 | bert_score_f1=0.639248 | bigram=0.0084 | trigram=0.0000 | distinct1=0.4169 | distinct2=0.9054 | spell=None
+final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40 | bleu=0.000000 | bert_score_f1=0.642375 | bigram=0.0105 | trigram=0.0000 | distinct1=0.3827 | distinct2=0.8850 | spell=None
+final_lstm_l3_s100_h256_d0p3_lr0p001 | bleu=0.000000 | bert_score_f1=0.639431 | bigram=0.0090 | trigram=0.0000 | distinct1=0.3916 | distinct2=0.8928 | spell=None
+final_lstm_l1_s200_h128_d0p3_lr0p0005 | bleu=0.000000 | bert_score_f1=0.641841 | bigram=0.0061 | trigram=0.0000 | distinct1=0.4359 | distinct2=0.9216 | spell=None
+final_rnn_s100_h128_lr0p0005 | bleu=0.000000 | bert_score_f1=0.629784 | bigram=0.0067 | trigram=0.0000 | distinct1=0.4186 | distinct2=0.8969 | spell=None

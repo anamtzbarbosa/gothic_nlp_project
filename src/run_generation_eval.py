@@ -33,7 +33,7 @@ from dataset import GothicDataset, split_tokens_by_chunks
 from evaluate_generation import compute_all_metrics, generate_continuation
 from generate import load_bpe_tokenizer, load_model_from_checkpoint
 
-CHECKPOINT_DIR = "checkpoints/grid_search"
+CHECKPOINT_DIR = "checkpoints/final_models"
 OUTPUT_DIR = "results/generation_eval"
 TOKENIZER_PATH = "data/gothic_tokenizer.json"
 TOKENIZED_PATH = "data/corpus_tokenized.pkl"
@@ -41,7 +41,7 @@ TOKENIZED_PATH = "data/corpus_tokenized.pkl"
 NUM_SAMPLES = 20
 PROMPT_LENGTH = 30
 SEQ_LENGTH = 100
-TEMPERATURE = 0.5
+TEMPERATURE = 0.7
 TOP_P = 0.9
 
 
@@ -172,7 +172,7 @@ def save_summary(all_results):
                 f"trigram={r['trigram_overlap']:.4f} | "
                 f"distinct1={r['distinct_1']:.4f} | "
                 f"distinct2={r['distinct_2']:.4f} | "
-                f"spell={r['spelling_accuracy']:.4f}\n"
+                f"spell={r['spelling_accuracy']:}\n"
             )
 
     with open(json_path, "w", encoding="utf-8") as f:
@@ -235,6 +235,8 @@ def main():
             }
         )
 
+        spell_val = metrics['spelling_accuracy']
+        spell_str = f"{spell_val:.4f}" if spell_val is not None else "--"
         print(
             f"  bleu={metrics['bleu']:.6f} | "
             f"bert score={metrics.get('bert_score_f1')} | "
@@ -242,7 +244,7 @@ def main():
             f"trigram={metrics['trigram_overlap']:.4f} | "
             f"distinct1={metrics['distinct_1']:.4f} | "
             f"distinct2={metrics['distinct_2']:.4f} | "
-            f"spell={metrics['spelling_accuracy']:.4f}"
+            f"spell={spell_str}"
         )
 
     save_summary(all_results)
