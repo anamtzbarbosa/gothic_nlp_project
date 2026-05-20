@@ -13,10 +13,10 @@ def load_and_clean_txt(folder_data):
         total_files += len(files)
         for file in files:
             ruta = os.path.join(folder, file)
-            with open(ruta, 'r', encoding='utf-8') as f:
+            with open(ruta, 'r', encoding='utf-8-sig') as f:
                 text = f.read()
 
-            text = re.sub(r'(?i)chapter [0-9ivxlc]+[.]*', '', text)
+            text = re.sub(r'(?i)chapter [0-9ivxlc]+[\.\-]*[^\n]*', '', text)
             # Carmilla-style: standalone Roman numeral on its own line (e.g. I., XIV.)
             text = re.sub(r'(?m)^\s*[IVXLC]+\.\s*$', '', text)
             text = re.sub(r'([* ])+([*])', '', text)
@@ -61,7 +61,7 @@ def inspect_pattern(text, pattern, name, max_examples=10):
 
 
 if __name__ == "__main__":
-    folders = ['data/archive', 'data/new books']
+    folders = ['data/archive', 'data/new books', 'data/new_books_2']
     corpus = load_and_clean_txt(folders)
     with open('data/corpus_clean.txt', 'w', encoding='utf-8') as f:
         f.write(corpus)
