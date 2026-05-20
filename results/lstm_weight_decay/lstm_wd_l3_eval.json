@@ -1,0 +1,37 @@
+{
+  "metrics": {
+    "num_samples": 20,
+    "bleu": 1.3937402587513853e-07,
+    "bert_score_f1": 0.6398941874504089,
+    "bigram_overlap": 0.0025736481033091204,
+    "trigram_overlap": 0.0,
+    "distinct_1": 0.3035398230088496,
+    "distinct_2": 0.8117117117117117,
+    "trigram_repetition_rate": 0.0018089960886571055,
+    "spelling_accuracy": 0.9384338352649246
+  },
+  "generated_examples": [
+    "-Do you think, dear Maud, be your daughter?' I cried. 'Are you not come to this house with me and wish it in me? You will not lie on your book, Miss Linton, you must be sure.' 'Oh, Nelly, I'll not say it, sir,' I replied, 'and I never heard of the thing I have to say",
+    "\" she asked, 'and not my darling. And it has no fear of death.' He shook his head, and said  'Are you not?' I exclaimed, 'and I love you.' And he smiled eagerly, as if he wished, 'I look at that very day; but when you know it all, you'll never come and go on; and I w",
+    "? What has become of you in life? We have had no objection, Jane, what does she do with me? Think you now; but you must have all sympathising to-day; and you think I believe I didn't mean to bring you a sudden dread of death, and one of your hopes will never take my suspicions.' ",
+    "n't you? What had he done? Ah, dear, oh, God! I may tell you now that I should like to have come to the house again, and I shall not love her! Oh, what's this means? How long did she live? What do you mean?' I inquired. 'Hush! no one will do! You'd not believe her! ",
+    "?' I continued. 'You must not speak to you.' 'I believe you are going away!' he replied, while I began to reflect on the subject, and dissipated, and my eyes wandered over the dusky foliage of its clouds, and a slight expression of thickness seemed to make the air. The voice was now before I quitted Bartram",
+    "?\" I felt quite sensible of the melancholy voice. Even the gate was coming back to the window and made him up to the table and held me in my arms at the door, and looked out to the moonlight shadows of the wind. I could see what it might have been to do so. The baron was unable to reach his head and seized the ",
+    "?\" He seemed unable to laugh at him. \"It is an old man who has not been wrong in one day.\" \"You know, Harry, you know nothing, but what is it?\" \"The attendants have got a certain plain damage. You would, of course, not fear, of course, are you afraid of your own f",
+    " and then, Ellen, I don't want to know how to do anything of your wishes.' 'But I dare say you said you were a very kindness in my mind; but I mean to go to school and Joseph,' she said, 'and my husband's name, Miss; I have not been seen, and I am afraid he would not come in till the very ",
+    " merely he always would have been happy? I did sit down to the window, and I was running downstairs; but he wanted no more good, and would not take the way for me if I couldn't be so close to me: even to me, so I never saw him in the room; that there was a very curious dejection, no",
+    "'s the matter? He's very good.' The girl grew quietly, and tea. 'You don't want it,' I said, 'and we shall have to come in at least.' Then he began to move. 'Will you come down, Miss, I won't do it?' 'I never know that,' he answered, with a little haughty laugh. '"
+  ],
+  "reference_examples": [
+    "Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par bleu! ma ch\u00e8re, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, ",
+    "Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par bleu! ma ch\u00e8re, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young ",
+    "do you persecute me? What good can you gain by my ruin?' 'Rueen! Par bleu! ma ch\u00e8re, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young J",
+    "you persecute me? What good can you gain by my ruin?' 'Rueen! Par bleu! ma ch\u00e8re, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jol",
+    "me? What good can you gain by my ruin?' 'Rueen! Par bleu! ma ch\u00e8re, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolk",
+    "me? What good can you gain by my ruin?' 'Rueen! Par bleu! ma ch\u00e8re, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, ",
+    "me? What good can you gain by my ruin?' 'Rueen! Par bleu! ma ch\u00e8re, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, star",
+    "What good can you gain by my ruin?' 'Rueen! Par bleu! ma ch\u00e8re, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up",
+    "What good can you gain by my ruin?' 'Rueen! Par bleu! ma ch\u00e8re, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the ",
+    "good can you gain by my ruin?' 'Rueen! Par bleu! ma ch\u00e8re, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window"
+  ]
+}
