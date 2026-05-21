@@ -1,13 +1,15 @@
 import csv
 import json
 import os
+import pickle
 import time
 from dataclasses import asdict
 
 import torch.nn as nn
 from torch.optim import Adam
+from torch.utils.data import DataLoader
 
-from dataset import get_dataloaders
+from dataset import GothicDataset
 from train import (
     TrainConfig,
     set_seed,
@@ -33,6 +35,16 @@ def make_dir(path):
     os.makedirs(path, exist_ok=True)
 
 
+def get_dataloaders_from_splits(seq_length, batch_size):
+    loaders = []
+    for name in ["train", "val", "test"]:
+        with open(f"data/{name}_tokens.pkl", "rb") as f:
+            tokens = pickle.load(f)
+        ds = GothicDataset(tokens, seq_length)
+        loaders.append(DataLoader(ds, batch_size=batch_size, shuffle=(name == "train")))
+    return loaders[0], loaders[1], loaders[2]
+
+
 def print_and_save(message, path):
     print(message)
     with open(path, "a", encoding="utf-8") as f:
@@ -50,7 +62,7 @@ def make_run_name(params):
 
 def create_grid():
     runs = []
-    for batch_size in [32, 64, 128]:
+    for batch_size in [32, 64]:
         for seq_length in [100, 200]:
             for hidden_dim in [128, 256]:
                 for lr in [5e-4, 1e-3]:
@@ -90,8 +102,7 @@ def run_one_experiment(run, device):
 
     print_and_save(f"run={run_name}", log_file)
 
-    train_loader, val_loader, test_loader = get_dataloaders(
-        path=config.tokenized_path,
+    train_loader, val_loader, test_loader = get_dataloaders_from_splits(
         seq_length=config.seq_length,
         batch_size=config.batch_size,
     )
@@ -156,13 +167,28 @@ def save_results(results):
     print(f"Saved results to {RESULT_DIR}/")
 
 
+def parse_args():
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--seq-length", type=int, choices=[100, 200], default=None,
+                        help="Fix seq_length to 100 or 200. If not set, runs both.")
+    return parser.parse_args()
+
+
 def main():
+    args = parse_args()
     device = get_device()
     runs = create_grid()
 
+    if args.seq_length is not None:
+        runs = [r for r in runs if r["config"].seq_length == args.seq_length]
+        global RESULT_DIR
+        RESULT_DIR = f"results/grid_search_v3_lstm_s{args.seq_length}"
+
     print(f"Using device: {device}")
     print(f"Total runs: {len(runs)}")
-    print(f"Searching: batch_size=[32,64,128], seq_length=[100,200], hidden_dim=[128,256]")
+    print(f"Seq length: {args.seq_length if args.seq_length else '[100, 200]'}")
+    print(f"Searching: batch_size=[32,64], hidden_dim=[128,256]")
     print(f"           num_layers=[1,2,3], dropout=[0.2,0.3], learning_rate=[5e-4,1e-3]")
     print(f"Fixed: embed_dim=128, vocab_size=5000\n")
 
