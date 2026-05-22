@@ -17,7 +17,8 @@ from tokenizer import GothicBPE
 import json
 
 from dataset import get_dataloaders
-from models import VanillaRNN, DeepLSTM, CrossAttentionLSTM
+# UPDATED IMPORTS: Now importing both attention models
+from models import VanillaRNN, DeepLSTM, SelfAttentionLSTM, CrossAttentionLSTM
 
 
 @dataclass
@@ -27,7 +28,7 @@ class TrainConfig:
     checkpoint_dir: str = "checkpoints"
     checkpoint_name: str = "best_lstm.pt"
 
-    # Model choice: "rnn", "lstm", or "attention_lstm"
+    # Model choice: "rnn", "lstm", "self_attention_lstm", or "cross_attention_lstm"
     model_name: str = "lstm"
 
     # Data
@@ -47,6 +48,10 @@ class TrainConfig:
     num_epochs: int = 10
     grad_clip: float = 1.0
     seed: int = 42
+    
+    # Overfit Prevention (As discussed earlier)
+    patience: int = 3
+    weight_decay: float = 1e-4
 
     # Generation evaluation
     run_generation_eval: bool = True
@@ -94,7 +99,19 @@ def build_model(config: TrainConfig):
             dropout=config.dropout,
         )
 
-    if config.model_name == "attention_lstm":
+    # NEW: Self Attention Model
+    if config.model_name == "self_attention_lstm":
+        return SelfAttentionLSTM(
+            vocab_size=config.vocab_size,
+            embed_dim=config.embed_dim,
+            hidden_dim=config.hidden_dim,
+            num_layers=config.num_layers,
+            dropout=config.dropout,
+            window_size_k=config.window_size_k,
+        )
+
+    # NEW: Cross Attention Model
+    if config.model_name == "cross_attention_lstm":
         return CrossAttentionLSTM(
             vocab_size=config.vocab_size,
             embed_dim=config.embed_dim,
@@ -126,8 +143,6 @@ def run_generation_evaluation_after_training(model, test_loader, config, device,
     log("\nRunning generation evaluation on test set...", log_path)
 
     tokenizer = load_bpe_tokenizer(config.tokenizer_path)
-
-    # model_config = asdict(config)
 
     generated_texts, reference_texts = collect_generation_pairs(
         model=model,
@@ -175,6 +190,11 @@ def train_one_epoch(model, train_loader, criterion, optimizer, device, config, l
 
     model.train()
     total_loss = 0.0
+    
+    # Initialize states before the batch loop
+    hidden = None
+    memory = None
+    is_cross_attention = type(model).__name__ == "CrossAttentionLSTM"
 
     pbar = tqdm(train_loader, desc="  Batches", leave=False, unit="batch")
     for batch_idx, (x, y) in enumerate(pbar, start=1):
@@ -183,8 +203,23 @@ def train_one_epoch(model, train_loader, criterion, optimizer, device, config, l
 
         optimizer.zero_grad()
 
-        output = model(x)
-        logits = output[0]
+        # Route the data based on model type
+        if is_cross_attention:
+            logits, hidden, _, memory = model(x, hidden, memory)
+            # Detach to prevent gradients from flowing endlessly backward through time
+            if isinstance(hidden, tuple):
+                hidden = tuple(h.detach() for h in hidden)
+            else:
+                hidden = hidden.detach()
+            if memory is not None:
+                memory = memory.detach()
+        else:
+            output = model(x, hidden)
+            logits, hidden = output[0], output[1]
+            if isinstance(hidden, tuple):
+                hidden = tuple(h.detach() for h in hidden)
+            else:
+                hidden = hidden.detach()
 
         loss = compute_loss(logits, y, criterion)
         loss.backward()
@@ -203,14 +238,21 @@ def train_one_epoch(model, train_loader, criterion, optimizer, device, config, l
 def evaluate(model, data_loader, criterion, device):
     model.eval()
     total_loss = 0.0
+    
+    hidden = None
+    memory = None
+    is_cross_attention = type(model).__name__ == "CrossAttentionLSTM"
 
     with torch.no_grad():
         for x, y in data_loader:
             x = x.to(device)
             y = y.to(device)
 
-            output = model(x)
-            logits = output[0]
+            if is_cross_attention:
+                logits, hidden, _, memory = model(x, hidden, memory)
+            else:
+                output = model(x, hidden)
+                logits, hidden = output[0], output[1]
 
             loss = compute_loss(logits, y, criterion)
             total_loss += loss.item()
@@ -298,9 +340,11 @@ def main():
     model = build_model(config).to(device)
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = Adam(model.parameters(), lr=config.learning_rate)
+    # Included weight decay directly in the baseline optimizer!
+    optimizer = Adam(model.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay)
 
     best_val_loss = float("inf")
+    patience_counter = 0
     history = []
 
     for epoch in range(1, config.num_epochs + 1):
@@ -346,6 +390,7 @@ def main():
 
         if val_loss < best_val_loss:
             best_val_loss = val_loss
+            patience_counter = 0
             checkpoint_path = save_checkpoint(
                 model=model,
                 optimizer=optimizer,
@@ -354,6 +399,13 @@ def main():
                 epoch=epoch,
             )
             log(f"Saved best model to {checkpoint_path}", log_path)
+        else:
+            patience_counter += 1
+            log(f"No improvement. Patience: {patience_counter}/{config.patience}", log_path)
+
+        if patience_counter >= config.patience:
+            log(f"\nEarly stopping triggered! Validation loss hasn't improved in {config.patience} epochs.", log_path)
+            break
 
     log("Loading best checkpoint before final test...", log_path)
     best_checkpoint = load_best_checkpoint(model, config, device)

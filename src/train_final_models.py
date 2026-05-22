@@ -125,7 +125,7 @@ def final_runs(num_epochs=5):
         {
             "label": "final_attention_lstm_l1_s100_h128_d0p3_lr0p0005_k40",
             "config": TrainConfig(
-                model_name="attention_lstm",
+                model_name="self_attention_lstm",
                 checkpoint_name="final_attention_lstm_l1_s100_h128_d0p3_lr0p0005_k40.pt",
                 seq_length=100,
                 num_layers=1,
@@ -140,7 +140,7 @@ def final_runs(num_epochs=5):
         {
             "label": "final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40",
             "config": TrainConfig(
-                model_name="attention_lstm",
+                model_name="self_attention_lstm",
                 checkpoint_name="final_attention_lstm_l2_s200_h128_d0p3_lr0p001_k40.pt",
                 seq_length=200,
                 num_layers=2,
@@ -155,7 +155,7 @@ def final_runs(num_epochs=5):
         {
             "label": "final_attention_lstm_l3_s100_h256_d0p3_lr0p0005_k40",
             "config": TrainConfig(
-                model_name="attention_lstm",
+                model_name="self_attention_lstm",
                 checkpoint_name="final_attention_lstm_l3_s100_h256_d0p3_lr0p0005_k40.pt",
                 seq_length=100,
                 num_layers=3,
@@ -199,7 +199,7 @@ def train_one_final_model(run, device):
     model = build_model(config).to(device)
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = Adam(model.parameters(), lr=config.learning_rate)
+    optimizer = Adam(model.parameters(), lr=config.learning_rate, weight_decay=1e-4)
 
     best_val_loss = float("inf")
     best_epoch = None
