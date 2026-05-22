@@ -4,7 +4,7 @@ import time
 from dataclasses import asdict
 
 import torch.nn as nn
-from torch.optim import Adam
+from torch.optim import AdamW
 
 from train import (
     TrainConfig,
@@ -160,7 +160,7 @@ def train_one_final_model(run, device):
     model = build_model(config).to(device)
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = Adam(model.parameters(), lr=config.learning_rate)
+    optimizer = AdamW(model.parameters(), lr=config.learning_rate, weight_decay=1e-4)
 
     best_val_loss = float("inf")
     best_epoch = None
