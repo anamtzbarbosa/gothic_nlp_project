@@ -1,0 +1,57 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 20
+bleu: 1.3937402587513853e-07
+bert_score_f1: 0.6398941874504089
+bigram_overlap: 0.0025736481033091204
+trigram_overlap: 0.0
+distinct_1: 0.3035398230088496
+distinct_2: 0.8117117117117117
+trigram_repetition_rate: 0.0018089960886571055
+spelling_accuracy: 0.9384338352649246
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Generated:
+-Do you think, dear Maud, be your daughter?' I cried. 'Are you not come to this house with me and wish it in me? You will not lie on your book, Miss Linton, you must be sure.' 'Oh, Nelly, I'll not say it, sir,' I replied, 'and I never heard of the thing I have to say
+
+Reference:
+Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, 
+--------------------------------------------------------------------------------
+
+Example 2
+Generated:
+" she asked, 'and not my darling. And it has no fear of death.' He shook his head, and said  'Are you not?' I exclaimed, 'and I love you.' And he smiled eagerly, as if he wished, 'I look at that very day; but when you know it all, you'll never come and go on; and I w
+
+Reference:
+Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young 
+--------------------------------------------------------------------------------
+
+Example 3
+Generated:
+? What has become of you in life? We have had no objection, Jane, what does she do with me? Think you now; but you must have all sympathising to-day; and you think I believe I didn't mean to bring you a sudden dread of death, and one of your hopes will never take my suspicions.' 
+
+Reference:
+do you persecute me? What good can you gain by my ruin?' 'Rueen! Par bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young J
+--------------------------------------------------------------------------------
+
+Example 4
+Generated:
+n't you? What had he done? Ah, dear, oh, God! I may tell you now that I should like to have come to the house again, and I shall not love her! Oh, what's this means? How long did she live? What do you mean?' I inquired. 'Hush! no one will do! You'd not believe her! 
+
+Reference:
+you persecute me? What good can you gain by my ruin?' 'Rueen! Par bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jol
+--------------------------------------------------------------------------------
+
+Example 5
+Generated:
+?' I continued. 'You must not speak to you.' 'I believe you are going away!' he replied, while I began to reflect on the subject, and dissipated, and my eyes wandered over the dusky foliage of its clouds, and a slight expression of thickness seemed to make the air. The voice was now before I quitted Bartram
+
+Reference:
+me? What good can you gain by my ruin?' 'Rueen! Par bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolk
+--------------------------------------------------------------------------------

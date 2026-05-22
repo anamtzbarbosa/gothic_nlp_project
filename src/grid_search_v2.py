@@ -19,13 +19,12 @@ from train import (
     load_best_checkpoint,
 )
 
-RESULT_DIR = "results/grid_search_v2"
-CHECKPOINT_DIR = "checkpoints/grid_search_v2"
+RESULT_DIR = "results/grid_search_v3"
+CHECKPOINT_DIR = "checkpoints/grid_search_v3"
 
 # Fixed across all runs
 FIXED = {
     "num_epochs": 1,
-    "batch_size": 64,
     "embed_dim": 128,
     "vocab_size": 5000,
 }
@@ -74,45 +73,50 @@ def add_run(runs, model_name, params):
 def create_grid():
     runs = []
 
-    for seq_length in [100, 200]:
-        for hidden_dim in [128, 256]:
-            for lr in [5e-4, 1e-3]:
+    for batch_size in [32, 64, 128]:
+        for seq_length in [100, 200]:
+            for hidden_dim in [128, 256]:
+                for lr in [5e-4, 1e-3]:
 
-                # RNN — num_layers fixed at 1, no dropout
-                add_run(runs, model_name="rnn", params={
-                    **FIXED,
-                    "seq_length": seq_length,
-                    "hidden_dim": hidden_dim,
-                    "num_layers": 1,
-                    "dropout": 0.0,
-                    "learning_rate": lr,
-                })
-
-                # LSTM — search num_layers 1, 2, 3 and dropout
-                for num_layers in [1, 2, 3]:
-                    for dropout in [0.2, 0.3]:
-                        add_run(runs, model_name="lstm", params={
+                    # RNN — num_layers fixed at 1, dropout searched alongside other models
+                    for dropout in [0.0, 0.2, 0.3]:
+                        add_run(runs, model_name="rnn", params={
                             **FIXED,
+                            "batch_size": batch_size,
                             "seq_length": seq_length,
                             "hidden_dim": hidden_dim,
-                            "num_layers": num_layers,
+                            "num_layers": 1,
                             "dropout": dropout,
                             "learning_rate": lr,
                         })
 
-                # Attention LSTM — search num_layers 1, 2, 3, dropout, and window_size_k
-                for num_layers in [1, 2, 3]:
-                    for dropout in [0.2, 0.3]:
-                        for k in [20, 40]:
-                            add_run(runs, model_name="attention_lstm", params={
+                    # LSTM — search num_layers 1, 2, 3 and dropout
+                    for num_layers in [1, 2, 3]:
+                        for dropout in [0.2, 0.3]:
+                            add_run(runs, model_name="lstm", params={
                                 **FIXED,
+                                "batch_size": batch_size,
                                 "seq_length": seq_length,
                                 "hidden_dim": hidden_dim,
                                 "num_layers": num_layers,
                                 "dropout": dropout,
                                 "learning_rate": lr,
-                                "window_size_k": k,
                             })
+
+                    # Attention LSTM — commented out for v3 (RNN + LSTM only)
+                    # for num_layers in [1, 2, 3]:
+                    #     for dropout in [0.2, 0.3]:
+                    #         for k in [20, 40]:
+                    #             add_run(runs, model_name="attention_lstm", params={
+                    #                 **FIXED,
+                    #                 "batch_size": batch_size,
+                    #                 "seq_length": seq_length,
+                    #                 "hidden_dim": hidden_dim,
+                    #                 "num_layers": num_layers,
+                    #                 "dropout": dropout,
+                    #                 "learning_rate": lr,
+                    #                 "window_size_k": k,
+                    #             })
 
     return runs
 
@@ -312,14 +316,15 @@ def main():
     print(f"Using device: {device}")
     print(f"Total runs: {len(runs)}")
     print(f"\nSearching:")
+    print(f"  batch_size    : [32, 64, 128]")
     print(f"  seq_length    : [100, 200]")
     print(f"  num_layers    : [1, 2, 3]")
     print(f"  hidden_dim    : [128, 256]")
     print(f"  learning_rate : [5e-4, 1e-3]")
-    print(f"  dropout       : [0.2, 0.3]  (LSTM and Attention LSTM only)")
+    print(f"  dropout       : [0.0, 0.2, 0.3] (RNN) / [0.2, 0.3] (LSTM, Attention LSTM)")
     print(f"  window_size_k : [20, 40]    (Attention LSTM only)")
     print(f"\nFixed:")
-    print(f"  embed_dim=128, batch_size=64, vocab_size=5000")
+    print(f"  embed_dim=128, vocab_size=5000")
 
     for i, run in enumerate(runs, start=1):
         print("\n" + "=" * 80)

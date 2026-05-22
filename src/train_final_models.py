@@ -199,7 +199,8 @@ def train_one_final_model(run, device):
     model = build_model(config).to(device)
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = Adam(model.parameters(), lr=config.learning_rate, weight_decay=1e-4)
+    optimizer = Adam(model.parameters(), lr=config.learning_rate)
+
     best_val_loss = float("inf")
     best_epoch = None
     epochs_without_improvement = 0
