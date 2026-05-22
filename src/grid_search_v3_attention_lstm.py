@@ -28,6 +28,8 @@ FIXED = {
     "num_epochs": 1,
     "embed_dim": 128,
     "vocab_size": 5000,
+    "dropout": 0.3,          # Locked to 0.3
+    "learning_rate": 1e-3,   # Locked to 1e-3 (Adam default)
 }
 
 
@@ -54,8 +56,7 @@ def print_and_save(message, path):
 def make_run_name(params):
     parts = ["attn"]
     short = {"batch_size": "B", "seq_length": "S", "hidden_dim": "H",
-             "num_layers": "L", "dropout": "D", "learning_rate": "LR",
-             "window_size_k": "K"}
+             "num_layers": "L", "window_size_k": "K"}
     for key, val in params.items():
         parts.append(f"{short.get(key, key)}{str(val).replace('.', 'p')}")
     return "_".join(parts)
@@ -63,31 +64,28 @@ def make_run_name(params):
 
 def create_grid():
     runs = []
+    # Simplified grid: 2 * 2 * 2 * 2 * 2 = 32 runs instead of 192
     for batch_size in [32, 64]:
         for seq_length in [100, 200]:
             for hidden_dim in [128, 256]:
-                for lr in [5e-4, 1e-3]:
-                    for num_layers in [1, 2, 3]:
-                        for dropout in [0.2, 0.3]:
-                            for k in [20, 40]:
-                                params = {
-                                    "batch_size": batch_size,
-                                    "seq_length": seq_length,
-                                    "hidden_dim": hidden_dim,
-                                    "learning_rate": lr,
-                                    "num_layers": num_layers,
-                                    "dropout": dropout,
-                                    "window_size_k": k,
-                                }
-                                run_name = make_run_name(params)
-                                config = TrainConfig(
-                                    model_name="attention_lstm",
-                                    checkpoint_dir=CHECKPOINT_DIR,
-                                    checkpoint_name=f"{run_name}.pt",
-                                    **params,
-                                    **FIXED,
-                                )
-                                runs.append({"name": run_name, "config": config})
+                for num_layers in [1, 2]: # Removed 3-layer
+                    for k in [20, 40]:
+                        params = {
+                            "batch_size": batch_size,
+                            "seq_length": seq_length,
+                            "hidden_dim": hidden_dim,
+                            "num_layers": num_layers,
+                            "window_size_k": k,
+                        }
+                        run_name = make_run_name(params)
+                        config = TrainConfig(
+                            model_name="cross_attention_lstm",
+                            checkpoint_dir=CHECKPOINT_DIR,
+                            checkpoint_name=f"{run_name}.pt",
+                            **params,
+                            **FIXED,
+                        )
+                        runs.append({"name": run_name, "config": config})
     return runs
 
 
@@ -100,7 +98,7 @@ def run_one_experiment(run, device):
     log_file = os.path.join(RESULT_DIR, f"{run_name}.log")
 
     with open(log_file, "w", encoding="utf-8") as f:
-        f.write(f"Grid Search V3 Attention LSTM: {run_name}\n")
+        f.write(f"Grid Search V3 (Optimized) Attention LSTM: {run_name}\n")
         f.write("=" * 80 + "\n")
 
     print_and_save(f"run={run_name}", log_file)
@@ -112,7 +110,8 @@ def run_one_experiment(run, device):
 
     model = build_model(config).to(device)
     loss_fn = nn.CrossEntropyLoss()
-    optimizer = Adam(model.parameters(), lr=config.learning_rate)
+    # Weight decay included for stability
+    optimizer = Adam(model.parameters(), lr=config.learning_rate, weight_decay=1e-4)
     started = time.time()
 
     train_loss = train_one_epoch(model, train_loader, loss_fn, optimizer, device, config, log_file)
@@ -124,17 +123,13 @@ def run_one_experiment(run, device):
 
     result = {
         "run_name": run_name,
-        "model_name": "attention_lstm",
+        "model_name": "cross_attention_lstm",
         "batch_size": config.batch_size,
         "seq_length": config.seq_length,
         "hidden_dim": config.hidden_dim,
         "num_layers": config.num_layers,
-        "dropout": config.dropout,
-        "learning_rate": config.learning_rate,
         "window_size_k": config.window_size_k,
         "val_loss": val_loss,
-        "val_ppl": val_ppl,
-        "test_loss": test_loss,
         "test_ppl": test_ppl,
         "total_time_seconds": time.time() - started,
     }
@@ -145,77 +140,36 @@ def run_one_experiment(run, device):
 
 def save_results(results):
     make_dir(RESULT_DIR)
+    # Simplified columns for the new grid
     columns = ["run_name", "model_name", "batch_size", "seq_length", "hidden_dim",
-               "num_layers", "dropout", "learning_rate", "window_size_k",
-               "val_loss", "val_ppl", "test_loss", "test_ppl", "total_time_seconds"]
+               "num_layers", "window_size_k", "val_loss", "test_ppl", "total_time_seconds"]
 
     with open(os.path.join(RESULT_DIR, "all_results.json"), "w") as f:
         json.dump(results, f, indent=2)
 
-    with open(os.path.join(RESULT_DIR, "all_results.csv"), "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=columns)
-        writer.writeheader()
-        for r in results:
-            writer.writerow({col: r.get(col) for col in columns})
-
     ranked = sorted(results, key=lambda r: r["val_loss"])
     with open(os.path.join(RESULT_DIR, "summary.txt"), "w") as f:
-        f.write("Grid Search V3 — Attention LSTM\n")
-        f.write("=" * 80 + "\n")
-        f.write("Searching: batch_size, seq_length, hidden_dim, num_layers, dropout, learning_rate, window_size_k\n")
-        f.write("Fixed: embed_dim=128, vocab_size=5000\n")
+        f.write("Grid Search V3 — Optimized\n")
         f.write("-" * 80 + "\n")
         for r in ranked:
             f.write(f"{r['run_name']} | val={r['val_loss']:.4f} | test_ppl={r['test_ppl']:.2f}\n")
 
     print(f"Saved results to {RESULT_DIR}/")
 
-
-def parse_args():
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--seq-length", type=int, choices=[100, 200], default=None,
-                        help="Fix seq_length to 100 or 200. If not set, runs both.")
-    parser.add_argument("--batch-size", type=int, choices=[32, 64], default=None,
-                        help="Fix batch_size to 32 or 64. If not set, runs both.")
-    return parser.parse_args()
-
-
 def main():
-    args = parse_args()
     device = get_device()
     runs = create_grid()
 
-    suffix = ""
-    if args.seq_length is not None:
-        runs = [r for r in runs if r["config"].seq_length == args.seq_length]
-        suffix += f"_s{args.seq_length}"
-    if args.batch_size is not None:
-        runs = [r for r in runs if r["config"].batch_size == args.batch_size]
-        suffix += f"_b{args.batch_size}"
-    if suffix:
-        global RESULT_DIR
-        RESULT_DIR = f"results/grid_search_v3_attention_lstm{suffix}"
-
     print(f"Using device: {device}")
-    print(f"Total runs: {len(runs)}")
-    print(f"Seq length: {args.seq_length if args.seq_length else '[100, 200]'}")
-    print(f"Batch size: {args.batch_size if args.batch_size else '[32, 64]'}")
-    print(f"Searching: batch_size=[32,64], hidden_dim=[128,256]")
-    print(f"           num_layers=[1,2,3], dropout=[0.2,0.3], learning_rate=[5e-4,1e-3], window_size_k=[20,40]")
-    print(f"Fixed: embed_dim=128, vocab_size=5000\n")
+    print(f"Optimized search: 32 total runs.")
+    print(f"Fixed: dropout=0.3, lr=1e-3, embed_dim=128, vocab=5000\n")
 
     results = []
     for i, run in enumerate(runs, start=1):
-        print("\n" + "=" * 80)
         print(f"[{i}/{len(runs)}] {run['name']}")
-        print("=" * 80)
         result = run_one_experiment(run, device)
         results.append(result)
         save_results(results)
-
-    save_results(results)
-
 
 if __name__ == "__main__":
     main()
