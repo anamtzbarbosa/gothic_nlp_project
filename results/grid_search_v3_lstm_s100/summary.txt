@@ -1,0 +1,35 @@
+Grid Search V3 — LSTM
+================================================================================
+Searching: batch_size, seq_length, hidden_dim, num_layers, dropout, learning_rate
+Fixed: embed_dim=128, vocab_size=5000
+--------------------------------------------------------------------------------
+lstm_B32_S100_H256_LR0p001_L3_D0p2 | val=4.3220 | test_ppl=84.48
+lstm_B32_S100_H256_LR0p001_L3_D0p3 | val=4.3357 | test_ppl=84.98
+lstm_B32_S100_H256_LR0p0005_L3_D0p2 | val=4.3400 | test_ppl=85.86
+lstm_B32_S100_H256_LR0p0005_L3_D0p3 | val=4.3625 | test_ppl=87.00
+lstm_B32_S100_H256_LR0p001_L2_D0p3 | val=4.3703 | test_ppl=88.00
+lstm_B32_S100_H256_LR0p0005_L2_D0p3 | val=4.3887 | test_ppl=89.73
+lstm_B32_S100_H256_LR0p001_L2_D0p2 | val=4.4186 | test_ppl=93.38
+lstm_B32_S100_H256_LR0p0005_L2_D0p2 | val=4.4237 | test_ppl=93.85
+lstm_B32_S100_H128_LR0p001_L3_D0p2 | val=4.5243 | test_ppl=101.52
+lstm_B32_S100_H128_LR0p001_L2_D0p2 | val=4.5459 | test_ppl=104.05
+lstm_B32_S100_H128_LR0p0005_L3_D0p2 | val=4.5628 | test_ppl=105.20
+lstm_B32_S100_H128_LR0p0005_L2_D0p2 | val=4.5789 | test_ppl=107.29
+lstm_B32_S100_H256_LR0p0005_L1_D0p3 | val=4.5907 | test_ppl=110.01
+lstm_B64_S100_H128_LR0p0005_L3_D0p2 | val=4.5931 | test_ppl=108.69
+lstm_B32_S100_H128_LR0p001_L2_D0p3 | val=4.5953 | test_ppl=108.85
+lstm_B64_S100_H128_LR0p0005_L2_D0p2 | val=4.6082 | test_ppl=110.59
+lstm_B32_S100_H256_LR0p001_L1_D0p3 | val=4.6230 | test_ppl=114.31
+lstm_B32_S100_H128_LR0p0005_L2_D0p3 | val=4.6344 | test_ppl=112.88
+lstm_B32_S100_H128_LR0p001_L3_D0p3 | val=4.6352 | test_ppl=112.57
+lstm_B32_S100_H128_LR0p001_L1_D0p3 | val=4.6473 | test_ppl=114.81
+lstm_B32_S100_H128_LR0p001_L1_D0p2 | val=4.6570 | test_ppl=116.07
+lstm_B32_S100_H256_LR0p0005_L1_D0p2 | val=4.6586 | test_ppl=118.85
+lstm_B32_S100_H128_LR0p0005_L1_D0p2 | val=4.6626 | test_ppl=116.02
+lstm_B32_S100_H128_LR0p0005_L1_D0p3 | val=4.6679 | test_ppl=116.61
+lstm_B32_S100_H128_LR0p0005_L3_D0p3 | val=4.6706 | test_ppl=116.81
+lstm_B64_S100_H128_LR0p0005_L2_D0p3 | val=4.6711 | test_ppl=117.00
+lstm_B64_S100_H128_LR0p0005_L1_D0p2 | val=4.6820 | test_ppl=118.78
+lstm_B64_S100_H128_LR0p0005_L1_D0p3 | val=4.6980 | test_ppl=119.75
+lstm_B64_S100_H128_LR0p0005_L3_D0p3 | val=4.7045 | test_ppl=120.59
+lstm_B32_S100_H256_LR0p001_L1_D0p2 | val=4.7096 | test_ppl=125.83
