@@ -13,9 +13,49 @@ from dataset import GothicDataset
 from train import get_device, set_seed, evaluate
 
 
+#  Multi-head self-attention (from scratch) 
+
+class CustomMultiHeadAttention(nn.Module):
+    def __init__(self, hidden_dim, num_heads=4, dropout=0.0):
+        super().__init__()
+        assert hidden_dim % num_heads == 0
+
+        self.hidden_dim = hidden_dim
+        self.num_heads = num_heads
+        self.head_dim = hidden_dim // num_heads
+        self.scale = self.head_dim ** 0.5
+
+        self.W_q = nn.Linear(hidden_dim, hidden_dim)
+        self.W_k = nn.Linear(hidden_dim, hidden_dim)
+        self.W_v = nn.Linear(hidden_dim, hidden_dim)
+        self.out_proj = nn.Linear(hidden_dim, hidden_dim)
+
+        self.dropout = nn.Dropout(dropout)
+
+    def forward(self, x, attn_mask=None):
+        B, T, _ = x.shape
+
+        Q = self.W_q(x).view(B, T, self.num_heads, self.head_dim).transpose(1, 2)
+        K = self.W_k(x).view(B, T, self.num_heads, self.head_dim).transpose(1, 2)
+        V = self.W_v(x).view(B, T, self.num_heads, self.head_dim).transpose(1, 2)
+
+        scores = torch.matmul(Q, K.transpose(-2, -1)) / self.scale
+
+        if attn_mask is not None:
+            scores = scores.masked_fill(attn_mask[None, None, :, :], float("-inf"))
+
+        weights = F.softmax(scores, dim=-1)
+        weights = self.dropout(weights)
+
+        context = torch.matmul(weights, V)
+        context = context.transpose(1, 2).contiguous().view(B, T, self.hidden_dim)
+
+        return self.out_proj(context), weights
+
+
 # ── Model ─────────────────────────────────────────────────────────────────────
 
-class CrossAttentionLSTM(nn.Module):
+class SelfAttentionLSTM(nn.Module):
     def __init__(self, vocab_size, embed_dim, hidden_dim, num_layers=2,
                  dropout=0.3, window_size_k=20, num_heads=4, ff_multiplier=4):
         super().__init__()
@@ -35,11 +75,10 @@ class CrossAttentionLSTM(nn.Module):
             dropout=dropout if num_layers > 1 else 0,
         )
 
-        self.self_attention = nn.MultiheadAttention(
-            embed_dim=hidden_dim,
+        self.self_attention = CustomMultiHeadAttention(
+            hidden_dim=hidden_dim,
             num_heads=num_heads,
             dropout=dropout,
-            batch_first=True,
         )
 
         self.norm1 = nn.LayerNorm(hidden_dim)
@@ -73,10 +112,7 @@ class CrossAttentionLSTM(nn.Module):
         seq_len = lstm_out.shape[1]
         attn_mask = self._make_causal_window_mask(seq_len, lstm_out.device)
 
-        attn_out, attn_weights = self.self_attention(
-            query=lstm_out, key=lstm_out, value=lstm_out,
-            attn_mask=attn_mask, need_weights=True, average_attn_weights=True,
-        )
+        attn_out, attn_weights = self.self_attention(lstm_out, attn_mask=attn_mask)
 
         x = self.norm1(lstm_out + self.dropout(attn_out))
         x = self.norm2(x + self.feed_forward(x))
@@ -157,7 +193,7 @@ def train_model(num_layers, window_size_k, label, checkpoint_path, train_loader,
     os.makedirs(os.path.dirname(checkpoint_path), exist_ok=True)
     os.makedirs(RESULT_DIR, exist_ok=True)
 
-    model = CrossAttentionLSTM(
+    model = SelfAttentionLSTM(
         vocab_size=VOCAB_SIZE,
         embed_dim=EMBED_DIM,
         hidden_dim=HIDDEN_DIM,

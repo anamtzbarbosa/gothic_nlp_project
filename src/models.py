@@ -44,9 +44,9 @@ class DeepLSTM(nn.Module):
         logits = self.fc(dropped_out_output)
         return logits, final_hidden_state
 
-class CustomCrossAttention(nn.Module):
+class CustomSelfAttention(nn.Module):
     def __init__(self, hidden_dim):
-        super(CustomCrossAttention, self).__init__()
+        super(CustomSelfAttention, self).__init__()
         self.W_q = nn.Linear(hidden_dim,hidden_dim)
         self.W_k = nn.Linear(hidden_dim,hidden_dim)
         self.W_v = nn.Linear(hidden_dim,hidden_dim)
@@ -75,12 +75,12 @@ class CustomCrossAttention(nn.Module):
     
 
 
-class CrossAttentionLSTM(nn.Module):
+class SelfAttentionLSTM(nn.Module):
     def __init__(self, vocab_size, embed_dim, hidden_dim, num_layers=2, dropout=0.3, window_size_k=5):
-        super(CrossAttentionLSTM, self).__init__()
+        super(SelfAttentionLSTM, self).__init__()
         self.window_size_k = window_size_k
         self.embedding = nn.Embedding(vocab_size, embed_dim)
-        
+
         self.lstm = nn.LSTM(
             input_size=embed_dim,
             hidden_size=hidden_dim,
@@ -88,8 +88,8 @@ class CrossAttentionLSTM(nn.Module):
             batch_first=True,
             dropout=dropout if num_layers > 1 else 0
         )
-        
-        self.attention = CustomCrossAttention(hidden_dim)
+
+        self.attention = CustomSelfAttention(hidden_dim)
         
         self.layer_norm = nn.LayerNorm(hidden_dim * 2)         
         self.dropout = nn.Dropout(dropout)
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     WINDOW_K = 5
     dummy_x = torch.randint(0, VOCAB_SIZE, (BATCH_SIZE, SEQ_LEN))
     
-    model = CrossAttentionLSTM(
+    model = SelfAttentionLSTM(
         vocab_size=VOCAB_SIZE, 
         embed_dim=EMBED_DIM, 
         hidden_dim=HIDDEN_DIM, 

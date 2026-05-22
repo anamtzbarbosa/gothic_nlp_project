@@ -17,7 +17,7 @@ from tokenizer import GothicBPE
 import json
 
 from dataset import get_dataloaders
-from models import VanillaRNN, DeepLSTM, CrossAttentionLSTM
+from models import VanillaRNN, DeepLSTM, SelfAttentionLSTM
 
 
 @dataclass
@@ -95,7 +95,7 @@ def build_model(config: TrainConfig):
         )
 
     if config.model_name == "attention_lstm":
-        return CrossAttentionLSTM(
+        return SelfAttentionLSTM(
             vocab_size=config.vocab_size,
             embed_dim=config.embed_dim,
             hidden_dim=config.hidden_dim,

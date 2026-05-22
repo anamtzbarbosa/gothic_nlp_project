@@ -6,7 +6,7 @@ from pathlib import Path
 import torch
 import torch.nn.functional as F
 
-from models import VanillaRNN, DeepLSTM, CrossAttentionLSTM
+from models import VanillaRNN, DeepLSTM, SelfAttentionLSTM
 from tokenizer import GothicBPE
 
 
@@ -70,7 +70,7 @@ def build_model(model_config):
         )
 
     if model_name == "attention_lstm":
-        return CrossAttentionLSTM(
+        return SelfAttentionLSTM(
             **common_args,
             num_layers=model_config["num_layers"],
             dropout=model_config["dropout"],
