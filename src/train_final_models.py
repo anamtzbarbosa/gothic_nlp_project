@@ -21,8 +21,8 @@ from train import (
 )
 
 from dataset import get_dataloaders, save_splits
-from run_generation_eval import get_fixed_samples, TOKENIZER_PATH, NUM_SAMPLES
-from plot_results import plot_training_curves, plot_model_comparison
+from evaluation.run_generation_eval import get_fixed_samples, TOKENIZER_PATH, NUM_SAMPLES
+from evaluation.plot_results import plot_training_curves, plot_model_comparison
 
 
 FINAL_CHECKPOINT_DIR = "checkpoints/final_models"
@@ -67,59 +67,59 @@ def final_runs(num_epochs=5):
 
     return [
         {
-            "label": "final_rnn_s100_h128_lr0p0005",
+            "label": "final_rnn_b64_s200_h256_d0p3_lr0p0005",
             "config": TrainConfig(
                 model_name="rnn",
-                checkpoint_name="final_rnn_s100_h128_lr0p0005.pt",
-                seq_length=100,
-                hidden_dim=128,
+                checkpoint_name="final_rnn_b64_s200_h256_d0p3_lr0p0005.pt",
+                seq_length=200,
+                hidden_dim=256,
                 learning_rate=5e-4,
-                dropout=0.0,
+                dropout=0.3,
                 num_layers=1,
-                generation_output_path=f"{FINAL_RESULTS_DIR}/final_rnn_s100_h128_lr0p0005_generation",
+                generation_output_path=f"{FINAL_RESULTS_DIR}/final_rnn_b64_s200_h256_d0p3_lr0p0005_generation",
                 **common,
             ),
         },
         {
-            "label": "final_lstm_l1_s200_h128_d0p3_lr0p0005",
+            "label": "final_lstm_l1_b64_s100_h256_d0p3_lr0p0005",
             "config": TrainConfig(
                 model_name="lstm",
-                checkpoint_name="final_lstm_l1_s200_h128_d0p3_lr0p0005.pt",
-                seq_length=200,
+                checkpoint_name="final_lstm_l1_b64_s100_h256_d0p3_lr0p0005.pt",
+                seq_length=100,
                 num_layers=1,
-                hidden_dim=128,
+                hidden_dim=256,
                 dropout=0.3,
                 learning_rate=5e-4,
-                generation_output_path=f"{FINAL_RESULTS_DIR}/final_lstm_l1_s200_h128_d0p3_lr0p0005_generation",
+                generation_output_path=f"{FINAL_RESULTS_DIR}/final_lstm_l1_b64_s100_h256_d0p3_lr0p0005_generation",
                 **common,
             ),
         },
         {
-            "label": "final_lstm_l2_s200_h128_d0p3_lr0p001",
+            "label": "final_lstm_l2_b32_s100_h256_d0p3_lr0p001",
             "config": TrainConfig(
                 model_name="lstm",
-                checkpoint_name="final_lstm_l2_s200_h128_d0p3_lr0p001.pt",
-                seq_length=200,
+                checkpoint_name="final_lstm_l2_b32_s100_h256_d0p3_lr0p001.pt",
+                seq_length=100,
                 num_layers=2,
-                hidden_dim=128,
-                dropout=0.3,
-                learning_rate=1e-3,
-                generation_output_path=f"{FINAL_RESULTS_DIR}/final_lstm_l2_s200_h128_d0p3_lr0p001_generation",
-                **common,
-            ),
-        },
-        {
-            "label": "final_lstm_l3_s100_h256_d0p3_lr0p001",
-            "config": TrainConfig(
-                model_name="lstm",
-                checkpoint_name="final_lstm_l3_s100_h256_d0p3_lr0p001.pt",
-                seq_length=100,
-                num_layers=3,
                 hidden_dim=256,
                 dropout=0.3,
                 learning_rate=1e-3,
-                generation_output_path=f"{FINAL_RESULTS_DIR}/final_lstm_l3_s100_h256_d0p3_lr0p001_generation",
-                **common,
+                generation_output_path=f"{FINAL_RESULTS_DIR}/final_lstm_l2_b32_s100_h256_d0p3_lr0p001_generation",
+                **{**common, "batch_size": 32},
+            ),
+        },
+        {
+            "label": "final_lstm_l3_b32_s100_h256_d0p2_lr0p001",
+            "config": TrainConfig(
+                model_name="lstm",
+                checkpoint_name="final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt",
+                seq_length=100,
+                num_layers=3,
+                hidden_dim=256,
+                dropout=0.2,
+                learning_rate=1e-3,
+                generation_output_path=f"{FINAL_RESULTS_DIR}/final_lstm_l3_b32_s100_h256_d0p2_lr0p001_generation",
+                **{**common, "batch_size": 32},
             ),
         },
         {

@@ -1,0 +1,26 @@
+{
+  "label": "multihead_attn_lstm_3layer_K40",
+  "num_layers": 3,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 4.284328287815818,
+      "val_loss": 4.337627509730134,
+      "val_ppl": 76.52576715921514
+    },
+    {
+      "epoch": 2,
+      "train_loss": 3.9648920062043778,
+      "val_loss": 4.350398019062466,
+      "val_ppl": 77.509306968287
+    },
+    {
+      "epoch": 3,
+      "train_loss": 3.883079829700054,
+      "val_loss": 4.377880252826885,
+      "val_ppl": 79.6689762020336
+    }
+  ],
+  "test_loss": 4.458979973160442,
+  "test_ppl": 86.39933449364044
+}

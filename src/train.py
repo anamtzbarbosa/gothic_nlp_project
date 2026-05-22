@@ -8,7 +8,7 @@ import torch
 import torch.nn as nn
 from torch.optim import Adam
 
-from evaluate_generation import (
+from evaluation.evaluate_generation import (
     collect_generation_pairs,
     compute_all_metrics,
     save_metrics_and_examples,

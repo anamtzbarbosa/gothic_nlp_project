@@ -1,5 +1,0 @@
-LSTM Weight Decay Training Summary
-weight_decay=0.0001, scheduler=ReduceLROnPlateau(factor=0.5, patience=1)
-================================================================================
-
-lstm_wd_l3_s100_h256_d0p3_lr0p001 | best_epoch=2 | val_loss=4.3250 | test_loss=4.4328 | test_ppl=84.17
