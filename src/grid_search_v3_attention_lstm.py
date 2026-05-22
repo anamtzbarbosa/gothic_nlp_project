@@ -43,7 +43,7 @@ def get_dataloaders_from_splits(seq_length, batch_size):
         with open(f"data/{name}_tokens.pkl", "rb") as f:
             tokens = pickle.load(f)
         ds = GothicDataset(tokens, seq_length)
-        loaders.append(DataLoader(ds, batch_size=batch_size, shuffle=(name == "train")))
+        loaders.append(DataLoader(ds, batch_size=batch_size, shuffle=(name == "train"), drop_last=True))
     return loaders[0], loaders[1], loaders[2]
 
 
