@@ -1,0 +1,72 @@
+Final training run: final_lstm_l1_b64_s100_h256_d0p3_lr0p0005
+================================================================================
+Run: final_lstm_l1_b64_s100_h256_d0p3_lr0p0005
+Config: TrainConfig(tokenized_path='data/corpus_tokenized.pkl', checkpoint_dir='checkpoints/final_rnn_lstm', checkpoint_name='final_lstm_l1_b64_s100_h256_d0p3_lr0p0005.pt', model_name='lstm', vocab_size=5000, seq_length=100, batch_size=64, embed_dim=128, hidden_dim=256, num_layers=1, dropout=0.3, window_size_k=5, learning_rate=0.0005, num_epochs=5, grad_clip=1.0, seed=42, run_generation_eval=False, tokenizer_path='data/gothic_tokenizer.json', generation_num_samples=50, generation_prompt_length=30, generation_temperature=0.8, generation_top_p=0.9, generation_output_path='results/final_rnn_lstm/final_lstm_l1_b64_s100_h256_d0p3_lr0p0005_generation')
+Epoch 1/5 | Train Loss: 4.6376 | Val Loss: 4.5780 | Val PPL: 97.32 | Time: 504.0s
+Saved best checkpoint to checkpoints/final_rnn_lstm/final_lstm_l1_b64_s100_h256_d0p3_lr0p0005.pt
+Epoch 2/5 | Train Loss: 4.2796 | Val Loss: 4.5925 | Val PPL: 98.74 | Time: 503.3s
+No improvement for 1 epoch(s)
+Epoch 3/5 | Train Loss: 4.1868 | Val Loss: 4.6366 | Val PPL: 103.20 | Time: 502.9s
+No improvement for 2 epoch(s)
+Early stopping triggered at epoch 3
+Loading best checkpoint before final test...
+
+Final test result:
+{
+  "label": "final_lstm_l1_b64_s100_h256_d0p3_lr0p0005",
+  "model_name": "lstm",
+  "checkpoint_name": "final_lstm_l1_b64_s100_h256_d0p3_lr0p0005.pt",
+  "best_epoch": 1,
+  "best_val_loss": 4.577978410044768,
+  "test_loss": 4.6827429701576495,
+  "test_ppl": 108.06608846012693,
+  "total_time_seconds": 1540.996681690216,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 4.637592904879485,
+      "val_loss": 4.577978410044768,
+      "val_ppl": 97.31745921520506,
+      "epoch_time": 504.0481467247009
+    },
+    {
+      "epoch": 2,
+      "train_loss": 4.279582414527632,
+      "val_loss": 4.592522844565922,
+      "val_ppl": 98.74323000956346,
+      "epoch_time": 503.3340947628021
+    },
+    {
+      "epoch": 3,
+      "train_loss": 4.186759831074297,
+      "val_loss": 4.636648929352929,
+      "val_ppl": 103.19794389520682,
+      "epoch_time": 502.91969084739685
+    }
+  ],
+  "config": {
+    "tokenized_path": "data/corpus_tokenized.pkl",
+    "checkpoint_dir": "checkpoints/final_rnn_lstm",
+    "checkpoint_name": "final_lstm_l1_b64_s100_h256_d0p3_lr0p0005.pt",
+    "model_name": "lstm",
+    "vocab_size": 5000,
+    "seq_length": 100,
+    "batch_size": 64,
+    "embed_dim": 128,
+    "hidden_dim": 256,
+    "num_layers": 1,
+    "dropout": 0.3,
+    "window_size_k": 5,
+    "learning_rate": 0.0005,
+    "num_epochs": 5,
+    "grad_clip": 1.0,
+    "seed": 42,
+    "run_generation_eval": false,
+    "tokenizer_path": "data/gothic_tokenizer.json",
+    "generation_num_samples": 50,
+    "generation_prompt_length": 30,
+    "generation_temperature": 0.8,
+    "generation_top_p": 0.9,
+    "generation_output_path": "results/final_rnn_lstm/final_lstm_l1_b64_s100_h256_d0p3_lr0p0005_generation"
+  }
+}

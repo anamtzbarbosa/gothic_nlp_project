@@ -1,0 +1,7 @@
+Final RNN & LSTM Training Summary
+================================================================================
+
+final_rnn_b64_s200_h256_d0p3_lr0p0005 | model=rnn | best_epoch=1 | val_loss=4.8263 | test_loss=4.9192 | test_ppl=136.89
+final_lstm_l1_b64_s100_h256_d0p3_lr0p0005 | model=lstm | best_epoch=1 | val_loss=4.5780 | test_loss=4.6827 | test_ppl=108.07
+final_lstm_l2_b32_s100_h256_d0p3_lr0p001 | model=lstm | best_epoch=2 | val_loss=4.3569 | test_loss=4.4670 | test_ppl=87.10
+final_lstm_l3_b32_s100_h256_d0p2_lr0p001 | model=lstm | best_epoch=1 | val_loss=4.3230 | test_loss=4.4400 | test_ppl=84.78

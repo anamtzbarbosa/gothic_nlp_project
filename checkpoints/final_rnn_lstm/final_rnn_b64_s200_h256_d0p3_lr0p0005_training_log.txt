@@ -1,0 +1,72 @@
+Final training run: final_rnn_b64_s200_h256_d0p3_lr0p0005
+================================================================================
+Run: final_rnn_b64_s200_h256_d0p3_lr0p0005
+Config: TrainConfig(tokenized_path='data/corpus_tokenized.pkl', checkpoint_dir='checkpoints/final_rnn_lstm', checkpoint_name='final_rnn_b64_s200_h256_d0p3_lr0p0005.pt', model_name='rnn', vocab_size=5000, seq_length=200, batch_size=64, embed_dim=128, hidden_dim=256, num_layers=1, dropout=0.3, window_size_k=5, learning_rate=0.0005, num_epochs=5, grad_clip=1.0, seed=42, run_generation_eval=False, tokenizer_path='data/gothic_tokenizer.json', generation_num_samples=50, generation_prompt_length=30, generation_temperature=0.8, generation_top_p=0.9, generation_output_path='results/final_rnn_lstm/final_rnn_b64_s200_h256_d0p3_lr0p0005_generation')
+Epoch 1/5 | Train Loss: 4.8985 | Val Loss: 4.8263 | Val PPL: 124.75 | Time: 684.2s
+Saved best checkpoint to checkpoints/final_rnn_lstm/final_rnn_b64_s200_h256_d0p3_lr0p0005.pt
+Epoch 2/5 | Train Loss: 4.6228 | Val Loss: 4.8552 | Val PPL: 128.41 | Time: 683.2s
+No improvement for 1 epoch(s)
+Epoch 3/5 | Train Loss: 4.5752 | Val Loss: 4.8643 | Val PPL: 129.58 | Time: 683.3s
+No improvement for 2 epoch(s)
+Early stopping triggered at epoch 3
+Loading best checkpoint before final test...
+
+Final test result:
+{
+  "label": "final_rnn_b64_s200_h256_d0p3_lr0p0005",
+  "model_name": "rnn",
+  "checkpoint_name": "final_rnn_b64_s200_h256_d0p3_lr0p0005.pt",
+  "best_epoch": 1,
+  "best_val_loss": 4.826294615586686,
+  "test_loss": 4.919201311524985,
+  "test_ppl": 136.89323446384697,
+  "total_time_seconds": 2097.456941127777,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 4.898489065023401,
+      "val_loss": 4.826294615586686,
+      "val_ppl": 124.74786441742314,
+      "epoch_time": 684.1756184101105
+    },
+    {
+      "epoch": 2,
+      "train_loss": 4.622828390052913,
+      "val_loss": 4.855222325271797,
+      "val_ppl": 128.4092366598573,
+      "epoch_time": 683.1757898330688
+    },
+    {
+      "epoch": 3,
+      "train_loss": 4.575210386277333,
+      "val_loss": 4.8643321885301045,
+      "val_ppl": 129.5843717800707,
+      "epoch_time": 683.2733767032623
+    }
+  ],
+  "config": {
+    "tokenized_path": "data/corpus_tokenized.pkl",
+    "checkpoint_dir": "checkpoints/final_rnn_lstm",
+    "checkpoint_name": "final_rnn_b64_s200_h256_d0p3_lr0p0005.pt",
+    "model_name": "rnn",
+    "vocab_size": 5000,
+    "seq_length": 200,
+    "batch_size": 64,
+    "embed_dim": 128,
+    "hidden_dim": 256,
+    "num_layers": 1,
+    "dropout": 0.3,
+    "window_size_k": 5,
+    "learning_rate": 0.0005,
+    "num_epochs": 5,
+    "grad_clip": 1.0,
+    "seed": 42,
+    "run_generation_eval": false,
+    "tokenizer_path": "data/gothic_tokenizer.json",
+    "generation_num_samples": 50,
+    "generation_prompt_length": 30,
+    "generation_temperature": 0.8,
+    "generation_top_p": 0.9,
+    "generation_output_path": "results/final_rnn_lstm/final_rnn_b64_s200_h256_d0p3_lr0p0005_generation"
+  }
+}

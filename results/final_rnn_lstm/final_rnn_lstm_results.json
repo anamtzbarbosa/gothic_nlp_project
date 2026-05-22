@@ -1,0 +1,241 @@
+[
+  {
+    "label": "final_rnn_b64_s200_h256_d0p3_lr0p0005",
+    "model_name": "rnn",
+    "checkpoint_name": "final_rnn_b64_s200_h256_d0p3_lr0p0005.pt",
+    "best_epoch": 1,
+    "best_val_loss": 4.826294615586686,
+    "test_loss": 4.919201311524985,
+    "test_ppl": 136.89323446384697,
+    "total_time_seconds": 2097.456941127777,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 4.898489065023401,
+        "val_loss": 4.826294615586686,
+        "val_ppl": 124.74786441742314,
+        "epoch_time": 684.1756184101105
+      },
+      {
+        "epoch": 2,
+        "train_loss": 4.622828390052913,
+        "val_loss": 4.855222325271797,
+        "val_ppl": 128.4092366598573,
+        "epoch_time": 683.1757898330688
+      },
+      {
+        "epoch": 3,
+        "train_loss": 4.575210386277333,
+        "val_loss": 4.8643321885301045,
+        "val_ppl": 129.5843717800707,
+        "epoch_time": 683.2733767032623
+      }
+    ],
+    "config": {
+      "tokenized_path": "data/corpus_tokenized.pkl",
+      "checkpoint_dir": "checkpoints/final_rnn_lstm",
+      "checkpoint_name": "final_rnn_b64_s200_h256_d0p3_lr0p0005.pt",
+      "model_name": "rnn",
+      "vocab_size": 5000,
+      "seq_length": 200,
+      "batch_size": 64,
+      "embed_dim": 128,
+      "hidden_dim": 256,
+      "num_layers": 1,
+      "dropout": 0.3,
+      "window_size_k": 5,
+      "learning_rate": 0.0005,
+      "num_epochs": 5,
+      "grad_clip": 1.0,
+      "seed": 42,
+      "run_generation_eval": false,
+      "tokenizer_path": "data/gothic_tokenizer.json",
+      "generation_num_samples": 50,
+      "generation_prompt_length": 30,
+      "generation_temperature": 0.8,
+      "generation_top_p": 0.9,
+      "generation_output_path": "results/final_rnn_lstm/final_rnn_b64_s200_h256_d0p3_lr0p0005_generation"
+    }
+  },
+  {
+    "label": "final_lstm_l1_b64_s100_h256_d0p3_lr0p0005",
+    "model_name": "lstm",
+    "checkpoint_name": "final_lstm_l1_b64_s100_h256_d0p3_lr0p0005.pt",
+    "best_epoch": 1,
+    "best_val_loss": 4.577978410044768,
+    "test_loss": 4.6827429701576495,
+    "test_ppl": 108.06608846012693,
+    "total_time_seconds": 1540.996681690216,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 4.637592904879485,
+        "val_loss": 4.577978410044768,
+        "val_ppl": 97.31745921520506,
+        "epoch_time": 504.0481467247009
+      },
+      {
+        "epoch": 2,
+        "train_loss": 4.279582414527632,
+        "val_loss": 4.592522844565922,
+        "val_ppl": 98.74323000956346,
+        "epoch_time": 503.3340947628021
+      },
+      {
+        "epoch": 3,
+        "train_loss": 4.186759831074297,
+        "val_loss": 4.636648929352929,
+        "val_ppl": 103.19794389520682,
+        "epoch_time": 502.91969084739685
+      }
+    ],
+    "config": {
+      "tokenized_path": "data/corpus_tokenized.pkl",
+      "checkpoint_dir": "checkpoints/final_rnn_lstm",
+      "checkpoint_name": "final_lstm_l1_b64_s100_h256_d0p3_lr0p0005.pt",
+      "model_name": "lstm",
+      "vocab_size": 5000,
+      "seq_length": 100,
+      "batch_size": 64,
+      "embed_dim": 128,
+      "hidden_dim": 256,
+      "num_layers": 1,
+      "dropout": 0.3,
+      "window_size_k": 5,
+      "learning_rate": 0.0005,
+      "num_epochs": 5,
+      "grad_clip": 1.0,
+      "seed": 42,
+      "run_generation_eval": false,
+      "tokenizer_path": "data/gothic_tokenizer.json",
+      "generation_num_samples": 50,
+      "generation_prompt_length": 30,
+      "generation_temperature": 0.8,
+      "generation_top_p": 0.9,
+      "generation_output_path": "results/final_rnn_lstm/final_lstm_l1_b64_s100_h256_d0p3_lr0p0005_generation"
+    }
+  },
+  {
+    "label": "final_lstm_l2_b32_s100_h256_d0p3_lr0p001",
+    "model_name": "lstm",
+    "checkpoint_name": "final_lstm_l2_b32_s100_h256_d0p3_lr0p001.pt",
+    "best_epoch": 2,
+    "best_val_loss": 4.356947125551714,
+    "test_loss": 4.46704239782694,
+    "test_ppl": 87.09873827579354,
+    "total_time_seconds": 3926.732983350754,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 4.523440357783433,
+        "val_loss": 4.364394297438176,
+        "val_ppl": 78.60177622310648,
+        "epoch_time": 965.9629089832306
+      },
+      {
+        "epoch": 2,
+        "train_loss": 4.273194111647171,
+        "val_loss": 4.356947125551714,
+        "val_ppl": 78.01858952608902,
+        "epoch_time": 968.1090593338013
+      },
+      {
+        "epoch": 3,
+        "train_loss": 4.219932850910212,
+        "val_loss": 4.362607329660728,
+        "val_ppl": 78.46144280473729,
+        "epoch_time": 965.7723379135132
+      },
+      {
+        "epoch": 4,
+        "train_loss": 4.1943473745225255,
+        "val_loss": 4.365179769504027,
+        "val_ppl": 78.6635399763319,
+        "epoch_time": 972.3372533321381
+      }
+    ],
+    "config": {
+      "tokenized_path": "data/corpus_tokenized.pkl",
+      "checkpoint_dir": "checkpoints/final_rnn_lstm",
+      "checkpoint_name": "final_lstm_l2_b32_s100_h256_d0p3_lr0p001.pt",
+      "model_name": "lstm",
+      "vocab_size": 5000,
+      "seq_length": 100,
+      "batch_size": 32,
+      "embed_dim": 128,
+      "hidden_dim": 256,
+      "num_layers": 2,
+      "dropout": 0.3,
+      "window_size_k": 5,
+      "learning_rate": 0.001,
+      "num_epochs": 5,
+      "grad_clip": 1.0,
+      "seed": 42,
+      "run_generation_eval": false,
+      "tokenizer_path": "data/gothic_tokenizer.json",
+      "generation_num_samples": 50,
+      "generation_prompt_length": 30,
+      "generation_temperature": 0.8,
+      "generation_top_p": 0.9,
+      "generation_output_path": "results/final_rnn_lstm/final_lstm_l2_b32_s100_h256_d0p3_lr0p001_generation"
+    }
+  },
+  {
+    "label": "final_lstm_l3_b32_s100_h256_d0p2_lr0p001",
+    "model_name": "lstm",
+    "checkpoint_name": "final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt",
+    "best_epoch": 1,
+    "best_val_loss": 4.322975243993911,
+    "test_loss": 4.4400374731891175,
+    "test_ppl": 84.7781185207727,
+    "total_time_seconds": 3888.848146677017,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 4.3518319485665,
+        "val_loss": 4.322975243993911,
+        "val_ppl": 75.41266592480349,
+        "epoch_time": 1273.9580795764923
+      },
+      {
+        "epoch": 2,
+        "train_loss": 4.090403493668131,
+        "val_loss": 4.326038489832445,
+        "val_ppl": 75.64402763785807,
+        "epoch_time": 1275.538227558136
+      },
+      {
+        "epoch": 3,
+        "train_loss": 4.032071361149633,
+        "val_loss": 4.336221617540651,
+        "val_ppl": 76.41825577328896,
+        "epoch_time": 1272.1113517284393
+      }
+    ],
+    "config": {
+      "tokenized_path": "data/corpus_tokenized.pkl",
+      "checkpoint_dir": "checkpoints/final_rnn_lstm",
+      "checkpoint_name": "final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt",
+      "model_name": "lstm",
+      "vocab_size": 5000,
+      "seq_length": 100,
+      "batch_size": 32,
+      "embed_dim": 128,
+      "hidden_dim": 256,
+      "num_layers": 3,
+      "dropout": 0.2,
+      "window_size_k": 5,
+      "learning_rate": 0.001,
+      "num_epochs": 5,
+      "grad_clip": 1.0,
+      "seed": 42,
+      "run_generation_eval": false,
+      "tokenizer_path": "data/gothic_tokenizer.json",
+      "generation_num_samples": 50,
+      "generation_prompt_length": 30,
+      "generation_temperature": 0.8,
+      "generation_top_p": 0.9,
+      "generation_output_path": "results/final_rnn_lstm/final_lstm_l3_b32_s100_h256_d0p2_lr0p001_generation"
+    }
+  }
+]
