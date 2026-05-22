@@ -132,12 +132,13 @@ PATIENCE     = 2
 GRAD_CLIP    = 1.0
 WARMUP_STEPS = 200       # linear warmup over first 200 steps
 
-RESULT_DIR = "results/attention_lstm_v2"
+RESULT_DIR       = "results/attention_lstm_v2"
+LAST_EPOCH_DIR   = "checkpoints/attention_lstm_v2_last_epoch"
 
 CONFIGS = [
-    {"num_layers": 1, "window_size_k": 20, "label": "v2_attn_lstm_1layer_K20", "checkpoint": "checkpoints/attention_lstm_v2/1layer_K20.pt"},
-    {"num_layers": 2, "window_size_k": 20, "label": "v2_attn_lstm_2layer_K20", "checkpoint": "checkpoints/attention_lstm_v2/2layer_K20.pt"},
-    {"num_layers": 3, "window_size_k": 20, "label": "v2_attn_lstm_3layer_K20", "checkpoint": "checkpoints/attention_lstm_v2/3layer_K20.pt"},
+    {"num_layers": 1, "window_size_k": 20, "label": "v2_attn_lstm_1layer_K20", "checkpoint": "checkpoints/attention_lstm_v2/v2_attn_lstm_1layer_K20.pt"},
+    {"num_layers": 2, "window_size_k": 20, "label": "v2_attn_lstm_2layer_K20", "checkpoint": "checkpoints/attention_lstm_v2/v2_attn_lstm_2layer_K20.pt"},
+    {"num_layers": 3, "window_size_k": 20, "label": "v2_attn_lstm_3layer_K20", "checkpoint": "checkpoints/attention_lstm_v2/v2_attn_lstm_3layer_K20.pt"},
 ]
 
 
@@ -201,9 +202,21 @@ def train_model(num_layers, window_size_k, label, checkpoint_path, train_loader,
     optimizer = AdamW(model.parameters(), lr=LR, weight_decay=WEIGHT_DECAY)
     scheduler = make_warmup_scheduler(optimizer, WARMUP_STEPS)
 
+    model_config = {
+        "model_name": "attention_lstm",
+        "vocab_size": VOCAB_SIZE,
+        "embed_dim": EMBED_DIM,
+        "hidden_dim": HIDDEN_DIM,
+        "num_layers": num_layers,
+        "dropout": DROPOUT,
+        "window_size_k": window_size_k,
+        "seq_length": SEQ_LENGTH,
+    }
+
     best_val_loss = float("inf")
     epochs_no_improve = 0
     history = []
+    epoch = 0
 
     for epoch in range(1, NUM_EPOCHS + 1):
         started = time.time()
@@ -217,16 +230,6 @@ def train_model(num_layers, window_size_k, label, checkpoint_path, train_loader,
         if val_loss < best_val_loss:
             best_val_loss = val_loss
             epochs_no_improve = 0
-            model_config = {
-                "model_name": "attention_lstm",
-                "vocab_size": VOCAB_SIZE,
-                "embed_dim": EMBED_DIM,
-                "hidden_dim": HIDDEN_DIM,
-                "num_layers": num_layers,
-                "dropout": DROPOUT,
-                "window_size_k": window_size_k,
-                "seq_length": SEQ_LENGTH,
-            }
             torch.save({
                 "model_state_dict": model.state_dict(),
                 "config": model_config,
@@ -240,6 +243,16 @@ def train_model(num_layers, window_size_k, label, checkpoint_path, train_loader,
             if epochs_no_improve >= PATIENCE:
                 print(f"Early stopping at epoch {epoch}")
                 break
+
+    os.makedirs(LAST_EPOCH_DIR, exist_ok=True)
+    last_epoch_path = os.path.join(LAST_EPOCH_DIR, f"{label}_epoch{epoch}.pt")
+    torch.save({
+        "model_state_dict": model.state_dict(),
+        "config": model_config,
+        "epoch": epoch,
+        "val_loss": val_loss,
+    }, last_epoch_path)
+    print(f"  → last epoch checkpoint saved: {last_epoch_path}")
 
     ckpt = torch.load(checkpoint_path, map_location=device)
     model.load_state_dict(ckpt["model_state_dict"])
