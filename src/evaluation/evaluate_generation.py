@@ -45,6 +45,43 @@ def compute_ngram_overlap(generated_text, reference_text, n):
     return matches / len(generated_ngrams)
 
 
+def compute_ttr(text):
+    words = tokenize_words(text)
+    if not words:
+        return 0.0
+    return len(set(words)) / len(words)
+
+
+def compute_generated_perplexity(model, tokenizer, generated_texts, seq_length, device):
+    model.eval()
+    total_loss, total_tokens = 0.0, 0
+    criterion = torch.nn.CrossEntropyLoss(reduction="sum")
+
+    with torch.no_grad():
+        for text in generated_texts:
+            token_ids = tokenizer.encode(text)
+            if len(token_ids) < 2:
+                continue
+            for start in range(0, len(token_ids) - 1, seq_length):
+                chunk = token_ids[start: start + seq_length + 1]
+                if len(chunk) < 2:
+                    continue
+                x = torch.tensor(chunk[:-1], dtype=torch.long, device=device).unsqueeze(0)
+                y = torch.tensor(chunk[1:],  dtype=torch.long, device=device)
+                output = model(x)
+                logits = output[0].squeeze(0)
+                total_loss += criterion(logits, y).item()
+                total_tokens += len(y)
+
+    if total_tokens == 0:
+        return float("inf")
+    avg_loss = total_loss / total_tokens
+    try:
+        return math.exp(avg_loss)
+    except OverflowError:
+        return float("inf")
+
+
 def compute_distinct_n(generated_texts, n):
     all_ngrams = []
     for text in generated_texts:
@@ -248,14 +285,15 @@ def average(values):
     return sum(values) / len(values)
 
 
-def compute_all_metrics(generated_texts, reference_texts):
+def compute_all_metrics(generated_texts, reference_texts,
+                        model=None, tokenizer=None, seq_length=None, device=None):
     dictionary_words = load_dictionary_words()
 
     bleu = compute_corpus_bleu(generated_texts, reference_texts)
 
     P, R, F1 = bert_score_compute(
-    generated_texts, 
-    reference_texts, 
+    generated_texts,
+    reference_texts,
     model_type= "bert-base-multilingual-cased",
     rescale_with_baseline=False)
 
@@ -265,6 +303,7 @@ def compute_all_metrics(generated_texts, reference_texts):
     trigram_overlaps = []
     repetition_rates = []
     spelling_scores = []
+    ttr_scores = []
 
     for generated_text, reference_text in zip(generated_texts, reference_texts):
         bigram_overlaps.append(
@@ -280,9 +319,14 @@ def compute_all_metrics(generated_texts, reference_texts):
         )
 
         spelling_score = compute_spelling_accuracy(generated_text, dictionary_words)
-
         if spelling_score is not None:
             spelling_scores.append(spelling_score)
+
+        ttr_scores.append(compute_ttr(generated_text))
+
+    gen_ppl = None
+    if model is not None and tokenizer is not None and seq_length is not None and device is not None:
+        gen_ppl = compute_generated_perplexity(model, tokenizer, generated_texts, seq_length, device)
 
     metrics = {
         "num_samples": len(generated_texts),
@@ -294,6 +338,8 @@ def compute_all_metrics(generated_texts, reference_texts):
         "distinct_2": compute_distinct_n(generated_texts, 2),
         "trigram_repetition_rate": average(repetition_rates),
         "spelling_accuracy": average(spelling_scores) if spelling_scores else None,
+        "ttr": average(ttr_scores),
+        "generated_perplexity": gen_ppl,
     }
 
     return metrics

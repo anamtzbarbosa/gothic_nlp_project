@@ -18,6 +18,7 @@ class GenerateConfig:
     max_new_tokens: int = 300
     temperature: float = 1.0
     top_p: float | None = None
+    deterministic: bool = False
 
 
 def get_device():
@@ -119,7 +120,10 @@ def apply_nucleus_sampling(probs, top_p):
     return filtered_probs
 
 
-def sample_next_token(logits, temperature, top_p):
+def sample_next_token(logits, temperature, top_p, deterministic=False):
+    if deterministic:
+        return torch.argmax(logits, dim=-1, keepdim=True)
+
     if temperature <= 0.0:
         raise ValueError("temperature must be greater than 0.")
 
@@ -156,6 +160,7 @@ def generate_text(model, tokenizer, config, model_config, device):
                 logits=next_token_logits,
                 temperature=config.temperature,
                 top_p=config.top_p,
+                deterministic=config.deterministic,
             )
 
             token_ids.append(next_token.item())
@@ -172,6 +177,7 @@ def parse_args():
     parser.add_argument("--max-new-tokens", type=int, default=300)
     parser.add_argument("--temperature", type=float, default=1.0)
     parser.add_argument("--top-p", type=float, default=None)
+    parser.add_argument("--deterministic", action="store_true", default=False)
 
     return parser.parse_args()
 
@@ -186,6 +192,7 @@ def main():
         max_new_tokens=args.max_new_tokens,
         temperature=args.temperature,
         top_p=args.top_p,
+        deterministic=args.deterministic,
     )
 
     device = get_device()

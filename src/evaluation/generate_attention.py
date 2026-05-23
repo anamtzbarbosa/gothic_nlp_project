@@ -101,7 +101,7 @@ def load_model(checkpoint_path, device):
     return model, cfg
 
 
-def generate(model, tokenizer, prompt, seq_length, max_new_tokens, temperature, top_p, device):
+def generate(model, tokenizer, prompt, seq_length, max_new_tokens, temperature, top_p, device, deterministic=False):
     token_ids = tokenizer.encode(prompt)
     if not token_ids:
         raise ValueError("Prompt produced no tokens.")
@@ -111,19 +111,22 @@ def generate(model, tokenizer, prompt, seq_length, max_new_tokens, temperature, 
             context = token_ids[-seq_length:]
             x = torch.tensor(context, dtype=torch.long, device=device).unsqueeze(0)
             logits, _ = model(x)
-            next_logits = logits[0, -1, :] / temperature
-            probs = F.softmax(next_logits, dim=-1)
+            next_logits = logits[0, -1, :]
 
-            if top_p is not None and top_p < 1.0:
-                sorted_probs, sorted_idx = torch.sort(probs, descending=True)
-                cumulative = torch.cumsum(sorted_probs, dim=-1)
-                remove = (cumulative - sorted_probs) >= top_p
-                remove[0] = False
-                sorted_probs = sorted_probs.masked_fill(remove, 0.0)
-                probs = torch.zeros_like(probs).scatter_(0, sorted_idx, sorted_probs)
-                probs = probs / probs.sum()
+            if deterministic:
+                next_token = torch.argmax(next_logits).item()
+            else:
+                probs = F.softmax(next_logits / temperature, dim=-1)
+                if top_p is not None and top_p < 1.0:
+                    sorted_probs, sorted_idx = torch.sort(probs, descending=True)
+                    cumulative = torch.cumsum(sorted_probs, dim=-1)
+                    remove = (cumulative - sorted_probs) >= top_p
+                    remove[0] = False
+                    sorted_probs = sorted_probs.masked_fill(remove, 0.0)
+                    probs = torch.zeros_like(probs).scatter_(0, sorted_idx, sorted_probs)
+                    probs = probs / probs.sum()
+                next_token = torch.multinomial(probs, 1).item()
 
-            next_token = torch.multinomial(probs, 1).item()
             token_ids.append(next_token)
 
     return tokenizer.decode(token_ids)
@@ -137,6 +140,7 @@ def main():
     parser.add_argument("--max-new-tokens", type=int, default=300)
     parser.add_argument("--temperature", type=float, default=0.8)
     parser.add_argument("--top-p", type=float, default=0.9)
+    parser.add_argument("--deterministic", action="store_true", default=False)
     args = parser.parse_args()
 
     device = get_device()
@@ -157,6 +161,7 @@ def main():
         temperature=args.temperature,
         top_p=args.top_p,
         device=device,
+        deterministic=args.deterministic,
     )
     print(text)
 

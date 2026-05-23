@@ -89,22 +89,55 @@ K=20 consistently outperforms K=40. Best overall: 3-layer K=20 (val PPL 76.02).
 
 ## Generate Text
 
+Three decoding modes are supported: **temperature**, **nucleus (top-p)**, and **deterministic (greedy)**.
+
 **RNN / LSTM** (run from project root):
 
 ```bash
+# Temperature / nucleus sampling
 PYTHONPATH=src python src/evaluation/generate.py \
   --checkpoint checkpoints/final_rnn_lstm/final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt \
   --tokenizer data/gothic_tokenizer.json \
   --prompt "The castle was dark and silent" \
   --max-new-tokens 300 --temperature 0.5 --top-p 0.85
+
+# Deterministic (greedy) — ignores --temperature and --top-p
+PYTHONPATH=src python src/evaluation/generate.py \
+  --checkpoint checkpoints/final_rnn_lstm/final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt \
+  --tokenizer data/gothic_tokenizer.json \
+  --prompt "The castle was dark and silent" \
+  --max-new-tokens 300 --deterministic
 ```
 
 **Attention LSTM** (run from `src/`):
 
 ```bash
+# Temperature / nucleus sampling
 python evaluation/generate_attention.py \
   --checkpoint ../checkpoints/attention_lstm_new/multihead_3layer_K20.pt \
   --tokenizer ../data/gothic_tokenizer.json \
   --prompt "The castle was dark and silent" \
   --max-new-tokens 300 --temperature 0.5 --top-p 0.85
+
+# Deterministic (greedy)
+python evaluation/generate_attention.py \
+  --checkpoint ../checkpoints/attention_lstm_new/multihead_3layer_K20.pt \
+  --tokenizer ../data/gothic_tokenizer.json \
+  --prompt "The castle was dark and silent" \
+  --max-new-tokens 300 --deterministic
 ```
+
+---
+
+## Evaluation Metrics (`evaluation/evaluate_generation.py`)
+
+| Metric | Description |
+| ------ | ----------- |
+| BLEU | Corpus-level n-gram overlap with reference text |
+| BERTScore F1 | Semantic similarity to reference using BERT embeddings |
+| Bigram / Trigram overlap | Fraction of generated n-grams found in reference |
+| Distinct-1 / Distinct-2 | Vocabulary diversity of generated text |
+| TTR (Type-Token Ratio) | Unique words / total words per generated sample |
+| Trigram repetition rate | Fraction of repeated trigrams (lower = more diverse) |
+| Spelling accuracy | Fraction of generated words found in English dictionary |
+| Generated perplexity | Model's own perplexity on the generated text — lower means more deterministic output |
