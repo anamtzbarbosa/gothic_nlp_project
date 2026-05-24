@@ -136,6 +136,54 @@ def build_samples(
     return samples
 
 
+def extend_samples(base_path, full_text, target_chars, min_chars, max_chars):
+    """Extend references in an existing eval_samples.json to a longer sentence boundary.
+    Prompts are kept identical; only reference_text is extended.
+    """
+    with open(base_path) as f:
+        base = json.load(f)["samples"]
+
+    new_samples = []
+    fallbacks = 0
+
+    for s in base:
+        prompt_text = s["prompt_text"]
+        orig_ref    = s["reference_text"]
+
+        pos = full_text.find(prompt_text + orig_ref[:30])
+        if pos == -1:
+            pos = full_text.find(prompt_text)
+        if pos == -1:
+            new_samples.append(s)
+            fallbacks += 1
+            continue
+
+        ref_start  = pos + len(prompt_text)
+        ref_window = full_text[ref_start: ref_start + max_chars + 300]
+
+        best_end  = None
+        best_dist = float("inf")
+        for em in SENT_END_RE.finditer(ref_window[min_chars:max_chars]):
+            end_pos = min_chars + em.end()
+            dist    = abs(end_pos - target_chars)
+            if dist < best_dist:
+                best_dist = dist
+                best_end  = end_pos
+
+        if best_end is None:
+            best_end = min(max_chars, len(ref_window))
+            fallbacks += 1
+
+        new_samples.append({
+            "prompt_ids":     s["prompt_ids"],
+            "prompt_text":    prompt_text,
+            "reference_text": ref_window[:best_end],
+        })
+
+    print(f"Extended {len(new_samples)} samples | fallbacks: {fallbacks}")
+    return new_samples
+
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--test-tokens",   default="data/test_tokens.pkl")
@@ -147,6 +195,9 @@ def parse_args():
     parser.add_argument("--target-chars",  type=int, default=DEFAULT_TARGET_CHARS)
     parser.add_argument("--min-chars",     type=int, default=DEFAULT_MIN_CHARS)
     parser.add_argument("--max-chars",     type=int, default=DEFAULT_MAX_CHARS)
+    # Extend mode: keep prompts from an existing file, only lengthen references
+    parser.add_argument("--extend-from",   default=None,
+                        help="Path to existing eval_samples.json whose prompts to reuse with longer references")
     return parser.parse_args()
 
 
@@ -159,17 +210,27 @@ def main():
         test_tokens = pickle.load(f)
     print(f"Test tokens: {len(test_tokens):,}")
 
-    samples = build_samples(
-        test_tokens  = test_tokens,
-        encode       = encode,
-        decode       = decode,
-        num_samples  = args.num_samples,
-        oversample   = args.oversample,
-        prompt_tokens= args.prompt_tokens,
-        target_chars = args.target_chars,
-        min_chars    = args.min_chars,
-        max_chars    = args.max_chars,
-    )
+    if args.extend_from:
+        full_text = decode(test_tokens)
+        samples = extend_samples(
+            base_path    = args.extend_from,
+            full_text    = full_text,
+            target_chars = args.target_chars,
+            min_chars    = args.min_chars,
+            max_chars    = args.max_chars,
+        )
+    else:
+        samples = build_samples(
+            test_tokens  = test_tokens,
+            encode       = encode,
+            decode       = decode,
+            num_samples  = args.num_samples,
+            oversample   = args.oversample,
+            prompt_tokens= args.prompt_tokens,
+            target_chars = args.target_chars,
+            min_chars    = args.min_chars,
+            max_chars    = args.max_chars,
+        )
 
     ref_lens  = [len(s["reference_text"]) for s in samples]
     prom_lens = [len(s["prompt_ids"])     for s in samples]

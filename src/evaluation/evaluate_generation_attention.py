@@ -71,7 +71,7 @@ def main():
     model, cfg = load_model(args.checkpoint, device)
     seq_length = cfg["seq_length"]
 
-    print(f"Loaded: {cfg['num_layers']}-layer Attention LSTM | K={cfg['window_size_k']}")
+    print(f"Loaded: {cfg['num_layers']}-layer Attention LSTM ({cfg.get('_arch','v1')}) | K={cfg['window_size_k']}")
     print(f"Sequence length: {seq_length}")
     print(f"Temperature: {args.temperature}")
     print(f"Top-p: {args.top_p}")

@@ -1,0 +1,78 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 100
+bleu_1: 0.17786427483513662
+bleu_2: 0.0432173956744579
+bleu_3: 0.011782633849559226
+bleu_4: 0.004132476823937347
+bleu_4_smoothed: 0.0051648358490433656
+bert_score_f1: 0.823655366897583
+bigram_overlap: 0.012188953899166277
+trigram_overlap: 0.0008960897032263414
+distinct_1: 0.1831105093924522
+distinct_2: 0.6209330349457738
+trigram_repetition_rate: 0.013652406967843114
+spelling_accuracy: 0.9231233659459314
+ttr: 0.7185892770968352
+generated_perplexity: 12.199087661565807
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Prompt:
+What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par
+
+Generated:
+is what is it?' cried I. 'Oh, He's a good girl!' I cried. 'What is that?' I continued. 'Oh, no, no, no! yes, I mean that I am a fool, Miss.' 'No; you don't mean to say what I did?' I inquired. 'That's what is the matter with you?' I exclaimed. 'Will 
+
+Reference:
+ bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking déshabille to show herself knocking at the window.
+--------------------------------------------------------------------------------
+
+Example 2
+Prompt:
+It appears to me un cimetière!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken
+
+Generated:
+ air. 'Oh, don't, don't, Maud, be very good!' he cried, 'and you need not be able to see me now.' 'I don't think that you had better not know the very best of you, Miss.' 'That's your papa,' I said; 'but I know not what to say, but that I should be at home, or a coup
+
+Reference:
+ eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions.
+--------------------------------------------------------------------------------
+
+Example 3
+Prompt:
+The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her
+
+Generated:
+ witness, and shook her head sadly  'You must be frightened, Miss, I'm not going to love me! I wish you were a good woman, Miss,' I replied. 'Well, I don't know how to say she isn't a'most.' 'And, lass,' he answered; 'but I can't be sure, I'm afraid I'm going to make a pop
+
+Reference:
+ exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption.
+--------------------------------------------------------------------------------
+
+Example 4
+Prompt:
+Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but
+
+Generated:
+ as we can scarcely do so on me." His face was very much excited. "But I only know that I was so doing that I could not bear to go on." "What a gift is to be done?" "That's what I want to know." "What, do you mean?" "A strange thing, Jack." "It is," said Jack. "Yes; if it were 
+
+Reference:
+ som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, "Might I speak a word wi' ye, please, on the lobby?" 'Mr.
+--------------------------------------------------------------------------------
+
+Example 5
+Prompt:
+But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she
+
+Generated:
+ep as she told her she was quite unexpectedly imparting. But she could not but see her, and she would have been settled for a single mistake of being frightened or dead; she had taken her good spirits, and she did not seem to notice her; but she knew not what to keep her unwilling to keep her from it. She could not see her, but she 
+
+Reference:
+ searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest.
+--------------------------------------------------------------------------------

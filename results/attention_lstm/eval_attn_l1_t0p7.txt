@@ -1,0 +1,78 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 100
+bleu_1: 0.18165467625913997
+bleu_2: 0.038693073349705474
+bleu_3: 0.0065368304621280906
+bleu_4: 1.5180251959308483e-05
+bleu_4_smoothed: 0.0032281220816121154
+bert_score_f1: 0.8171500563621521
+bigram_overlap: 0.008723168448224076
+trigram_overlap: 0.0002127659574468085
+distinct_1: 0.24856115107913668
+distinct_2: 0.763003663003663
+trigram_repetition_rate: 0.0019141388612861421
+spelling_accuracy: 0.9195574571747526
+ttr: 0.8008829736301439
+generated_perplexity: 19.282420589781875
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Prompt:
+What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par
+
+Generated:
+t I never thought how you a drink on your eyes; but my lover heart beating's to be another. I don't love her. It must be an instant expect to hear it." Lord Henry stooped back in his chair, and shouted  "It is well; but I could only take it away as my own friends who are right to call him by all means; and
+
+Reference:
+ bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking déshabille to show herself knocking at the window.
+--------------------------------------------------------------------------------
+
+Example 2
+Prompt:
+It appears to me un cimetière!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken
+
+Generated:
+ tears as though the anxious question came in from her. 'And what did I do? But I know that the world were not so far from being so well. I don't mind? No one could do whatever he should have themselves.  "That's the thing, your father is a man of importance to him." "Indeed!" "Sure
+
+Reference:
+ eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions.
+--------------------------------------------------------------------------------
+
+Example 3
+Prompt:
+The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her
+
+Generated:
+ a troop of vexation. The night was clever and dishonourable soul and Jacintha had been sunset and for a moment longer. Thus far as I spoke for me to ask me with some other place is made up, but without paying copyright royalties "the most sacred interest that it is well to 
+
+Reference:
+ exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption.
+--------------------------------------------------------------------------------
+
+Example 4
+Prompt:
+Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but
+
+Generated:
+, no doubt, be a little bit of the house which is very well." "When will, whatever things are, Henry? I hear a night of Flora; I told you that it is on the way to hear that is a train." Both I presume, not my friend, that I forgot it instantly, that I hope to make me 
+
+Reference:
+ som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, "Might I speak a word wi' ye, please, on the lobby?" 'Mr.
+--------------------------------------------------------------------------------
+
+Example 5
+Prompt:
+But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she
+
+Generated:
+er master's bed: for she had been unavailing a single woman's sanctity, and some one sought for it on one side, and in the majestics of my friends, was situated in a tone of sufferings, to whom he did not wish to show his resentment at the end of the castle, before he reach
+
+Reference:
+ searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest.
+--------------------------------------------------------------------------------

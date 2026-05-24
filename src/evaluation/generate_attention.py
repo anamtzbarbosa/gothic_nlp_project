@@ -14,7 +14,7 @@ from tokenizer import GothicBPE
 
 
 class MultiHeadAttentionLSTM(nn.Module):
-    """Architecture matching checkpoints trained in train_attention_lstm.py (nn.MultiheadAttention)."""
+    """v1 architecture: uses nn.MultiheadAttention (train_attention_lstm.py)."""
     def __init__(self, vocab_size, embed_dim, hidden_dim, num_layers=2,
                  dropout=0.3, window_size_k=20, num_heads=4, ff_multiplier=4):
         super().__init__()
@@ -66,6 +66,80 @@ class MultiHeadAttentionLSTM(nn.Module):
         return self.fc(x), hidden
 
 
+class _CustomMultiHeadAttention(nn.Module):
+    """Custom W_q/W_k/W_v attention used in v2 (train_attention_lstm_v2.py)."""
+    def __init__(self, hidden_dim, num_heads=4, dropout=0.0):
+        super().__init__()
+        assert hidden_dim % num_heads == 0
+        self.num_heads = num_heads
+        self.head_dim = hidden_dim // num_heads
+        self.scale = self.head_dim ** 0.5
+        self.W_q = nn.Linear(hidden_dim, hidden_dim)
+        self.W_k = nn.Linear(hidden_dim, hidden_dim)
+        self.W_v = nn.Linear(hidden_dim, hidden_dim)
+        self.out_proj = nn.Linear(hidden_dim, hidden_dim)
+        self.dropout = nn.Dropout(dropout)
+
+    def forward(self, x, attn_mask=None):
+        B, T, H = x.shape
+        Q = self.W_q(x).view(B, T, self.num_heads, self.head_dim).transpose(1, 2)
+        K = self.W_k(x).view(B, T, self.num_heads, self.head_dim).transpose(1, 2)
+        V = self.W_v(x).view(B, T, self.num_heads, self.head_dim).transpose(1, 2)
+        scores = torch.matmul(Q, K.transpose(-2, -1)) / self.scale
+        if attn_mask is not None:
+            scores = scores.masked_fill(attn_mask.unsqueeze(0).unsqueeze(0), float("-inf"))
+        weights = self.dropout(torch.softmax(scores, dim=-1))
+        context = torch.matmul(weights, V).transpose(1, 2).contiguous().view(B, T, H)
+        return self.out_proj(context), weights
+
+
+class MultiHeadAttentionLSTMV2(nn.Module):
+    """v2 architecture: uses custom W_q/W_k/W_v attention (train_attention_lstm_v2.py)."""
+    def __init__(self, vocab_size, embed_dim, hidden_dim, num_layers=2,
+                 dropout=0.4, window_size_k=20, num_heads=4, ff_multiplier=4):
+        super().__init__()
+        assert hidden_dim % num_heads == 0
+        self.window_size_k = window_size_k
+        self.embedding = nn.Embedding(vocab_size, embed_dim)
+        self.lstm = nn.LSTM(
+            input_size=embed_dim, hidden_size=hidden_dim,
+            num_layers=num_layers, batch_first=True,
+            dropout=dropout if num_layers > 1 else 0,
+        )
+        self.self_attention = _CustomMultiHeadAttention(hidden_dim, num_heads=num_heads, dropout=dropout)
+        self.norm1 = nn.LayerNorm(hidden_dim)
+        self.norm2 = nn.LayerNorm(hidden_dim)
+        self.feed_forward = nn.Sequential(
+            nn.Linear(hidden_dim, ff_multiplier * hidden_dim),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(ff_multiplier * hidden_dim, hidden_dim),
+            nn.Dropout(dropout),
+        )
+        self.dropout = nn.Dropout(dropout)
+        self.fc = nn.Linear(hidden_dim, vocab_size)
+
+    def _make_causal_window_mask(self, seq_len, device):
+        positions = torch.arange(seq_len, device=device)
+        distance = positions[None, :] - positions[:, None]
+        future_mask = distance > 0
+        if self.window_size_k is not None and self.window_size_k > 0:
+            mask = future_mask | (distance < -self.window_size_k)
+        else:
+            mask = future_mask
+        return mask
+
+    def forward(self, x, hidden=None):
+        embedded = self.embedding(x)
+        lstm_out, hidden = self.lstm(embedded, hidden)
+        seq_len = lstm_out.shape[1]
+        attn_mask = self._make_causal_window_mask(seq_len, lstm_out.device)
+        attn_out, _ = self.self_attention(lstm_out, attn_mask=attn_mask)
+        x = self.norm1(lstm_out + self.dropout(attn_out))
+        x = self.norm2(x + self.feed_forward(x))
+        return self.fc(x), hidden
+
+
 def get_device():
     if torch.cuda.is_available():
         return torch.device("cuda")
@@ -88,7 +162,14 @@ def load_tokenizer(path):
 def load_model(checkpoint_path, device):
     ckpt = torch.load(checkpoint_path, map_location=device)
     cfg = ckpt["config"]
-    model = MultiHeadAttentionLSTM(
+    state = ckpt["model_state_dict"]
+
+    # Auto-detect architecture: v1 uses nn.MultiheadAttention (in_proj_weight),
+    # v2 uses custom W_q/W_k/W_v projection matrices.
+    is_v2 = "self_attention.W_q.weight" in state
+    cls = MultiHeadAttentionLSTMV2 if is_v2 else MultiHeadAttentionLSTM
+
+    model = cls(
         vocab_size=cfg["vocab_size"],
         embed_dim=cfg["embed_dim"],
         hidden_dim=cfg["hidden_dim"],
@@ -96,8 +177,9 @@ def load_model(checkpoint_path, device):
         dropout=cfg["dropout"],
         window_size_k=cfg["window_size_k"],
     ).to(device)
-    model.load_state_dict(ckpt["model_state_dict"])
+    model.load_state_dict(state)
     model.eval()
+    cfg["_arch"] = "v2" if is_v2 else "v1"
     return model, cfg
 
 
