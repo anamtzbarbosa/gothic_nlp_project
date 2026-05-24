@@ -3,13 +3,11 @@ import json
 import math
 import os
 import re
-from collections import Counter
 from pathlib import Path
 from bert_score import score as bert_score_compute
 
 import torch
 
-from dataset import get_dataloaders
 from evaluation.generate import (
     get_device,
     load_bpe_tokenizer,
@@ -143,46 +141,52 @@ def compute_spelling_accuracy(text, dictionary_words):
     return correct_words / len(words)
 
 
-def compute_corpus_bleu(generated_texts, reference_texts, max_n=4):
-    generated_length = 0
-    reference_length = 0
+def _modified_precision(generated_tokens, reference_tokens, n):
+    from collections import Counter
+    gen_ngrams = Counter(make_ngrams(generated_tokens, n))
+    ref_ngrams = Counter(make_ngrams(reference_tokens, n))
+    matches = sum(min(c, ref_ngrams.get(ng, 0)) for ng, c in gen_ngrams.items())
+    total = sum(gen_ngrams.values())
+    return matches, total
+
+
+def _corpus_bleu(generated_texts, reference_texts, max_n, smooth=False):
+    gen_len, ref_len = 0, 0
     precisions = []
 
     for n in range(1, max_n + 1):
-        total_matches = 0
-        total_generated_ngrams = 0
-
-        for generated_text, reference_text in zip(generated_texts, reference_texts):
-            generated_tokens = tokenize_words(generated_text)
-            reference_tokens = tokenize_words(reference_text)
-
+        total_matches, total_generated = 0, 0
+        for gen, ref in zip(generated_texts, reference_texts):
+            g_tok = tokenize_words(gen)
+            r_tok = tokenize_words(ref)
             if n == 1:
-                generated_length += len(generated_tokens)
-                reference_length += len(reference_tokens)
+                gen_len += len(g_tok)
+                ref_len += len(r_tok)
+            m, t = _modified_precision(g_tok, r_tok, n)
+            total_matches += m
+            total_generated += t
 
-            generated_ngrams = Counter(make_ngrams(generated_tokens, n))
-            reference_ngrams = Counter(make_ngrams(reference_tokens, n))
-
-            total_generated_ngrams += sum(generated_ngrams.values())
-
-            for ngram, count in generated_ngrams.items():
-                total_matches += min(count, reference_ngrams.get(ngram, 0))
-
-        precision = (total_matches + 1e-9) / (total_generated_ngrams + 1e-9)
+        if smooth:
+            precision = (total_matches + 1) / (total_generated + 1)
+        else:
+            precision = (total_matches + 1e-9) / (total_generated + 1e-9)
         precisions.append(precision)
 
-    if generated_length == 0:
+    if gen_len == 0:
         return 0.0
 
-    if generated_length > reference_length:
-        brevity_penalty = 1.0
-    else:
-        brevity_penalty = math.exp(1 - reference_length / generated_length)
+    bp = 1.0 if gen_len > ref_len else math.exp(1 - ref_len / gen_len)
+    log_avg = sum(math.log(p) for p in precisions) / max_n
+    return bp * math.exp(log_avg)
 
-    average_log_precision = sum(math.log(p) for p in precisions) / max_n
-    bleu = brevity_penalty * math.exp(average_log_precision)
 
-    return bleu
+def compute_bleu_scores(generated_texts, reference_texts):
+    bleu1 = _corpus_bleu(generated_texts, reference_texts, max_n=1)
+    bleu2 = _corpus_bleu(generated_texts, reference_texts, max_n=2)
+    bleu3 = _corpus_bleu(generated_texts, reference_texts, max_n=3)
+    bleu4 = _corpus_bleu(generated_texts, reference_texts, max_n=4)
+    bleu4_smoothed = _corpus_bleu(generated_texts, reference_texts, max_n=4, smooth=True)
+    return bleu1, bleu2, bleu3, bleu4, bleu4_smoothed
 
 
 def generate_continuation(
@@ -289,13 +293,14 @@ def compute_all_metrics(generated_texts, reference_texts,
                         model=None, tokenizer=None, seq_length=None, device=None):
     dictionary_words = load_dictionary_words()
 
-    bleu = compute_corpus_bleu(generated_texts, reference_texts)
+    bleu1, bleu2, bleu3, bleu4, bleu4_smoothed = compute_bleu_scores(generated_texts, reference_texts)
 
     P, R, F1 = bert_score_compute(
-    generated_texts,
-    reference_texts,
-    model_type= "bert-base-multilingual-cased",
-    rescale_with_baseline=False)
+        generated_texts,
+        reference_texts,
+        model_type="roberta-large",
+        rescale_with_baseline=False,
+    )
 
     mean_bert_score_f1 = F1.mean().item()
 
@@ -330,7 +335,11 @@ def compute_all_metrics(generated_texts, reference_texts,
 
     metrics = {
         "num_samples": len(generated_texts),
-        "bleu": bleu,
+        "bleu_1": bleu1,
+        "bleu_2": bleu2,
+        "bleu_3": bleu3,
+        "bleu_4": bleu4,
+        "bleu_4_smoothed": bleu4_smoothed,
         "bert_score_f1": mean_bert_score_f1,
         "bigram_overlap": average(bigram_overlaps),
         "trigram_overlap": average(trigram_overlaps),
@@ -345,7 +354,7 @@ def compute_all_metrics(generated_texts, reference_texts,
     return metrics
 
 
-def save_metrics_and_examples(metrics, generated_texts, reference_texts, output_prefix):
+def save_metrics_and_examples(metrics, generated_texts, reference_texts, output_prefix, prompt_texts=None):
     output_prefix = Path(output_prefix)
     output_prefix.parent.mkdir(parents=True, exist_ok=True)
 
@@ -367,6 +376,9 @@ def save_metrics_and_examples(metrics, generated_texts, reference_texts, output_
 
         for i in range(min(5, len(generated_texts))):
             f.write(f"\nExample {i + 1}\n")
+            if prompt_texts is not None:
+                f.write("Prompt:\n")
+                f.write(prompt_texts[i] + "\n\n")
             f.write("Generated:\n")
             f.write(generated_texts[i] + "\n\n")
             f.write("Reference:\n")
@@ -375,8 +387,14 @@ def save_metrics_and_examples(metrics, generated_texts, reference_texts, output_
 
     result_data = {
         "metrics": metrics,
-        "generated_examples": generated_texts[:10],
-        "reference_examples": reference_texts[:10],
+        "examples": [
+            {
+                "prompt": (prompt_texts[i] if prompt_texts else None),
+                "generated": generated_texts[i],
+                "reference": reference_texts[i],
+            }
+            for i in range(min(10, len(generated_texts)))
+        ],
     }
 
     with json_path.open("w", encoding="utf-8") as f:
@@ -385,16 +403,49 @@ def save_metrics_and_examples(metrics, generated_texts, reference_texts, output_
     return txt_path, json_path
 
 
+def load_eval_samples(eval_samples_path):
+    with open(eval_samples_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return data["samples"]
+
+
+def collect_from_eval_samples(model, tokenizer, eval_samples, seq_length, temperature, top_p, device):
+    generated_texts = []
+    reference_texts = []
+    prompt_texts = []
+
+    for sample in eval_samples:
+        prompt_ids = sample["prompt_ids"]
+        reference_text = sample["reference_text"]
+        prompt_text = sample.get("prompt_text", tokenizer.decode(prompt_ids))
+        max_new_tokens = seq_length - len(prompt_ids)
+        if max_new_tokens <= 0:
+            max_new_tokens = seq_length
+
+        generated_ids = generate_continuation(
+            model=model,
+            prompt_ids=prompt_ids,
+            seq_length=seq_length,
+            max_new_tokens=max_new_tokens,
+            temperature=temperature,
+            top_p=top_p,
+            device=device,
+        )
+
+        generated_text = tokenizer.decode(generated_ids[len(prompt_ids):])
+        generated_texts.append(generated_text)
+        reference_texts.append(reference_text)
+        prompt_texts.append(prompt_text)
+
+    return generated_texts, reference_texts, prompt_texts
+
+
 def parse_args():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--checkpoint", default="checkpoints/best_lstm.pt")
     parser.add_argument("--tokenizer", default="data/gothic_tokenizer.json")
-    parser.add_argument("--tokenized-data", default="data/corpus_tokenized.pkl")
-
-    parser.add_argument("--num-samples", type=int, default=50)
-    parser.add_argument("--prompt-length", type=int, default=30)
-    parser.add_argument("--batch-size", type=int, default=64)
+    parser.add_argument("--eval-samples", default="data/eval_samples.json")
 
     parser.add_argument("--temperature", type=float, default=0.8)
     parser.add_argument("--top-p", type=float, default=0.9)
@@ -417,30 +468,26 @@ def main():
 
     print(f"Loaded model: {model_config['model_name']}")
     print(f"Sequence length: {seq_length}")
-    print(f"Prompt length: {args.prompt_length}")
     print(f"Temperature: {args.temperature}")
     print(f"Top-p: {args.top_p}")
-    print(f"Samples: {args.num_samples}")
 
-    _, _, test_loader = get_dataloaders(
-        path=args.tokenized_data,
-        seq_length=seq_length,
-        batch_size=args.batch_size,
-    )
+    eval_samples = load_eval_samples(args.eval_samples)
+    print(f"Loaded {len(eval_samples)} fixed eval samples from {args.eval_samples}")
 
-    generated_texts, reference_texts = collect_generation_pairs(
+    generated_texts, reference_texts, prompt_texts = collect_from_eval_samples(
         model=model,
         tokenizer=tokenizer,
-        test_loader=test_loader,
+        eval_samples=eval_samples,
         seq_length=seq_length,
-        num_samples=args.num_samples,
-        prompt_length=args.prompt_length,
         temperature=args.temperature,
         top_p=args.top_p,
         device=device,
     )
 
-    metrics = compute_all_metrics(generated_texts, reference_texts)
+    metrics = compute_all_metrics(
+        generated_texts, reference_texts,
+        model=model, tokenizer=tokenizer, seq_length=seq_length, device=device,
+    )
 
     print("\nMetrics:")
     for key, value in metrics.items():
@@ -450,6 +497,7 @@ def main():
         metrics=metrics,
         generated_texts=generated_texts,
         reference_texts=reference_texts,
+        prompt_texts=prompt_texts,
         output_prefix=args.output,
     )
 

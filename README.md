@@ -21,6 +21,8 @@ Language models trained on Gothic literature using RNN, LSTM, and Attention-LSTM
 | `evaluation/generate.py` | Text generation for RNN and LSTM checkpoints |
 | `evaluation/generate_attention.py` | Text generation for Attention LSTM checkpoints |
 | `evaluation/evaluate_generation.py` | BLEU, n-gram overlap, distinct-n, spelling metrics |
+| `evaluation/evaluate_generation_attention.py` | Same evaluation pipeline for Attention LSTM checkpoints |
+| `evaluation/build_eval_samples.py` | Builds `data/eval_samples.json` from the test set |
 | `evaluation/plot_results.py` | Training curves and model comparison plots |
 
 ### Custom Multi-Head Attention
@@ -83,7 +85,65 @@ K=20 consistently outperforms K=40. Best overall: 3-layer K=20 (val PPL 76.02).
 | `grid_search_v3_lstm_s100/` | LSTM grid search results (seq_length=100) |
 | `attention_lstm_new/` | Attention LSTM v1 results |
 | `attention_lstm_v2/` | Attention LSTM v2 results |
-| `final_rnn_lstm/` | Final RNN/LSTM training results and plots |
+| `final_rnn_lstm/` | Final RNN/LSTM training results, plots, and generation evaluation |
+
+---
+
+## Generation Evaluation
+
+Evaluated on 100 fixed samples from the test set (`data/eval_samples.json`). Each sample has a prompt starting at a sentence boundary (≈30 BPE tokens) and a reference ending at the next sentence boundary (≈250 chars). Two decoding settings: conservative (T=0.5, top-p=0.85) and diverse (T=0.7, top-p=0.9).
+
+### Final RNN/LSTM generation results
+
+| Model | Setting | T | top-p | BLEU-1 | BLEU-4s | BERTScore | Bigram ovlp | Spelling | Distinct-2 | TTR | genPPL |
+| ----- | ------- | - | ----- | ------ | ------- | --------- | ----------- | -------- | ---------- | --- | ------ |
+| RNN | t0p5 | 0.5 | 0.85 | 0.121 | 0.0023 | 0.810 | 0.008 | 0.923 | 0.492 | 0.643 | 20.4 |
+| RNN | t0p7 | 0.7 | 0.90 | 0.124 | 0.0020 | 0.809 | 0.008 | 0.902 | 0.646 | 0.688 | 36.3 |
+| LSTM 1-layer | t0p5 | 0.5 | 0.85 | 0.185 | 0.0029 | 0.819 | 0.011 | 0.921 | 0.644 | 0.770 | 18.3 |
+| LSTM 1-layer | t0p7 | 0.7 | 0.90 | 0.187 | 0.0034 | 0.818 | 0.009 | 0.920 | 0.766 | 0.810 | 30.2 |
+| LSTM 2-layer | t0p5 | 0.5 | 0.85 | 0.185 | 0.0045 | 0.823 | 0.013 | 0.937 | 0.595 | 0.718 | 17.3 |
+| LSTM 2-layer | t0p7 | 0.7 | 0.90 | 0.188 | 0.0048 | 0.820 | 0.012 | 0.924 | 0.744 | 0.784 | 28.2 |
+| LSTM 3-layer | t0p5 | 0.5 | 0.85 | 0.188 | **0.0087** | **0.823** | **0.016** | **0.938** | 0.587 | 0.724 | **14.8** |
+| LSTM 3-layer | t0p7 | 0.7 | 0.90 | **0.188** | 0.0070 | 0.821 | 0.013 | 0.922 | **0.734** | **0.781** | 23.0 |
+
+**BLEU-4s** = smoothed BLEU-4. **genPPL** = model's own perplexity on generated text (lower = more confident/focused output).
+
+```text
+Model        Set     T  top-p |  BLEU1  BLEU4s   BERT  |  bi-ov  spell  dist2   TTR  | genPPL
+──────────────────────────────────────────────────────────────────────────────────────────────────
+rnn          t0p5  0.5  0.85  | 0.1213  0.0023  0.8100 | 0.0079  0.923  0.492  0.643 |  20.44
+rnn          t0p7  0.7  0.90  | 0.1241  0.0020  0.8088 | 0.0081  0.902  0.646  0.688 |  36.34
+lstm_l1      t0p5  0.5  0.85  | 0.1850  0.0029  0.8186 | 0.0112  0.921  0.644  0.770 |  18.30
+lstm_l1      t0p7  0.7  0.90  | 0.1866  0.0034  0.8184 | 0.0093  0.920  0.766  0.810 |  30.19
+lstm_l2      t0p5  0.5  0.85  | 0.1847  0.0045  0.8228 | 0.0134  0.937  0.595  0.718 |  17.28
+lstm_l2      t0p7  0.7  0.90  | 0.1882  0.0048  0.8204 | 0.0121  0.924  0.744  0.784 |  28.19
+lstm_l3      t0p5  0.5  0.85  | 0.1881  0.0087  0.8227 | 0.0156  0.938  0.587  0.724 |  14.76
+lstm_l3      t0p7  0.7  0.90  | 0.1882  0.0070  0.8212 | 0.0126  0.922  0.734  0.781 |  23.02
+```
+
+Key observations:
+
+- LSTM consistently outperforms RNN across all metrics
+- Deeper LSTM layers improve quality: LSTM-3 achieves the best BLEU-4s, BERTScore, bigram overlap, and spelling
+- T=0.5 gives more focused output (lower genPPL, higher spelling accuracy); T=0.7 gives more diverse output (higher distinct-2 and TTR)
+- Full per-sample results with prompt / generated / reference examples in `results/final_rnn_lstm/eval_*.txt`
+
+To rebuild eval samples:
+
+```bash
+python src/evaluation/build_eval_samples.py
+```
+
+To run evaluation (from project root):
+
+```bash
+PYTHONPATH=src python src/evaluation/evaluate_generation.py \
+  --checkpoint checkpoints/final_rnn_lstm/final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt \
+  --tokenizer data/gothic_tokenizer.json \
+  --eval-samples data/eval_samples.json \
+  --temperature 0.5 --top-p 0.85 \
+  --output results/final_rnn_lstm/eval_lstm_l3_t0p5
+```
 
 ---
 
