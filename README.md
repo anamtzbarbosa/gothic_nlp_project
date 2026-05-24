@@ -1,6 +1,6 @@
 # Gothic NLP Project
 
-Language models trained on Gothic literature using RNN, LSTM, and Multi-Head Self-Attention LSTM architectures with BPE tokenization.
+Language models trained on Gothic literature using RNN, LSTM, Multi-Head Self-Attention LSTM, and Cached Cross-Attention LSTM architectures with BPE tokenization.
 
 ---
 
@@ -71,7 +71,7 @@ Each epoch sees the entire 2.8M-token training set regardless of batch or sequen
 
 | File | Description |
 | ---- | ----------- |
-| `models.py` | `VanillaRNN`, `DeepLSTM`, `SelfAttentionLSTM` definitions |
+| `models.py` | `VanillaRNN`, `DeepLSTM`, `SelfAttentionLSTM`, `CrossAttentionLSTM` definitions |
 | `train.py` | Core training loop, evaluation, checkpointing |
 | `train_final_rnn_lstm.py` | Final RNN and LSTM runs (best configs from grid search v3) |
 | `train_final_models.py` | Alternative final training script |
@@ -97,6 +97,14 @@ Both `train_attention_lstm.py` (v1) and `train_attention_lstm_v2.py` (v2) implem
 - **v1** (`train_attention_lstm.py`): LR=1e-3, dropout=0.3, 4 epochs max. Trained on 1/2/3 layers with K=20 and K=40. Results are available (see table below).
 - **v2** (`train_attention_lstm_v2.py`): LR=5e-4, dropout=0.4, 5 epochs max, K=20 only (1/2/3 layers). Trained to investigate whether lower LR and higher dropout reduce overfitting in the multi-head self-attention block.
 
+
+### Cached Cross-Attention (resolve-conflicts branch)
+
+Implemented in `CachedCrossAttention` and `CrossAttentionLSTM` available in the resolve-conflicts branch. Instead of only attending to the current sequence, this architecture maintains a detached `cached_memory` of past LSTM outputs to extend context.
+- The current sequence acts as the **Query**.
+- The concatenated past memory and current sequence act as **Keys** and **Values**.
+- This allows the model to look back across batch boundaries up to `window_size_k` steps. The memory is explicitly detached from the computation graph at the end of each step to prevent Backpropagation Through Time (BPTT) from blowing up memory limits.
+
 ---
 
 ## Checkpoints (`checkpoints/`)
@@ -109,6 +117,7 @@ Both `train_attention_lstm.py` (v1) and `train_attention_lstm_v2.py` (v2) implem
 | `attention_lstm_new/` | Multi-Head Self-Attention LSTM v1 — 1/2/3 layers, K=20 and K=40 (trained) |
 | `attention_lstm_v2/` | Multi-Head Self-Attention LSTM v2 — best val epoch, 1/2/3 layers, K=20 (not yet trained) |
 | `attention_lstm_v2_last_epoch/` | Multi-Head Self-Attention LSTM v2 — last epoch checkpoint with epoch number in filename (not yet trained) |
+| `cross_attention_lstm/` | Top performing Cached Cross-Attention LSTM models |
 
 ### Hyperparameter Search
 
@@ -160,6 +169,18 @@ Total: 48 runs. Top results by 1-epoch val PPL:
 | 32 | 256 | 1e-3 | 2 | 0.3 | 79.06 | 88.00 | ★ LSTM-2 |
 
 The best-per-depth configurations (starred) were promoted to full training. For LSTM-1, the same regime (B=64, H=256, LR=5e-4, dropout=0.3) was applied following the pattern from the grid search — this config ranked at the top across all single-layer runs.
+
+**Cached Cross-Attention LSTM search**
+
+A dedicated grid search was run for the Cross-Attention architecture. Interestingly, every single one of the top 5 performing models utilized a Batch Size of 64. Top 5 results by Validation Loss:
+
+| Batch | Seq | Hidden | Layers | K | LR | Dropout | Val Loss | Val PPL | Notes |
+| ----- | --- | ------ | ------ | - | -- | ------- | -------- | ------- | ----- |
+| 64 | 100 | 256 | 2 | 40 | 1e-3 | 0.3 | 4.630 | 112.55 | ★ Best Model |
+| 64 | 200 | 256 | 2 | 20 | 1e-3 | 0.3 | 4.639 | 114.18 | |
+| 64 | 100 | 256 | 2 | 20 | 1e-3 | 0.3 | 4.643 | 114.07 | |
+| 64 | 100 | 256 | 1 | 40 | 1e-3 | 0.3 | 4.660 | 116.59 | |
+| 64 | 200 | 256 | 1 | 40 | 1e-3 | 0.3 | 4.674 | 117.90 | |
 
 ### Final RNN/LSTM configs (`final_rnn_lstm/`)
 
