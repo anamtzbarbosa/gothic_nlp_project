@@ -618,8 +618,9 @@ PYTHONPATH=src python src/evaluation/generate.py \
   --max-new-tokens 280 --temperature 0.5 --top-p 0.85
 ```
 
+---
 
-### Sample 3 — Attention LSTM 3-layer (seq=100) | T=0.7, top-p=0.9
+### Sample 8 — Attention LSTM 3-layer (seq=100) | T=0.7, top-p=0.9
 
 > **Prompt:** *He had not slept since the night the stranger came to the door.*
 >
