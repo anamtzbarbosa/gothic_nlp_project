@@ -1,0 +1,4 @@
+Grid Search V3 (Optimized) Attention LSTM: attn_B32_S200_H256_L1_K40
+================================================================================
+run=attn_B32_S200_H256_L1_K40
+val_loss=4.6898 test_ppl=119.61
