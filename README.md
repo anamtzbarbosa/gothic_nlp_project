@@ -1,6 +1,6 @@
 # Gothic NLP Project
 
-Language models trained on Gothic literature using RNN, LSTM, and Attention-LSTM architectures with BPE tokenization.
+Language models trained on Gothic literature using RNN, LSTM, and Multi-Head Self-Attention LSTM architectures with BPE tokenization.
 
 ---
 
@@ -75,16 +75,16 @@ Each epoch sees the entire 2.8M-token training set regardless of batch or sequen
 | `train.py` | Core training loop, evaluation, checkpointing |
 | `train_final_rnn_lstm.py` | Final RNN and LSTM runs (best configs from grid search v3) |
 | `train_final_models.py` | Alternative final training script |
-| `train_attention_lstm.py` | Multi-head Attention LSTM — v1 (LR=1e-3, dropout=0.3, 4 epochs) |
-| `train_attention_lstm_v2.py` | Multi-head Attention LSTM — v2 (LR=5e-4, dropout=0.4, 5 epochs) |
+| `train_attention_lstm.py` | Multi-Head Self-Attention LSTM — v1 (LR=1e-3, dropout=0.3, 4 epochs) |
+| `train_attention_lstm_v2.py` | Multi-Head Self-Attention LSTM — v2 (LR=5e-4, dropout=0.4, 5 epochs) |
 | `test_attention_equivalence.py` | Forward equivalence test: custom vs `nn.MultiheadAttention` |
 | `dataset.py` | Dataset class and train/val/test splits (80/10/10) |
 | `tokenizer.py` | BPE tokenizer (train + encode/decode) |
 | `grid_search/` | Grid search scripts for RNN, LSTM, Attention LSTM (v3) |
 | `evaluation/generate.py` | Text generation for RNN and LSTM checkpoints |
-| `evaluation/generate_attention.py` | Text generation for Attention LSTM checkpoints |
+| `evaluation/generate_attention.py` | Text generation for Multi-Head Self-Attention LSTM checkpoints |
 | `evaluation/evaluate_generation.py` | BLEU, n-gram overlap, distinct-n, spelling metrics |
-| `evaluation/evaluate_generation_attention.py` | Same evaluation pipeline for Attention LSTM checkpoints |
+| `evaluation/evaluate_generation_attention.py` | Same evaluation pipeline for Multi-Head Self-Attention LSTM checkpoints |
 | `evaluation/build_eval_samples.py` | Builds `data/eval_samples.json` from the test set |
 | `evaluation/plot_results.py` | Training curves and model comparison plots |
 
@@ -95,7 +95,7 @@ Both `train_attention_lstm.py` (v1) and `train_attention_lstm_v2.py` (v2) implem
 **v1 vs v2:**
 
 - **v1** (`train_attention_lstm.py`): LR=1e-3, dropout=0.3, 4 epochs max. Trained on 1/2/3 layers with K=20 and K=40. Results are available (see table below).
-- **v2** (`train_attention_lstm_v2.py`): LR=5e-4, dropout=0.4, 5 epochs max, K=20 only (1/2/3 layers). Trained to investigate whether lower LR and higher dropout reduce overfitting in the multi-head attention block.
+- **v2** (`train_attention_lstm_v2.py`): LR=5e-4, dropout=0.4, 5 epochs max, K=20 only (1/2/3 layers). Trained to investigate whether lower LR and higher dropout reduce overfitting in the multi-head self-attention block.
 
 ---
 
@@ -106,9 +106,9 @@ Both `train_attention_lstm.py` (v1) and `train_attention_lstm_v2.py` (v2) implem
 | `grid_search_v3_rnn/` | Best checkpoint per RNN grid search run (48 runs) |
 | `grid_search_v3_lstm/` | Best checkpoint per LSTM grid search run (48 runs) |
 | `final_rnn_lstm/` | Final trained RNN and LSTM models (see configs below) |
-| `attention_lstm_new/` | Multi-head Attention LSTM v1 — 1/2/3 layers, K=20 and K=40 (trained) |
-| `attention_lstm_v2/` | Multi-head Attention LSTM v2 — best val epoch, 1/2/3 layers, K=20 (not yet trained) |
-| `attention_lstm_v2_last_epoch/` | Multi-head Attention LSTM v2 — last epoch checkpoint with epoch number in filename (not yet trained) |
+| `attention_lstm_new/` | Multi-Head Self-Attention LSTM v1 — 1/2/3 layers, K=20 and K=40 (trained) |
+| `attention_lstm_v2/` | Multi-Head Self-Attention LSTM v2 — best val epoch, 1/2/3 layers, K=20 (not yet trained) |
+| `attention_lstm_v2_last_epoch/` | Multi-Head Self-Attention LSTM v2 — last epoch checkpoint with epoch number in filename (not yet trained) |
 
 ### Hyperparameter Search
 
@@ -212,9 +212,9 @@ To investigate how increasing the hidden state size affects performance, each mo
 
 Across every model, larger hidden_dim consistently improves both val and test PPL. The biggest gain is from 64→128; the gain from 128→256 is smaller but still consistent. This confirms that h=256 is the right capacity choice for this corpus size — there is no sign of diminishing returns or overfitting from the larger hidden state when paired with appropriate dropout and weight decay.
 
-### Multi-Head Attention LSTM — v1 (`attention_lstm_new/`)
+### Multi-Head Self-Attention LSTM — v1 (`attention_lstm_new/`)
 
-Custom multi-head attention (4 heads, K=window size), LR=1e-3, dropout=0.3, 4 epochs max, AdamW weight decay=1e-4:
+Custom multi-head self-attention (4 heads, K=window size), LR=1e-3, dropout=0.3, 4 epochs max, AdamW weight decay=1e-4:
 
 | Layers | K | Best Val PPL | Test PPL |
 | ------ | -- | ------------ | -------- |
@@ -227,9 +227,9 @@ Custom multi-head attention (4 heads, K=window size), LR=1e-3, dropout=0.3, 4 ep
 
 K=20 consistently outperforms K=40. Best overall: 3-layer K=20 (val PPL 76.02).
 
-### Multi-Head Attention LSTM — v2 (`attention_lstm_v2/`)
+### Multi-Head Self-Attention LSTM — v2 (`attention_lstm_v2/`)
 
-v1 training curves showed the gap between train and val loss growing over epochs, indicating overfitting in the attention block. v2 was designed to address this: lower LR (5e-4 → down from 1e-3), higher dropout (0.4 → up from 0.3), 5 epochs max. K=20 only (since K=20 already dominated in v1).
+v1 training curves showed the gap between train and val loss growing over epochs, indicating overfitting in the self-attention block. v2 was designed to address this: lower LR (5e-4 → down from 1e-3), higher dropout (0.4 → up from 0.3), 5 epochs max. K=20 only (since K=20 already dominated in v1).
 
 | Layers | K | Best Val PPL | Test PPL | vs v1 Test PPL |
 | ------ | -- | ------------ | -------- | -------------- |
@@ -237,7 +237,7 @@ v1 training curves showed the gap between train and val loss growing over epochs
 | 2 | 20 | 78.51 | **89.01** | −2.45 ✓ |
 | 3 | 20 | 79.30 | 89.78 | +3.78 ✗ |
 
-v2 helps for 1-layer and 2-layer (overfitting was the bottleneck there), but hurts for 3-layer — the deeper model already regularises effectively through depth, and the lower LR slows convergence enough that the model does not recover within 5 epochs. **Best checkpoint for generation evaluation: v1 3-layer K=20.**
+v2 helps for 1-layer and 2-layer (overfitting was the bottleneck there), but hurts for 3-layer — the deeper model already regularises effectively through depth, and the lower LR slows convergence enough that the model does not recover within 5 epochs. **Best checkpoint for generation evaluation: Multi-Head Self-Attention LSTM v1 3-layer K=20.**
 
 ### Best model per layer count
 
@@ -251,7 +251,7 @@ Selecting the better checkpoint per depth across v1 and v2:
 
 These three checkpoints are used for all generation evaluation.
 
-### Attention LSTM generation results
+### Multi-Head Self-Attention LSTM: Generation Results
 
 Same evaluation setup as RNN/LSTM: 100 sentence-boundary samples, two decoding settings.
 
@@ -268,13 +268,13 @@ attn_l3    t0p7  0.7  0.90  | 0.1802  0.0043  0.8237 | 0.0132  0.924  0.738  0.7
 
 Key observations:
 
-- Attention LSTM 2-layer achieves the best BLEU-4s (0.0058) and competitive BERTScore across both settings
-- Attention LSTM 3-layer has the highest BERTScore (0.8241) and spelling accuracy (0.934) at t0p5
-- Generated perplexity is notably low for all attention models at t0p5 (~11–12), lower than the plain LSTM equivalents, indicating the attention mechanism produces more confident and focused distributions
+- Multi-Head Self-Attention LSTM 2-layer achieves the best BLEU-4s (0.0058) and competitive BERTScore across both settings
+- Multi-Head Self-Attention LSTM 3-layer has the highest BERTScore (0.8241) and spelling accuracy (0.934) at t0p5
+- Generated perplexity is notably low for all Multi-Head Self-Attention LSTM models at t0p5 (~11–12), lower than the plain LSTM equivalents, indicating the multi-head self-attention mechanism produces more confident and focused distributions
 - **attn_l1 shows the highest dist2/TTR despite the worst test PPL (138.91)** — counterintuitively, the weakest model appears most "diverse." This is not a sign of quality: a poorly-fitted model samples more uniformly across vocabulary, producing scattered text that hasn't learned strong pattern preferences. The low bi-ov (0.0098) and BLEU-4s (0.0027) confirm the output doesn't meaningfully overlap with references. The slightly lower genPPL vs l2 (11.61 vs 12.20) reflects overconfidence on a simpler learned distribution rather than genuine fluency.
 - Full per-sample results in `results/attention_lstm/eval_*.txt`
 
-### attn_l3 vs lstm_l3 (head-to-head, t0p5)
+### MH-Self-Attn LSTM-3 vs LSTM-3 (head-to-head, t0p5)
 
 | Metric | lstm_l3 | attn_l3 | Winner |
 | ------ | ------- | ------- | ------ |
@@ -287,13 +287,13 @@ Key observations:
 | TTR | 0.724 | 0.716 | ~tied |
 | genPPL | 14.76 | **11.96** | attn |
 
-Plain LSTM-3 wins on n-gram metrics (BLEU, bigram overlap) — it generates text that more literally matches the reference wording. Attention LSTM-3 wins on BERTScore and genPPL — it's semantically closer to the reference and produces more confident distributions, but uses different surface words to get there.
+Plain LSTM-3 wins on n-gram metrics (BLEU, bigram overlap) — it generates text that more literally matches the reference wording. Multi-Head Self-Attention LSTM-3 wins on BERTScore and genPPL — it's semantically closer to the reference and produces more confident distributions, but uses different surface words to get there.
 
 This is actually expected: at seq_length=100, plain LSTM is in its comfort zone (no vanishing gradient problem over 100 steps), so the attention mechanism doesn't provide a clear architectural advantage. The attention model would likely pull ahead at seq_length=200 where LSTM starts struggling with long-range dependencies.
 
-### Attention LSTM at seq_length=200 — demonstrating the benefit of attention
+### Multi-Head Self-Attention LSTM at seq_length=200 — demonstrating the benefit of attention
 
-To test this hypothesis, both a 3-layer Attention LSTM and a 3-layer plain LSTM were trained at seq_length=200.
+To test this hypothesis, both a 3-layer Multi-Head Self-Attention LSTM and a 3-layer plain LSTM were trained at seq_length=200.
 
 **Motivation:** at seq=100 the LSTM handles all dependencies within its context window comfortably, so adding attention gives no clear win. At seq=200 the LSTM must track dependencies twice as far back, where its hidden state starts to become a bottleneck — the attention mechanism can directly attend to any past token and should have a genuine architectural advantage.
 
@@ -302,9 +302,9 @@ Training results (3-layer, seq=200):
 | Model | Config | Best Val PPL | Test PPL |
 | ----- | ------ | ------------ | -------- |
 | LSTM 3-layer | seq=200, batch=32, LR=1e-3, dropout=0.2 | 75.41 | 85.49 |
-| Attention LSTM 3-layer (v2, K=20) | seq=200, batch=64, LR=5e-4, dropout=0.4 | **75.90** | **85.33** |
+| MH-Self-Attn LSTM 3-layer (v2, K=20) | seq=200, batch=64, LR=5e-4, dropout=0.4 | **75.90** | **85.33** |
 
-The Attention LSTM achieves a better test PPL (85.33 vs 85.49) at seq=200 — confirming that the attention mechanism provides a genuine advantage when the sequence is long enough to expose the LSTM's limitations. Notably, the attention model's test PPL (85.33) also improves on its own seq=100 counterpart (86.00), whereas the plain LSTM seq=200 (85.49) does not clearly improve on LSTM seq=100 (75.34 val / ~86 test at comparable depth).
+The Multi-Head Self-Attention LSTM achieves a better test PPL (85.33 vs 85.49) at seq=200 — confirming that the multi-head self-attention mechanism provides a genuine advantage when the sequence is long enough to expose the LSTM's limitations. Notably, the attention model's test PPL (85.33) also improves on its own seq=100 counterpart (86.00), whereas the plain LSTM seq=200 (85.49) does not clearly improve on LSTM seq=100 (75.34 val / ~86 test at comparable depth).
 
 For a fair generation evaluation, seq=200 requires longer references (~170 tokens ≈ 596 chars). A separate `data/eval_samples_long.json` was built from the same prompts as `eval_samples.json` but with references extended to the next sentence boundary around 600 characters. To make the comparison apples-to-apples, `attn_l3 seq=100` was also evaluated against the long references.
 
@@ -329,8 +329,8 @@ On the same long references, seq=200 wins clearly on BLEU-1 (+0.10) and BLEU-4s 
 | ------ | -------- |
 | `grid_search_v3_rnn/` | RNN grid search results |
 | `grid_search_v3_lstm_s100/` | LSTM grid search results (seq_length=100) |
-| `attention_lstm_new/` | Attention LSTM v1 results |
-| `attention_lstm_v2/` | Attention LSTM v2 results |
+| `attention_lstm_new/` | Multi-Head Self-Attention LSTM v1 results |
+| `attention_lstm_v2/` | Multi-Head Self-Attention LSTM v2 results |
 | `final_rnn_lstm/` | Final RNN/LSTM training results, plots, and generation evaluation |
 
 ---
@@ -415,7 +415,7 @@ PYTHONPATH=src python src/evaluation/generate.py \
   --max-new-tokens 300 --deterministic
 ```
 
-**Attention LSTM** (run from `src/`):
+**Multi-Head Self-Attention LSTM** (run from `src/`):
 
 ```bash
 # Temperature / nucleus sampling
@@ -464,13 +464,13 @@ Train loss continues falling every epoch while val loss flattens or rises after 
 
 ![RNN/LSTM training curves](results/plots/fig1_rnn_lstm_curves.png)
 
-### Figure 2 — Attention LSTM: Train vs Validation Loss
+### Figure 2 — Multi-Head Self-Attention LSTM: Train vs Validation Loss
 
-The same overfitting pattern appears in the Attention LSTM — particularly severe in 1-layer where val loss climbs steadily from epoch 1. The 3-layer model (marked ★) is the best-performing checkpoint and is selected for generation evaluation.
+The same overfitting pattern appears in the Multi-Head Self-Attention LSTM — particularly severe in 1-layer where val loss climbs steadily from epoch 1. The 3-layer model (marked ★) is the best-performing checkpoint and is selected for generation evaluation.
 
-![Attention LSTM curves](results/plots/fig2_attn_curves.png)
+![Multi-Head Self-Attention LSTM training curves](results/plots/fig2_attn_curves.png)
 
-### Figure 3 — Attention LSTM: Initial vs Regularized Config
+### Figure 3 — Multi-Head Self-Attention LSTM: Initial vs Regularized Config
 
 The initial config (LR=1e-3, dropout=0.3) shows a growing train/val gap across all layer counts. The regularized config (LR=5e-4, dropout=0.4) narrows this gap for 1-layer and 2-layer. For 3-layer the regularization does not help — the deeper model already self-regularizes through depth, and the lower LR prevents it from converging to a better minimum within the same epoch budget.
 
@@ -484,18 +484,18 @@ Increasing hidden_dim consistently improves validation PPL across every model ty
 
 ### Figure 5 — Val and Test Perplexity: All Final Models
 
-Val PPL (lighter bars) and Test PPL (darker bars) are shown side by side. The gap between val and test reflects generalization: smaller gap = better generalization. Attention LSTM 3-layer (seq=200) achieves the best test PPL overall.
+Val PPL (lighter bars) and Test PPL (darker bars) are shown side by side. The gap between val and test reflects generalization: smaller gap = better generalization. Multi-Head Self-Attention LSTM 3-layer (seq=200) achieves the best test PPL overall.
 
 ![Val and test PPL all models](results/plots/fig5_val_test_ppl.png)
 
 ### Figure 6 — Generation Quality Metrics (T=0.5, top-p=0.85)
 
-Reference-overlap and semantic similarity metrics for all 7 models at conservative decoding. LSTM-3 leads on BLEU-4s and bigram overlap; Attn-LSTM-2 and Attn-LSTM-3 lead on BERTScore, indicating that attention models produce semantically closer text even when surface n-gram overlap is slightly lower.
+Reference-overlap and semantic similarity metrics for all 7 models at conservative decoding. LSTM-3 leads on BLEU-4s and bigram overlap; MH-Self-Attn-LSTM-2 and MH-Self-Attn-LSTM-3 lead on BERTScore, indicating that the multi-head self-attention models produce semantically closer text even when surface n-gram overlap is slightly lower.
 
 ![Generation quality metrics](results/plots/fig6_eval_quality.png)
 
 ### Figure 7 — Diversity and Fluency Metrics (T=0.5 vs T=0.7)
 
-Diversity metrics (Distinct-2, TTR) increase markedly from T=0.5 to T=0.7 across all models, while spelling accuracy drops slightly. Generated PPL (model confidence on its own output) is notably lower for Attention LSTM models at T=0.5, indicating more focused and confident distributions compared to plain LSTM.
+Diversity metrics (Distinct-2, TTR) increase markedly from T=0.5 to T=0.7 across all models, while spelling accuracy drops slightly. Generated PPL (model confidence on its own output) is notably lower for Multi-Head Self-Attention LSTM models at T=0.5, indicating more focused and confident distributions compared to plain LSTM.
 
 ![Diversity and fluency metrics](results/plots/fig7_eval_diversity.png)

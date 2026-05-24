@@ -1,0 +1,78 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 100
+bleu_1: 0.25285457809700157
+bleu_2: 0.0873314896390867
+bleu_3: 0.04186018128041593
+bleu_4: 0.02817170722159696
+bleu_4_smoothed: 0.02830192591442039
+bert_score_f1: 0.8180270195007324
+bigram_overlap: 0.03587348569894389
+trigram_overlap: 0.009432652949477448
+distinct_1: 0.11403949730700179
+distinct_2: 0.48094032549728755
+trigram_repetition_rate: 0.023467359776806206
+spelling_accuracy: 0.924096842791485
+ttr: 0.5794975180816114
+generated_perplexity: 12.781868072955488
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Prompt:
+What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par
+
+Generated:
+o is dead, Jane: that is there the thing in my life. What a curious man! Do you think he is? He has never seen him. I believe he is not deadly young, more strongly than he can." "So are you?" I asked. "Then I mean that you ought to know that." "No, sir, I have been told, Harry." "Because I don't think that's all I can, Harry." "Well, then, say you do so." "Is your own soul?" "Yes; you don't know what to do." "Oh no! no! And how did you hear that? Hush! you don't know what are you about?" "But you think so, I suppose?" "Yes, sir." "And what do you mean?" "Yes; it's like a servant." "Well, you don't know what to say." "Well, sir, what's the matter? S
+
+Reference:
+ bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking déshabille to show herself knocking at the window. 'Twould be very nice thing, Mary Queence, don't you think?' I was sitting now on the bedside, crying in mere despair. I did not care to dispute or to resist. Oh! why had rescue come so near, only to prove that it could not reach me? So I went on crying, with a clasping of my hands and turning up of my eyes, in incoherent prayer.
+--------------------------------------------------------------------------------
+
+Example 2
+Prompt:
+It appears to me un cimetière!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken
+
+Generated:
+ly in agony. 'Hush! oh! no! how can I be afraid of it? Is it? If you be so, I shall not see you again.' 'As you do, Madame, don't you think it would be?' I cried. 'You're very kind, Miss!' I exclaimed, 'and if you had better have the address with me, I shall not see it.' I stared at me with an effort. 'I hope I shall not come to a long time for your uncle.' 'Yes, sir.' 'Well, that is no use for you.' 'Ah! mustn't be afraid of it, Maud; I'll be bound to get out o' the gate, nor I'll tell you if ye be a good bit of it.' She laughed aloud. 'Ah!' said she, 'and my dear sir, I'll 
+
+Reference:
+ eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions. 'I weel make excuse to go into his room again,' said Madame; 'and I weel endeavor to learn something more from him, and I weel come back again to you in half an hour.' She departed. But in half an hour did not return. I had a dull longing to leave Bartram-Haugh. For me, since the departure of poor Milly, it had grown like the haunt of evil spirits, and to escape on any terms from it was a blessing unspeakable.
+--------------------------------------------------------------------------------
+
+Example 3
+Prompt:
+The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her
+
+Generated:
+ aid with both handkerchiefs: and, instead of being in the room, I found it locked; my eyes were fixed on the table, and was as much excited as a baby as it might be, I saw a gentleman in the great battlements and soft shadows. They looked about me. It was as much as I could have done. And then we went out and ran downstairs into the kitchen. The next morning was very slight, warmly, and the sounds passed over the battlements nearly a little table, and was an old friend of the housekeeper, and who were very much in order to visit the house and was in the kitchen in front, and make no noise. We were sitting near, and found it impossible to describe it. The moon was now darkened and wet and bright, and very dark
+
+Reference:
+ exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption. This little anxiety ended, its subsidence was followed by a sense of loneliness, and with it, of vague insecurity, which increased at last to such a pitch, that I wondered at my own madness in sending my companion away; and at last my terrors so grew, that I drew back into the farthest corner of the bed, with my shoulders to the wall, and my bed-clothes huddled about me, with only a point open to peep at. At last the door opened gently.
+--------------------------------------------------------------------------------
+
+Example 4
+Prompt:
+Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but
+
+Generated:
+ this was a fine thing that would have been quite unknown to me, but I do not know what they were. You were the only one." "I dare say it doesn't seem to me to be afraid of your friendship." "Some one," said the admiral, "and I think you're afraid of you." "But what do you think of me, uncle?" "Ay, ay, sir." "Nay, you know, Jack." "Why, you don't know what a good deal better than you do." "Well, then, Jack, Jack, Jack, Jack, you don't mind." "But what do you mean?" "Why, it must be a little one." "That's all that," said Jack, "and I'll be hanged about." The man was in no condition, Jack, very much frightened when he saw him very much frightened when he came out. He did not like him, he was as much pleased as if he had been in possess
+
+Reference:
+ som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, "Might I speak a word wi' ye, please, on the lobby?" 'Mr. Dudley was making belief be this time to look out at window, wi' his back to me, and I kept looking straight on Madame, and she said, "They're mendin' my broken glass, Mary," walking between them and me, and coming close up to me very quick; and so she marched me backward out o' the door, prating all the time.
+--------------------------------------------------------------------------------
+
+Example 5
+Prompt:
+But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she
+
+Generated:
+epishly was at home, and was found in the room where she was, she did not see her in the morning. She said nothing, but she was as much pleased with the indifference of her spirits. Such was the first to hear the words of the two men, and she was not quite afraid of being not to be heard of. "Of course she doesn't think she doesn't think." "You never heard of it now," said Bessie. "I remember it was too much to say she would come back to Limmeridge House. You're so good as to say you never had her way to her aunt's house." "And, Jane? What do you mean?" "That is what you say." "You don't know how she isn't?" "Is it?" "Yes, sir." "And you had no idea of our housekeeper?" "No, no; don't you hear that?" "The devil!" she said. "Well, 
+
+Reference:
+ searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest. She had merely come in to say that she had heard nothing since, but was now going to make my uncle's chocolate; and that so soon as her interview was ended she would see me again, and let me hear anything she should have gleaned. In a little while a knock came to my door, and Mary Quince was ordered by old Wyat into my uncle's room.
+--------------------------------------------------------------------------------
