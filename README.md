@@ -654,3 +654,147 @@ PYTHONPATH=src python src/evaluation/generate_attention.py \
   --prompt "He had not slept since the night the stranger came to the door." \
   --max-new-tokens 220 --temperature 0.7 --top-p 0.9
 ```
+
+---
+
+## LLM-as-Judge Evaluation (Pairwise G-Eval)
+
+Quantitative metrics (BLEU, BERTScore) measure surface overlap with a reference text and cannot capture whether generated prose is atmospherically gothic, narratively coherent, or stylistically consistent. To evaluate these qualitative dimensions, we use a **pairwise LLM-as-judge** approach inspired by G-Eval (Liu et al., 2023) and MT-Bench.
+
+### Method
+
+- **Judge model:** Gemini 3.1 Flash-Lite (`gemini-3.1-flash-lite-preview`)
+- **Prompts:** 30 simple Gothic scene-setting prompts (e.g. "She walked alone through the moonlit corridor.") — open-ended enough for the model to generate naturally
+- **Procedure:** For each prompt, generate one continuation per model (LSTM-3 and Attn-LSTM-3 v1, seq=100, T=0.7, top-p=0.9). Show both to Gemini and ask which wins on each criterion.
+- **Position bias control:** Order alternated across 3 judge calls per prompt (LSTM=A, Attn=A, LSTM=A), so any preference for the first position cancels out
+- **Total judgments:** 30 prompts × 3 calls × 4 criteria = 360 individual verdicts
+
+### Criteria
+
+| Criterion | What it measures |
+| --------- | ---------------- |
+| **Coherence** | Does the text hold together logically and follow from the prompt? |
+| **Gothic Atmosphere** | Darkness, mystery, dread, supernatural foreboding |
+| **Narrative Quality** | Any sense of scene, character, or story development |
+| **Fluency** | Readability, grammar, and natural word flow |
+
+### Results
+
+| Criterion | LSTM-3 win rate | Attn-LSTM-3 win rate | Ties | Winner |
+| --------- | --------------- | -------------------- | ---- | ------ |
+| Coherence | 33.8% | **66.2%** | 13 | **Attn** |
+| Gothic Atmosphere | 32.5% | **67.5%** | 7 | **Attn** |
+| Narrative Quality | 31.0% | **69.0%** | 3 | **Attn** |
+| Fluency | 37.8% | **62.2%** | 0 | **Attn** |
+| **Overall** | **33.8%** | **66.2%** | 23 | **Attn** |
+
+Attn-LSTM-3 wins on all four criteria with consistent margins (~65–69% win rate). The largest advantage is on **Narrative Quality** (69%) and **Gothic Atmosphere** (67.5%) — precisely the dimensions where attention's ability to maintain long-range context across the sequence should help most.
+
+This complements the quantitative finding that Attn-LSTM-3 has ~20% lower generated perplexity (genPPL) than LSTM-3: the attention model is both more confident in its token distributions and produces qualitatively better prose as judged independently by a language model evaluator.
+
+### Reproducing
+
+```bash
+# Install dependency
+pip install google-genai
+
+# Run pairwise G-Eval (requires Gemini API key)
+PYTHONPATH=src python src/evaluation/llm_eval/geval_gothic.py \
+  --prompts data/geval_prompts.json \
+  --num-samples 30 \
+  --temperature 0.7 --top-p 0.9 \
+  --api-key YOUR_GEMINI_API_KEY \
+  --output results/llm_eval/pairwise_per_criterion
+```
+
+Results are saved to `results/llm_eval/pairwise_per_criterion.json` and `.txt`. The 30 evaluation prompts are in `data/geval_prompts.json`.
+
+### Methodology detail
+
+Standard automatic metrics (BLEU, BERTScore) compare generated text against a fixed reference string — they reward surface-level word overlap but cannot tell whether text *feels* gothic, maintains a coherent scene, or reads naturally. LLM-as-judge addresses this by using a capable language model as an evaluator instead of a reference string.
+
+We use **pairwise comparison** rather than absolute scoring (e.g. "score this 1–5") because:
+
+- Pairwise judgments have higher reliability and inter-rater agreement (shown in the MT-Bench and Chatbot Arena papers)
+- Absolute scores are sensitive to scale calibration — especially hard for small domain-specific models whose output quality is hard to anchor
+- A preference judgment ("A or B?") is a simpler cognitive task for the judge model
+
+To control for **position bias** (LLM judges tend to favour whichever text appears first), we alternate the order of the two continuations across the 3 calls per prompt: LSTM appears first in calls 1 and 3, Attn appears first in call 2. Any systematic first-position preference cancels out in the tally.
+
+Each call returns a winner for all 4 criteria simultaneously using Gemini's structured JSON output, so 3 calls × 30 prompts = 90 API calls total (360 individual criterion verdicts).
+
+### Prompts used
+
+The 30 evaluation prompts are short, open-ended Gothic scene-setters — simple enough that the model can generate naturally without failing a specific narrative constraint:
+
+```text
+The old castle stood silent in the darkness.
+She walked alone through the moonlit corridor.
+A cold wind swept through the empty hall.
+The stranger arrived at the gate after midnight.
+He lit a candle and descended the stone staircase.
+The forest was silent and the path had disappeared.
+She sat alone in the great dark chamber.
+The old monk led her through the vaulted passage.
+Rain fell heavily upon the ancient stone walls.
+The servant knocked softly at the heavy door.
+He stood at the window and looked into the night.
+The fires in the hall had long since gone cold.
+She found herself alone in the ruined chapel.
+The road wound through dark hills and bare trees.
+A figure moved at the far end of the gallery.
+The old woman spoke in a low and trembling voice.
+He wandered through the deserted rooms of the manor.
+The night was still and no sound came from below.
+She opened the heavy gate and stepped inside.
+The torches in the passage flickered and went out.
+He read the old letter by the light of the fire.
+The mountains rose dark and steep on every side.
+She heard a sound in the room above her.
+The garden was overgrown and the paths long forgotten.
+He rode through the valley as the sun was setting.
+The door at the end of the corridor stood open.
+She climbed the winding stairs in the dark tower.
+The village lay quiet beneath a moonless sky.
+He paused at the threshold and listened.
+The wind moved through the trees like a whisper.
+```
+
+### Gemini judge prompt
+
+**System prompt** (sets context and calibration for the judge):
+
+```text
+You are evaluating text generated by small LSTM language models (~10M parameters)
+trained on 3.5 million tokens of 19th-century Gothic fiction.
+Expect archaic vocabulary, imperfect grammar, and occasional wandering — that is normal.
+For each criterion, pick which continuation (A or B) is better, or call it a tie.
+Judge each criterion independently. Be willing to call a tie if both are similarly good or poor.
+```
+
+**User prompt** (sent once per judgment, with the two continuations substituted in):
+
+```text
+Two small Gothic language models were given the same prompt.
+For each criterion below, pick which continuation is better: A, B, or tie.
+
+PROMPT:
+{prompt}
+
+CONTINUATION A:
+{text_a}
+
+CONTINUATION B:
+{text_b}
+
+Judge each criterion independently:
+
+1. COHERENCE — does the text hold together logically and follow from the prompt?
+2. GOTHIC_ATMOSPHERE — darkness, mystery, dread, supernatural foreboding
+3. NARRATIVE_QUALITY — any sense of scene, character, or story development
+4. FLUENCY — readability, grammar, and natural word flow
+
+For each criterion choose A, B, or tie.
+```
+
+The response is constrained to structured JSON via Gemini's `response_schema` parameter, returning a winner (`"A"`, `"B"`, or `"tie"`) for each criterion in a single call.
