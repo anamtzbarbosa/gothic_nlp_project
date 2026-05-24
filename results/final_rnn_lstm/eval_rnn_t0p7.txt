@@ -1,0 +1,78 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 100
+bleu_1: 0.12405492979485236
+bleu_2: 0.028800629920525053
+bleu_3: 0.005065687672425684
+bleu_4: 1.0065914332019427e-05
+bleu_4_smoothed: 0.001986848927105777
+bert_score_f1: 0.8087882399559021
+bigram_overlap: 0.00805784657349996
+trigram_overlap: 0.00015417457305502846
+distinct_1: 0.18461657151674124
+distinct_2: 0.6462447519825844
+trigram_repetition_rate: 0.001672890776695175
+spelling_accuracy: 0.9023553018104157
+ttr: 0.6876345080643759
+generated_perplexity: 36.342705612647784
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Prompt:
+What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par
+
+Generated:
+is, too, no sooner, and heard his poor girl, waiting in the morning. I thought you pulled myself in the right now to one letters for two years." "By God!" repeated his eyes were fixed eyes closed after it with the white and buffer part of the porters of our misery. They passed the floor. Mr. Rochester looked down, and had passed along the back of the room. "'Tis William ... Was I as it really love you all I have a rich satisfaction, I must have no fear of you can't be read in dispatching me here now the next day, and all three or four minutes, where we may have to discover that?" "You will be a question, how happy my wife is my love!" said the admiral, "is quite fight." "I am not to tell me. You will 
+
+Reference:
+ bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking déshabille to show herself knocking at the window.
+--------------------------------------------------------------------------------
+
+Example 2
+Prompt:
+It appears to me un cimetière!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken
+
+Generated:
+ where, till I could see his ear-room now someone of a strange thing for a moment since it was a good and unless in reality for the purpose of recalling herself, which I felt a means of example from heaven. From it away from his brother's wife's character. Yet she dared to remove the advantage-great sheltered orth on the floor. We were dimly dressed in darkness, and the assembled, hurried down, yet returned to the door and opened down the road, looking at the right. 'Oh yes! I never can make a happier for that I am, he's sure; and he must be imposed on the subject of time I can do all about it. You have known him! In you the enemy had made his own exercise of proper cinion, it appeared to be thrown open, and a littl
+
+Reference:
+ eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions.
+--------------------------------------------------------------------------------
+
+Example 3
+Prompt:
+The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her
+
+Generated:
+ save to let her wall with fury. 'Purrified you not in what it is it?" "Yes!" said the admiral. "If sure I never came in titrated. Mrs. Ferrari's voice still lingered, even to face and in a kind of packets, or from that strange very well-known Bartram-Haugh he called him and said he swell at him, and put her hand his head. 'Her hand he called, 'For you! I tell you what is this old Garon't take the best of life, and you cannot have the worst of life." "I am very glad to hold myself you into annoyance which you read her forest I ever know the means of food, but I don't feel very much less sorry, if it had not been in his house for grant
+
+Reference:
+ exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption.
+--------------------------------------------------------------------------------
+
+Example 4
+Prompt:
+Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but
+
+Generated:
+ there was no comfort I entreat you, as some in the world which has been bound by no means than your personal experience has not known to you." "I do not know how much that a catastrope it will have done to prevent her; yet we can acquire by telling me to get your eyes; in your mind.' So searching to hear the old man, who shuddered. "It may be, you must have done it?" "Oh! my niece we now go far-to be still apology, and I fear not with that your truths would hear what have you do to be reined Mr. Hartright." Her eyes were roused rapidly placed above the handkerchiefs, which bent upon the ground-head; when they reached the door and opened room, and then reached Christine's face. "He is very 
+
+Reference:
+ som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, "Might I speak a word wi' ye, please, on the lobby?" 'Mr.
+--------------------------------------------------------------------------------
+
+Example 5
+Prompt:
+But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she
+
+Generated:
+et a retreat, brothers my admired, and yet hardly even to my letters were would secure the result of truth that He had made our exertions to me and some interests of the mob, who could not be unnecessarily imprisonment. Madame drew him with his mouth. He has often memory, flattered earnestly ascended on the floor, and to a small fate of Sophilst of being left; when they would hear them, he went to collect for the purpose of fear for the first time of its influences, which she had too much affected like a momentary pistol sat over with a wild flowers, as I had seen, and looked round to hear him with I range the joy of my labours in those to see him; and she did not notice it to his lips, as we could 
+
+Reference:
+ searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest.
+--------------------------------------------------------------------------------

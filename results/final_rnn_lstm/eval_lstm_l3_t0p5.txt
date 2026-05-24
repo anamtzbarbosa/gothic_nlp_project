@@ -1,0 +1,78 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 100
+bleu_1: 0.18809849521217709
+bleu_2: 0.05019721740563393
+bleu_3: 0.017966741405737487
+bleu_4: 0.008041422348514026
+bleu_4_smoothed: 0.0086902032301131
+bert_score_f1: 0.8226735591888428
+bigram_overlap: 0.015551560537025201
+trigram_overlap: 0.0025101838221261693
+distinct_1: 0.16843365253077974
+distinct_2: 0.5868128044537231
+trigram_repetition_rate: 0.010965160135932992
+spelling_accuracy: 0.9378099376898514
+ttr: 0.7235961989164257
+generated_perplexity: 14.763956883986081
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Prompt:
+What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par
+
+Generated:
+is! my dear Maud, you must not send me a little away with you.' 'No, no, no, no; you don't know that I am the only one that is more absurdly than to do, and because you know it will be a good deal better than a good deal of mind and kindness for your sake.' And then the other w
+
+Reference:
+ bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking déshabille to show herself knocking at the window.
+--------------------------------------------------------------------------------
+
+Example 2
+Prompt:
+It appears to me un cimetière!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken
+
+Generated:
+. 'Well, we must not see it go out o' the trees.' 'Well, we must not see me all the time I do, Madame,' I said. 'She is quite right, Miss.' 'And what is the matter with you? Why? And why should I do it? Is it not? As soon as you had done so, I am going to 
+
+Reference:
+ eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions.
+--------------------------------------------------------------------------------
+
+Example 3
+Prompt:
+The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her
+
+Generated:
+ appearance to her father, but she did not seem to notice any question. 'No, no, no, no,' she answered, 'and let me see him again.' 'No, no, no, no; no; you don't want me to do so, and I won't have you a good deal better than most of yours for you, Maud, I am so glad to see you very 
+
+Reference:
+ exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption.
+--------------------------------------------------------------------------------
+
+Example 4
+Prompt:
+Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but
+
+Generated:
+ a few words more satisfactory than I did." "Well, well, I will take it at once to take the room to go on to London," said Varney, "that I never saw him." "Certainly not." "Well, well, have you been forgiven?" I asked. "You will not be a very serious one?" "Yes." "Well, well, dear, I am 
+
+Reference:
+ som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, "Might I speak a word wi' ye, please, on the lobby?" 'Mr.
+--------------------------------------------------------------------------------
+
+Example 5
+Prompt:
+But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she
+
+Generated:
+er fondness she did not lose their present marriage. The old woman had been sitting down in bed, she did not make her crying 'and I won't be able to make her in company with her.' 'Well, Miss,' she said, smiling, 'and I think it so long as we can see her.' 'I do, Miss Maud,' said he, 
+
+Reference:
+ searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest.
+--------------------------------------------------------------------------------

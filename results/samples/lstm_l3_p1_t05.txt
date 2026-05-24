@@ -1,0 +1,7 @@
+Using device: mps
+Loaded model: lstm
+Prompt: The castle was dark and silent, and not a soul stirred within its crumbling walls.
+Temperature: 0.5
+Top-p: 0.85
+--------------------------------------------------------------------------------
+The castle was dark and silent, and not a soul stirred within its crumbling walls.-On leaving us we had got up to bed again, and returned to her room, and shut her head on the door-floor. "But we must not go back again! ... We have better enough! ... Oh! what is it you? What is it? And what is that?" She looked round at her feet, and said: "Hold your tongue!" He was very pale, and spoke and speaking: "I didn't know it again." And she turned back again, and said: "We must have been married." He turned round and said: "She is dead! ... You're right! ... We can see the darkness on the sofa where we can. The Professor says ... And what do you mean?" "Why, you cannot tell me that you see it! ... Well, do not be sure we shall find that we may have to make the wedding! ... And what did you do? It is a little thing in the coffin-door! There is no difficulty in our own way. It is the most unpleasant thing that may happen to us.... I must have to make my inquiry without being done with Erik ... But I shall not doubt it." "But I have not told you that Christine Daae is dead!" The Per

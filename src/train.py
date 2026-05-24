@@ -8,7 +8,7 @@ import torch
 import torch.nn as nn
 from torch.optim import Adam
 
-from evaluate_generation import (
+from evaluation.evaluate_generation import (
     collect_generation_pairs,
     compute_all_metrics,
     save_metrics_and_examples,
@@ -17,7 +17,7 @@ from tokenizer import GothicBPE
 import json
 
 from dataset import get_dataloaders
-from models import VanillaRNN, DeepLSTM, CrossAttentionLSTM
+from models import VanillaRNN, DeepLSTM, SelfAttentionLSTM
 
 
 @dataclass
@@ -95,7 +95,7 @@ def build_model(config: TrainConfig):
         )
 
     if config.model_name == "attention_lstm":
-        return CrossAttentionLSTM(
+        return SelfAttentionLSTM(
             vocab_size=config.vocab_size,
             embed_dim=config.embed_dim,
             hidden_dim=config.hidden_dim,
@@ -298,7 +298,8 @@ def main():
     model = build_model(config).to(device)
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = Adam(model.parameters(), lr=config.learning_rate, weight_decay=1e-4)
+    optimizer = Adam(model.parameters(), lr=config.learning_rate)
+
     best_val_loss = float("inf")
     history = []
 

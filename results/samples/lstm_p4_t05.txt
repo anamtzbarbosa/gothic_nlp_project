@@ -1,0 +1,7 @@
+Using device: mps
+Loaded model: lstm
+Prompt: It was past midnight when the letter arrived, sealed with black wax and bearing no return address.
+Temperature: 0.5
+Top-p: 0.85
+--------------------------------------------------------------------------------
+It was past midnight when the letter arrived, sealed with black wax and bearing no return address."-"As well as you please, sir," said she, "but what is my opinion? Here, my Lord," said Emily, "and let me go back to the castle by night, and say that I am going to say, for I do not know how to say what she is. I cannot tell my story when you can see you; what is it? She has gone through the gates." "Yes, sir." "Well, Annette, you can see the Signor's chamber, and you shall not see her." Emily now paused, and looked anxiously on the spot, looking round for them, and made no reply, but paused a moment. "Oh, what did she say now?" said Emily. "I am glad you have seen her," said she, "and you are not so much better than you are, ma'amselle, I would not sit down to meet her." "But I believe you, are you?" said Emily, in a voice of emotion, "and to know that what she is alive is well enough; what is the matter with you? It is my intention to come, will you tell me what she should have to do with me and you? Is it possible?" said Emily, endeavouring to speak, "the Signor was married?" "Then I do so," replied Emily, "and I have a reason to believe that I have not been able to have the honour of your

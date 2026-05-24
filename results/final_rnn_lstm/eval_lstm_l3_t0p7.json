@@ -1,0 +1,71 @@
+{
+  "metrics": {
+    "num_samples": 100,
+    "bleu_1": 0.18822068476154188,
+    "bleu_2": 0.04664299184126217,
+    "bleu_3": 0.014096257858148073,
+    "bleu_4": 0.00629917813063903,
+    "bleu_4_smoothed": 0.007026240547113316,
+    "bert_score_f1": 0.821211040019989,
+    "bigram_overlap": 0.012571805029264726,
+    "trigram_overlap": 0.001455542264752791,
+    "distinct_1": 0.23718289870498493,
+    "distinct_2": 0.7336102582625971,
+    "trigram_repetition_rate": 0.002237766058824123,
+    "spelling_accuracy": 0.9216854169463379,
+    "ttr": 0.7809004081745198,
+    "generated_perplexity": 23.023845087371853
+  },
+  "examples": [
+    {
+      "prompt": "What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par",
+      "generated": "is! But how do you do?' cried I. 'Too much affecting disorderly suspecting whether she won't leave you.' 'No more I can only do,' she answered. 'Look a whole old child! In him a half farm-fellow, and seek this hot sheep on the way.' 'That is your foolish, Miss, ",
+      "reference": " bleu! ma ch\u00e8re, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking d\u00e9shabille to show herself knocking at the window."
+    },
+    {
+      "prompt": "It appears to me un cimeti\u00e8re!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken",
+      "generated": " money with a look of indifference as though there was no particular objection to Mrs. Linton Bartram-Haugh. 'Show you won't know what to say what you say,' she said, with a curious look. \"Let us go to talk, and we must not partake so far as to find the handsomest mills of our phan",
+      "reference": " eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions."
+    },
+    {
+      "prompt": "The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her",
+      "generated": " walk, making a chair to listen with quietness. 'And what is your old Master of Bartram-Haugh? All right's stay! By her, don't you think it run back? Is it? You're very foolish; you must do so not to cross her; it is not easy to see her.' And ",
+      "reference": " exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption."
+    },
+    {
+      "prompt": "Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but",
+      "generated": " that no one has not done but good; my old William was waiting; when I did so, I set myself with a sort of pulse of sky. But it was rather bright than a curious thing, never to come with me to London; sometimes I feared that the baron was still not only drawn up in the same direction ",
+      "reference": " som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, \"Might I speak a word wi' ye, please, on the lobby?\" 'Mr."
+    },
+    {
+      "prompt": "But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she",
+      "generated": "ets were absurdly when she said, with a mode of fear. 'How dare you not give you the pause of her?' 'No,' she answered, 'and you have not been dead, I cannot tell the more and more natural.' 'My dear Madam Mina are at once depended upon me. I don't know what you mean. I hope you'll see the ",
+      "reference": " searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest."
+    },
+    {
+      "prompt": "Tomorrow you shall write a note to Lady Knollys, from London, telling her how you have got over so much of your journey, and that you",
+      "generated": " say, Catherine, it is very bad for the schoolmaster in the town,' she answered, 'and I do, my dear Maud, you should be pleased.' \"'When you are cross yonder?' asked my father. 'This is little Dudley; you don't mean to think it for a bit of making some pretext of",
+      "reference": " cannot write from Dover, as you must instantly start by the packet on reaching it; and that until my affairs are a little settled, you cannot write to her from France, as it is of high importance to my safety that no clue should exist as to our address."
+    },
+    {
+      "prompt": "Our dear Maud started this morning en route for her destination, very sorry, as am I, that she could not enjoy",
+      "generated": " them a nunnery from its children in the vestry? Is it that I am right, your grandfather had risen through me or wrong? Never mind to call me a letter to Gimmerton Arthur's frowning respect: a female voice was already all kind and peremptory, and I ",
+      "reference": " first a flying visit to Elverston, but in high spirits, notwithstanding, at the new life and sights before her.' At the door my beloved old friend, Mary Quince, awaited me. 'Am I going with you, Miss Maud?' I burst into tears and clasped her in my arms."
+    },
+    {
+      "prompt": "The sergeant departed toward the people, who looked at him without any distrust, for he came single-handed, though they thought he",
+      "generated": "'d be a young servant's daughter, or hero and exist in the castle. I am going to say, but, whatever he is, we have nothing to do with him.\" \"Not at all, Henry,\" said Henry. \"He is certainly now.\" \"A great deal of it,\" said Henry; \"it would be so much interested. It is not so near to you; but not so surely what ",
+      "reference": " came with the intention of learning what they knew of each other, and so stroll about with the intention of getting up accusations against them. But this was not the case, the officer didn't like the work well enough; he'd rather have been elsewhere."
+    },
+    {
+      "prompt": "Pooh, pooh!\" \"Oh no! Sir Francis Varney is a vampyre! There can be no sort of doubt about it. You have only to look at him, and you",
+      "generated": " take it of him in some way to meet him as you did; he is as well as well as in his own way; and here I am so long, indeed, but my fears are still very unusual with you.\" \"I am very glad you do.\" \"Then how do you do so for your honour?\" I whispered to myself, \"why do you ask me?\" The sound of a wind",
+      "reference": " will soon be satisfied of that. See his great sharp teeth in front, and ask yourself what they are for, and you will soon find the answer. They are to make holes with in the bodies of his victims, through which he can suck their blood!\""
+    },
+    {
+      "prompt": "It was a strange sight that; and there were many persons who would, without doubt, have rather been snug by their own fire-side",
+      "generated": ": a gay voice which stood upon this door, looking at him with a faint lustrous sound, apparently stupid and silent for some minutes; and as he stood up by the lock, laid it on the weapon, and took his hand, and said: \"Yes, you don't mean to tell you, for the thing is the first time I do not know.\" \"",
+      "reference": " than they would have remained there but it happened that no one felt inclined to express his inclination to his neighbour, and, consequently, no one said anything on the subject."
+    }
+  ]
+}

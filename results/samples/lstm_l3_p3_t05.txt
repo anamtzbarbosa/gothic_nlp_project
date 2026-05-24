@@ -1,0 +1,7 @@
+Using device: mps
+Loaded model: lstm
+Prompt: The portrait on the wall seemed to watch her every move, its painted eyes alive with something she could not name.
+Temperature: 0.5
+Top-p: 0.85
+--------------------------------------------------------------------------------
+The portrait on the wall seemed to watch her every move, its painted eyes alive with something she could not name.'" He took his handkerchief from her head, and gave her his hand to hide her head. "He has come and gone to London, Harry," replied the man. "I don't know that I have a little girl for anything more than a doom, and I shall have to do so." "Can you put my hand on the inside?" "I do." "You don't mean anything about it, sir?" "No, no, no, no, no." "Well, well, I am glad you have been in London, now." "You know that?" "Yes, sir." "You know, Mr. Utterson," said Varney, "that you will be sure to get on without any question." "Well, well, indeed." "Well, I will take care of it." "You don't want me to say that you mean?" "The lady is very sensible." "You cannot tell you what it is," said Jack; "I hope it would be a right to know that that is true if you can see you." "Go on, sir; you don't know what to say?" "Hush! you can sit down to meet me by all sorts of friendship." "Oh, yes; I know." "You don't know?" "Yes; it will be a great deal of mind." "Well, then, Mr Lessingham, that's all right." "

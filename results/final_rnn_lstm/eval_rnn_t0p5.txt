@@ -1,0 +1,78 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 100
+bleu_1: 0.12133161446886165
+bleu_2: 0.028236844530609633
+bleu_3: 0.006745764306033341
+bleu_4: 1.242325544388724e-05
+bleu_4_smoothed: 0.0023191052053290495
+bert_score_f1: 0.8099985718727112
+bigram_overlap: 0.007902976839458942
+trigram_overlap: 0.000373101438439724
+distinct_1: 0.1317206339576856
+distinct_2: 0.4922442118132498
+trigram_repetition_rate: 0.007471395957231575
+spelling_accuracy: 0.9229219844874453
+ttr: 0.6433422238804788
+generated_perplexity: 20.442626258995706
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Prompt:
+What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par
+
+Generated:
+is that I was not to think that you had better not only say that it is not very well." "Yes, yes." "Good-night-night! Had you not know the most sailors of my own feelings never to think of your own." My father was not in the garden, Walter, and softened down-stairs from the window and opened hand and shook his head. "Dear you here?" she asked. "To the better, I've told you." "You don't know it would give you a few minutes ago! Her I go to be to it; and now we have seen him very sweet Marriage, and he never have seen the law of Sir Francis Varney; I will not tell you how it happened; but it was not likely to be so much for one was one of those who were allowed in such statement was now per
+
+Reference:
+ bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking déshabille to show herself knocking at the window.
+--------------------------------------------------------------------------------
+
+Example 2
+Prompt:
+It appears to me un cimetière!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken
+
+Generated:
+, by the window-coloured shriek sounds upon the wall, and looked up, like a service, and she could, save me from the sea-book of her, and the shadow of a pitchcraft, on hearing by her father's voice. "Ah!" said the admiral, "the most uneasy misery, but it will be a very sensible and better than you can make her only fight of the Castle and Mother House, the bloom of its own, whilst he looked up to the door, and soot. 'We have no idea that I am very glad to get on that night I do not know how it may be that you might be happy?" "Yes; I will do my best to speak to me. I have already mentioned: they have not been very sweet suspicion, and yet
+
+Reference:
+ eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions.
+--------------------------------------------------------------------------------
+
+Example 3
+Prompt:
+The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her
+
+Generated:
+ tight, her father had softened, she would be to it. See paragraph 1.C.- You well enough, Miss, saying? I hope I am so very much afraid of our way to the truth, I wonder, have you not?" "Why, you know not what I do, I am going to see you." "What are you?" "Then you have not been guilt." "Is it not I tell you how it happened?" "The poor girl, dashing on our hand, and so much less have I been able to get her; I will go and see if you'll be ashamed to see you." My uncle Silas was ill, but I never heard him from what he went to Mme. Giry, who was not aware of others his usual indignation. '"There's a good laden sleep in the mid
+
+Reference:
+ exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption.
+--------------------------------------------------------------------------------
+
+Example 4
+Prompt:
+Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but
+
+Generated:
+ as you do? Death is very good, and you know not what a good deal of facts you like your own, I should be sure, I shall have to be for many years ago of the Blanche is at my own. Until Hindley!" exclaimed Mrs. Fairfax's wife had some more cheerful, and that there was something in the shape of the old man in front of the window, and gave me the things. A faint glimpse of its darkness were not so reserved an object in his tumult, and sighed quietly; "I will be able to get it from me. What is the cause of it." "Well, well, I'll go to the Heights where I gazed 'dry me! Then, Miss," I replied. "What is that?" "No, no, Madame, sir, dear, I will, 
+
+Reference:
+ som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, "Might I speak a word wi' ye, please, on the lobby?" 'Mr.
+--------------------------------------------------------------------------------
+
+Example 5
+Prompt:
+But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she
+
+Generated:
+ep, its contents in his hand, and said nothing, a sound of ghastly civility which had occurred the first place, it was quite possible that he had seen the places, that it would be impossible to do so, and her own words of Valancourt, instead of her eyes of it into her eyes, and looked up to flying through the door, followed by a large chest of Society. The moonlight was now water and shook his head. "And now, my dear Maud, I am quite unable to make the soft now." "But what is it? I do not know the thing that of your wife is in your wife-"Ah!" said the admiral. "Oh!" said the admiral, "how it would go, oh, lad, Miss?" "Thou art! I am very glad to get back to the churchyard, 
+
+Reference:
+ searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest.
+--------------------------------------------------------------------------------

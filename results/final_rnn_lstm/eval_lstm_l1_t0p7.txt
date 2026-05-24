@@ -1,0 +1,78 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 100
+bleu_1: 0.18662169758306413
+bleu_2: 0.04135808291463564
+bleu_3: 0.0069311252132776835
+bleu_4: 1.603466240674239e-05
+bleu_4_smoothed: 0.003408640712314794
+bert_score_f1: 0.8183966875076294
+bigram_overlap: 0.009254284599282287
+trigram_overlap: 0.00017241379310344826
+distinct_1: 0.2615701705077759
+distinct_2: 0.7660874546496086
+trigram_repetition_rate: 0.0015076504776012167
+spelling_accuracy: 0.9195392808251335
+ttr: 0.8097802863658103
+generated_perplexity: 30.1885143723067
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Prompt:
+What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par
+
+Generated:
+isa had in troubled brain to save him? Too pants' he must have been passed with smile and how it spent in my shadows clear round with blood. The fiddy began to feel shelter on the line. The melancholy fervent night was like a loud shadow of Milan, and shook her head; and 
+
+Reference:
+ bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking déshabille to show herself knocking at the window.
+--------------------------------------------------------------------------------
+
+Example 2
+Prompt:
+It appears to me un cimetière!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken
+
+Generated:
+. "We must not wake me through the best of it, if you will have seen him." "Well, well, you are not like him." "So we do!" said the lad, dashing back on, and so I became myself to ask him that; if he had on seeing the night before my eyes, where he shook his head; and in a woman of cun
+
+Reference:
+ eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions.
+--------------------------------------------------------------------------------
+
+Example 3
+Prompt:
+The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her
+
+Generated:
+ meal he knew where she could hardly recognize it. "Well, Milly, or that I take it." "So you have done? Some good to feel your accustomed I found so?" She looked at her. "On her a little pair of dusky hints of that swelled and daily embarked new shadow of his 
+
+Reference:
+ exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption.
+--------------------------------------------------------------------------------
+
+Example 4
+Prompt:
+Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but
+
+Generated:
+ that I was a lubber that I should like to see him." "Certainly, I am, a sort of man and dream." I had not seen nothing to understand, and I was determined not to speak to her, at the time, and had occurred to any other person. With it giving the duke as a pity that I am willing to believe that it was his nervous effort; or as
+
+Reference:
+ som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, "Might I speak a word wi' ye, please, on the lobby?" 'Mr.
+--------------------------------------------------------------------------------
+
+Example 5
+Prompt:
+But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she
+
+Generated:
+ep on the nest of Ferrari, her face was damp and over-thinking in the street to one minute for a little shock that questioned, with its light assumption of madame, though he loved her. I felt that she had neither my husband's presence in the night, she was the execution, only, my dear sir, that 
+
+Reference:
+ searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest.
+--------------------------------------------------------------------------------
