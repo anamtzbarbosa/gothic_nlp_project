@@ -554,6 +554,70 @@ PYTHONPATH=src python src/evaluation/generate_attention.py \
   --max-new-tokens 200 --temperature 0.7 --top-p 0.9
 ```
 
+---
+
+### Sample 4 — Attention LSTM 3-layer (seq=200) | T=0.7, top-p=0.9
+
+> **Prompt:** *She had locked the door, yet somehow it stood open.*
+>
+> Her cheeks were unearthly flushed, and her eyes were full of terror. Her eyes were still over-shine and her bosom, mingled with the gratification which overspread her disgust with a falsehood, and her own eyes seemed to be too long for his senses. I think her Highness would have tried to convince her to deliberate her features, and her head seemed to restrain the flames with rapture, and She sank into a blaze of despair. I bent over her for the first time. My heart was covered with a strange sorrow; My eyes seemed miserable and every moment. I was surprised as to what I meant for one of my sight: But I distinguished such beauty when my mind was sweet and cold, and very sudden, that it lay in a torch or clamour. I fear to proceed immediately: But this was no need to hold the desire of discovering myself by despair. My narrative was prevailed. These particulars I endeavoured to venture upon my knees. I saw clearly to the scene within these Cellars, and retiring before the Prioress to receive my Nuns of my Prisoners, and my host was beginning to run down the Corner of St. John's Wood. I was on the point of receiving your life and my narrative with the Grave's explanation. The Prioress had given her unwillingly by himself: She replied that She
+
+```bash
+PYTHONPATH=src python src/evaluation/generate_attention.py \
+  --checkpoint checkpoints/attention_lstm_v2_s200/v2_attn_lstm_3layer_K20_S200_B64_ls.pt \
+  --tokenizer data/gothic_tokenizer.json \
+  --prompt "She had locked the door, yet somehow it stood open." \
+  --max-new-tokens 300 --temperature 0.7 --top-p 0.9
+```
+
+---
+
+### Sample 5 — Attention LSTM 3-layer (seq=200) | T=0.5, top-p=0.85
+
+> **Prompt:** *His portrait in the hall seemed to watch her wherever she moved.*
+>
+> She was too much occupied in her present state of conduct to herself, and she was silent. The night on which he had been sleeping from the château, it was necessary that he should retire. Emily's mind was so strong and so lonely so uncertain, that she had hitherto been unwilling to retire from the château, now discovered the sweet music, which had so long overcame the late events of Montoni by herself in the castle. From her hands, she found herself in a state of fearful sensation, that a light was heard, and, on the preceding night, she perceived only a faint voice of Annette in the apartment, and there she heard a voice of voices, and then heard a voice at the door. "Who are you?" said she. "You must not see it," said Emily, in a voice of impatience. "Alas!" said she, "it will not be so good to hear the whole story." "No, ma'amselle, ma'amselle," said Annette, "but it is my duty." Annette paused a moment, and then said, "I have no objection to you now," said Emily, "but it will not be, perhaps, not
+
+```bash
+PYTHONPATH=src python src/evaluation/generate_attention.py \
+  --checkpoint checkpoints/attention_lstm_v2_s200/v2_attn_lstm_3layer_K20_S200_B64_ls.pt \
+  --tokenizer data/gothic_tokenizer.json \
+  --prompt "His portrait in the hall seemed to watch her wherever she moved." \
+  --max-new-tokens 300 --temperature 0.5 --top-p 0.85
+```
+
+---
+
+### Sample 6 — Attention LSTM 3-layer (seq=100) | T=0.7, top-p=0.9
+
+> **Prompt:** *She had locked the door, yet somehow it stood open.*
+>
+> The travellers followed. From it darkened the Guests, and they returned; Emily feared no opportunity to enquire further. But She was unwilling to explain herself — to walk a few words: the next morning I heard the Colonel, perceiving that it were necessary before I had left him. But I discovered that it was still fastened. Once more I was persuaded that I was unable to find the Spectre whom I had been taught to save my Lady. At length I heard the Stranger, and heard him enter: There was no sound of fear. "Will you promise, Segnor!" said Matilda. "But let me not leave me, my Lord, and let me leave you till thou hast not repressed thee in temptation! Stop! Should I ever be your passion? These words we shall return; When the Nuns will be too much vain to recall your Soul."
+
+```bash
+PYTHONPATH=src python src/evaluation/generate_attention.py \
+  --checkpoint checkpoints/attention_lstm_new/multihead_3layer_K20.pt \
+  --tokenizer data/gothic_tokenizer.json \
+  --prompt "She had locked the door, yet somehow it stood open." \
+  --max-new-tokens 280 --temperature 0.7 --top-p 0.9
+```
+
+---
+
+### Sample 7 — LSTM 3-layer | T=0.5, top-p=0.85
+
+> **Prompt:** *The letter arrived three days after his death.*
+>
+> The Baroness had just left him — so much that she was incapable of saying what she could do, except her own account, would now be the most unpleasantly unfortunate woman, and had no right to be trusted to give her any further information. On the contrary, she took the little girl in both of us, and went out to bed. As she stood down to bed, she saw the air of a little affected movement, and she was so much occupied by her own situation. Lady Montbarry's manner and her husband was so suspicious as to what he considered was not to be found. The Count had taken her for dinner, and left her by some means of convenient circumstances with the Count's wife, who was so much interested about her aunt's death, and that this purpose had occurred in the neighbourhood of Venice, and that the Count had already married — she did not know that she had made her discovery that she had seen the Count's son and her husband's death.
+
+```bash
+PYTHONPATH=src python src/evaluation/generate.py \
+  --checkpoint checkpoints/final_rnn_lstm/final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt \
+  --tokenizer data/gothic_tokenizer.json \
+  --prompt "The letter arrived three days after his death." \
+  --max-new-tokens 280 --temperature 0.5 --top-p 0.85
+```
+
 
 ### Sample 3 — Attention LSTM 3-layer (seq=100) | T=0.7, top-p=0.9
 
