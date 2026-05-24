@@ -1,0 +1,17 @@
+PAIRWISE G-EVAL — LSTM-3 vs Attn-LSTM-3
+=======================================================
+
+Prompts: 3 | T=0.7 top-p=0.9 | 3 calls/prompt
+
+LSTM-3  wins: 6  (75.0% excl. ties)
+Attn-3  wins: 2  (25.0% excl. ties)
+Ties        : 1
+
+PER-PROMPT BREAKDOWN
+-------------------------------------------------------
+ATTN  The old castle stood silent in the darkness.
+      Both continuations are nonsensical and suffer from severe grammatical fragmentation, making them equally poor in terms of coherence and narrative quality.
+LSTM  She walked alone through the moonlit corridor.
+      Continuation A, while nonsensical, retains a slightly better Gothic tone with its focus on a monastery and murder, whereas B descends into disjointed, incoherent imagery.
+LSTM  A cold wind swept through the empty hall.
+      Continuation A, despite its fragmented and nonsensical dialogue, manages to maintain a slightly more consistent emotional tone, whereas Continuation B devolves into an incoherent and jarring series of disconnected questions.

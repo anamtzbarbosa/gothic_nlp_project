@@ -1,0 +1,78 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 100
+bleu_1: 0.18725099601607703
+bleu_2: 0.04487150064459619
+bleu_3: 0.007122252752992943
+bleu_4: 1.6029009056643546e-05
+bleu_4_smoothed: 0.0034037117145651365
+bert_score_f1: 0.8224868774414062
+bigram_overlap: 0.011470426734239205
+trigram_overlap: 0.00016949152542372882
+distinct_1: 0.221375368092846
+distinct_2: 0.7184910981843822
+trigram_repetition_rate: 0.0018545574318093872
+spelling_accuracy: 0.9306344708374613
+ttr: 0.7662005409477274
+generated_perplexity: 23.816287365114214
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Prompt:
+What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par
+
+Generated:
+is! You! yes! I am not surprised! I have not been faithful to think that I am so curious as those who love me! You are so fascinating as your child! What does it mean? That will be a deep sleep that you never heard of it. How this is not the truth as far as I can guess, how it is my party and that
+
+Reference:
+ bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking déshabille to show herself knocking at the window.
+--------------------------------------------------------------------------------
+
+Example 2
+Prompt:
+It appears to me un cimetière!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken
+
+Generated:
+. 'But his father is not aware of your company; and what is he? Begone, they will be a new man, Miss?' 'Why, it is more afraid, and I think, for they may be understood my situation, and shall cut off his horse home for us; but, perhaps, I have said that I am in no sense a very heart
+
+Reference:
+ eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions.
+--------------------------------------------------------------------------------
+
+Example 3
+Prompt:
+The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her
+
+Generated:
+ appearance with amazement. 'Take me away,' he said; 'you'd not be so long, Monica,-if you won't be a fool, you would leave me so much from this pleasant future; and I shall never see you; you know of it so better.' I felt that it was not the square that would have been now; that was the girl she 
+
+Reference:
+ exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption.
+--------------------------------------------------------------------------------
+
+Example 4
+Prompt:
+Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but
+
+Generated:
+ that's not what they have thought of you." "I'll be hanged if I did." "Jane, you are not mistaken, for I must go on; I will tell you. It will be a little alone." The admiral felt convinced that a stranger did not understand what a little took his own hands of an excess, that he was alarmed by the admiral, who said,  "Thank God
+
+Reference:
+ som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, "Might I speak a word wi' ye, please, on the lobby?" 'Mr.
+--------------------------------------------------------------------------------
+
+Example 5
+Prompt:
+But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she
+
+Generated:
+eted fearful parts in her own mind, and pray, for now she had often seen his food, and had been thrown away with St. Aubert. The more she could not have suffered, she did not reply, however, was a little more, and sobbing over her eyes. She did not know what she fancied she heard her saying: "Thank you, Jem
+
+Reference:
+ searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest.
+--------------------------------------------------------------------------------

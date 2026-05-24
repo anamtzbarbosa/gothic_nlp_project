@@ -1,0 +1,71 @@
+PAIRWISE G-EVAL — LSTM-3 vs Attn-LSTM-3
+=======================================================
+
+Prompts: 30 | T=0.7 top-p=0.9 | 3 calls/prompt
+
+LSTM-3  wins: 24  (28.2% excl. ties)
+Attn-3  wins: 61  (71.8% excl. ties)
+Ties        : 5
+
+PER-PROMPT BREAKDOWN
+-------------------------------------------------------
+ATTN  The old castle stood silent in the darkness.
+      Continuation B presents a somewhat coherent, albeit slightly disjointed, dramatic scene with characters and dialogue, whereas Continuation A dissolves into irrelevant boilerplate text from a license agreement.
+ATTN  She walked alone through the moonlit corridor.
+      Continuation B retains a slightly more coherent, albeit dreamlike, narrative structure consistent with the gothic genre, whereas Continuation A dissolves into complete incoherence and nonsensical grammar.
+LSTM  A cold wind swept through the empty hall.
+      Both models fail to maintain a coherent Gothic narrative, but Continuation A at least preserves a semblance of structural continuity and atmosphere compared to the nonsensical dialogue of B.
+ATTN  The stranger arrived at the gate after midnight.
+      Both continuations are largely nonsensical, but Continuation B retains a slightly better sense of gothic vocabulary and dramatic tension, even if the syntax is disjointed.
+LSTM  He lit a candle and descended the stone staircase.
+      Continuation A maintains a slightly more cohesive focus on a Gothic setting and a character named Emily, whereas Continuation B devolves into disconnected names and fragmented phrasing.
+LSTM  The forest was silent and the path had disappeared.
+      Both continuations suffer from severe incoherence and sudden shifts in tone that lose the initial gothic atmosphere of the prompt, making them equally poor.
+ATTN  She sat alone in the great dark chamber.
+      Continuation B captures a semblance of narrative tension and character interaction, whereas Continuation A consists mostly of incoherent, abstract musings.
+ATTN  The old monk led her through the vaulted passage.
+      Continuation B maintains a better sense of gothic atmosphere and physical setting, whereas A is a disjointed collection of dialogue fragments that fail to construct a coherent scene.
+ATTN  Rain fell heavily upon the ancient stone walls.
+      Continuation B establishes a clearer scene with dialogue and named characters, whereas Continuation A consists of nonsensical, repetitive clauses that lack narrative coherence.
+LSTM  The servant knocked softly at the heavy door.
+      Continuation A maintains a slightly more cohesive narrative structure and Gothic tone, whereas Continuation B feels nonsensical and disconnected.
+ATTN  He stood at the window and looked into the night.
+      Continuation B captures a degree of the required atmosphere and aesthetic through its descriptive, albeit slightly nonsensical, imagery, whereas Continuation A dissolves into incoherent, disconnected dialogue and prose.
+ATTN  The fires in the hall had long since gone cold.
+      While both continuations suffer from the limitations of the small model size, B establishes a slightly more concrete Gothic scene involving a Baron, a Count, and a mysterious house, whereas A is mostly incoherent babble.
+ATTN  She found herself alone in the ruined chapel.
+      Continuation B maintains a consistent narrative tone and character focus that fits the Gothic genre, whereas A quickly devolves into incoherent, nonsensical rambling.
+ATTN  The road wound through dark hills and bare trees.
+      Continuation B presents a more cohesive narrative scene featuring a recognizable Gothic character and a sense of suspense, whereas Continuation A dissolves into incoherent word fragments.
+LSTM  A figure moved at the far end of the gallery.
+      Continuation A maintains a consistent, albeit rambling, atmospheric description of a landscape, while Continuation B devolves into nonsensical and repetitive dialogue that lacks logical structure.
+ATTN  The old woman spoke in a low and trembling voice.
+      Both continuations are largely nonsensical and grammatically fragmented, but Continuation B features slightly more evocative phrasing regarding dread and mystery.
+ATTN  He wandered through the deserted rooms of the manor.
+      Continuation B maintains a somewhat coherent, albeit dreamlike, narrative flow with character interaction and gothic tropes like friars and cottages, whereas A devolves into disjointed, incomprehensible dialogue.
+ATTN  The night was still and no sound came from below.
+      Continuation B captures a more traditional Gothic sense of dread and suspense with the auditory disturbance and internal reaction, whereas A dissolves into incoherent, repetitive dialogue.
+ATTN  She opened the heavy gate and stepped inside.
+      Continuation B maintains a consistent sense of Gothic anxiety and internal dread, whereas A is a jumbled collection of disjointed dialogue and narrative incoherence.
+ATTN  The torches in the passage flickered and went out.
+      Continuation B features coherent character names and dialogue typical of Gothic tropes, whereas Continuation A is fragmented and nearly nonsensical.
+LSTM  He read the old letter by the light of the fire.
+      Continuation A maintains a slightly more cohesive sentence structure and narrative movement compared to B, which descends into incoherent strings of words.
+LSTM  The mountains rose dark and steep on every side.
+      Continuation A maintains a slightly better connection to the Gothic tradition of names and dialogue, whereas B descends into incoherent sentence structures.
+ATTN  She heard a sound in the room above her.
+      Continuation B captures a slightly more consistent Gothic tone and dramatic flair typical of 19th-century romances, whereas A descends into incoherent and jarring modern-sounding dialogue.
+ATTN  The garden was overgrown and the paths long forgotten.
+      Continuation B maintains a slightly more consistent tone and grammatical structure, whereas Continuation A devolves into nonsensical phrasing very quickly.
+ATTN  He rode through the valley as the sun was setting.
+      Continuation B retains a stronger connection to the Gothic genre through its thematic references to Madame Montoni and Emily, whereas Continuation A dissolves into nonsensical word combinations.
+LSTM  The door at the end of the corridor stood open.
+      Continuation A maintains a slightly more consistent conversational tone and internal mystery, whereas Continuation B devolves into a repetitive and nonsensical list of characters.
+ATTN  She climbed the winding stairs in the dark tower.
+      Continuation B maintains a better sense of gothic tension and atmosphere by describing the sounds and setting of the tower, whereas Continuation A dissolves into nonsensical dialogue.
+LSTM  The village lay quiet beneath a moonless sky.
+      Continuation A attempts to build a setting and atmosphere consistent with Gothic tropes, whereas Continuation B is a fragmented, nonsensical dialogue that fails to connect to the prompt.
+ATTN  He paused at the threshold and listened.
+      Continuation B utilizes classic Gothic tropes and vocabulary, such as the marquis and Madame Montoni, which provides a more atmospheric and coherent narrative experience than the fragmented and nonsensical sentences in A.
+ATTN  The wind moved through the trees like a whisper.
+      Continuation B introduces specific characters and a more coherent, albeit fragmented, dialogue that aligns better with the Gothic tradition than the nonsensical rambling of A.

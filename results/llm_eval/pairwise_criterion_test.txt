@@ -1,0 +1,13 @@
+PER-CRITERION PAIRWISE G-EVAL — LSTM-3 vs Attn-LSTM-3
+============================================================
+
+Prompts: 3 | T=0.7 top-p=0.9 | 3 calls/prompt
+
+Criterion                  LSTM-3   Attn-3   Ties  Winner
+----------------------------------------------------------
+coherence                   57.1%    42.9%      2  LSTM
+gothic_atmosphere           55.6%    44.4%      0  LSTM
+narrative_quality           66.7%    33.3%      0  LSTM
+fluency                     44.4%    55.6%      0  ATTN
+----------------------------------------------------------
+OVERALL                     55.9%    44.1%      2  LSTM

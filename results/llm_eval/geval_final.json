@@ -1,0 +1,702 @@
+{
+  "config": {
+    "lstm_checkpoint": "checkpoints/final_rnn_lstm/final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt",
+    "attn_checkpoint": "checkpoints/attention_lstm_new/multihead_3layer_K20.pt",
+    "tokenizer": "data/gothic_tokenizer.json",
+    "eval_samples": "data/eval_samples.json",
+    "prompts": "data/geval_prompts.json",
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "num_samples": 30,
+    "api_key": "AIzaSyD8bsGgGrk7-_ZbW678GdecRWwHp6MQiGs",
+    "output": "results/geval/geval_final"
+  },
+  "results": [
+    {
+      "sample_idx": 0,
+      "prompt": "She heard footsteps in the corridor above.",
+      "lstm_text": "-She opened the door of the chamber, and sought some apartment. The Count now returned, and stopped, while the gates were open to some of the distant roads, were fastened the doorway; and, in this room, several persons examined the others, and hastened to lock the door behind him, but she remembered the former walking down the road, and taking a cigarette in the ground, \"the door is locked, you needn't come,\" said Manfred, \"and ",
+      "attn_text": "-The subject of her discovery, but She was soon shut with impatience, and She observed \"One,\" and \"The Prioress will have her Father's mercy.\"-\"Father,\" cried Manfred, \"My Aunt's Mother and myself are the midst of your protection.\" \"Give me a few days, and are already inconvenient!\" He paused, and was silent; He heard his ",
+      "lstm_scores": {
+        "reasoning": "The model displays typical LSTM limitations, struggling with logical continuity and coherent character actions, although it successfully maintains a vaguely gothic setting with specific references like 'the Count' and 'Manfred'.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 3,
+        "narrative_quality": 2
+      },
+      "attn_scores": {
+        "reasoning": "The model produces a series of fragmented, disjointed sentences that struggle to maintain a consistent narrative flow or logical connection to the prompt. While some vocabulary fits the Gothic genre, the syntactical breakdown and sudden shifts in character perspective result in a low coherence and narrative quality score.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 1,
+      "prompt": "Something moved in the darkness below.",
+      "lstm_text": "\"-\"Did you hear any laugh?\" \"My dear sir, I have known it. It is an odd aspect of mind only to come. Now my only chance is to produce our reasons by circumstances, in our power to get on to the certificate and insisted. It is impossible to decide my wife.\" \"Nothing more than that, sir, it is enough to come to my own directions,\" he answered. \"You have, no doubt, of whom will be ",
+      "attn_text": "- \"My Lord! she's silent!\" \"Good God! Why is it? He is not so fond of reflection! But what are you doing? And who are not yet in the habit of giving here?\" \"Does no harm, Annette,\" said Emily, in a voice of deep emotion. \"It would be a bad bag,\" said Doroth\u00e9e. \"My Lord, how did you ever see this place?\" \"Is so, sir,\" said the Count, with an air of dignity. \"Why, I ",
+      "lstm_scores": {
+        "reasoning": "The model produces a series of disjointed, grammatically weak dialogues that fail to build any meaningful narrative or maintain the tension established by the prompt. While the vocabulary is occasionally reminiscent of period prose, the lack of syntactic coherence makes it difficult to follow.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The model displays a typical LSTM 'flicker' where it shifts rapidly between dialogue tags and inconsistent character exchanges, making the narrative incoherent despite maintaining a mildly gothic vocabulary.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 2,
+      "prompt": "No one spoke of what had happened in the east tower.",
+      "lstm_text": "-The tower-chamber I looked round. \"Why are you happy to see you?\" She looked round me with a feverish cat with a look of success-laugh. \"I want to hear it,\" she answered. \"But I shall try to speak to you, Dorian,\" she answered. \"At least, I'll not leave you. Perhaps you don't see why I come in? I thought you had better not look at first, and if you were going to",
+      "attn_text": "-The storm was there, with the fire of unmolested chemicals, could scarcely have taken a strengthened impression on the water, for which, of course, in the time of its mob, as we had reached the lake, began to search the air and dry shoes, which, crouching down its summer length, glowing under the piano and gaping over the earth, and then ran close to it",
+      "lstm_scores": {
+        "reasoning": "The model produces mostly broken dialogue that loses track of its subjects and syntax, though it retains a vague, disjointed Gothic melodrama feel.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      },
+      "attn_scores": {
+        "reasoning": "The model quickly devolves into nonsensical imagery and fragmented syntax, losing all narrative thread despite maintaining some vocabulary associated with the period.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      }
+    },
+    {
+      "sample_idx": 3,
+      "prompt": "She had locked the door, yet somehow it stood open.",
+      "lstm_text": "-We know the St Augustina!\" The answer came a sort of cigar. \"Mother,\" said Lord Henry. \"And now you don't think you're dead?\" \"Yes, sir.\" \"And I tell you that I should like to see the back of the sofa.\" \"What are you doing? You must be excellent.\" \"You have been obliged to hear the footsteps of my operation?\" I asked, getting up before my eyes. I began to feel",
+      "attn_text": "-The Count had called me on the part of Manfred's room and my Friend, and remained at my bedside. While the Friar was imprudent to see that He was no more to enquire if I proceeded to meet the Castle Duke. The Duke de Luovo was dispersed, and She quitted the Horses into her bedside, and then quitted the Castle, She took it with impati",
+      "lstm_scores": {
+        "reasoning": "The model produces a series of disjointed, nonsensical dialogues that bear little relation to the prompt's premise of a mysterious open door. While individual sentences are grammatically acceptable, the narrative is entirely incoherent and lacks any atmospheric consistency.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The model displays classic LSTM behavior with fragmented syntax, disjointed character references, and a sudden collapse into nonsense. While it attempts to use Gothic vocabulary, the narrative structure fails almost immediately after the prompt.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 4,
+      "prompt": "His portrait in the hall seemed to watch her wherever she moved.",
+      "lstm_text": "-From the heart, perhaps, her spirits was in fact. She seemed to see her heart, and bewildered from her mind, and so she drew back, with the maid she had seen him with her arms crossing her face with an ample and raging pupil. Mrs. Grose grew like a little more, and it was not so unusual, like a child, only come here as she came back and looked in, and even",
+      "attn_text": "-On the following morning, she had thrown herself back to the spot where Annette had begun to show her the door opened, and Emily looked upon the doorway, and almost opening it. \"We have no hope for wishing, but for the Count,\" said the Count, \"and you are not injudiciously mistake. You may be able to find you here with your own chamber.\" \"Why do you not?\" said Emily, smiling in a sud",
+      "lstm_scores": {
+        "reasoning": "The model produces a series of fragmented, nonsensical clauses that struggle to maintain grammatical structure or logical narrative continuity after the prompt. While it uses Gothic-adjacent vocabulary, the sentences do not form a coherent scene.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The model maintains basic grammatical structures but suffers from significant semantic breakdown and repetitive, nonsensical dialogue that detracts from the initial Gothic setup.",
+        "fluency": 3,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 5,
+      "prompt": "The letter arrived three days after his death.",
+      "lstm_text": "- \"Take care, mother; I have heard of the moment, I should like to know what I do.\" \"You will not make a fool to ask you for any explanation,\" he said; \"they are afraid to prevent you.\" \"You need not trouble you, sir, it is only more natural.\" \"We were well well enough to see your doctrine.\" \"You are mad, lad, Flora.\" \"I thank you, sir; I have not been so much troubles",
+      "attn_text": "\"-\"Mother, I am staying there, and I am certain that, if you have any other means to say, I believe that you are the only person who has done so similar to a series of resources which, from this moment, have arranged to succeed in recurrating my husband's breast.\" The dignity of his hand, startled me, with a look of contemptible emotion, that rose from him. He could not, perhaps, ",
+      "lstm_scores": {
+        "reasoning": "The model produces a series of disjointed dialogue exchanges that fail to connect to the prompt, exhibiting significant grammatical collapse and a lack of narrative purpose.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The model produces grammatically functional sentences that quickly devolve into nonsensical word combinations like 'recurrating my husband's breast'. While it maintains a faint period-appropriate tone, the narrative thread shatters immediately after the first sentence.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 6,
+      "prompt": "He had not slept since the night the stranger came to the door.",
+      "lstm_text": "-The voice was uncommonly embarrassed. He lay on the sofa, and stretched him up to the turret, saw the lamps and opened the door, opened it, and said: \"Let us go, and see if you see a feather, child! These things are more clear and more distracted than ever.\" \"Well, then, I told you, what's left of it?\" \"The girl's face is ",
+      "attn_text": "- \"What was it I found you?\" \"The parish-room door opened, and when I heard the sound of the passage of the Carpathians by some means of getting the sounds which they might open at me, it is not so great that a noise there is no escape. On the contrary, I will not see my master-in-law. Have you forgotten your letters? You know the name of Mr. Fairlie, ma'am,\" I said",
+      "lstm_scores": {
+        "reasoning": "The model produces a disjointed narrative where the sentences lose logical connection rapidly, though it maintains a somewhat archaic vocabulary fitting for the genre.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 3,
+        "narrative_quality": 2
+      },
+      "attn_scores": {
+        "reasoning": "The model produces a series of disjointed, grammatically questionable sentences that fail to establish a coherent narrative, though it manages to capture a faint, Victorian-esque tone.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 7,
+      "prompt": "The candle went out before she reached the staircase.",
+      "lstm_text": "-Curiously, with the heart with that of a sunshine was only coming to her. The place was peculiar to Emily's arm-room. The Countess had found it necessary to send her down to repair to Montoni, on his guard and to discover the last circumstances, that had occurred; but her interests instantly became more composed, she did not doubt that the Signor had suffered to complain. Her aunt had left her in a ",
+      "attn_text": "- \"We were not so sure as to stir, I suppose, Marian!\" she said, \"and perhaps I do not know that this is a great one! Go to the town-hall,\" I cried, \"for it may be the very favourite partner.\" \"Is it all right?\" she asked. \"Why?\" \"Yes; and it may be, all my thoughts assailing; they are quite strong. Notwithstanding your illness isn't sh",
+      "lstm_scores": {
+        "reasoning": "The model displays a standard level of small LSTM output, maintaining some character continuity and Gothic lexicon despite fractured syntax and erratic sentence structure.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 3,
+        "narrative_quality": 2
+      },
+      "attn_scores": {
+        "reasoning": "The model produces grammatically functional sentences, but the dialogue is nonsensical and lacks any Gothic atmosphere, effectively abandoning the prompt's tone immediately.",
+        "fluency": 3,
+        "coherence": 2,
+        "gothic_atmosphere": 1,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 8,
+      "prompt": "A cold wind came from the sealed room at the end of the hall.",
+      "lstm_text": "-Nothing that would happen. But I never didn't then I do not know; yet it wasn't such a studio: we were not in station; but then it would be very good to tell it was that if the three men had gone through them, except us, for we had gone through stairs, ascended through the window, collecting ourselves. Shorthouse went on for a long time at his own private residence where he came to his ",
+      "attn_text": "-The Count had discovered the summons of the preceding night. It was impossible to bear a long examination of the door in the house. From the rooms were now empty by which the To-evening before it was fastened. Nothing was more natural than I had heard of it, for that night, when a faint sound came up to stop the voices in the darkness of the scene we saw the bureau seemed only now and then to go on either",
+      "lstm_scores": {
+        "reasoning": "The text suffers from severe grammatical instability and lacks logical progression, quickly devolving into incoherent phrasing after the prompt.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The model displays significant syntactic breakdown and struggles with internal logical consistency, though it successfully maintains a vaguely eerie, 19th-century vocabulary appropriate for the genre.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 3,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 9,
+      "prompt": "She recognized the handwriting but the man had been dead for twenty years.",
+      "lstm_text": "-The Countess and Lady Glyde was still in bed in the evenings, because she was only dissipated. She found her maiden little little friend of London, and saw her and a somewhat bold and unusual companion in the house, and her cousin had gone out of sight, and that they should like to go alone, and that she had not been here and she took the keys on together for the night. All at once ",
+      "attn_text": "-By this time Damt was sealed fastly in his bosom, and his crimes were now continually creeping on his head. He stumbled down in his eye. No more embarrassing him in so sweet a new joy, which might have fallen in love with his own. \"His eyes!\" he cried. \"It is the dumb forbidden for words.\" \"But why does it seem to ",
+      "lstm_scores": {
+        "reasoning": "The model struggles with basic syntax and logical progression, resulting in a disjointed series of clauses that lose the initial tension of the prompt entirely.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      },
+      "attn_scores": {
+        "reasoning": "The model produces a series of disjointed, grammatically incorrect sentences that struggle to maintain a logical connection to the prompt, though it retains a few archaic-sounding words that evoke a faint sense of Gothic tension.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 10,
+      "prompt": "The mirror showed a figure standing behind her, yet she was alone.",
+      "lstm_text": "-It was always so very sensible as she spoke, that the others who knew the storm of the Count, how came she would sit down, Francis knew what she knew were momentarily slipping up her heart and saw the greatest flight. The shadowy hush of slumber, and sank into a chair. Her lips were still black-looking down her arm, full of them",
+      "attn_text": "\"-\"What do you think of this hideous portrait?\" I inquired. \"I have a pretty letter in the name of Sir Percival,\" I replied. \"I hope I could have told you all I know.\" Laura looked at me almostly-looking with a brutal smile. She then turned round. \"I don't know how to get off with my own hand on my throat--\" She stopped: \"You will hear the word",
+      "lstm_scores": {
+        "reasoning": "The model displays classic LSTM fragmentation where syntax breaks down mid-sentence and narrative threads lose their logic. While it manages to capture a vaguely dark, Victorian-inspired vocabulary, the lack of coherent sentence structure makes it difficult to follow.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      },
+      "attn_scores": {
+        "reasoning": "The model produces grammatically strained and non-sequitur sentences that quickly abandon the prompt's premise of a supernatural reflection. While it uses some gothic-adjacent vocabulary, the narrative structure is largely nonsensical.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 11,
+      "prompt": "When she opened the chest, she found the locket she had buried herself.",
+      "lstm_text": "-Then I found her in a room on the ground of one side, with great large black glass-chairs, and dipping up in front of the house, and enveloped a table; and very smoothly puzzled. I stood quiet and closing, but it was a stick of something in the parlour, and said to myself, with great flames as I had seen, and I would not see it; so I knew well, ",
+      "attn_text": "-Is it possible that she might be hidden during the day, when they saw me when she was in doors and her eyes were open, and she began to cling to what had happened. Suddenly, the travellers turned over them, still listening to her feet, and though she could no longer lay down, looked out. \"It wasn't no change!\" said Bessie. \"Who are you going?\" I felt quite serious. \"W",
+      "lstm_scores": {
+        "reasoning": "The continuation quickly loses logical thread, transitioning from a mystery-focused prompt to nonsensical imagery involving glass-chairs and disconnected actions. While it maintains a somewhat archaic vocabulary, the lack of syntactic coherence makes it very difficult to follow.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      },
+      "attn_scores": {
+        "reasoning": "The model displays typical LSTM instability, starting with a somewhat coherent sentence before rapidly descending into disjointed clauses and nonsensical dialogue. It fails to connect the locket discovery to the subsequent narrative, though it maintains a minor Victorian sentence structure.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 12,
+      "prompt": "No one in the village would speak of what lived in the old house on the hill.",
+      "lstm_text": "-Sydney has taken him out. He would try me, and that's the rest of the day in the morning,\" he added. \"Can you promise to see you?\" \"No, sir.\" \"It is not so, indeed.\" \"Well, I'm glad I found it so easy about the fact.\" \"Will you give me a walk to your house in the room I promise?\" \"I will.\" \"Well, well, well, Henry, thank you; but I will not repose it ",
+      "attn_text": "-In Miss Fairlie was away-\" Henry repeated. \"Where is the next witch?\" \"And what am I to do?\" she asked. \"You must help him yet. He is a husband of Sir Harry's Lord Eyre.\" \"It is very odd, but he has taken a fortune of his wife and to come to him, and he has no sooner nor else being the advantage of getting out for tea-tim",
+      "lstm_scores": {
+        "reasoning": "The model fails to maintain any thematic connection to the prompt, devolving into disjointed dialogue that lacks grammatical structure and narrative purpose.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 1,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The model quickly collapses into repetitive, disjointed dialogue that loses the initial premise of the prompt entirely. While some individual phrases are grammatically sound, the narrative logic and thematic consistency are severely lacking.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 1
+      }
+    },
+    {
+      "sample_idx": 13,
+      "prompt": "He returned from the crypt before dawn and said nothing of what he had seen.",
+      "lstm_text": "\"-\"Because you had stolen on your part? In a private country-I met it by your part, instead of doing.\" When they came back to bed, the door opened, and I sat down, and said: \"Now, my friends, you won't go back to London when you have been seen to run out of Bartram-Haugh.' 'Report down, Miss,' I said, '",
+      "attn_text": "\"-\"Did you say that?\" \"Who are you?\" \"Ah, well, indeed! Oh! what's that to you?\" \"Ay, ay!\" \"Why, what do you mean? Why, what's to be done?\" \"Jack, I wondered what it was?\" \"I don't know whether you had seen him before.\" \"And why did you come here for me if I couldn't? I wondered what he wanted to do anything else, when I ",
+      "lstm_scores": {
+        "reasoning": "The model produces a fractured narrative that struggles to maintain syntax or logical continuity, though it captures fragments of Victorian-style dialogue and location references. It ultimately collapses into disjointed clauses that lose the initial momentum of the prompt.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      },
+      "attn_scores": {
+        "reasoning": "The continuation descends into a repetitive series of nonsensical, disjointed dialogue fragments that fail to maintain the narrative established by the prompt.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 1,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 1
+      }
+    },
+    {
+      "sample_idx": 14,
+      "prompt": "The sound of weeping came from the walls themselves.",
+      "lstm_text": ") \"After her favourite skin's life! If you had better love me, you are not very happy for your own sake! Now you shall hear the rest of my suspicions and my husband's throat in a very short time.\" Lord Henry laughed. I said to him,  \"Good God! Help! oh! and what did it do? And now it has scarcely been settled, some weight of the dead ",
+      "attn_text": "-Should I be driven now? Be it so abroad: Listen alone from the top night!\" From his Sister's hand, He recommended Theodore: The Duke de Luovo were shown out of his Castle Don Raymond's merciful Jacintha, and his Attendants delivered themselves from his Bandow",
+      "lstm_scores": {
+        "reasoning": "The text displays the classic hallmarks of a small LSTM model, suffering from disjointed syntax and nonsensical dialogue that loses the thread of the initial prompt almost immediately.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The model produces a series of disjointed fragments that lose the prompt's thread almost immediately, resulting in a chaotic and nonsensical narrative.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 1
+      }
+    },
+    {
+      "sample_idx": 15,
+      "prompt": "Every night at midnight the same door opened, though no hand touched it.",
+      "lstm_text": "\"-\"The gentlemen are waiting for dinner,\" said she, \"and this is the court-yard, and in that way.\" The old lady (who had no wolves, had never made her alive or enough) or had passed all our own, there, to argue the door-a lady from the time of the book. \"Is Miss Lindon?\" She had no time to lose. \"That is one thing in this ",
+      "attn_text": "-The Slovaks were followed into a locked door; the Spirits were pushed off. The travellers entered. The Monk was ashamed of being already unable to support himself upon the Cottages. Once the Books were rolling down on the hearth. \"We must hasten to-morrow!\" He immediately went to the Pavilion to hear them; \"What is it?\" \"What can be done!\" ",
+      "lstm_scores": {
+        "reasoning": "The model displays significant degradation in syntax and logic, becoming largely nonsensical halfway through the paragraph. While it attempts to mimic character dialogue, the lack of narrative cohesion makes the Gothic elements nearly imperceptible.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The model displays classic LSTM limitations, struggling with logical syntax and sentence-to-sentence connection, though it captures enough genre-specific vocabulary to feel like a fractured Gothic narrative.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 16,
+      "prompt": "She had seen the same woman at the window for three nights running.",
+      "lstm_text": "-But as she was not surprised she could not be imagined, while she remained silent, her hand was seen the waves of her cheeks. She saw the valley treading on a small nun's bow. The strained cottagers darted over the panel, and determined to join their being disturbed, as it had bewrapped every part of the edifice; but, recollecting how beautiful she thought she heard her",
+      "attn_text": "-That the disclosure was situated in the middle of the hall. She then looked up to meet me on the steps. I was sure to hear that she could do so. The moment she came close beside her; she looked up at me with a look of horror as she sat down on the sofa, and stood down beside the bed, stopped at the door to look at her. \"Who is it?\" \"To bed with your own hand on her darling.\" Mme. G",
+      "lstm_scores": {
+        "reasoning": "The model produces a series of disjointed, dream-like images that fail to form a coherent narrative. While it maintains a slightly archaic tone, the sentence structure breaks down quickly into nonsensical clauses.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The text suffers from severe structural incoherence and logical gaps typical of small LSTMs, though it maintains a haunting, albeit disjointed, tone that fits the Gothic prompt.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 3,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 17,
+      "prompt": "The physician would not say what had killed the old count.",
+      "lstm_text": "\"-\"Here, so I will be your governess,\" said I. \"My own souls are the best I believe I presume. But the sweetest mob in front and reaching us in future. Just before you are gone home again, you will be allowed to see you!\" The Professor gave a gigantic look at him. He bowed and came into the room next to some of the servants to see him, and ",
+      "attn_text": ") The propriety of Mr. Brocklehurst had done so many unpleasantly important professions from Bannerworth Hall, cut off his faculties and feelings, however, without being detained by this mysterious uncomfortable manner to Sir Francis Varney's house. Had he been incapable of escaping outraging the whole affair that Marchdale, who had come from Flora, had he been wandering down, and ",
+      "lstm_scores": {
+        "reasoning": "The model fails to connect the narrative to the prompt entirely, shifting into non-sequitur dialogue and erratic character interaction. While individual sentences are syntactically sound, the lack of thematic connection and logical flow results in very low scores.",
+        "fluency": 3,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 2
+      },
+      "attn_scores": {
+        "reasoning": "The model produces a series of disconnected clauses and syntactically awkward sentences that fail to establish a coherent narrative, though it does include some Victorian character names reminiscent of the genre.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 18,
+      "prompt": "There was blood on the floor of the chapel, though the altar had not been touched.",
+      "lstm_text": "-The Countess was still on the same day, and her husband was in the parlour, where she looked at the place and desired for the rest of the night. The Count was still in the pocket of two persons at the ch\u00e2teau, and looked on the Countess and herself. Lady Montbarry was quite unconscious of the arrival of the Countess. \"In the meantime, Count Fosco,\" he said, \"and Mr. Kyrle's lady",
+      "attn_text": "\"-\"The Marquis de las Cisternas is already locked,\" &c. &c.-\"Who are those among them?\" said Emily, \"and that is one of the Signors open the door?\" \"Yes, ma'am.\" \"Did she return?\" said Emily. \"No, Signora,\" said Doroth\u00e9e, \"she was a boat-house for you but just now.\" Thus soon after Doroth\u00e9e had ",
+      "lstm_scores": {
+        "reasoning": "The model produces grammatically standard sentences but they fail to form a coherent narrative, with characters appearing disjointed and unrelated to the initial mystery of the chapel.",
+        "fluency": 3,
+        "coherence": 2,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      },
+      "attn_scores": {
+        "reasoning": "The model displays a decent grasp of dialogue and character names typical of Gothic literature, though it suffers from severe logical leaps and nonsensical transitions, particularly regarding the 'boat-house' comment.",
+        "fluency": 3,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 19,
+      "prompt": "The child in the garden was not the child she had left there.",
+      "lstm_text": ") Leave me, then she has lost all men be overheard. Come, let us be convinced that you had no idea of being removed. In this state of affairs, I will endeavour to keep a considerable time.\" \"Such may be so.\" \"Never mind my own goodness,\" I replied. \"Yes,\" said Jack. \"Why do you do that you had got into some money?\" \"Who else does the persons who have to",
+      "attn_text": "\"-\"Dare it not what you hear?\" The new look came into his eyes. \"Well, well,\" he cried, \"the help of yours is very well-but she will not leave me.\" \"Nay, surely,\" she said; \"as that it was her own safety.\" \"Which is he?\" \"Ah, never mind, child-the words are more close. Yet it's no time to say so, for you had better be more good than to ",
+      "lstm_scores": {
+        "reasoning": "The model quickly descends into incoherent dialogue and disjointed syntax, losing the tension of the prompt almost immediately. It relies on generic, mismatched phrases that lack any gothic narrative structure.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 1,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The model produces mostly broken syntax with dialogue that fails to establish a coherent scene, though it retains a vague, disjointed Gothic-adjacent tone characteristic of small-scale LSTMs.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 20,
+      "prompt": "He swore the voice in the cellar was his dead wife calling his name.",
+      "lstm_text": "\"-\"The farmhouse is married,\" said Lord Henry, who had no idea of laughing. Christine opened the door and drawing back in a chair, with a light on the wall, which opened between her and the dark flames and shutting the doorway. \"No,\" she said sternly, \"and who have not been gone-some day, and if I were going to that chamber? You like them!\" \"That is no time to",
+      "attn_text": "\"-\"Where are you?\" \"To fetch him.\" \"Where did you get on?\" \"Yes.\" \"Then come here and see me and see if I could help you for a month.\" \"You understand that Miss Jessel?\" \"Yes; she has had told me about a good deal more. We have come to this; but she has seen her for any longer. But she must go to sleep again, and all may be well. When she ",
+      "lstm_scores": {
+        "reasoning": "The model produces a disjointed narrative where the dialogue and scene descriptions collapse into nonsensical phrasing, showing classic limitations of a small LSTM.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      },
+      "attn_scores": {
+        "reasoning": "The model produces a series of disjointed, nonsensical dialogues that fail to address the premise, resulting in a fractured narrative that lacks coherence or atmosphere.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      }
+    },
+    {
+      "sample_idx": 21,
+      "prompt": "After the funeral the family refused to speak of her, as though she had never existed.",
+      "lstm_text": "\"-\"Everything more,\" I said, \"and you believe me, so invented as your own souls if I can help it. I dare not say something that was too weak to repeat it from any more. I am too much for this hesitation.\" Mrs. Clements continued, with a sort of very impatience, which she now now controlled herself from the most extent of keeping her sister's in",
+      "attn_text": "\"-\"Why?\" \"Yes; I hate you.\" \"My good Percival, you would have thought it necessary to answer, that you left him.\" \"Have you had promised to know everything?\" \"Why, sir.\" \"But he has not mentioned many pages in the neighbourhood, sir, sir.\" In repeating it I felt that he was too late on the ground. \"Are you satisfied?\" \"Yes.\" \"Yes, sir.\" \"Well, then, it is",
+      "lstm_scores": {
+        "reasoning": "The text suffers from severe grammatical breakdown and repetitive syntax, making it difficult to discern a clear narrative. While it attempts a somber tone, the sentence structures are too fragmented to maintain any consistent gothic atmosphere.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The model produces a series of fragmented dialogues that fail to form a coherent narrative, essentially becoming a collection of disjointed strings. While it maintains a somewhat formal tone, it lacks the substance to progress the prompt's premise.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 1
+      }
+    },
+    {
+      "sample_idx": 22,
+      "prompt": "The shadow on the curtain moved when nothing in the room did.",
+      "lstm_text": "\"-\"Yes, I take it from me.\" \"We must not,\" cried George, \"and we will get some way to get down and get there against us, as I have done with.\" \"You are right?\" \"Oh, I could not tell, but I was unable to come to me while I was now tired, and stopped for a few minutes. \"And if I had not seen a dog bush, Jane, it is not my only fighting mischief, and ",
+      "attn_text": "\"-\"Besides, my Lord,\" said she, \"who could not see my Lord.\" \"But I have, sir,\" said Emily. \"Let me say the letter was to be done. For you not come again, I hope, that you will do my best; I will not leave you, but I will take care that the rest to marry you.\" Emily paused a moment, gazing on the peasant and rushed off to Emily, and sunk in darkness. Hippolit",
+      "lstm_scores": {
+        "reasoning": "The model produces mostly incoherent dialogue with nonsensical phrasing that fails to maintain the atmosphere or logic of the initial prompt.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The output begins with a weak attempt at dialogue but quickly descends into syntactical confusion and disjointed character interactions that fail to maintain the initial premise.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 23,
+      "prompt": "She found the diary hidden behind a loose stone, and wished she had not read it.",
+      "lstm_text": ") Emily followed the last word of persons, her eyes fixed on the door, and gave her order to enquire further, and on the following day, to which she perceived this. \"I have not been waiting,\" said Ugo, \"but where is the Signor's servants, Signora,\" replied Ludovico, \"I have some reasons for expecting you for this place, and also, I do not like your master, you know, than I ever saw",
+      "attn_text": "\"-\"When is it possible, Annette?\" \"It is impossible!\" added Annette, \"that is the assertion of Signora Laurentini is connected with her.-Blanche has her late child.\" \"Possibly your hopes, ma'amselle,\" said Emily. \"Of what I have to apprehend, madam,\" said Emily, impatiently; \"and that was the happiest thoughts as this",
+      "lstm_scores": {
+        "reasoning": "The model displays typical LSTM structural breakdown, struggling with dialogue attribution and logical syntax while maintaining a generic period-appropriate character vocabulary. It provides a weak continuation that loses the tension of the diary discovery almost immediately.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      },
+      "attn_scores": {
+        "reasoning": "The model produces a fractured dialogue that fails to maintain the narrative established by the prompt. While the vocabulary is evocative of Gothic literature, the syntax is incoherent, and the character names appear randomly.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 24,
+      "prompt": "The abbey had been abandoned for a century, yet the candles were freshly lit.",
+      "lstm_text": ") Before her fruitless explanation had left her from a sudden, she heard him discover the story of the instruments of her eyes, that had now yet been past, and one day left it with horror, and her breast, through a cavalier music, her countenance and her eyes were closed in the gallery, where she was awakened by some distance, over",
+      "attn_text": ") \"Something is it? It makes nothing in the air.\" He turned, as if to speak, but we threw back a step. \"Be it so, Flora. You know that it has one moment become so sweet and more so.\" \"Let us go through them, and so we cannot take it.\" They both moved, and Flora shook his head, and lay down to go slow",
+      "lstm_scores": {
+        "reasoning": "The output is largely a collection of fragmented clauses that fail to establish a coherent narrative or maintain the atmosphere of the prompt, resulting in low scores across the board.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The output struggles significantly with pronoun consistency and logical progression, resulting in disjointed dialogue that barely acknowledges the atmospheric setting established in the prompt.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 25,
+      "prompt": "His hand was cold when she touched it, though he had only just arrived.",
+      "lstm_text": "-What sort of question that might be? I had not seen him, but so soon as I heard it from him as much as I could. He was as weak as weapon, and was rewarded for me as I heard him speak to him. I did not seem to know what to think. He said nothing; then I didn't, but he did not go into the street, and that if I were in fact he was not at home, or it might be. There ",
+      "attn_text": "-You have a mind to put out a name, \"the Americans may be too much for me to crown off my mind.\" \"That is very wonderful.\" \"My dear sir, indeed have made you a light, by this circular interview with me, but to go into the room where we may have to look upon it, and there may be no great barbarous scene in the study.\" \"You cannot",
+      "lstm_scores": {
+        "reasoning": "The text suffers from repetitive syntax and nonsensical phrasing, making it difficult to follow the narrative despite maintaining a baseline of grammatical English.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      },
+      "attn_scores": {
+        "reasoning": "The model fails to maintain a coherent narrative thread, relying on fragmented, nonsensical dialogue and awkward phrasing that loses the gothic tone of the prompt entirely.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      }
+    },
+    {
+      "sample_idx": 26,
+      "prompt": "She followed the sound of music into the wood and could not find her way back.",
+      "lstm_text": "-No further sensation she caught her! Her voice was blushing; her head was soothed with her heart; she sat silent and silent, and silently caught the higher lights from the arms of her. The door was opened, and the door of the staircase was also overcome with solemn noise. She was an old servant, whom Doroth\u00e9e had heard some of the servants fastening his hand",
+      "attn_text": "-This remained here was lighted through which I had seen nothing, but my first wishes were so unexpectedly solicited to see a light on the air. The wind rose slowly on my shoulders. I heard the sound of footsteps approaching; I saw him falling on the horses and hasty fire. This trees led me down from the great hall, I saw a heavy door; my eye struck me. I groped through the panels ",
+      "lstm_scores": {
+        "reasoning": "The model quickly devolves into repetitive sentence structures and nonsensical phrasing, ultimately failing to maintain the narrative logic established by the prompt.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The model produces mostly disjointed phrases that struggle to maintain a consistent narrative, though it manages to evoke a vaguely dark, Gothic tone through isolated word choices.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 27,
+      "prompt": "The old servant warned her never to enter the east wing after dark.",
+      "lstm_text": "-The words died about me as I passed the door of the window, and it was the Count's voice from our breast. \"He had a waverage classes about his watch and strove to run down again; but I thought it would be the first day of his arrival at Todd's Corner, and left that evening in the presence of the persons who was searching under his hand, and ",
+      "attn_text": "-She said nothing. Perhaps he was a very large man, who had been still in my own room, but I had no power to believe that he was in need of giving him any one could see him. He began to think that he would have been so fortunate in delivering himself to himself. \"Well, well,\" he replied, \"there are no secrets of excitement and wonderfulness which has happened to you.\" \"Sir,\" said Henry, \"we have lost",
+      "lstm_scores": {
+        "reasoning": "The continuation displays significant breakdown in syntax and coherence, failing to maintain the narrative tension of the prompt while descending into nonsensical phrasing.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The model quickly descends into incoherent, repetitive sentence structures where characters and pronouns lose their focus. It fails to maintain the narrative momentum provided by the prompt and struggles with basic grammatical logic.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 28,
+      "prompt": "Something beneath the floorboards had been scratching for three nights.",
+      "lstm_text": "-The porter, I suppose, on such a purpose is required, it is so large and so far as it happened. In this way, the windows of the Paladmines, was well, attired on the left, and told him that the landlord, who had been sought to meet him, till he was left alone, at length, made his sword upon the bed; but he must hear nothing; and thus he determined to go with ",
+      "attn_text": "\"-\"Did you like to see you now?\" said Henry. \"Yes,\" said the admiral. \"No; be as well as I know,\" said George. \"You will hear what I can say, sir, that Jack Pringle got out and not found it impossible to say anything at all.\" \"We have to acknowledge his most difficult purposes, and get some one's subject,\" said the admiral; \"for we have no desire to turn it back.\" \"We cannot know what",
+      "lstm_scores": {
+        "reasoning": "The model produces a series of loosely connected clauses that lose the subject entirely, failing to address the scratching beneath the floorboards. It maintains a superficial Victorian vocabulary but lacks any discernible narrative logic.",
+        "fluency": 2,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The model fails to connect the creepy premise to the dialogue, resulting in a nonsensical conversation that bears no relation to the prompt's Gothic tone.",
+        "fluency": 3,
+        "coherence": 2,
+        "gothic_atmosphere": 1,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 2
+      }
+    },
+    {
+      "sample_idx": 29,
+      "prompt": "The stranger at the gate knew her name, though they had never met.",
+      "lstm_text": ") The unaccountable circumstances had left her in the night, she asked her every movement and importunity, that it was not the matter with Valancourt, but was left by hesitate to risk it for the purpose of his own. On the contrary, he endeavoured to begin confirmed the subject of his designs, and thanked him more forcibly than himself. \"Stay, Annette, you did not tell him what I have to say?\" \"You are not aware of the ",
+      "attn_text": "\"-\"Some persons saying, that is quite away on the sofa in my room now the letter, Miss Fairlie, to whom I have been in this house to-day long ago; she has missed me here yesterday.\" She spoke and said, \"We are both friends.\" Mrs. Grose shuddered almost with a rage as she said,  \"How do you know how you came in?\" \"Speak, dear! I'll show you a ",
+      "lstm_scores": {
+        "reasoning": "The model produces mostly coherent sentences that attempt to mimic the prose style of Gothic literature, though it suffers from repetitive phrasing and a confusing shift in narrative perspective. It is quite readable for a model of this size, maintaining a decent level of prompt adherence despite the disjointed dialogue.",
+        "fluency": 3,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 3,
+        "narrative_quality": 2
+      },
+      "attn_scores": {
+        "reasoning": "The model produces a series of fragmented sentences that struggle with syntax and logical progression, though it captures a brief moment of tension characteristic of Victorian gothic melodrama.",
+        "fluency": 2,
+        "coherence": 2,
+        "gothic_atmosphere": 3,
+        "prompt_faithfulness": 3,
+        "narrative_quality": 2
+      }
+    }
+  ],
+  "summary": {
+    "fluency": {
+      "lstm_avg": 2.1,
+      "attn_avg": 2.1333333333333333
+    },
+    "coherence": {
+      "lstm_avg": 1.4666666666666666,
+      "attn_avg": 1.7333333333333334
+    },
+    "gothic_atmosphere": {
+      "lstm_avg": 2.2333333333333334,
+      "attn_avg": 2.5
+    },
+    "prompt_faithfulness": {
+      "lstm_avg": 1.9666666666666666,
+      "attn_avg": 1.9333333333333333
+    },
+    "narrative_quality": {
+      "lstm_avg": 1.4666666666666666,
+      "attn_avg": 1.7666666666666666
+    }
+  },
+  "overall": {
+    "lstm": 1.8466666666666665,
+    "attn": 2.013333333333333
+  }
+}

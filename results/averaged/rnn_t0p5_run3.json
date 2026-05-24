@@ -1,0 +1,71 @@
+{
+  "metrics": {
+    "num_samples": 100,
+    "bleu_1": 0.11964190880819969,
+    "bleu_2": 0.031136810708571813,
+    "bleu_3": 0.007652390393058392,
+    "bleu_4": 0.00242862490005832,
+    "bleu_4_smoothed": 0.0030089128922047076,
+    "bert_score_f1": 0.8105769157409668,
+    "bigram_overlap": 0.00953949072041863,
+    "trigram_overlap": 0.00047250922929720484,
+    "distinct_1": 0.13436006372809348,
+    "distinct_2": 0.4975919272226894,
+    "trigram_repetition_rate": 0.006680608610935781,
+    "spelling_accuracy": 0.9202601554867232,
+    "ttr": 0.6444828628471282,
+    "generated_perplexity": 20.40024004982786
+  },
+  "examples": [
+    {
+      "prompt": "What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par",
+      "generated": "is, are in love of life, and may have the searching of a General Bell M\u00fcller was to be made to a night; and she could not trust it from me. On the contrary, she wished some one who had not time to lose, and his heart was over with them, her eyes were fixed upon her with the solemnity of the woods, or sounds opening upon him. He could not be afraid of Annette, and I felt the more of the goodness of his friendship and mother he wished to leave him with a small light of the window, of which was waiting for him, and sat down to the door, and of Todd's Blanche became a grinning him, he would never be afraid and my own hands, sought for any particular state of affairs who were the others, so that the unhappy ",
+      "reference": " bleu! ma ch\u00e8re, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking d\u00e9shabille to show herself knocking at the window."
+    },
+    {
+      "prompt": "It appears to me un cimeti\u00e8re!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken",
+      "generated": ", followed down and waved into the courtable and of the dress was in vain to pay in the room. Emily was silent, and made his strength to speak, her countenance and manner and distrustful one. Before I could, perhaps, because he might never be supposed to have the wealth- of whom we were not the season, I was not incapable of being able to do with it: he would have been quite unable to speak to me. He was very much obliged to leave his wife, who was so many fevers it and unpleasantly interested in your own suspicions that I have been informed what I have been made, in our own house of Bartram-Haugh for me with this matter, nor any other work association, and I have no claim on it.\" \"That is very well-",
+      "reference": " eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions."
+    },
+    {
+      "prompt": "The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her",
+      "generated": " tongue, at length, came in a ton't tongue, with sharp and modation, and immediately overcame forward, and lower and round the bitten of the window, shook her head. \"He has not been forgetting for her to go through my heart, yet it may be, nor marriage is quite well.\" \"Indeed!\" \"Yes; I will not see him?\" \"Yes; But what you know your father?\" \"He will not be useful to us to leave you; it is the only chance of one of those persons who have to be so unpleasantly bound in no means by some people who knows?\" \"He trift in England is it; a good deal of man and your brother's face. And what does he be done it so.\" \"That is so? What have you not ",
+      "reference": " exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption."
+    },
+    {
+      "prompt": "Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but",
+      "generated": ", of course, it has never been dead?\" \"Yes, sir,\" said Jack. \"Nothing! We will go out! Oh!\" said the admiral, \"and I do not know what to you do so; but not my duty; I have no doubt in my power to escape him; if you were a very fond of life.\" \"Is it possible, sir, you, sir,\" said she, \"that you are not only in this? How is it? In one who is dead!\" He looked at me with little Hareton's head upon the floor, and walked round to meet him with him. \"You know not?\" \"Yes; I must go, hush! I'll be hanging.\" Henry was now in a low-room, where he spoke of used she should have the search, and had no doubt had so much of the woman's note for one of these moments from the town, now had prevented ",
+      "reference": " som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, \"Might I speak a word wi' ye, please, on the lobby?\" 'Mr."
+    },
+    {
+      "prompt": "But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she",
+      "generated": "et, nor liberality of such a sad he knew not how to escape the other mistress was now to listen to the Count's disposition, and my father would have made him uneasy in his mind, and even if he could not think of it would certainly have made the most unpleasant personality of my journey in particulars, who are incapable of being not to be a very consummation, yet, yet never had no doubt had happened to repair to him by our father's command, and not even to speak with her: he said she would break my letter, He had long been the first time that he should have the worst of the clergyman in Hotel-house where I do not know the cause of a man who had made no other people: but that is there any one who have never been marri",
+      "reference": " searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest."
+    },
+    {
+      "prompt": "Tomorrow you shall write a note to Lady Knollys, from London, telling her how you have got over so much of your journey, and that you",
+      "generated": " are, and one is very good as that-there are you. You are not yet forgiven, Sydney is it?\" \"You know not for you, my dear, dear Flora,\" said Henry; \"but I do not know that you are so good as you cannot take it a good deal in the house of the room? What is the matter! What is the matter?\" I replied. 'You're a praise it.\" Shorthouse went down, looking back to the door, shutting out into the air. The old man's voice was called up and down the chair, and looking down to speak, from that moment, by the dressing-room, and looked down to sleep, no answer, Mrs. Linton's hands. \"What do you mean?\" \"Because you are a very foolish-I looks.' And she was that I was not too much pleased with her in the presence of mindic",
+      "reference": " cannot write from Dover, as you must instantly start by the packet on reaching it; and that until my affairs are a little settled, you cannot write to her from France, as it is of high importance to my safety that no clue should exist as to our address."
+    },
+    {
+      "prompt": "Our dear Maud started this morning en route for her destination, very sorry, as am I, that she could not enjoy",
+      "generated": " the disposition, apparently enough of Valancourt's death was so far from her mother to whom I knew not what to think that I was not in vain to say it had been in a great deal more than I own, Tormosphere the lady who has not been able to make a dog of indignation, and so much for you to do? Why did you not come down to go and see me and unknown to him, and never have got a lover; if it may be, perhaps, you think so,\" said Mr. Chillingworth, \"and I never heard a flames; yet he said  'Oh, you don't know what to do, dear Maud, Jane, sir?\" \"Yes; it was not one of those who will do it for myself.\" \"You know not?\" \"What do you mean?\" \"As I never could not tell.\" \"I told you how it happened?\" \"Ah, it's no ",
+      "reference": " first a flying visit to Elverston, but in high spirits, notwithstanding, at the new life and sights before her.' At the door my beloved old friend, Mary Quince, awaited me. 'Am I going with you, Miss Maud?' I burst into tears and clasped her in my arms."
+    },
+    {
+      "prompt": "The sergeant departed toward the people, who looked at him without any distrust, for he came single-handed, though they thought he",
+      "generated": "edly; he was not to be the Countess's door, and in a few minutes of her father, \"there is no ney.\" \"Mistress me! Some of yours, sir, have you been the better of affairs.\" Those were the words they were, were all subjected under the influence of the whole thing was not without observing any one to a lot of scene on which she had taken the road. Arthur Baron Rienne and Poligny. He seemed quite unable to speak to me, she was always within them, and yet she raised her eyes were fixed on the door, bound up in front of him, he was dressed, with the verting gestures of the family. The man who had left me as he appeared to be the same way to the house of the Count's house. My mind was ",
+      "reference": " came with the intention of learning what they knew of each other, and so stroll about with the intention of getting up accusations against them. But this was not the case, the officer didn't like the work well enough; he'd rather have been elsewhere."
+    },
+    {
+      "prompt": "Pooh, pooh!\" \"Oh no! Sir Francis Varney is a vampyre! There can be no sort of doubt about it. You have only to look at him, and you",
+      "generated": " think it?\" \"Because it can be no doubt in my mind, it is not what he shouldn't be so much interested in most unable to do anything but my duty to you? If you do not know that you have already mentioned or of him from your own life. My heart was not to be assured and my senses as bad as his faces.\" \"Well, well, no, it is not yet.\" \"You know that this is what you had come in bread and he will not be unable to say with you a human being.\" \"Well, are you do?\" \"Why, you know not how to come and I.\" \"It is so, no matter, you may be so good as to leave you-\" \"Yes! It is an old woman was not to be seen, and my heart was gone, and a couple of hours, \"the General Ram",
+      "reference": " will soon be satisfied of that. See his great sharp teeth in front, and ask yourself what they are for, and you will soon find the answer. They are to make holes with in the bodies of his victims, through which he can suck their blood!\""
+    },
+    {
+      "prompt": "It was a strange sight that; and there were many persons who would, without doubt, have rather been snug by their own fire-side",
+      "generated": "; and then the better, now he appeared to be a handsome of the churchyard, and so he threw himself into a chair, and with a sticking voice. \"He is not to be so good as to leave me; I have no right to give you a good deal in the public day?\" \"What do you mean?\" \"That is this affair, I will tell me, if you will be in fact, I am afraid to forget my own infamous situation to the town, and I can't help it!\" He looked up to cleaning on her hands, and her eyes fixed on the window, drawing nearly a few minutes after a long room was still and opened, as it were, like a man of flames in the carriage of the chapel, and with a pupil, wing round my neck, and picked up the window-door, and shook his head. \"",
+      "reference": " than they would have remained there but it happened that no one felt inclined to express his inclination to his neighbour, and, consequently, no one said anything on the subject."
+    }
+  ]
+}

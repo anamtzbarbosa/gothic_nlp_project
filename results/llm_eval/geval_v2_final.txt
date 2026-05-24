@@ -1,0 +1,53 @@
+G-EVAL RESULTS — LSTM-3 vs Attn-LSTM-3
+============================================================
+
+Samples: 30  |  T=0.7  top-p=0.9
+
+Criterion                    LSTM-3   Attn-3   Winner
+-------------------------------------------------------
+fluency                       2.122    2.144    ~tied
+coherence                     1.611    1.689     ATTN
+gothic_atmosphere             2.533    2.611     ATTN
+prompt_faithfulness           2.189    2.133     LSTM
+narrative_quality             1.622    1.700     ATTN
+-------------------------------------------------------
+OVERALL                       2.016    2.056
+
+
+SAMPLE EXAMPLES
+-------------------------------------------------------
+
+Prompt: The old castle stood silent in the darkness.
+LSTM:   -For every one else came into the room. Mrs. Clements had been placed between us, and I had been brought up long in London, except by Mrs. Clements. B
+        scores: {'fluency': '3.00', 'coherence': '2.00', 'gothic_atmosphere': '2.33', 'prompt_faithfulness': '2.00', 'narrative_quality': '2.00'}
+ATTN:   -"Which is your own?" She said; "Mme. Giry!" "Because I am not very sure." "No, no, no, no; do." "Yes, yes; it is so, it is too late. We have both too
+        scores: {'fluency': '2.00', 'coherence': '1.00', 'gothic_atmosphere': '1.00', 'prompt_faithfulness': '1.67', 'narrative_quality': '1.00'}
+-------------------------------------------------------
+
+Prompt: She walked alone through the moonlit corridor.
+LSTM:   -The tears were of unnecessary, and every moment was made a wild example of letting them the grave of their pure and unusual importance. They were mov
+        scores: {'fluency': '2.00', 'coherence': '1.67', 'gothic_atmosphere': '3.00', 'prompt_faithfulness': '2.00', 'narrative_quality': '1.67'}
+ATTN:   -It was already beyond the full of the sound; Elizabeth had also sufficient intent for the future which she had already seen, and who was as ill as th
+        scores: {'fluency': '2.33', 'coherence': '2.00', 'gothic_atmosphere': '3.33', 'prompt_faithfulness': '3.00', 'narrative_quality': '2.00'}
+-------------------------------------------------------
+
+Prompt: A cold wind swept through the empty hall.
+LSTM:   -Thank God! Thou art a hair head, crouching like the trees that I shall not be!" And so I looked up, I saw a bright light, in a lower glassy figure, a
+        scores: {'fluency': '2.00', 'coherence': '1.33', 'gothic_atmosphere': '2.33', 'prompt_faithfulness': '2.00', 'narrative_quality': '1.33'}
+ATTN:   '" "You should be so obliged to give you a serious idea!" said Emily, "to be able to leave you, sir." "I will tell you how much you are about to sleep
+        scores: {'fluency': '2.00', 'coherence': '2.00', 'gothic_atmosphere': '2.67', 'prompt_faithfulness': '2.33', 'narrative_quality': '2.00'}
+-------------------------------------------------------
+
+Prompt: The stranger arrived at the gate after midnight.
+LSTM:   -The man I have been married, "And you really know the Child where this island was the great Spectre, as He talked to me with Spain, He would just see
+        scores: {'fluency': '2.00', 'coherence': '1.67', 'gothic_atmosphere': '3.00', 'prompt_faithfulness': '2.00', 'narrative_quality': '2.00'}
+ATTN:   '" "I promised to find my way," said Manfred; "I did so, you see, that this castle is situated." Emily, shocked by the successful shame to which she s
+        scores: {'fluency': '2.00', 'coherence': '2.00', 'gothic_atmosphere': '3.00', 'prompt_faithfulness': '2.33', 'narrative_quality': '2.00'}
+-------------------------------------------------------
+
+Prompt: He lit a candle and descended the stone staircase.
+LSTM:   -The door was opened, and Emily watched her with a groan, rushing through the woods. The gloom of the shadows were sunk and skirted with her eyes were
+        scores: {'fluency': '2.00', 'coherence': '1.67', 'gothic_atmosphere': '2.67', 'prompt_faithfulness': '2.00', 'narrative_quality': '1.67'}
+ATTN:   -It was a strange quick laugh: for it was that of the whole building was unable to speak, but I was glad to explain my mind, but it was impossible to 
+        scores: {'fluency': '2.00', 'coherence': '1.33', 'gothic_atmosphere': '2.00', 'prompt_faithfulness': '2.00', 'narrative_quality': '1.33'}
+-------------------------------------------------------

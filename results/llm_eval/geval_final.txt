@@ -1,0 +1,53 @@
+G-EVAL RESULTS — LSTM-3 vs Attn-LSTM-3
+============================================================
+
+Samples: 30  |  T=0.7  top-p=0.9
+
+Criterion                    LSTM-3   Attn-3   Winner
+-------------------------------------------------------
+fluency                       2.100    2.133    ~tied
+coherence                     1.467    1.733     ATTN
+gothic_atmosphere             2.233    2.500     ATTN
+prompt_faithfulness           1.967    1.933    ~tied
+narrative_quality             1.467    1.767     ATTN
+-------------------------------------------------------
+OVERALL                       1.847    2.013
+
+
+SAMPLE EXAMPLES
+-------------------------------------------------------
+
+Prompt: She heard footsteps in the corridor above.
+LSTM:   -She opened the door of the chamber, and sought some apartment. The Count now returned, and stopped, while the gates were open to some of the distant 
+        scores: {'fluency': 2, 'coherence': 2, 'gothic_atmosphere': 3, 'prompt_faithfulness': 3, 'narrative_quality': 2}
+ATTN:   -The subject of her discovery, but She was soon shut with impatience, and She observed "One," and "The Prioress will have her Father's mercy."-"Father
+        scores: {'fluency': 2, 'coherence': 2, 'gothic_atmosphere': 3, 'prompt_faithfulness': 2, 'narrative_quality': 2}
+-------------------------------------------------------
+
+Prompt: Something moved in the darkness below.
+LSTM:   "-"Did you hear any laugh?" "My dear sir, I have known it. It is an odd aspect of mind only to come. Now my only chance is to produce our reasons by c
+        scores: {'fluency': 2, 'coherence': 2, 'gothic_atmosphere': 2, 'prompt_faithfulness': 2, 'narrative_quality': 1}
+ATTN:   - "My Lord! she's silent!" "Good God! Why is it? He is not so fond of reflection! But what are you doing? And who are not yet in the habit of giving h
+        scores: {'fluency': 2, 'coherence': 2, 'gothic_atmosphere': 3, 'prompt_faithfulness': 2, 'narrative_quality': 2}
+-------------------------------------------------------
+
+Prompt: No one spoke of what had happened in the east tower.
+LSTM:   -The tower-chamber I looked round. "Why are you happy to see you?" She looked round me with a feverish cat with a look of success-laugh. "I want to he
+        scores: {'fluency': 2, 'coherence': 2, 'gothic_atmosphere': 3, 'prompt_faithfulness': 2, 'narrative_quality': 2}
+ATTN:   -The storm was there, with the fire of unmolested chemicals, could scarcely have taken a strengthened impression on the water, for which, of course, i
+        scores: {'fluency': 2, 'coherence': 1, 'gothic_atmosphere': 2, 'prompt_faithfulness': 2, 'narrative_quality': 1}
+-------------------------------------------------------
+
+Prompt: She had locked the door, yet somehow it stood open.
+LSTM:   -We know the St Augustina!" The answer came a sort of cigar. "Mother," said Lord Henry. "And now you don't think you're dead?" "Yes, sir." "And I tell
+        scores: {'fluency': 2, 'coherence': 1, 'gothic_atmosphere': 2, 'prompt_faithfulness': 1, 'narrative_quality': 1}
+ATTN:   -The Count had called me on the part of Manfred's room and my Friend, and remained at my bedside. While the Friar was imprudent to see that He was no 
+        scores: {'fluency': 2, 'coherence': 2, 'gothic_atmosphere': 3, 'prompt_faithfulness': 2, 'narrative_quality': 2}
+-------------------------------------------------------
+
+Prompt: His portrait in the hall seemed to watch her wherever she moved.
+LSTM:   -From the heart, perhaps, her spirits was in fact. She seemed to see her heart, and bewildered from her mind, and so she drew back, with the maid she 
+        scores: {'fluency': 2, 'coherence': 1, 'gothic_atmosphere': 2, 'prompt_faithfulness': 2, 'narrative_quality': 1}
+ATTN:   -On the following morning, she had thrown herself back to the spot where Annette had begun to show her the door opened, and Emily looked upon the door
+        scores: {'fluency': 3, 'coherence': 2, 'gothic_atmosphere': 3, 'prompt_faithfulness': 2, 'narrative_quality': 2}
+-------------------------------------------------------

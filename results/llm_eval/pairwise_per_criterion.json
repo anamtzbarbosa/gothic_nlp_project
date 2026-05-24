@@ -1,0 +1,856 @@
+{
+  "config": {
+    "lstm_checkpoint": "checkpoints/final_rnn_lstm/final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt",
+    "attn_checkpoint": "checkpoints/attention_lstm_new/multihead_3layer_K20.pt",
+    "tokenizer": "data/gothic_tokenizer.json",
+    "prompts": "data/geval_prompts.json",
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "num_samples": 30,
+    "n_calls": 3,
+    "api_key": "AIzaSyD8bsGgGrk7-_ZbW678GdecRWwHp6MQiGs",
+    "output": "results/geval/pairwise_per_criterion"
+  },
+  "summary": {
+    "coherence": {
+      "lstm_wins": 26,
+      "attn_wins": 51,
+      "ties": 13,
+      "lstm_win_rate": 33.76623376623377,
+      "attn_win_rate": 66.23376623376623
+    },
+    "gothic_atmosphere": {
+      "lstm_wins": 27,
+      "attn_wins": 56,
+      "ties": 7,
+      "lstm_win_rate": 32.53012048192771,
+      "attn_win_rate": 67.46987951807229
+    },
+    "narrative_quality": {
+      "lstm_wins": 27,
+      "attn_wins": 60,
+      "ties": 3,
+      "lstm_win_rate": 31.03448275862069,
+      "attn_win_rate": 68.96551724137932
+    },
+    "fluency": {
+      "lstm_wins": 34,
+      "attn_wins": 56,
+      "ties": 0,
+      "lstm_win_rate": 37.77777777777778,
+      "attn_win_rate": 62.22222222222222
+    }
+  },
+  "results": [
+    {
+      "prompt": "The old castle stood silent in the darkness.",
+      "lstm_text": "-Jacques was shocked by some of the strangers who was born with the Convent of St. Clare. Some of Lady Montbarry's castle was closed to him. The Countess had given a perfect conjecture of assuming that some of the guests have had her father. Shall I go with an Englishman, by any means ago, on returning from England? At first, I determined to keep the letter from London to ",
+      "attn_text": "-But I was so sorry she had a settled object of refuge from death and vigorous flight. She looked as if he were allowed or not to abandon the means of extreme concern. When she saw me she was, with an effort, her eyes were again, her eyes bent on looking round the room. The girl stood behind the blind-face. \"That is her last word!\" I said. \"It has not been you like ",
+      "tallies": {
+        "coherence": [
+          1,
+          2,
+          0
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          1,
+          2,
+          0
+        ],
+        "fluency": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "She walked alone through the moonlit corridor.",
+      "lstm_text": "-Emily wished to accompany her from the desolate scene, went to the woods till Madame Cheron found her walk at the ch\u00e2teau, yet she made no noise to see her. Emily's voice was very strange, with a look of fearful countenance, and listening to her fearful anxiety, with passing eyes to her heart, and passed with shadows upon the back below, and, having reached the window, she leaned towards her with a deep sigh",
+      "attn_text": "-Blanche seemed so solemn and so unhappy as her aunt had conceived, that, if it were alone, she could only have returned to her chamber, Montoni hurried from the steps of the ch\u00e2teau, and went to and fro, waiting for an opportunity to interfere with this part of the castle. When she entered the room, her countenance was so unwillingly made her some serious prospect. \"Be it so,\" ",
+      "tallies": {
+        "coherence": [
+          3,
+          0,
+          0
+        ],
+        "gothic_atmosphere": [
+          3,
+          0,
+          0
+        ],
+        "narrative_quality": [
+          3,
+          0,
+          0
+        ],
+        "fluency": [
+          3,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "A cold wind swept through the empty hall.",
+      "lstm_text": "-It seemed a strange reason for one word which I had just been for life, and in such a trifle as that of either correspondence or rather-its manifestations are attended to have a great deal of wood and women and its inhabitants. I promised to leave me-all the picturesque papers I had once taken, especially when my only chance was to leave me on the subject of the future family, in a ",
+      "attn_text": "\"-\"Come in and get down to the place where he goes, I'll see you.\" '\"And now, do! Are you thinking of my journey? They are not going to rich you,' and he could not have seen him, and asked me if he were all the heats, he spoke he would say anything about it. \"It's not a trick!\" I said. \"Why don't you see the devil?\" I asked. \"Certainly, as soon as the ladies have ",
+      "tallies": {
+        "coherence": [
+          0,
+          2,
+          1
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          0,
+          3,
+          0
+        ],
+        "fluency": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "The stranger arrived at the gate after midnight.",
+      "lstm_text": "-\"Hah! the ocean!\" exclaimed Varney, \"and then see you just here.\" The noise was suspended, and Emily was startled into a chair with which Emily met Emily. \"I have heard nothing from her,\" said Henry. \"I am certain that you should not return to your chamber, and would give me a superstitious feeling that your pity, but a child?\" \"The most unfortunate man is very far from yours,\" said Emily, then ",
+      "attn_text": "-It was a long journey; and to show her customary efforts to suffer her to make another effort to discover the cause of her father's assertion, but had no means of escaping the melancholy scenes of it, and, after endeavouring to persuade her to persevere concerning the last means of being accustomed to her chambers, and without considering that she might learn suspected. Her aunt, who was too much occupied by this thought, had so ",
+      "tallies": {
+        "coherence": [
+          1,
+          2,
+          0
+        ],
+        "gothic_atmosphere": [
+          1,
+          2,
+          0
+        ],
+        "narrative_quality": [
+          1,
+          2,
+          0
+        ],
+        "fluency": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "He lit a candle and descended the stone staircase.",
+      "lstm_text": "-He spoke her well, and made her forget her own heart. She trembled when she saw the roof of Notelier Street, and waited for a moment's notice, with her unbridled veins had always conceived of her attention to St. John's Wood. Unhappily as I ain't it to be it, he has no right to explain the thing connected with him that no other ",
+      "attn_text": "-The men was in the room, breathing much more and more distinctly than it was possible. I was not without able to get up a human being in the empty house. But that I was not so much occupied by the uncertainty of my senses in any way, so far as I could possibly be, but no doubt was to be called myself. The idea of the conspiracy was universally conducted. I had found that these men were all silent. The two ",
+      "tallies": {
+        "coherence": [
+          0,
+          3,
+          0
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          0,
+          3,
+          0
+        ],
+        "fluency": [
+          0,
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "The forest was silent and the path had disappeared.",
+      "lstm_text": "-She trembled the top of the staircase, and had seen swords before her eyes were unable to do so, and of Emily's silence, till she heard a voice of terror; while Emily passed the night, a gallant chair of the chamber, that led immediately to the town. Her countenance expressed a degree of sensibility. The door was opened, and Doroth\u00e9e sat down on the pavement, and perceived, that she had been for some time ",
+      "attn_text": "-We were seated in darkness, and looking out. The sound was not shaped by the earth, and the background of my eyes. \"Believe me, Jane, you don't know how much I have to say.\" \"Be so good, Ernest, because you mustn't have to show it with such a subject.\" \"And what sort of things?\" \"Because, sir,\" said Henry; \"that's what he is, but they do well",
+      "tallies": {
+        "coherence": [
+          2,
+          1,
+          0
+        ],
+        "gothic_atmosphere": [
+          3,
+          0,
+          0
+        ],
+        "narrative_quality": [
+          2,
+          1,
+          0
+        ],
+        "fluency": [
+          2,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "She sat alone in the great dark chamber.",
+      "lstm_text": "-No, sir, treacherous and habit of delay. But they followed me on side of the room, castled in the moonlight as lightning as it had passed. Not a bright moonlight, through which sitting down the corner of the lake and chests that had moved the pallor and the sky, gleamed downwards, and the ground was sunk, and flitted over the dark branches, lowering ga",
+      "attn_text": "-Her Husband, having seen her Father, stood behind a door open, and placed her hand upon the Lamp door. The Door was on the point of returning to her Cell. At the abbey, the Mob slept the Crowd: The Duke appeared in honest Antonia's orders, She gave her a small Nun the Garden were conveyed. Ambrosio was struck with his L",
+      "tallies": {
+        "coherence": [
+          3,
+          0,
+          0
+        ],
+        "gothic_atmosphere": [
+          3,
+          0,
+          0
+        ],
+        "narrative_quality": [
+          2,
+          1,
+          0
+        ],
+        "fluency": [
+          3,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "The old monk led her through the vaulted passage.",
+      "lstm_text": "-A good man, indeed-I am no feast of seeing the old woman.\" \"The nurse has gone with you, sir, has come into the room-I can tell you.\" So she rose to her feet, but she said nothing, but looked into the calmness of her nerves when her eyes were fixed on me, and overcame the same truth, \"the first thing she wants?\" He could not. \"So I heard a heavy noise of ",
+      "attn_text": "-Sit down my brother in the gallery. No, no, dear, good woman! God help us! From it, then, have I not my friends, when you fancy it would let me be able to lose my suspicions. As I said to myself, it would be necessary for me to bear it now. It must be so much better pleased and curious to keep up all this. I can only say that I have travelled here from ",
+      "tallies": {
+        "coherence": [
+          1,
+          2,
+          0
+        ],
+        "gothic_atmosphere": [
+          3,
+          0,
+          0
+        ],
+        "narrative_quality": [
+          1,
+          2,
+          0
+        ],
+        "fluency": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "Rain fell heavily upon the ancient stone walls.",
+      "lstm_text": "-The soft philosophers, bloomed with sea-eye, was still a rich, note-looking beach, as it seemed to me a little wrought on the left. It was the first time the other stumbling over each madness of thick, sceptical arms and the wings and stiffened cleverness of my beauty of magnificent ",
+      "attn_text": ") I turned the hinges from the Count's room. \"I have been writing,\" said Henry, \"we shall walk in our way to the town, and give the stain by this time and all.\" \"Is it a good night?\" \"The old man is quite so,\" said Henry, \"that you are the only way of the vampyre.\" \"Well, then, Jack, doctor, the ship, I won't be going out to get a bund",
+      "tallies": {
+        "coherence": [
+          0,
+          3,
+          0
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          0,
+          3,
+          0
+        ],
+        "fluency": [
+          0,
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "The servant knocked softly at the heavy door.",
+      "lstm_text": "-It came a rustic gesture, and saw him again again. We were busy in our labour-we must see nothing but ourselves. These was more strongly than usual. There had been some difficulty in reaching the waters we saw the Professor lifted his head, and closed his eyes, and stooped to go back to the front door. Raoul listened attentively, and then asked the question which had his own interests s",
+      "attn_text": "-Douglass shook his head. \"Oh, John Rivers!\" exclaimed John Westlake, \"you see whatever were to do with this way.\" There was no time to lose that he returned to Flora's room, and saw him looking at him with more expression than to speak, he was anxious to draw his head and slip and laughed at the thought that he saw the other were quietly solitary. It was ",
+      "tallies": {
+        "coherence": [
+          1,
+          2,
+          0
+        ],
+        "gothic_atmosphere": [
+          1,
+          1,
+          1
+        ],
+        "narrative_quality": [
+          1,
+          2,
+          0
+        ],
+        "fluency": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "He stood at the window and looked into the night.",
+      "lstm_text": "-\"Come, sir,\" he said, \"don't let him see him with him.\" \"No! But where is it?\" \"Do you believe that he would be really still surrounding?\" \"Precisely! Be it so! I want you to be silent.\" \"Shall I put it?\" I inquired if I spoke to him. \"I have heard my uncle in a week, sir. I did not like to ask the question that I have written at such a time as I can say how",
+      "attn_text": "\"* The scene rose in front of the picture, but he could not even have told himself at the moment when he had seen his feet, and had one of them, thought he might be, he had heard any of the roadmen left behind. He had not been able to see him, and he sunk down into the room, and lay down in the hall. He was sitting beside him, moving over the body, which he began to make a terrible dream. It was empty enough to think that he was, however, in a few moments before he ",
+      "tallies": {
+        "coherence": [
+          1,
+          2,
+          0
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          1,
+          2,
+          0
+        ],
+        "fluency": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "The fires in the hall had long since gone cold.",
+      "lstm_text": "-Emily did not know the lofty infuriated mob by this little girl, who had made no scruple on the subject of her sister's maid, yet she would know more of the lovely delights of the world, and she felt a view of her aunt's contempt with tears. She passed the door, opened her door, and listened to her still, flying with the light that had sworned in a moment, and yet stopped",
+      "attn_text": "\"-\"Then you are always unkind!\" exclaimed Valancourt. \"I have seen a long grey cloak and a heavy fire on the earth, and the surrounding horizon-openings, is I improved!\" \"From your door,\" replied the Count, \"and don't send for it until your friend is coming.\" Emily was silent and silent, and heard the distant murmur of the voice of Annette, and the light flashed upon the faint murmur, that waved beneath",
+      "tallies": {
+        "coherence": [
+          1,
+          2,
+          0
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          1,
+          2,
+          0
+        ],
+        "fluency": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "She found herself alone in the ruined chapel.",
+      "lstm_text": "-The Countess hesitated to excite the dispute in the Countess and her mother, who had been endeavouring to bear the delicacy of a perfect kind of thing. Under these circumstances, in the same formal appearance she looked unconnected with her want of grief, did not conjecture her disposition, and no means of hope. The marquis had long known, entirely frequently since the scene of his late principal, ",
+      "attn_text": ") \"So!\" said the Duke of Guest, suddenly; \"Have you been the Pagar Abbey? What was the meaning of this? The young Lady! But now I started out his bachelors!\" \"Stop! Speak!\" cried Matilda. \"Oh! my Lord! He has just kept your Highness for your pleasure.\" \"Stop! my Lord! No, God! Will it be ",
+      "tallies": {
+        "coherence": [
+          0,
+          3,
+          0
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          0,
+          3,
+          0
+        ],
+        "fluency": [
+          0,
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "The road wound through dark hills and bare trees.",
+      "lstm_text": "-The well-known smellers were raised up and modern in their cupboards, and withdrew to the sea, covered with rugged style with heavy woods, and were seen in the middle of the road. The top of the bank was covered with crouching, pining heavily. The moonlight was coming on the sky, and the moonlight rays becomes on measured, that some new foot",
+      "attn_text": ") They were literally slanting Apparition, and the drivers were gone; or within the bold men, shone in the grey sky, some deep, stunned flowers darting over them, and came again, as if the landlord was no special experience that were of the most dreadful conditions to be done. We all felt that it was not easy to give the answer for the doctor and no ",
+      "tallies": {
+        "coherence": [
+          3,
+          0,
+          0
+        ],
+        "gothic_atmosphere": [
+          3,
+          0,
+          0
+        ],
+        "narrative_quality": [
+          3,
+          0,
+          0
+        ],
+        "fluency": [
+          3,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "A figure moved at the far end of the gallery.",
+      "lstm_text": "-Had I been so long expected to see the admiral and Marchdale he looked like itself into the veins in his pocket-book, it was not the name of Henry Bannerworth, saying that he wouldn't be found that he was very nicely enabled to see his friend he had been called in another, and should not be able to get much upon the subject to tell him, as well as the very sciences of his own.\" \"I will not forget the name of Sir Francis Varney,\" said ",
+      "attn_text": ") Shorthouse had already dropped me, for he wrote a few seconds to his daughter's side. And she added, that the two friends were in the neighbourhood of Louis-Philippe house. On the other hand at the end of the luncheon-room, without three o'clock, her husband had found her husband's room. The next morning Sir Nathaniel had left him by him's work of collect",
+      "tallies": {
+        "coherence": [
+          0,
+          0,
+          3
+        ],
+        "gothic_atmosphere": [
+          3,
+          0,
+          0
+        ],
+        "narrative_quality": [
+          3,
+          0,
+          0
+        ],
+        "fluency": [
+          3,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "The old woman spoke in a low and trembling voice.",
+      "lstm_text": "\"-\"The lecture is mad, Mr Atherton,\" said Mr. Chillingworth; \"for what is it, if I don't know how to talk of it, tell him that he's just passing through the summer-house. I wonder what had become of it, before you go up? You don't know what you do, Jane.\" \"No; I'll tell you all about it, because I have no right to say, for myself. I must have taken it on the subject.\" And she ",
+      "attn_text": "'\" \"When you come, let me leave you?\" \"Very good.\" \"Let us go on, Dorian,\" said Van Helsing, \"and we may know how he wants any one, for he would be the cause of saying that he will be a great deal of the wrong, you're a fool. He is such a fool that's what he says. Why should he be so good? Atherton, that is quite so, he cannot be a vampyre.\" \"He is; ",
+      "tallies": {
+        "coherence": [
+          1,
+          0,
+          2
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          1,
+          2,
+          0
+        ],
+        "fluency": [
+          2,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "He wandered through the deserted rooms of the manor.",
+      "lstm_text": "-Can Rosario, that She was desired to Tom? What was my Duke? The searching sleep was then extinguished beyond the Cottage. Now St. Foix was silent, too much vainly cautiously, and hoped to suspend him on the subject of Antonia to bid her Nattee would permit her to refuse to conceal his persuasion",
+      "attn_text": "-Raoul retired to the Castle, and gave them the opportunity of his life, and yet his eye betrayed these words, He considered not that He might easily be supposed that He was much better than Antonia's Wife. The Mother St. Ursula should be lodged in his aversion, He was embarrassed than He had hitherto lamented the Brotherhood, and therefore overpowered by ",
+      "tallies": {
+        "coherence": [
+          0,
+          3,
+          0
+        ],
+        "gothic_atmosphere": [
+          1,
+          1,
+          1
+        ],
+        "narrative_quality": [
+          0,
+          3,
+          0
+        ],
+        "fluency": [
+          0,
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "The night was still and no sound came from below.",
+      "lstm_text": "-But yet it would be difficult to leave the convenient seat which falls upon its lofty silver water, the sea-circle at one side, whose hair was panting. Among the woods, closed the breeze, through the porters, which the vessels had totally hid by him were not in the mouth of the woods beyond the reach of the light",
+      "attn_text": "-When I had succeeded, I was surprised to see my father, but she heard me walking up, and looked at the strangers from behind the table-room. \"My good God! What was that? Suppose the sight? There is nothing wrong, and I know of Amante's materials for me. I am one of those things besides in my bed and when you are of playing your pink name on a mass of power of your own ",
+      "tallies": {
+        "coherence": [
+          1,
+          2,
+          0
+        ],
+        "gothic_atmosphere": [
+          3,
+          0,
+          0
+        ],
+        "narrative_quality": [
+          1,
+          2,
+          0
+        ],
+        "fluency": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "She opened the heavy gate and stepped inside.",
+      "lstm_text": ") \"Strain is a fresh heart,\" was the answer, with a look of despair. \"It will be a very little difficulty,\" she added, in an answer, raising his hand on his hand. \"You had better not lose my wedding-night.\" And he placed his hands, and said, \"Are you not going? Atherton, I'll make you pull me at my neck!\" I laughed. \"Nothing could you find the next day?\" He looked ",
+      "attn_text": "-A year of Dudley's face, and I found that Ferdinand, resolved to do his presence, I made no reply to visit him from his desolate situation. He was so much disappointed to resign the newspapers of my conduct. When I reached the chamber door, I perceived that it was fastened, I heard a noise, and a yellow rock, descending the walls, and descending into the narrow rock and window-s",
+      "tallies": {
+        "coherence": [
+          0,
+          2,
+          1
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          0,
+          3,
+          0
+        ],
+        "fluency": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "The torches in the passage flickered and went out.",
+      "lstm_text": "-The shrill clock is removed, at the door of the door, fastened it to one side, and the door was opened, and found the door of the lock and door, which hung and locked the door to the table. \"This is it not so far out,\" said Marchdale, \"that I perceive this one is a servant of us; at least I am not admitted.\" Emily, perceiving Emily was on the point of being part",
+      "attn_text": "-I thought of the senses which led me to make out, for my own memory I lamented myself. \"And I tell you the man who had gone to you,\" I said, \"if he has taken me off, and there is no use of that. I can only speak a little, forgive him as bad as possible.\" When he spoke, he spoke slowly:  \"I am glad to come on your knees,\" said La Voisin",
+      "tallies": {
+        "coherence": [
+          0,
+          3,
+          0
+        ],
+        "gothic_atmosphere": [
+          0,
+          1,
+          2
+        ],
+        "narrative_quality": [
+          0,
+          3,
+          0
+        ],
+        "fluency": [
+          0,
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "He read the old letter by the light of the fire.",
+      "lstm_text": "-He was going to see that his comparison was so good as to describe him. He was not disappointed, and had in the House of Commons, or by some means of age. He had already settled itself in October. He was at length declining at the sight, some of the Unfortunate which had been placed in one of the Baptiste under my honour, and was persuaded that He should know what a wildness would be",
+      "attn_text": "-The visit of Frederick Fairlie kept her ears, as she sprang up again, could only be sure to be seen so inexpressibly as to be of the sight of the friends, and the truth of this tracked more as the subtle buildings who did not see. The truth had been highly attracted even by their insolent causes. The old woman was unwilling to reach her. But she remained in ",
+      "tallies": {
+        "coherence": [
+          0,
+          0,
+          3
+        ],
+        "gothic_atmosphere": [
+          0,
+          2,
+          1
+        ],
+        "narrative_quality": [
+          0,
+          2,
+          1
+        ],
+        "fluency": [
+          2,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "The mountains rose dark and steep on every side.",
+      "lstm_text": "'\" He paused while he spoke, 'I want you to marry him better than that of my own sake! I must leave you with me and see you, nor my dear mother and yours may be assured. The man is alone now; I am quite sure you know your father, you may turn up all about him so much alive in a murderer for yourself. Oh! don't you think you love me, I never beheld ",
+      "attn_text": "'\" \"How dare you see my eyes close,\" said Emily. \"It is very late, madam,\" replied Emily. \"O Emily,\" said Emily, \"to open her late situation, and you shall leave you in the direction of your own superior. She is a trial, and no other person related to you. The place is now unseen in undisturbed circumstances: She wishes to sit in the darkness of her chamber. Her spirits be assured that her ",
+      "tallies": {
+        "coherence": [
+          0,
+          2,
+          1
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          0,
+          2,
+          1
+        ],
+        "fluency": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "She heard a sound in the room above her.",
+      "lstm_text": "-She had no doubt for an opportunity of becoming any of the means of removing the Abbot's orders. \"Some one Rosario!\" He returned; \"He has followed me from some dangerous miserable world. He would remember the Duke's affairs to take him with this Great Sophie. And I inform you that He would marry him till your Relation has suspected your intention to your ",
+      "attn_text": "-It seemed to have appeared her only sister; her voice was now suddenly acquired of shuddering grief, and her countenance flowed fast on the cheek, her tears flowed fast upon her cheeks. She threw herself to her feet, and pointed to her arms, with a heavy sigh upon the fire. \"Gracious God! How can you say it will be so? The snow is unfastened! Where is she?\" The voice ",
+      "tallies": {
+        "coherence": [
+          0,
+          3,
+          0
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          0,
+          3,
+          0
+        ],
+        "fluency": [
+          0,
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "The garden was overgrown and the paths long forgotten.",
+      "lstm_text": "-Who are you?\" \"As you shocked?\" \"Ah, no! how did the other! What a vessel look upon me in thy mercy? Yet! In Heaven that I have not been too much to conceive a greater effect upon my heart, and when I were unable to speak to him! His long friendship was undoubtedly so seldom that I should certainly have succeeded. Despair, to ",
+      "attn_text": "-Here the door of the Mediterranean, seasoned brightened through the mountains. A valley smoothly glowing with the valleys of the lower hills, surrounding the landscape and spreading Languedoc, on the plains architecture, whose features were hung over me, and its reflection unclouded. One of the towers of the scene seemed to have ",
+      "tallies": {
+        "coherence": [
+          0,
+          2,
+          1
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          1,
+          2,
+          0
+        ],
+        "fluency": [
+          0,
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "He rode through the valley as the sun was setting.",
+      "lstm_text": "-Nothing could happen to suffer in London, and had so many weeks before him. His heart was unnatural; it was quite impossible to believe that he might have made his proposal to escape his habitual speed. From the little period of Mimi de Menon of Diana's Grove, whose massive eyes tumbled back and followed him to the circle ",
+      "attn_text": "\"-\"Ah, ma'amselle, what am I going to do?\" said Emily, with a trembling voice, \"it cannot have been so sweet and so lonely in fear, so much wild, lonely cold sweetness, she must not yet sleep her ch\u00e2teau!\" \"Speak!\" cried Manfred; \"you are sure I desired, but I fear it cannot be false that I fear not like any danger to me, for I do not know that I am going.\" The ",
+      "tallies": {
+        "coherence": [
+          0,
+          2,
+          1
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          0,
+          3,
+          0
+        ],
+        "fluency": [
+          0,
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "The door at the end of the corridor stood open.",
+      "lstm_text": "-I only want to say something about what we must pass home.\" \"It is all I did. I only know that it is my business to stand on your part to speak to us. Shall I tell you that you might be a nice in January, who will keep the materials (who are all wanted) I should like to see her-that Mrs. Clements had been informed of the old lady's marriage, and even the best ",
+      "attn_text": "-It was a figure which seemed to have a time to be prevented. It was my first occasion for keeping my sleep now, and I waited before I left my journal's room. The room contained (as if I had been in all her apartment), were sure to do it on the second floor), except the peasant-looking village schoolroom in the library-I felt it in my room-town-handed \"The W",
+      "tallies": {
+        "coherence": [
+          1,
+          2,
+          0
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          1,
+          2,
+          0
+        ],
+        "fluency": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "She climbed the winding stairs in the dark tower.",
+      "lstm_text": "-She was so much scolding for fears. \"Go and go to rest!\" \"Mina, you can make me a little sleep,\" answered the Count, \"and I put it.\" The moment she grew stronger at her feet, went out into the room, leaving us on the floor. \"Oh, Go!\" she said. \"O! let me go out my bedroom last night.\" He turned the gown, and looked out of the window. \"Who are ",
+      "attn_text": "-But she perceived the soft looks of the sea-walk-flowers, that was sensible of the scenes of beauty, which, perhaps, seemed to have yielded to the world, animated with the weakness of taste by the terrible beauty of the sources of their sufferings. Thus she remained gazing on her arms towards the windows above. Emily was somewhat surprised by the sound of steps, and Emily turned away to her",
+      "tallies": {
+        "coherence": [
+          0,
+          3,
+          0
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          0,
+          3,
+          0
+        ],
+        "fluency": [
+          0,
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "The village lay quiet beneath a moonless sky.",
+      "lstm_text": "-The appointment was placed in the Mason, and looking in suddenly a few seconds with his eyes fixed on the table, and added to the effects of the arm, and withdrew from the windows, descending to a distant frenzy of trees, and where there were some horsemen in the park. The Count had poured out on the great staircase below, and found himself waiting on the table before he heard them. The door opened, and he ",
+      "attn_text": ") \"Well, Jane Eyre!\" I had not yet seen Mr. Rochester. \"I have no husband,\" she said, \"what have you taught me in fact, you might have long been yours?\" \"Please, if you don't know it now.\" \"Then you understand that your will, dear Flora, I will not be worthy of uneasiness, and yet I do not know that this will show the heart.\" \"Ah, you see, what did you do?\" I inquired",
+      "tallies": {
+        "coherence": [
+          3,
+          0,
+          0
+        ],
+        "gothic_atmosphere": [
+          3,
+          0,
+          0
+        ],
+        "narrative_quality": [
+          2,
+          1,
+          0
+        ],
+        "fluency": [
+          2,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "He paused at the threshold and listened.",
+      "lstm_text": "\"-\"You will not know who my Lord,\" said he, \"we may know that poor House is at first; perhaps he has no power to become to my own interests.\" \"I perceive my sorrows,\" said Bianca, \"that we must keep up, Annette would not return till the day, and leave us to consult her for our own accord.\" Emily was silent, still more composed, and her thoughts did not seem to notice the ",
+      "attn_text": "-She trembled to behold the sacristan's mind, and turning over the country, while the hand had ceased. The Nuns continued to observe the unhappy Agnes: The Lamp, having followed the Prioress and Lorenzo's parents, She had already seen him in the neighbourhood of the Church, which was so sudden and so wonderful a dream that he should have taken the better of the Assassin",
+      "tallies": {
+        "coherence": [
+          3,
+          0,
+          0
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          2,
+          0,
+          1
+        ],
+        "fluency": [
+          3,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "The wind moved through the trees like a whisper.",
+      "lstm_text": "-Unknown, however it might have been his own history and defending companionship, and had on me, at least, did it not in what way of action that that they should be so much changed by curiosity, the whole shock of circumstances which, enraged even to the most unpleasantly meal, they might be on the point of controlling the public summer of the woods. \"As I have done,\" he added, \"",
+      "attn_text": "-'Who is it what you propose to do?' I asked. 'Well, well! You will be more stupid and pleasant.' 'Speak to her,' he replied, 'but what is this?' 'What does he say?' asked Doctor Bryerly. 'Well, you know, Miss,' said Milly. 'Is he not quite a young lady?' 'Is she very pale, Mr. Lockwood?' I inquired. 'You're a bit ",
+      "tallies": {
+        "coherence": [
+          0,
+          3,
+          0
+        ],
+        "gothic_atmosphere": [
+          0,
+          1,
+          2
+        ],
+        "narrative_quality": [
+          0,
+          3,
+          0
+        ],
+        "fluency": [
+          0,
+          3,
+          0
+        ]
+      }
+    }
+  ]
+}

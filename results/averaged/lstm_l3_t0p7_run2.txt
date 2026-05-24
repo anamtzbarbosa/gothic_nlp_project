@@ -1,0 +1,78 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 100
+bleu_1: 0.19047619047633163
+bleu_2: 0.048998145955945295
+bleu_3: 0.013756774701456458
+bleu_4: 0.004678725246536196
+bleu_4_smoothed: 0.005803123905077891
+bert_score_f1: 0.8229400515556335
+bigram_overlap: 0.014023516520309582
+trigram_overlap: 0.0012118253458285
+distinct_1: 0.22832722832722832
+distinct_2: 0.7243032132078822
+trigram_repetition_rate: 0.0031962269347252203
+spelling_accuracy: 0.9197330647900741
+ttr: 0.7688312300477074
+generated_perplexity: 22.918569801024862
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Prompt:
+What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par
+
+Generated:
+is!" she said. "Yet I did say that she had not been alive, even to us. She looked quite aware that that place I had thought that it was her stupid melancholy eyes. From this moment, she turned towards me in the next moment. Her eyes fell on her walk on me, and said, "Whose suspicions I do pity you! 
+
+Reference:
+ bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking déshabille to show herself knocking at the window.
+--------------------------------------------------------------------------------
+
+Example 2
+Prompt:
+It appears to me un cimetière!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken
+
+Generated:
+ as was so tempted in his eyes. 'Be so good as to continue me away; But how will you trust me and permit me to bear on me some of your wife. You know nothing, indeed, you would be sure I should have swallowed your heart's heart to crush my store in despair. You have tru
+
+Reference:
+ eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions.
+--------------------------------------------------------------------------------
+
+Example 3
+Prompt:
+The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her
+
+Generated:
+ answer to herself, and asked if it were a bad woman; her father's spirit had only been so marked she would be very well. 'Let us go out,' I answered, 'because my daughter and you died in secret, she is not a sort of friend, very much." "Never mind, Madame," she said; "but you will not tell the name of my 
+
+Reference:
+ exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption.
+--------------------------------------------------------------------------------
+
+Example 4
+Prompt:
+Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but
+
+Generated:
+ there is no reason why I really knew that that man had taken a female story in the morning, and be able to explain the evidence of our escape. I have a dungeon to this account, and I am sure it is true, under any circumstances, which is the man who has chosen out of my flights. And for science that there are so many 
+
+Reference:
+ som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, "Might I speak a word wi' ye, please, on the lobby?" 'Mr.
+--------------------------------------------------------------------------------
+
+Example 5
+Prompt:
+But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she
+
+Generated:
+er of comfort and kindness, to inform her that his father was at the termination of spirits, and he saw her faithful young lady's daughter, and if she was inclined to come to her very heart, and not having accompanied by her friends, and she found herself in the carriage. The reader criticised unequal to the whole world, but of 
+
+Reference:
+ searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest.
+--------------------------------------------------------------------------------

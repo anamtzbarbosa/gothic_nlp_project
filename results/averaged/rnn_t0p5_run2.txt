@@ -1,0 +1,78 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 100
+bleu_1: 0.12198076777473144
+bleu_2: 0.03004553203286163
+bleu_3: 0.007027230847568018
+bleu_4: 1.2805066490351308e-05
+bleu_4_smoothed: 0.0023895980016002106
+bert_score_f1: 0.8104043006896973
+bigram_overlap: 0.008186692454628448
+trigram_overlap: 0.00038690251936117516
+distinct_1: 0.13159688044218976
+distinct_2: 0.49462119478141453
+trigram_repetition_rate: 0.0076359290438263675
+spelling_accuracy: 0.9271899918524059
+ttr: 0.6379697742573408
+generated_perplexity: 20.749703531815054
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Prompt:
+What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par
+
+Generated:
+is that I am quite sure of you of my uncle's name of Bartram-Haugh he went down to him, '"'To-morrow, you must have the suspicions that I found myself in the same day. The latter had followed him to me, and with his aunt had made the way of aiding a word, and I was very much interested? As I gave him a strange thing, except my eyes now sides, I like an inside of the house." And now I felt the door opened, and his eyes were fixed back to the window, looking up to him, in a few minutes and turned the door, and saw the door opened, and his eyes were fixed on the window-chairs opening. "You are not quite a little girl in my life. If you don't know what a good deal of misery." "We were not quite sure of that! It is
+
+Reference:
+ bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking déshabille to show herself knocking at the window.
+--------------------------------------------------------------------------------
+
+Example 2
+Prompt:
+It appears to me un cimetière!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken
+
+Generated:
+, looked into the room. "'Tis my dear, dear Maud, I'm afraid you like a man." "Good-bye, my Lord's Secreti', Sydney is my friend," I replied, "the poor girl who is very good as well as I could; my father had made up her own heart, and I will not doubt my father," said Jack, "and do you know, nor do you do?" "Ah! you won't be so much in love and my duty." Emily was silent, suddenly perceiving over me that was now expired, with the folk and fitting colours upon the ground and saw the most battlements, where he should have been in no chance of his thoughts, with which I observed that it had been no doubt but a stranger to apology for any purpose in the shape of being in the 
+
+Reference:
+ eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions.
+--------------------------------------------------------------------------------
+
+Example 3
+Prompt:
+The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her
+
+Generated:
+ appearance with an adventure, but I heard no sound of tears as though it was, I felt the devotion of my sympathy. 'When you have seen the first times!" exclaimed Annette, who was still in case. And the first words I found it up. The first she had arrived before his eyes. 'But I be so that you can tell you how long ago that I am very glad to leave my way to come through the westernal literature, And you do not so? What do you mean?" "What do you mean?" "Ay! Then he can do so. But what has happened?" "It isn't it?" "My dear fellow, I'll be a foolish that you had better now sinct his name is in the permission for your age for your own good people. I will be at once again!" "
+
+Reference:
+ exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption.
+--------------------------------------------------------------------------------
+
+Example 4
+Prompt:
+Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but
+
+Generated:
+ as you do, dear, it is the chapel, and be it for your own soul, you must have no doubt my own interests, I have no doubt but it will be sufficient to send for your own soul. You must have no doubt my intention to deceive me: He was not to be already for years. 'But you don't know my father, I'm sure he will soon be rejoiced! My own misery by which I have already been too much occupied by my own self-control, even in the course of concealment the knowledge of the Countess of the night before he felt the most extraordinary personal resemblance to his anxiety for it might have been the exact situation, the Countess had passed the house where she had taken the window, showed no means frankly displayed. I
+
+Reference:
+ som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, "Might I speak a word wi' ye, please, on the lobby?" 'Mr.
+--------------------------------------------------------------------------------
+
+Example 5
+Prompt:
+But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she
+
+Generated:
+'d be well-adventure that it has not been in love with any one." And he is at last night, and seemed absorbed in him with an expression of disguise, in vain, and retired, and found the pistol of the date of the windows of the German and who were now in the same room. The Countess was very much frightened; his last words had done so and mother from him: he did not know what a quarter of an hour, how he stood, and sat down on the road, and entered along the gallery. I felt a little surprised, she was already in earnestly dispatching his authority was so much interesting for his master's death. A mother's opinion, and it would be no doubt of guilt) suspected that she could do so that I was in order to find it difficult
+
+Reference:
+ searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest.
+--------------------------------------------------------------------------------

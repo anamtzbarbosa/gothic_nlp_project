@@ -1,0 +1,85 @@
+{
+  "config": {
+    "lstm_checkpoint": "checkpoints/final_rnn_lstm/final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt",
+    "attn_checkpoint": "checkpoints/attention_lstm_new/multihead_3layer_K20.pt",
+    "tokenizer": "data/gothic_tokenizer.json",
+    "eval_samples": "data/eval_samples.json",
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "num_samples": 2,
+    "api_key": "AIzaSyD8bsGgGrk7-_ZbW678GdecRWwHp6MQiGs",
+    "output": "results/geval/geval_results"
+  },
+  "results": [
+    {
+      "sample_idx": 0,
+      "prompt": "What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par",
+      "lstm_text": "is!' she cried, 'no, of course, 'artin' in front of the worst and vice of England grow over them rash or packet, Dudley Earnshaw. I saw him that short sword made ye get half a word, and I'd fight you.' And so we stooped towards the little ",
+      "attn_text": "ent thou didst dune! To die now: Ah! Thou art mine! Thou wilt unendurable for life. Let me say so: To give me good advantage.\" And so he felt itself in his eyes; But I strove to reply: But as soon as the Children were called for him, He ",
+      "lstm_scores": {
+        "reasoning": "The continuation suffers from severe incoherence and nonsensical phrasing that renders the narrative unintelligible. It fails to maintain the established tone, dialogue structure, or thematic gravity of the prompt.",
+        "fluency": 1,
+        "coherence": 1,
+        "gothic_atmosphere": 1,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The continuation suffers from severe syntactical breakdown, rendering the prose incoherent and nearly unintelligible. While it attempts to mimic a dark, antiquated tone, the lack of grammatical structure destroys any sense of narrative or atmosphere.",
+        "fluency": 1,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      }
+    },
+    {
+      "sample_idx": 1,
+      "prompt": "It appears to me un cimeti\u00e8re!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken",
+      "lstm_text": ". 'How is your father?' I continued, 'I knew it would be a fierce and blood. I do not know that I am so glad to come, because I have to have the property to that night. If we can persuade my future cousin to remain alone, and we shall be tracing.' \"'The name is Heathcliff, dear, is you?' '",
+      "attn_text": ". 'I didn't know what to do, smiling like me. 'You must see a little dog, Milly; I've been here here, and I'll walk about this, lassen and scathlets, fishs with sleep; but for so long a holiday o' holk cot-gouts out to, and ",
+      "lstm_scores": {
+        "reasoning": "The generated text is incoherent and lacks logical syntactic structure, appearing as a disjointed collection of fragments that fail to sustain the narrative tone or clarity. It abandons the established gothic mood entirely in favor of nonsensical dialogue that bears no connection to the prompt.",
+        "fluency": 1,
+        "coherence": 1,
+        "gothic_atmosphere": 1,
+        "prompt_faithfulness": 2,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The generated text descends into unintelligible gibberish and incoherent syntax, completely failing to maintain the Gothic tone or continue the narrative logic established by the prompt.",
+        "fluency": 1,
+        "coherence": 1,
+        "gothic_atmosphere": 1,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 1
+      }
+    }
+  ],
+  "summary": {
+    "fluency": {
+      "lstm_avg": 1.0,
+      "attn_avg": 1.0
+    },
+    "coherence": {
+      "lstm_avg": 1.0,
+      "attn_avg": 1.0
+    },
+    "gothic_atmosphere": {
+      "lstm_avg": 1.0,
+      "attn_avg": 1.5
+    },
+    "prompt_faithfulness": {
+      "lstm_avg": 2.0,
+      "attn_avg": 1.5
+    },
+    "narrative_quality": {
+      "lstm_avg": 1.0,
+      "attn_avg": 1.0
+    }
+  },
+  "overall": {
+    "lstm": 1.2,
+    "attn": 1.2
+  }
+}

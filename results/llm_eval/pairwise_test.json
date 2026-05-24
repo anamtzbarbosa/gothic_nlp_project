@@ -1,0 +1,62 @@
+{
+  "config": {
+    "lstm_checkpoint": "checkpoints/final_rnn_lstm/final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt",
+    "attn_checkpoint": "checkpoints/attention_lstm_new/multihead_3layer_K20.pt",
+    "tokenizer": "data/gothic_tokenizer.json",
+    "prompts": "data/geval_prompts.json",
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "num_samples": 3,
+    "n_calls": 3,
+    "api_key": "AIzaSyD8bsGgGrk7-_ZbW678GdecRWwHp6MQiGs",
+    "output": "results/geval/pairwise_test"
+  },
+  "summary": {
+    "lstm_wins": 6,
+    "attn_wins": 2,
+    "ties": 1,
+    "lstm_win_rate": 75.0,
+    "attn_win_rate": 25.0
+  },
+  "results": [
+    {
+      "prompt": "The old castle stood silent in the darkness.",
+      "lstm_text": "-I tremble for her own heart, would have given a faintness. Suddenly her eyes were fixed on me, but as I spoke, he went to bed, in a minute or two at his temples and his eyes, but, I suppose, muttered: \"I do not know whether you may appear to be the best thing-I can give you a likeness, and my wife was not ignorant of it, even if you were as sensible of it. I cannot",
+      "attn_text": "-How strangely it was, indeed, not for her to see the kindness of the letters which had passed away since it was justified. It was a strong impression on the mind of the drug of that beautiful spectre which I had so often felt myself to oppose the reality of my life. As I passed along I found that the marquis had overtaken the parties of the murdered Robert, and that he did not drink me as a consideration and indign",
+      "lstm_wins": 0,
+      "attn_wins": 2,
+      "ties": 1,
+      "reasonings": [
+        "Both continuations are nonsensical and suffer from severe grammatical fragmentation, making them equally poor in terms of coherence and narrative quality.",
+        "Continuation A maintains a more consistent, albeit fragmented, Gothic tone through its vocabulary, whereas Continuation B devolves into confusing and nonsensical character interactions.",
+        "Both continuations are largely incoherent, but Continuation B features more evocative Gothic vocabulary such as 'spectre' and 'murdered' which better aligns with the genre than the mundane dialogue and stuttering of Continuation A."
+      ]
+    },
+    {
+      "prompt": "She walked alone through the moonlit corridor.",
+      "lstm_text": "-Oh! my Lord! my Lord, I am very vacant, and who will be my friend. I presume, insisted on seeing that that gentlemen himself has murdered the monastery.\" \"But you fear,\" said Emily, \"we shall have the best suspicion of such horrible moods. Shall I meet her?\" \"Impossible,\" I replied, \"which you don't seem to have so much friend to observe the ",
+      "attn_text": "-It was now a mere saloon. As she approached the windings of the woods, she distinguished masses in the air, the mellowing horizon below, throwing up her breast, and perceived some degree of safety; though she often held a view of horses and arms on me, and fixed them up to the top of the ballet, conversing between us, spread its s",
+      "lstm_wins": 3,
+      "attn_wins": 0,
+      "ties": 0,
+      "reasonings": [
+        "Continuation A, while nonsensical, retains a slightly better Gothic tone with its focus on a monastery and murder, whereas B descends into disjointed, incoherent imagery.",
+        "Both continuations are largely nonsensical, but Continuation B contains more recognizable Gothic elements like dialogue and mention of a monastery.",
+        "Continuation A, despite its fragmented and disjointed nature, maintains a closer thematic connection to the Gothic genre through its references to a monastery, murder, and suspicion, whereas B loses all narrative sense in a bizarre description of a ballet."
+      ]
+    },
+    {
+      "prompt": "A cold wind swept through the empty hall.",
+      "lstm_text": "-She looked so pale and beautiful, and made me feel grateful. She sighed and looked at me at last and whispered to her: \"But I must not stay in London!\" She kissed herself from the table and said \"No! How can you do, Jane?\" \"You're not happy! Are you going to give me your head?\" She shook her head. \"What! where?\" I asked. \"Yes, you see it has not. I can tell you I was now so well ",
+      "attn_text": "'\" \"What do you mean, Jekyll?\" asked the admiral. \"Indeed!\" \"What do you mean?\" \"Why, sir, he's only such a matters,\" said Jack. \"Who's there?\" inquired Sir Francis Varney. \"And now it will be a small figure.\" \"Well, but not, I dare say, for I cannot make a use of them.\" \"When you shall be down to London, there's a very pretty night-catching, but as you are, you see you'",
+      "lstm_wins": 3,
+      "attn_wins": 0,
+      "ties": 0,
+      "reasonings": [
+        "Continuation A, despite its fragmented and nonsensical dialogue, manages to maintain a slightly more consistent emotional tone, whereas Continuation B devolves into an incoherent and jarring series of disconnected questions.",
+        "Both continuations are largely nonsensical, but Continuation B maintains a slightly better, albeit still very strange, sense of a narrative interaction between two characters compared to the jarring dialogue fragments in A.",
+        "Continuation A, while somewhat disjointed, maintains a more coherent emotional thread and dialogue structure compared to B, which relies on nonsensical, fragmented character introductions that break the Gothic mood."
+      ]
+    }
+  ]
+}

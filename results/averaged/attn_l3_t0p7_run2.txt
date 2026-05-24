@@ -1,0 +1,78 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 100
+bleu_1: 0.18729444348291718
+bleu_2: 0.04595079044309118
+bleu_3: 0.009114617363537128
+bleu_4: 1.9282713378063154e-05
+bleu_4_smoothed: 0.0038097581001775294
+bert_score_f1: 0.8235403299331665
+bigram_overlap: 0.013655205543933435
+trigram_overlap: 0.0003333333333333333
+distinct_1: 0.2271074952397438
+distinct_2: 0.7327813986260349
+trigram_repetition_rate: 0.0033723382632532472
+spelling_accuracy: 0.9266492540983122
+ttr: 0.7633490456452072
+generated_perplexity: 18.820004147410362
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Prompt:
+What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par
+
+Generated:
+a, Father! Hush! my father!' said I, buried in one word, making his sense of laugh. "You know that you cannot say something to love him!" He started back with horror. "But you are wrong and yet it cannot be, indeed. That is why you are well forbidden to talk about love, but that I should be able to leave to 
+
+Reference:
+ bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking déshabille to show herself knocking at the window.
+--------------------------------------------------------------------------------
+
+Example 2
+Prompt:
+It appears to me un cimetière!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken
+
+Generated:
+, very smallly. 'Oh, yes, ye, ye'll be very good on; and I'll do that ye won't get out; and though ye'll be in order to go and see her.' 'Which boots into the yard o' me, and when ye bid me get over!' I bid her go through the cabin
+
+Reference:
+ eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions.
+--------------------------------------------------------------------------------
+
+Example 3
+Prompt:
+The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her
+
+Generated:
+ aversion, drew a sudden stand from her little shoulder, and sat down in bed, with eyes. 'Nothing, they've come in here?' I cried. 'They know that I have been shaken. You never had no right to eat: you don't think I desired.' 'Yes, sir.' 'You must be a good woman,' she answered, with a sudden 
+
+Reference:
+ exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption.
+--------------------------------------------------------------------------------
+
+Example 4
+Prompt:
+Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but
+
+Generated:
+ the two young men had returned to me at least, all I knew what was done by it. The straight hat had passed through my mind when I had been employed! I was too much of knowing my own language. Mrs. Clements had just looked for me as I looked up the burden-glass of my own room-and to my left 
+
+Reference:
+ som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, "Might I speak a word wi' ye, please, on the lobby?" 'Mr.
+--------------------------------------------------------------------------------
+
+Example 5
+Prompt:
+But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she
+
+Generated:
+ert my eyes, but as she was sensible of the little speech, lowered the threshold and muffled in my face, scared and heavily. I was still asleep she turned towards me, and unable to move up, and she took no notice of her; and she took me in my hand and put my hand for an instant. 'How 
+
+Reference:
+ searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest.
+--------------------------------------------------------------------------------

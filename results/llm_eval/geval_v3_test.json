@@ -1,0 +1,114 @@
+{
+  "config": {
+    "lstm_checkpoint": "checkpoints/final_rnn_lstm/final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt",
+    "attn_checkpoint": "checkpoints/attention_lstm_new/multihead_3layer_K20.pt",
+    "tokenizer": "data/gothic_tokenizer.json",
+    "eval_samples": "data/eval_samples.json",
+    "prompts": "data/geval_prompts.json",
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "num_samples": 3,
+    "api_key": "AIzaSyD8bsGgGrk7-_ZbW678GdecRWwHp6MQiGs",
+    "output": "results/geval/geval_v3_test"
+  },
+  "results": [
+    {
+      "sample_idx": 0,
+      "prompt": "The old castle stood silent in the darkness.",
+      "lstm_text": "-The whole of the Diary. 18 August. After dinner the Grand Magnificent was still cleared away from the Stranger, and Carmilla was directed over the clock of St. Clare, and entering by the People and Ferdinand, at length, resolved to enter the cottage, where a narrow passage of the staircase, which, on some other way, leav",
+      "attn_text": "-Yes, I could see no sound of terror: I have no idea of the means of giving my own character in me in safety. He is beginning to make up his mind to become his own.\" Sometimes he drew his lips to me, and said: \"My dear sir, you are not so bad as to what he can do is to do!' 'You said I am not aware of that, Maud good-night, and you know how much anything else would you do",
+      "lstm_scores": {
+        "fluency": 1.3333333333333333,
+        "coherence": 1.0,
+        "gothic_atmosphere": 2.0,
+        "prompt_faithfulness": 1.6666666666666667,
+        "narrative_quality": 1.0,
+        "reasoning": "The model begins with a disjointed series of fragments and proper nouns that do not flow logically from the prompt, though it retains a vague Victorian vocabulary.",
+        "n_calls": 3
+      },
+      "attn_scores": {
+        "fluency": 1.0,
+        "coherence": 1.0,
+        "gothic_atmosphere": 2.0,
+        "prompt_faithfulness": 1.3333333333333333,
+        "narrative_quality": 1.0,
+        "reasoning": "The model struggles significantly with syntactic coherence and loses the thread of the narrative almost immediately. While it utilizes a few classic Gothic tropes like 'terror' and 'night', the structure is too fragmented to sustain any meaningful atmosphere or story.",
+        "n_calls": 3
+      }
+    },
+    {
+      "sample_idx": 1,
+      "prompt": "She walked alone through the moonlit corridor.",
+      "lstm_text": ") \"When is it?\" said Bertrand, \"what he wants you! There is no possibility of being able to get out of it! Be so good as to open the gate, to tell him how he will, provide, because I have been so much better than I have seen.\" \"No, no,\" said Varney, \"I have to tell him soon enough.\" \"It is; but you may depend with you, sir, have gone to bed when you are will",
+      "attn_text": "-Her voice was unable to support herself, but the next day, for the first time the recovery of her spirits and the mention of her beauty, and the delicacy of joy which her life was past, and the insensibility of her murdered gradual passion, and her own parents, as she considered the abbess to whom she felt concerned, had her own, had allowed her to commit a degree of displeasure. She was as ",
+      "lstm_scores": {
+        "fluency": 1.0,
+        "coherence": 1.0,
+        "gothic_atmosphere": 2.0,
+        "prompt_faithfulness": 1.0,
+        "narrative_quality": 1.0,
+        "reasoning": "The output quickly devolves into nonsensical dialogue and fragmented syntax that loses the setting established in the prompt. While it uses Gothic-adjacent names like Varney and Bertrand, the internal logic and sentence structure are broken.",
+        "n_calls": 3
+      },
+      "attn_scores": {
+        "fluency": 1.0,
+        "coherence": 1.0,
+        "gothic_atmosphere": 2.0,
+        "prompt_faithfulness": 2.0,
+        "narrative_quality": 1.3333333333333333,
+        "reasoning": "The model displays a typical LSTM 'word salad' structure where clauses are grammatically connected but semantically nonsensical. It maintains a slightly melancholic, formal tone fitting for the genre, but fails to maintain a logical narrative flow.",
+        "n_calls": 3
+      }
+    },
+    {
+      "sample_idx": 2,
+      "prompt": "A cold wind swept through the empty hall.",
+      "lstm_text": "-But yet he has died away and to say what you say. \"But I will not tell me that you know it; if you will, and one may be overcome of you.\" \"How are you not in company with you? They are not welcome.\" \"You are not quite willing to make up the subject,\" said the Count, endeavouring to join himself. \"If you want to believe and go to must take you aware that this is a matter of business; and if ",
+      "attn_text": "-I trust myself, I saw him pass over my pillow, and made his way back to the dungeons waiting to see a groan. I did not know what to do, but he seemed very much frightened, for he only was dressed. He was not yet alive, so he was the admiral's entrance. Jack was getting up a drowning glance, that all he went on in order to accept him the keys of the tea, and ",
+      "lstm_scores": {
+        "fluency": 1.0,
+        "coherence": 1.0,
+        "gothic_atmosphere": 2.0,
+        "prompt_faithfulness": 2.0,
+        "narrative_quality": 1.0,
+        "reasoning": "The model produces a series of disjointed, grammatically strained sentences that capture a vague sense of gothic dialogue but fail to form a coherent narrative. Despite the awkward syntax, the inclusion of a 'Count' and formal, ominous tone provides a fleeting gothic atmosphere.",
+        "n_calls": 3
+      },
+      "attn_scores": {
+        "fluency": 1.0,
+        "coherence": 1.0,
+        "gothic_atmosphere": 2.0,
+        "prompt_faithfulness": 2.0,
+        "narrative_quality": 1.0,
+        "reasoning": "The text demonstrates typical limitations for an LSTM of this size, with disjointed sentences and confusing character transitions, yet retains a dark, unsettling tone consistent with the requested style.",
+        "n_calls": 3
+      }
+    }
+  ],
+  "summary": {
+    "fluency": {
+      "lstm_avg": 1.111111111111111,
+      "attn_avg": 1.0
+    },
+    "coherence": {
+      "lstm_avg": 1.0,
+      "attn_avg": 1.0
+    },
+    "gothic_atmosphere": {
+      "lstm_avg": 2.0,
+      "attn_avg": 2.0
+    },
+    "prompt_faithfulness": {
+      "lstm_avg": 1.5555555555555556,
+      "attn_avg": 1.7777777777777777
+    },
+    "narrative_quality": {
+      "lstm_avg": 1.0,
+      "attn_avg": 1.111111111111111
+    }
+  },
+  "overall": {
+    "lstm": 1.3333333333333333,
+    "attn": 1.3777777777777778
+  }
+}

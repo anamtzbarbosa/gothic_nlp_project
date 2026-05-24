@@ -1,0 +1,39 @@
+G-EVAL RESULTS — LSTM-3 vs Attn-LSTM-3
+============================================================
+
+Samples: 3  |  T=0.7  top-p=0.9
+
+Criterion                    LSTM-3   Attn-3   Winner
+-------------------------------------------------------
+fluency                       1.111    1.000     LSTM
+coherence                     1.000    1.000    ~tied
+gothic_atmosphere             2.000    2.000    ~tied
+prompt_faithfulness           1.556    1.778     ATTN
+narrative_quality             1.000    1.111     ATTN
+-------------------------------------------------------
+OVERALL                       1.333    1.378
+
+
+SAMPLE EXAMPLES
+-------------------------------------------------------
+
+Prompt: The old castle stood silent in the darkness.
+LSTM:   -The whole of the Diary. 18 August. After dinner the Grand Magnificent was still cleared away from the Stranger, and Carmilla was directed over the cl
+        scores: {'fluency': '1.33', 'coherence': '1.00', 'gothic_atmosphere': '2.00', 'prompt_faithfulness': '1.67', 'narrative_quality': '1.00'}
+ATTN:   -Yes, I could see no sound of terror: I have no idea of the means of giving my own character in me in safety. He is beginning to make up his mind to b
+        scores: {'fluency': '1.00', 'coherence': '1.00', 'gothic_atmosphere': '2.00', 'prompt_faithfulness': '1.33', 'narrative_quality': '1.00'}
+-------------------------------------------------------
+
+Prompt: She walked alone through the moonlit corridor.
+LSTM:   ) "When is it?" said Bertrand, "what he wants you! There is no possibility of being able to get out of it! Be so good as to open the gate, to tell him
+        scores: {'fluency': '1.00', 'coherence': '1.00', 'gothic_atmosphere': '2.00', 'prompt_faithfulness': '1.00', 'narrative_quality': '1.00'}
+ATTN:   -Her voice was unable to support herself, but the next day, for the first time the recovery of her spirits and the mention of her beauty, and the deli
+        scores: {'fluency': '1.00', 'coherence': '1.00', 'gothic_atmosphere': '2.00', 'prompt_faithfulness': '2.00', 'narrative_quality': '1.33'}
+-------------------------------------------------------
+
+Prompt: A cold wind swept through the empty hall.
+LSTM:   -But yet he has died away and to say what you say. "But I will not tell me that you know it; if you will, and one may be overcome of you." "How are yo
+        scores: {'fluency': '1.00', 'coherence': '1.00', 'gothic_atmosphere': '2.00', 'prompt_faithfulness': '2.00', 'narrative_quality': '1.00'}
+ATTN:   -I trust myself, I saw him pass over my pillow, and made his way back to the dungeons waiting to see a groan. I did not know what to do, but he seemed
+        scores: {'fluency': '1.00', 'coherence': '1.00', 'gothic_atmosphere': '2.00', 'prompt_faithfulness': '2.00', 'narrative_quality': '1.00'}
+-------------------------------------------------------

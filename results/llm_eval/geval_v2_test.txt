@@ -1,0 +1,32 @@
+G-EVAL RESULTS — LSTM-3 vs Attn-LSTM-3
+============================================================
+
+Samples: 2  |  T=0.7  top-p=0.9
+
+Criterion                    LSTM-3   Attn-3   Winner
+-------------------------------------------------------
+fluency                       2.000    2.000    ~tied
+coherence                     1.500    1.667     ATTN
+gothic_atmosphere             2.667    2.833     ATTN
+prompt_faithfulness           2.167    2.000     LSTM
+narrative_quality             1.667    1.667    ~tied
+-------------------------------------------------------
+OVERALL                       2.000    2.033
+
+
+SAMPLE EXAMPLES
+-------------------------------------------------------
+
+Prompt: The old castle stood silent in the darkness.
+LSTM:   -'When Suppose she is so proud of her sister? Oh, don't be hanging now! And the sharp wind is shopping! When you do so I hear the pallor's chin, and l
+        scores: {'fluency': '2.00', 'coherence': '1.33', 'gothic_atmosphere': '2.67', 'prompt_faithfulness': '2.00', 'narrative_quality': '1.33'}
+ATTN:   "-"Where is the Baron Stolmuyer of MorSSIS-HAM PASPOKES OF THE MANERY.  The sun began to start very beautiful, but the moonbeams brightened; the moon 
+        scores: {'fluency': '2.00', 'coherence': '1.33', 'gothic_atmosphere': '2.67', 'prompt_faithfulness': '2.00', 'narrative_quality': '1.33'}
+-------------------------------------------------------
+
+Prompt: She walked alone through the moonlit corridor.
+LSTM:   -He had come back to her room with her, and had at length been sitting down on the matter in the night air, and gazed upon her reverie. For hours then
+        scores: {'fluency': '2.00', 'coherence': '1.67', 'gothic_atmosphere': '2.67', 'prompt_faithfulness': '2.33', 'narrative_quality': '2.00'}
+ATTN:   -I trembled when I made the picture of my bag. "Where are you going?" said Emily, "they were left alone!" "Well, well," said Ludovico, "why should I b
+        scores: {'fluency': '2.00', 'coherence': '2.00', 'gothic_atmosphere': '3.00', 'prompt_faithfulness': '2.00', 'narrative_quality': '2.00'}
+-------------------------------------------------------

@@ -1,0 +1,46 @@
+G-EVAL RESULTS — LSTM-3 vs Attn-LSTM-3
+============================================================
+
+Samples: 4  |  T=0.7  top-p=0.9
+
+Criterion                    LSTM-3   Attn-3   Winner
+-------------------------------------------------------
+fluency                       2.000    2.000    ~tied
+coherence                     1.500    1.500    ~tied
+gothic_atmosphere             2.500    2.500    ~tied
+prompt_faithfulness           2.000    2.500     ATTN
+narrative_quality             1.750    1.500     LSTM
+-------------------------------------------------------
+OVERALL                       1.950    2.000
+
+
+SAMPLE EXAMPLES
+-------------------------------------------------------
+
+Prompt: She heard footsteps in the corridor above.
+LSTM:   -He did not suspect it with that moment, and because the cause of her mother was only too sensible to those whom she deserved only which they were to 
+        scores: {'fluency': 2, 'coherence': 1, 'gothic_atmosphere': 3, 'prompt_faithfulness': 2, 'narrative_quality': 2}
+ATTN:   -It was only for a moment, that the Baroness came to me at the idea of its former hospitality; and She returned no other Thursday to receive her. The 
+        scores: {'fluency': 2, 'coherence': 1, 'gothic_atmosphere': 2, 'prompt_faithfulness': 2, 'narrative_quality': 1}
+-------------------------------------------------------
+
+Prompt: Something moved in the darkness below.
+LSTM:   -'And how do I not find? I didn't know that I was to go with that night as I could have touched the window-silly robbing night. I must think it was ve
+        scores: {'fluency': 2, 'coherence': 2, 'gothic_atmosphere': 2, 'prompt_faithfulness': 2, 'narrative_quality': 2}
+ATTN:   "-"We must go downstairs again," remarked Mr. Marchdale. "Come on, I'll soon be here at once, and go away with you." "It is the way of putting the old
+        scores: {'fluency': 2, 'coherence': 1, 'gothic_atmosphere': 2, 'prompt_faithfulness': 2, 'narrative_quality': 1}
+-------------------------------------------------------
+
+Prompt: No one spoke of what had happened in the east tower.
+LSTM:   -The wine was brought in the air from some one where the brown hair entered at a cottage-hole the other tremendous sigh. "Is this a danger?" asked Lor
+        scores: {'fluency': 2, 'coherence': 1, 'gothic_atmosphere': 2, 'prompt_faithfulness': 2, 'narrative_quality': 1}
+ATTN:   -But what had been the nearest surviving lady who was so much living, her gambling conversation awakened those who had no other objections with the mo
+        scores: {'fluency': 2, 'coherence': 2, 'gothic_atmosphere': 3, 'prompt_faithfulness': 3, 'narrative_quality': 2}
+-------------------------------------------------------
+
+Prompt: She had locked the door, yet somehow it stood open.
+LSTM:   -Never mind was still watching back and read the plate of band in the corridor and the master in testimony. He discovered he saw the lawyer's face of 
+        scores: {'fluency': 2, 'coherence': 2, 'gothic_atmosphere': 3, 'prompt_faithfulness': 2, 'narrative_quality': 2}
+ATTN:   -It struck me, at length, of horror, supported by the rest which lay between us, and which were too little in the darkness of all the boat-house, its 
+        scores: {'fluency': 2, 'coherence': 2, 'gothic_atmosphere': 3, 'prompt_faithfulness': 3, 'narrative_quality': 2}
+-------------------------------------------------------

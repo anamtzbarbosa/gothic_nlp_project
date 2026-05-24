@@ -1,0 +1,32 @@
+G-EVAL RESULTS — LSTM-3 vs Attn-LSTM-3
+============================================================
+
+Samples: 2  |  T=0.7  top-p=0.9
+
+Criterion                    LSTM-3   Attn-3   Winner
+-------------------------------------------------------
+fluency                       1.000    1.000    ~tied
+coherence                     1.000    1.000    ~tied
+gothic_atmosphere             1.000    1.500     ATTN
+prompt_faithfulness           2.000    1.500     LSTM
+narrative_quality             1.000    1.000    ~tied
+-------------------------------------------------------
+OVERALL                       1.200    1.200
+
+
+SAMPLE EXAMPLES
+-------------------------------------------------------
+
+Prompt: What was it to you? Why do you persecute me? What good can you gain by my ruin?'
+LSTM:   is!' she cried, 'no, of course, 'artin' in front of the worst and vice of England grow over them rash or packet, Dudley Earnshaw. I saw him that short
+        scores: {'fluency': 1, 'coherence': 1, 'gothic_atmosphere': 1, 'prompt_faithfulness': 2, 'narrative_quality': 1}
+ATTN:   ent thou didst dune! To die now: Ah! Thou art mine! Thou wilt unendurable for life. Let me say so: To give me good advantage." And so he felt itself i
+        scores: {'fluency': 1, 'coherence': 1, 'gothic_atmosphere': 2, 'prompt_faithfulness': 2, 'narrative_quality': 1}
+-------------------------------------------------------
+
+Prompt: It appears to me un cimetière!' 'Yes, I should like to leave it,' I said, sittin
+LSTM:   . 'How is your father?' I continued, 'I knew it would be a fierce and blood. I do not know that I am so glad to come, because I have to have the prope
+        scores: {'fluency': 1, 'coherence': 1, 'gothic_atmosphere': 1, 'prompt_faithfulness': 2, 'narrative_quality': 1}
+ATTN:   . 'I didn't know what to do, smiling like me. 'You must see a little dog, Milly; I've been here here, and I'll walk about this, lassen and scathlets, 
+        scores: {'fluency': 1, 'coherence': 1, 'gothic_atmosphere': 1, 'prompt_faithfulness': 1, 'narrative_quality': 1}
+-------------------------------------------------------

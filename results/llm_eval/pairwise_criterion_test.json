@@ -1,0 +1,127 @@
+{
+  "config": {
+    "lstm_checkpoint": "checkpoints/final_rnn_lstm/final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt",
+    "attn_checkpoint": "checkpoints/attention_lstm_new/multihead_3layer_K20.pt",
+    "tokenizer": "data/gothic_tokenizer.json",
+    "prompts": "data/geval_prompts.json",
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "num_samples": 3,
+    "n_calls": 3,
+    "api_key": "AIzaSyD8bsGgGrk7-_ZbW678GdecRWwHp6MQiGs",
+    "output": "results/geval/pairwise_criterion_test"
+  },
+  "summary": {
+    "coherence": {
+      "lstm_wins": 4,
+      "attn_wins": 3,
+      "ties": 2,
+      "lstm_win_rate": 57.14285714285714,
+      "attn_win_rate": 42.857142857142854
+    },
+    "gothic_atmosphere": {
+      "lstm_wins": 5,
+      "attn_wins": 4,
+      "ties": 0,
+      "lstm_win_rate": 55.55555555555556,
+      "attn_win_rate": 44.44444444444444
+    },
+    "narrative_quality": {
+      "lstm_wins": 6,
+      "attn_wins": 3,
+      "ties": 0,
+      "lstm_win_rate": 66.66666666666666,
+      "attn_win_rate": 33.33333333333333
+    },
+    "fluency": {
+      "lstm_wins": 4,
+      "attn_wins": 5,
+      "ties": 0,
+      "lstm_win_rate": 44.44444444444444,
+      "attn_win_rate": 55.55555555555556
+    }
+  },
+  "results": [
+    {
+      "prompt": "The old castle stood silent in the darkness.",
+      "lstm_text": "-Sir July followed our name, for I declined an investigation of a thunder-book of Mrs. Clements had very nearly entered the room before I left the room. \"Give me the first of her journey,\" said Laura. \"But she wasn't Miss Fairlie had left them, Miss Halcombe-Marian, that I had seen her to ask the question that Miss Halcombe had lived here by the morning. I had been in the house-place of ",
+      "attn_text": "\"-\"Oh, you know I couldn't tell what you mean!\" As he said, turning to her feet, in a closet-looking face and made her shriek, looking at me as a blank smile and saying, \"Oh, dear little friend!\" cried Helen's voice; 'and now I shall do what I loved.' And she spoke a little rough stillness, and threw herself upon the wall, and looking around her, but ",
+      "tallies": {
+        "coherence": [
+          1,
+          2,
+          0
+        ],
+        "gothic_atmosphere": [
+          0,
+          3,
+          0
+        ],
+        "narrative_quality": [
+          1,
+          2,
+          0
+        ],
+        "fluency": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "She walked alone through the moonlit corridor.",
+      "lstm_text": "-Some of her situation was so far off, and I must have to see him. Emily now perceived, that it was not long after dinner, that she would have taken possession of amusements, and gave a little remote part of the castle, who could scarcely have seen him so much of the full convent, and which they now perceived when they reached the door, and she stopped at the door. \"For God's sake, ma'am,\" said Annette, \"the Signor, Signor",
+      "attn_text": "-This was now crowded with her cheeks; a heavy glow of blue silence seemed to interrupt me from a distance, and the cadence of my wretched imagination was awaiting it, my father was too much occupied by the extraordinary report of his aversion! \"I have heard that these words are still in my heart; I am unable to describe the sensations which has hitherto existence to you; But I do not want to persuade myself that ",
+      "tallies": {
+        "coherence": [
+          3,
+          0,
+          0
+        ],
+        "gothic_atmosphere": [
+          2,
+          1,
+          0
+        ],
+        "narrative_quality": [
+          3,
+          0,
+          0
+        ],
+        "fluency": [
+          3,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "prompt": "A cold wind swept through the empty hall.",
+      "lstm_text": "-She had just reached the Garden by the Russian school-door-keeper-I knew her namely-and-twenty-thousand francs who entered the castle on the lake! ... I would not trust her in her title, but the sequel of her own portrait and her return was more indifferent than her mother, it was not for its escape and second marriage which inspired the day before my marri",
+      "attn_text": "'\" \"Yes,\" said the young lady; \"but that little house is no light it is as yet fire on the lake.\" \"Well, well! no!\" cried Henry; \"it does not matter so.\" \"So it will do.\" \"It was a very pretty nice argument.\" \"It's so?\" \"Yes, unless I came back, and it was a very odd tomb for the other comes.\" The admiral was very much displeased when he could not have seen the admiral, for the admiral, who ",
+      "tallies": {
+        "coherence": [
+          0,
+          1,
+          2
+        ],
+        "gothic_atmosphere": [
+          3,
+          0,
+          0
+        ],
+        "narrative_quality": [
+          2,
+          1,
+          0
+        ],
+        "fluency": [
+          0,
+          3,
+          0
+        ]
+      }
+    }
+  ]
+}

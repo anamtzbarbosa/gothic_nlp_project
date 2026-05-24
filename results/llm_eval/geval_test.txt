@@ -1,0 +1,39 @@
+G-EVAL RESULTS — LSTM-3 vs Attn-LSTM-3
+============================================================
+
+Samples: 3  |  T=0.7  top-p=0.9
+
+Criterion                    LSTM-3   Attn-3   Winner
+-------------------------------------------------------
+fluency                       1.000    1.000    ~tied
+coherence                     1.000    1.000    ~tied
+gothic_atmosphere             1.667    1.333     LSTM
+prompt_faithfulness           1.000    1.000    ~tied
+narrative_quality             1.000    1.000    ~tied
+-------------------------------------------------------
+OVERALL                       1.133    1.067
+
+
+SAMPLE EXAMPLES
+-------------------------------------------------------
+
+Prompt: She heard footsteps in the corridor above.
+LSTM:   -Her heart was fixed upon Matilda's eyes. The stillness was more closely than ever. "Confound the Monks to hear from him some other small Servants, He
+        scores: {'fluency': 1, 'coherence': 1, 'gothic_atmosphere': 1, 'prompt_faithfulness': 1, 'narrative_quality': 1}
+ATTN:   "-"Stop! What will She mean?" cried Manfred; "for God's sake, do you know my Lord," said Hippolita; "No, God remember me. We cannot sleep on these sub
+        scores: {'fluency': 1, 'coherence': 1, 'gothic_atmosphere': 1, 'prompt_faithfulness': 1, 'narrative_quality': 1}
+-------------------------------------------------------
+
+Prompt: Something moved in the darkness below.
+LSTM:   -Yet I was obliged to raise my hand and lament as it could fail: Her father was not come to the charm and apostrophising in her care, I was obliged to
+        scores: {'fluency': 1, 'coherence': 1, 'gothic_atmosphere': 2, 'prompt_faithfulness': 1, 'narrative_quality': 1}
+ATTN:   -I heard him play and murmur, 'When the shepherd and his voice is burning over, Will I come back at once? You must hear your sake, Catherine, if your 
+        scores: {'fluency': 1, 'coherence': 1, 'gothic_atmosphere': 2, 'prompt_faithfulness': 1, 'narrative_quality': 1}
+-------------------------------------------------------
+
+Prompt: No one spoke of what had happened in the east tower.
+LSTM:   -The scene was at length in deep mouth, and which had been not sufficient to restore the Mediterranean, where a look of gloomy gloomy scene. The sun w
+        scores: {'fluency': 1, 'coherence': 1, 'gothic_atmosphere': 2, 'prompt_faithfulness': 1, 'narrative_quality': 1}
+ATTN:   ) Something came from him in all sorts of ghastly blanked faces. "If it were only a fortnight or a pitcher, I shall be at peace and shouting." Dorian 
+        scores: {'fluency': 1, 'coherence': 1, 'gothic_atmosphere': 1, 'prompt_faithfulness': 1, 'narrative_quality': 1}
+-------------------------------------------------------

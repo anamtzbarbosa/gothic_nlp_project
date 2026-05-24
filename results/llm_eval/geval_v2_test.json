@@ -1,0 +1,90 @@
+{
+  "config": {
+    "lstm_checkpoint": "checkpoints/final_rnn_lstm/final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt",
+    "attn_checkpoint": "checkpoints/attention_lstm_new/multihead_3layer_K20.pt",
+    "tokenizer": "data/gothic_tokenizer.json",
+    "eval_samples": "data/eval_samples.json",
+    "prompts": "data/geval_prompts.json",
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "num_samples": 2,
+    "api_key": "AIzaSyD8bsGgGrk7-_ZbW678GdecRWwHp6MQiGs",
+    "output": "results/geval/geval_v2_test"
+  },
+  "results": [
+    {
+      "sample_idx": 0,
+      "prompt": "The old castle stood silent in the darkness.",
+      "lstm_text": "-'When Suppose she is so proud of her sister? Oh, don't be hanging now! And the sharp wind is shopping! When you do so I hear the pallor's chin, and look at hers for the dead!\" He shook his head, and gave his look. \"No! I would have the hand of my eyes!\" The spectre was still trembling, but all bound to admit of it. He ",
+      "attn_text": "\"-\"Where is the Baron Stolmuyer of MorSSIS-HAM PASPOKES OF THE MANERY.  The sun began to start very beautiful, but the moonbeams brightened; the moon rose slowly onwards and forwards. Then they looked round and saw them so quickly, the voice was not to be heard to get up and retired to see the moor",
+      "lstm_scores": {
+        "fluency": 2.0,
+        "coherence": 1.3333333333333333,
+        "gothic_atmosphere": 2.6666666666666665,
+        "prompt_faithfulness": 2.0,
+        "narrative_quality": 1.3333333333333333,
+        "reasoning": "The output descends into nonsensical dialogue and bizarre imagery, losing grammatical integrity early on while only tenuously maintaining a dark tone.",
+        "n_calls": 3
+      },
+      "attn_scores": {
+        "fluency": 2.0,
+        "coherence": 1.3333333333333333,
+        "gothic_atmosphere": 2.6666666666666665,
+        "prompt_faithfulness": 2.0,
+        "narrative_quality": 1.3333333333333333,
+        "reasoning": "The model produces a significant amount of gibberish, nonsensical proper nouns, and fragmented syntax that breaks down shortly after the prompt, indicating poor coherence and narrative progression.",
+        "n_calls": 3
+      }
+    },
+    {
+      "sample_idx": 1,
+      "prompt": "She walked alone through the moonlit corridor.",
+      "lstm_text": "-He had come back to her room with her, and had at length been sitting down on the matter in the night air, and gazed upon her reverie. For hours then She told her that the silence was too much for it. Let us lose an hour: Speaking no hope, not no more but a bad \"the Domina's Alphonso d'Alvarada.\" My father had ",
+      "attn_text": "-I trembled when I made the picture of my bag. \"Where are you going?\" said Emily, \"they were left alone!\" \"Well, well,\" said Ludovico, \"why should I be surprised to have to be discovered?\" \"I will tell you,\" said Emily, endeavouring to sooth Emily. \"Dear Madam!\" said Annette, \"if any one could possibly be so; we must have been bound in the same place, we shall then have to be sure.\" \"Which ",
+      "lstm_scores": {
+        "fluency": 2.0,
+        "coherence": 1.6666666666666667,
+        "gothic_atmosphere": 2.6666666666666665,
+        "prompt_faithfulness": 2.3333333333333335,
+        "narrative_quality": 2.0,
+        "reasoning": "The output begins with a coherent sentence structure but quickly devolves into nonsensical phrasing and disconnected proper nouns, losing all logical progression.",
+        "n_calls": 3
+      },
+      "attn_scores": {
+        "fluency": 2.0,
+        "coherence": 2.0,
+        "gothic_atmosphere": 3.0,
+        "prompt_faithfulness": 2.0,
+        "narrative_quality": 2.0,
+        "reasoning": "The model displays classic LSTM behavior by correctly identifying Gothic archetypes like Emily and Ludovico, but the dialogue quickly descends into repetitive, nonsensical loops that break narrative coherence.",
+        "n_calls": 3
+      }
+    }
+  ],
+  "summary": {
+    "fluency": {
+      "lstm_avg": 2.0,
+      "attn_avg": 2.0
+    },
+    "coherence": {
+      "lstm_avg": 1.5,
+      "attn_avg": 1.6666666666666665
+    },
+    "gothic_atmosphere": {
+      "lstm_avg": 2.6666666666666665,
+      "attn_avg": 2.833333333333333
+    },
+    "prompt_faithfulness": {
+      "lstm_avg": 2.166666666666667,
+      "attn_avg": 2.0
+    },
+    "narrative_quality": {
+      "lstm_avg": 1.6666666666666665,
+      "attn_avg": 1.6666666666666665
+    }
+  },
+  "overall": {
+    "lstm": 2.0,
+    "attn": 2.033333333333333
+  }
+}

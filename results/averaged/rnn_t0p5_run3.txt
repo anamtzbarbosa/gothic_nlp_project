@@ -1,0 +1,78 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 100
+bleu_1: 0.11964190880819969
+bleu_2: 0.031136810708571813
+bleu_3: 0.007652390393058392
+bleu_4: 0.00242862490005832
+bleu_4_smoothed: 0.0030089128922047076
+bert_score_f1: 0.8105769157409668
+bigram_overlap: 0.00953949072041863
+trigram_overlap: 0.00047250922929720484
+distinct_1: 0.13436006372809348
+distinct_2: 0.4975919272226894
+trigram_repetition_rate: 0.006680608610935781
+spelling_accuracy: 0.9202601554867232
+ttr: 0.6444828628471282
+generated_perplexity: 20.40024004982786
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Prompt:
+What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par
+
+Generated:
+is, are in love of life, and may have the searching of a General Bell Müller was to be made to a night; and she could not trust it from me. On the contrary, she wished some one who had not time to lose, and his heart was over with them, her eyes were fixed upon her with the solemnity of the woods, or sounds opening upon him. He could not be afraid of Annette, and I felt the more of the goodness of his friendship and mother he wished to leave him with a small light of the window, of which was waiting for him, and sat down to the door, and of Todd's Blanche became a grinning him, he would never be afraid and my own hands, sought for any particular state of affairs who were the others, so that the unhappy 
+
+Reference:
+ bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking déshabille to show herself knocking at the window.
+--------------------------------------------------------------------------------
+
+Example 2
+Prompt:
+It appears to me un cimetière!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken
+
+Generated:
+, followed down and waved into the courtable and of the dress was in vain to pay in the room. Emily was silent, and made his strength to speak, her countenance and manner and distrustful one. Before I could, perhaps, because he might never be supposed to have the wealth- of whom we were not the season, I was not incapable of being able to do with it: he would have been quite unable to speak to me. He was very much obliged to leave his wife, who was so many fevers it and unpleasantly interested in your own suspicions that I have been informed what I have been made, in our own house of Bartram-Haugh for me with this matter, nor any other work association, and I have no claim on it." "That is very well-
+
+Reference:
+ eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions.
+--------------------------------------------------------------------------------
+
+Example 3
+Prompt:
+The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her
+
+Generated:
+ tongue, at length, came in a ton't tongue, with sharp and modation, and immediately overcame forward, and lower and round the bitten of the window, shook her head. "He has not been forgetting for her to go through my heart, yet it may be, nor marriage is quite well." "Indeed!" "Yes; I will not see him?" "Yes; But what you know your father?" "He will not be useful to us to leave you; it is the only chance of one of those persons who have to be so unpleasantly bound in no means by some people who knows?" "He trift in England is it; a good deal of man and your brother's face. And what does he be done it so." "That is so? What have you not 
+
+Reference:
+ exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption.
+--------------------------------------------------------------------------------
+
+Example 4
+Prompt:
+Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but
+
+Generated:
+, of course, it has never been dead?" "Yes, sir," said Jack. "Nothing! We will go out! Oh!" said the admiral, "and I do not know what to you do so; but not my duty; I have no doubt in my power to escape him; if you were a very fond of life." "Is it possible, sir, you, sir," said she, "that you are not only in this? How is it? In one who is dead!" He looked at me with little Hareton's head upon the floor, and walked round to meet him with him. "You know not?" "Yes; I must go, hush! I'll be hanging." Henry was now in a low-room, where he spoke of used she should have the search, and had no doubt had so much of the woman's note for one of these moments from the town, now had prevented 
+
+Reference:
+ som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, "Might I speak a word wi' ye, please, on the lobby?" 'Mr.
+--------------------------------------------------------------------------------
+
+Example 5
+Prompt:
+But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she
+
+Generated:
+et, nor liberality of such a sad he knew not how to escape the other mistress was now to listen to the Count's disposition, and my father would have made him uneasy in his mind, and even if he could not think of it would certainly have made the most unpleasant personality of my journey in particulars, who are incapable of being not to be a very consummation, yet, yet never had no doubt had happened to repair to him by our father's command, and not even to speak with her: he said she would break my letter, He had long been the first time that he should have the worst of the clergyman in Hotel-house where I do not know the cause of a man who had made no other people: but that is there any one who have never been marri
+
+Reference:
+ searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest.
+--------------------------------------------------------------------------------

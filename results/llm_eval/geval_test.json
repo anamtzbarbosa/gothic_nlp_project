@@ -1,0 +1,108 @@
+{
+  "config": {
+    "lstm_checkpoint": "checkpoints/final_rnn_lstm/final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt",
+    "attn_checkpoint": "checkpoints/attention_lstm_new/multihead_3layer_K20.pt",
+    "tokenizer": "data/gothic_tokenizer.json",
+    "eval_samples": "data/eval_samples.json",
+    "prompts": "data/geval_prompts.json",
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "num_samples": 3,
+    "api_key": "AIzaSyD8bsGgGrk7-_ZbW678GdecRWwHp6MQiGs",
+    "output": "results/geval/geval_test"
+  },
+  "results": [
+    {
+      "sample_idx": 0,
+      "prompt": "She heard footsteps in the corridor above.",
+      "lstm_text": "-Her heart was fixed upon Matilda's eyes. The stillness was more closely than ever. \"Confound the Monks to hear from him some other small Servants, He had no doubt He informed me of the Marquis de Medina. The Signor obtained the dismal Bedside, and had arranged himself to the marquis to hold the Garden of his name, and they would make the Nuns whom He had known",
+      "attn_text": "\"-\"Stop! What will She mean?\" cried Manfred; \"for God's sake, do you know my Lord,\" said Hippolita; \"No, God remember me. We cannot sleep on these subjects than their Companions. It will not relapse into me, as it were, so I have seen something of art. But it is impossible for all this affair of life and death. The truth is to say so, even now I have lost my ",
+      "lstm_scores": {
+        "reasoning": "The generated text is incoherent and suffers from severe grammatical failure, rendering the narrative completely nonsensical. It ignores the initial prompt entirely and fails to establish any discernible Gothic tone or logical sequence.",
+        "fluency": 1,
+        "coherence": 1,
+        "gothic_atmosphere": 1,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The continuation is nonsensical, suffering from severe grammatical disintegration and a complete lack of narrative coherence or thematic relevance to the prompt. It reads as a disjointed collection of phrases that fails to establish any intelligible scene or gothic tone.",
+        "fluency": 1,
+        "coherence": 1,
+        "gothic_atmosphere": 1,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 1
+      }
+    },
+    {
+      "sample_idx": 1,
+      "prompt": "Something moved in the darkness below.",
+      "lstm_text": "-Yet I was obliged to raise my hand and lament as it could fail: Her father was not come to the charm and apostrophising in her care, I was obliged to support myself; and rejoiced to see how my weapon had suffered to depart. At length, I ordered to examine the Companion of my master, delivered a visit to the table. My future visit was already buried in the same convention",
+      "attn_text": "-I heard him play and murmur, 'When the shepherd and his voice is burning over, Will I come back at once? You must hear your sake, Catherine, if your God's eye shall have been buried or by this time!\" He paused, without a moment's hesitation, but she answered,  \"That is there is a murderer; you are not permitted to call you for the use of death.\" \"Where are you going?\" said Henry",
+      "lstm_scores": {
+        "reasoning": "The text suffers from severe syntactic incoherence and nonsensical phrasing, making it nearly impossible to discern any narrative meaning or Gothic style. It fails to maintain a logical connection to the prompt, reading more like a jumble of disconnected, archaic-sounding clauses.",
+        "fluency": 1,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The text suffers from severe grammatical incoherence and nonsensical dialogue, failing to establish any meaningful connection to the prompt or a recognizable Gothic narrative. It reads like a disjointed series of fragments rather than a literary continuation.",
+        "fluency": 1,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 1
+      }
+    },
+    {
+      "sample_idx": 2,
+      "prompt": "No one spoke of what had happened in the east tower.",
+      "lstm_text": "-The scene was at length in deep mouth, and which had been not sufficient to restore the Mediterranean, where a look of gloomy gloomy scene. The sun was deepened by the scene of a hills, and that was already near midnight; and now one of the last sounds of the ch\u00e2teau, the dismal light, that of the seat floated through the woods, and gleaming over its woods along the pavement, now w",
+      "attn_text": ") Something came from him in all sorts of ghastly blanked faces. \"If it were only a fortnight or a pitcher, I shall be at peace and shouting.\" Dorian Gray looked up at the window. He waved his hand, and looked at me with the same expression on the speaker. \"How do you know?\" he asked. \"I'm very glad of it.\" \"Don't trouble him on me, Bessie",
+      "lstm_scores": {
+        "reasoning": "The generated text suffers from severe syntactic incoherence and nonsensical phrasing, rendering it unintelligible and failing to maintain the Gothic tone or narrative logic. It reads as a collection of garbled, fragmented clauses that bear no logical relationship to the provided prompt.",
+        "fluency": 1,
+        "coherence": 1,
+        "gothic_atmosphere": 2,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 1
+      },
+      "attn_scores": {
+        "reasoning": "The continuation is nonsensical, suffering from severe grammatical errors and incoherent dialogue that lacks any thematic connection to the prompt's established mood. It fails to form a coherent narrative, reading like disjointed, randomly generated phrases that break immersion entirely.",
+        "fluency": 1,
+        "coherence": 1,
+        "gothic_atmosphere": 1,
+        "prompt_faithfulness": 1,
+        "narrative_quality": 1
+      }
+    }
+  ],
+  "summary": {
+    "fluency": {
+      "lstm_avg": 1.0,
+      "attn_avg": 1.0
+    },
+    "coherence": {
+      "lstm_avg": 1.0,
+      "attn_avg": 1.0
+    },
+    "gothic_atmosphere": {
+      "lstm_avg": 1.6666666666666667,
+      "attn_avg": 1.3333333333333333
+    },
+    "prompt_faithfulness": {
+      "lstm_avg": 1.0,
+      "attn_avg": 1.0
+    },
+    "narrative_quality": {
+      "lstm_avg": 1.0,
+      "attn_avg": 1.0
+    }
+  },
+  "overall": {
+    "lstm": 1.1333333333333333,
+    "attn": 1.0666666666666667
+  }
+}

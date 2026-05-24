@@ -1,0 +1,413 @@
+{
+  "config": {
+    "lstm_checkpoint": "checkpoints/final_rnn_lstm/final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt",
+    "attn_checkpoint": "checkpoints/attention_lstm_new/multihead_3layer_K20.pt",
+    "tokenizer": "data/gothic_tokenizer.json",
+    "prompts": "data/geval_prompts.json",
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "num_samples": 30,
+    "n_calls": 3,
+    "api_key": "AIzaSyD8bsGgGrk7-_ZbW678GdecRWwHp6MQiGs",
+    "output": "results/geval/pairwise_final"
+  },
+  "summary": {
+    "lstm_wins": 24,
+    "attn_wins": 61,
+    "ties": 5,
+    "lstm_win_rate": 28.235294117647058,
+    "attn_win_rate": 71.76470588235294
+  },
+  "results": [
+    {
+      "prompt": "The old castle stood silent in the darkness.",
+      "lstm_text": "-\"Thomas I believe they saw you once more. I require my indignation, and send me to keep the lights out of the room.\" THE HIMCES OF THE DEAD OF THE PROJECT GUTENBERG\u2122 LICENSE PLEASE READ THIS BEFORE YOU DISTR",
+      "attn_text": "-Bertrand, impatiently, placed his hands and coffee she laid it up on the bag. \"Nay, madam,\" said the Count, \"and I can't help it.\" Could he not have to keep his eyes upon him? He was about to speak, but she turned round. \"You do,\" he continued, \"and he never heard it or die in the morning.\" \"Did you see anything in the house? Are you afraid of it?\" she asked. \"Not ",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B presents a somewhat coherent, albeit slightly disjointed, dramatic scene with characters and dialogue, whereas Continuation A dissolves into irrelevant boilerplate text from a license agreement.",
+        "Continuation A maintains a semblance of narrative dialogue and character interaction appropriate to a Gothic setting, whereas Continuation B devolves into incoherent metadata and legal boilerplate.",
+        "Continuation B presents a coherent, albeit dreamlike, narrative scene with dialogue, whereas A breaks character to include boilerplate text regarding a digital license."
+      ]
+    },
+    {
+      "prompt": "She walked alone through the moonlit corridor.",
+      "lstm_text": "-The Hungarian nobleman were uneasy; He began to give the whole Antonia: He was not a Friend: She bad her passing the night, tightly at her aggravation, and suspected her by the death to confer the exclamation of surprise. Before She had already lost his entrance, She sprung into his hand, and said, \"Would you be your Sister's ",
+      "attn_text": "-The Lady Blanche, whose voices were numbered over the barren, endeavoured to see that she had seen her; she heard her window round the room below, where she had already observed some sounds, and that of Annette had found their way; but Emily's wishes were retired to rest, on which the night was now broken by Emily's earlier returning; and, with the exception of this comparison, she was taken up with s",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B retains a slightly more coherent, albeit dreamlike, narrative structure consistent with the gothic genre, whereas Continuation A dissolves into complete incoherence and nonsensical grammar.",
+        "Continuation A maintains a slightly more cohesive, albeit fragmented, narrative style typical of Gothic prose, whereas Continuation B devolves into nonsensical character shifts and disjointed actions.",
+        "Continuation B maintains a better sense of gothic atmosphere through the use of character names and setting details, whereas Continuation A dissolves into incoherent word salad."
+      ]
+    },
+    {
+      "prompt": "A cold wind swept through the empty hall.",
+      "lstm_text": "-The fact is to be removed us to examine the place in the room and the keys which we have to lose it;\" and we proceeded to descend at once, and then found the little gates of the top of a week. We were allowed to meet this night before, when they got into the hall and tolerably large and openly dressed. We have noticed some little distances before they reached Gabriels. Mr. S",
+      "attn_text": "'\" \"Here is he?\" said the stranger. \"I hope he is a great deal to see that there's a grand old fellow, here he is quite well.\" \"I've been laughing about this man like that, Jack, Jack.\" \"Yes, sir.\" \"Good morning, Jack.\" \"But the old man is not a gentleman, and I'm obliged to give you a cowardly part of it.\" \"But he will show him no way of money; it's quite away if he wasn't",
+      "lstm_wins": 3,
+      "attn_wins": 0,
+      "ties": 0,
+      "reasonings": [
+        "Both models fail to maintain a coherent Gothic narrative, but Continuation A at least preserves a semblance of structural continuity and atmosphere compared to the nonsensical dialogue of B.",
+        "Continuation B maintains a slightly more cohesive narrative structure and tone consistent with a Gothic mystery, whereas Continuation A dissolves into incoherent, nonsensical dialogue.",
+        "Both continuations are largely nonsensical, but Continuation A maintains a slightly more consistent, albeit fragmented, narrative tone that feels marginally more atmospheric than the disjointed dialogue in B."
+      ]
+    },
+    {
+      "prompt": "The stranger arrived at the gate after midnight.",
+      "lstm_text": "-But as we were all thoroughly heard the country of a fire and unsuccessful-this window was opened on the table, and now enclosed the object of a great oaths, and whirled round a vessel, and threw him into a chair, and found the coarse and flush of silence, as he stood at the foot of the bed, for a second or two and so heavy that he could do so; for",
+      "attn_text": "\"-\"Murder! When you are going!\" cried Manfred; \"this is my business to leave this chamber.\" There was no reply, but was now in a moment. The sight of Julia were placed among the avenues of a lower ruin, such as was made by their full heights, they all parted with dispute, from whence the most common scenes of one circumstance, but a remote part of the tomb, and had pursued ",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Both continuations are largely nonsensical, but Continuation B retains a slightly better sense of gothic vocabulary and dramatic tension, even if the syntax is disjointed.",
+        "Continuation A maintains a slightly more consistent Gothic tone with its mention of ruins and tombs, whereas B descends into disjointed, incoherent imagery.",
+        "Both continuations suffer from the typical incoherence of small LSTM models, but Continuation B contains more evocative Gothic vocabulary like 'ruin', 'tomb', and 'chamber' that better aligns with the genre."
+      ]
+    },
+    {
+      "prompt": "He lit a candle and descended the stone staircase.",
+      "lstm_text": "-It was plainly his words, he was in no state, his own marriage was due at length on the ground, and, as they examined the woods fitting among the clouds, where they were the only steps of the people of the narrative of the castle, who was a full confession, when Emily now walked on the pavement, and entered the room, and looked anxiously back towards the window, she distinguished Emily's hands, and said to her, that she ",
+      "attn_text": "-Some of the Superiors were standing between us both, elegant and dark and strained, and my hand trembled and melted my tongue, and on them they continued our returning work, hastening up for Louisa Reed's parents: The Bride of Geneva were at Blackwater Park. The two gentlemen were all less than usual. Mrs. ",
+      "lstm_wins": 3,
+      "attn_wins": 0,
+      "ties": 0,
+      "reasonings": [
+        "Continuation A maintains a slightly more cohesive focus on a Gothic setting and a character named Emily, whereas Continuation B devolves into disconnected names and fragmented phrasing.",
+        "Continuation B maintains a better sense of Gothic scene-setting by focusing on the castle environment and character movement, whereas A dissolves into nonsensical word associations.",
+        "Continuation A maintains a slightly more consistent focus on a Gothic setting and character interaction, whereas Continuation B devolves into nonsensical name-dropping and disjointed phrasing."
+      ]
+    },
+    {
+      "prompt": "The forest was silent and the path had disappeared.",
+      "lstm_text": "\"-\"Ah!\" said she, \"it is no answer.\" \"Let me have the address in that neighbourhood,\" said Emily, with an amount of curiosity. She listened to her calm. \"Begone, madam,\" replied Annette, \"and I am sure we shall only hear the gentleman in London.\" \"You know it may be so; you will be content,\" said Emily; \"but if not more than any more particularly for her authority, would take the subject of her own situ",
+      "attn_text": "\"-\"This is a great Providence which is either to put off to the place where they can tell?\" The young man was already contented to speak with him as usual. \"Be patient,\" cried Henry; \"but we have no difficulty in finding you here, but, if the man's party, is his own faults, and he is a good woman as I am doing by himself.\" \"No doubt Varney; yet it has no doubt upon me would have ",
+      "lstm_wins": 1,
+      "attn_wins": 0,
+      "ties": 2,
+      "reasonings": [
+        "Both continuations suffer from severe incoherence and sudden shifts in tone that lose the initial gothic atmosphere of the prompt, making them equally poor.",
+        "Both continuations suffer from severe coherence issues and nonsensical dialogue, but B maintains a slightly more consistent tone and character interaction typical of the genre.",
+        "Both continuations fail to maintain the atmosphere of the prompt and descend into incoherent, syntactically broken dialogue, making them equally poor."
+      ]
+    },
+    {
+      "prompt": "She sat alone in the great dark chamber.",
+      "lstm_text": "-Some of the Danube-Death, are they in bewildered? Was it not much? It was the old time for life at the Hall, I found the sand, and I was compelled to disguise it myself, like it in my own mind, with the result of a day of making a resource which I have been writing. Sometimes I felt that I was not entirely discovered, when, of course, I was not tempted to see her",
+      "attn_text": "-The Baroness lived within the avenue, her death was alive. One day, for the first time she began to hear the winter in the chamber. She heard voices on the preceding night, and almost she heard her footsteps approaching. \"It is true,\" said Annette, \"but I was sure it is necessary to be my husband's room. No, no, no, no, no, no, no!\" cried Emily, who was alive to do, that she could not deserve ",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B captures a semblance of narrative tension and character interaction, whereas Continuation A consists mostly of incoherent, abstract musings.",
+        "Continuation A maintains a semblance of narrative focus and Gothic tone, whereas Continuation B descends into incoherent abstraction.",
+        "Continuation B captures a slightly better sense of narrative tension and character interaction, whereas Continuation A dissolves into incoherent rambling."
+      ]
+    },
+    {
+      "prompt": "The old monk led her through the vaulted passage.",
+      "lstm_text": "-The gate was gone to her feet. \"Please explain,\" said she, \"to be a lunatic.\" Du Pont, of the stranger, \"I am going to leave you.\" \"Let us go back to the house,\" said Emily. \"Pray, gentlemen,\" said Ludovico, \"the Signors have to go on.\" \"Can you tell me what he was going to say?\" \"That is no sign of any other.\" \"You cannot,\" said Henry, ",
+      "attn_text": ") It was the sea-room, that I had seen it, the shadow of the building was showered through the centre of the western trees. The sea-sills were crowned with tea-shapes, and its long horizons, it appeared to be still standing up beneath the side of the house. The sound of footsteps were ascending towards the hall. The two men were alone with a dreary wall in the ",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B maintains a better sense of gothic atmosphere and physical setting, whereas A is a disjointed collection of dialogue fragments that fail to construct a coherent scene.",
+        "Continuation A maintains a more consistent, albeit abstract, Gothic atmosphere, whereas Continuation B relies on disjointed dialogue that lacks narrative flow.",
+        "Continuation B maintains a better sense of atmosphere and descriptive imagery, whereas Continuation A devolves into a disjointed and nonsensical string of dialogue."
+      ]
+    },
+    {
+      "prompt": "Rain fell heavily upon the ancient stone walls.",
+      "lstm_text": "-He took his hand and put it into his pocket, and stood in the sofa, and looking at me with a noise that was in the same direction. From her head, the door was opened, and I saw the door open, open the door, and opened it to her head. \"No, no, dear, dear mother! I see you don't know everything about it. Before I have left you to-day, you are in one direction.\" \"Did you try to look at me for?\" ",
+      "attn_text": "'\" \"What do you do with it?\" asked Raoul. \"You had better have the whole thing and you've no right to eat it!\" I heard the white voice of the dingy voice behind him. The voice was unluckily in his eyes. \"And now I come out with this mysterious secret!\" cried Manfred. \"He is insolent for you,\" said Manfred; \"but this is what he wants to know.\" Emily started back and opened the door ",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B establishes a clearer scene with dialogue and named characters, whereas Continuation A consists of nonsensical, repetitive clauses that lack narrative coherence.",
+        "Continuation A provides a slightly more coherent scene with distinct characters and dialogue, whereas Continuation B devolves into repetitive, nonsensical phrasing.",
+        "Continuation B establishes a clearer scene with dialogue and distinct character names, whereas Continuation A is repetitive and nearly incoherent."
+      ]
+    },
+    {
+      "prompt": "The servant knocked softly at the heavy door.",
+      "lstm_text": "-The Count made no attempt to sit down, and examined his hands and pulled the picture on the floor. The young man was very long and so quiet and silent. Presently I opened one of the windows, and crept down to the back of the room. Mrs. Fairfax had just gone, and I went towards the door, and went out of the room. \"Yes,\" said she, \"and we shall have the nearest bedroom in the room (she will not tell us what was ",
+      "attn_text": "'\" \"But what is that?\" \"The light is a savage of a stage,\" she whispered. \"We must have to ask it a little.\" \"We were alone in the garden of London \"Aunt M. Richard,\" she said, \"but I can't make a use of it.\" \"Well, what are you going?\" Before I could get up, I went on upstairs to examine the ladies, and asked me the question we had left the room while ",
+      "lstm_wins": 3,
+      "attn_wins": 0,
+      "ties": 0,
+      "reasonings": [
+        "Continuation A maintains a slightly more cohesive narrative structure and Gothic tone, whereas Continuation B feels nonsensical and disconnected.",
+        "Continuation B maintains a somewhat coherent narrative flow regarding the character's movements and actions, whereas Continuation A dissolves into incoherent, nonsensical dialogue.",
+        "Continuation A maintains a slightly more cohesive narrative structure and tone, despite both samples suffering from the limitations of the small model size."
+      ]
+    },
+    {
+      "prompt": "He stood at the window and looked into the night.",
+      "lstm_text": "-The Count could not laugh at him; and when he had done, He had closed the door. The next morning He arrived at the Book, where He ordered them to release him with all his own hands. Pray, Admiral Bell, He had heard of Monsieur Du Pont, of nothing but satisfaction, from that moment in a few moments, as one preceding Emily passed the day before, was so far beyond the doubtful ",
+      "attn_text": "-The absolute wonderful scenes of the monastery, which the scene of the valleys extended to the breeze, the sea-foliage with its coarses had long since now faded over the track, stretching up her garments and moon began to swell; so that the charm of her hands were flying from the earth; the western shades exhibited their beauty ",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B captures a degree of the required atmosphere and aesthetic through its descriptive, albeit slightly nonsensical, imagery, whereas Continuation A dissolves into incoherent, disconnected dialogue and prose.",
+        "Continuation A captures the descriptive, flowery, and slightly surreal landscape imagery characteristic of Gothic literature, whereas Continuation B is disjointed and lacks thematic relevance to the prompt.",
+        "Continuation B captures the atmospheric, descriptive nature of Gothic prose much better than Continuation A, which descends into incoherent character shifts and nonsensical syntax."
+      ]
+    },
+    {
+      "prompt": "The fires in the hall had long since gone cold.",
+      "lstm_text": "-\"Ah!\" The old man wore a little bit of tears. \"Sir, you must be consistent with me if I may argue the vestry-man's bright colour, and I am puzzled.\" I trembled. More I had more noticed, it gave me a considerable significantly to me. I knew nothing but the best, in spite of my own situation. But I was sorry for him to keep the refuge in the first moment",
+      "attn_text": "-It was all over all night; but when I saw him first he found the two men were called back to the house and came from some part of the windows, on the fourth floor, full of living trunk of marble walls. One of them had gone into such a great bunch of paper and several other members of the various hills. The Baron stood up at once, and perceived that there was something about him at least noticed that the count had no time to feel",
+      "lstm_wins": 1,
+      "attn_wins": 2,
+      "ties": 0,
+      "reasonings": [
+        "While both continuations suffer from the limitations of the small model size, B establishes a slightly more concrete Gothic scene involving a Baron, a Count, and a mysterious house, whereas A is mostly incoherent babble.",
+        "Continuation B maintains a slightly more personal, emotive narrative tone that fits the Gothic style better than the disjointed and nonsensical description provided in A.",
+        "Continuation B presents a more consistent attempt at a physical scene involving a Baron and a mysterious house, whereas Continuation A dissolves into incoherent, fragmented dialogue."
+      ]
+    },
+    {
+      "prompt": "She found herself alone in the ruined chapel.",
+      "lstm_text": "-The law of Mount Carmilla was a monstrous genuine animal classic Gabriel, than the lively devotion of mind to keep them and who were a servant and daughter-in-law, was an Italian fate of the Greek-invention and scene-in-law. \"No, no, no,\" said Bessie, with a frankness of",
+      "attn_text": "-The sight of Emily's mind seemed to have entirely been her imagination. She shuddered at the apparition which had occasioned her, she thought of her aunt's mind, and made her hesitate whether she should return to the monastery. She determined not to return her chamber with her company, by no means\" lady, and, after a few moments, she pressed her hand to Emily, and, though her thoughts might pass through her, till her spirits ",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B maintains a consistent narrative tone and character focus that fits the Gothic genre, whereas A quickly devolves into incoherent, nonsensical rambling.",
+        "Continuation A maintains a tenuous connection to a Gothic narrative, whereas Continuation B devolves into incoherent nonsense that fails to maintain the atmosphere or logic of the scene.",
+        "Continuation B maintains a better narrative flow and coherent Gothic vocabulary, whereas Continuation A is largely nonsensical and disjointed."
+      ]
+    },
+    {
+      "prompt": "The road wound through dark hills and bare trees.",
+      "lstm_text": "-Is what it might be now? Then I dispelled my discourse. One day I heard him enter the apartment, as well as the lamps of the Hall, and stooping down, made no sign to it. I knew the window of the door, that opened upon the open door, and passed between the door and above. Having been closed, we found ourselves with the southern buildings onside, stam",
+      "attn_text": "-here I saw her a trap, over which she saw it and the door opened. She entered upon the staircase, and she saw that Annette herself escaped from somebody, and found Annette follow her again in the apartment, looking pale, and poured forth her lamp; and then she remembered this, she approached her, looking round, and saw her again, to hear the Count's voice at the door, but was silent. She heard the voice, as though she heard it",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B presents a more cohesive narrative scene featuring a recognizable Gothic character and a sense of suspense, whereas Continuation A dissolves into incoherent word fragments.",
+        "Continuation A provides a slightly more coherent scene involving a character encounter and classic gothic tropes like a lamp and a staircase, whereas B is largely nonsensical and disjointed.",
+        "Continuation B presents a more coherent narrative scene involving specific characters and actions typical of Gothic suspense, whereas A is largely disjointed and nonsensical."
+      ]
+    },
+    {
+      "prompt": "A figure moved at the far end of the gallery.",
+      "lstm_text": "-It was only now that it was opened through the chamber, no musician would have seen him and heard a noise of the stone steps, with which they gazed on each other, by the side of the sea below the woods, where it was some of the rocks, which was passing over the sea, white, looking up, bound on the cliffs, and softened their way through the gloomy woods, and streaming low among the trees. The sun was now risen upon the ",
+      "attn_text": "\"-\"That is my husband!\" cried Emily. \"Who are you?\" she asked; \"but what has happened?\" \"Ah! my Lord!\" \"Oh! she is my master!\" said Manfred with a look of impatience; \"but it is so, for you can tell us all about it; but my mind is warmly too much more than to be.\" \"It is what you say, ma'amselle,\" said Emily. \"Emily! that will do,\" said the magnificent ",
+      "lstm_wins": 2,
+      "attn_wins": 1,
+      "ties": 0,
+      "reasonings": [
+        "Continuation A maintains a consistent, albeit rambling, atmospheric description of a landscape, while Continuation B devolves into nonsensical and repetitive dialogue that lacks logical structure.",
+        "Continuation A attempts a dramatic Gothic dialogue sequence, whereas Continuation B is a fragmented, nonsensical string of environmental descriptions that lack clear narrative connection to the prompt.",
+        "Continuation A maintains a more consistent, if slightly wandering, Gothic descriptive tone, whereas Continuation B devolves into nonsensical and disjointed dialogue."
+      ]
+    },
+    {
+      "prompt": "The old woman spoke in a low and trembling voice.",
+      "lstm_text": "-\"Is that you frightened Mercier?\" \"Oh, my dear sir, you must be on the point of being unknown to you, and you needn't be able to look out on it for any other way.\" Dorian looked at me with quiet and unexpected amazement. \"Yes,\" she whispered, \"a friend is not the last.\" \"Dear madam,\" said Meg; \"for I don't think I don't know that you might have been sitting down here ",
+      "attn_text": "-\"Death! Whatever are you here?\" \"Only a little.\" \"Why should you like to see it now? We must wait till to-morrow morning.\" Her eyes shook with a look of pain and indignation, and almost searched her eyes. \"My Lord's brother Dudley are always all in keeping him from her: and you have, sir, I've heard a child to tell you that you and ",
+      "lstm_wins": 0,
+      "attn_wins": 1,
+      "ties": 2,
+      "reasonings": [
+        "Both continuations are largely nonsensical and grammatically fragmented, but Continuation B features slightly more evocative phrasing regarding dread and mystery.",
+        "Both continuations suffer from severe incoherence and disjointed syntax typical of small language models, making it impossible to distinguish a narrative quality or superior Gothic atmosphere.",
+        "Both continuations suffer from extreme incoherence and nonsensical dialogue, making it impossible to favor one over the other."
+      ]
+    },
+    {
+      "prompt": "He wandered through the deserted rooms of the manor.",
+      "lstm_text": ") He said: \"Can you give me a few hours since, my dear? For God's sake, shall forgive me, for your own sake is incht this mark: Sometimes, it must be not unnecessary to make me be acquainted with the Abbot, and let me be your hand; But the Duke of the Virgin and whom it will be as He thus rattling.\" \"How show I ",
+      "attn_text": "-\"Who are you?\" said Emily, interrupting her. \"Ah, ma'amselle, will you not see me?\" cried Emily. \"No, no, sir! And will you be still? Speak be at this moment! Still let me hear your Highness's hearing.\" Her voice was uncertain whether to hear the sounds which led upon her mind, and at length prevented her distinguishing that the Cottage; the Friars followed her, ",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B maintains a somewhat coherent, albeit dreamlike, narrative flow with character interaction and gothic tropes like friars and cottages, whereas A devolves into disjointed, incomprehensible dialogue.",
+        "Continuation A maintains a slightly more cohesive narrative structure and evocative Gothic vocabulary, whereas Continuation B devolves into nonsensical syntax and disjointed phrasing.",
+        "Continuation B maintains a somewhat more coherent narrative structure and atmosphere, even with its disjointed syntax, whereas A devolves into confusing, nonsensical dialogue."
+      ]
+    },
+    {
+      "prompt": "The night was still and no sound came from below.",
+      "lstm_text": "-We have just passed through the woods from the woods, and awaiting us the sight of the dead, which is the matter.\" \"Indeed!\" \"Yes; that is what we may: we cannot have heard it.\" \"Then we must have been a place of life,\" said Henry, \"I do not want to wake myself.\" \"Well, I will take you to the Hall,\" said Mr. Marchdale, \"it is yours for me, at least.\" \"That's the best way.\" \"Some of the old admiral,\" said Mr. Chillingworth",
+      "attn_text": "-But what was it? when she saw me a little from the little girl, taking her back and tried to give up the keys of her shoulders. They went upstairs again, leaving Gateshead and went to bed, I heard him stop him, because I heard a noise: a stone, talking advancing about the room, and sat down by the table, and I stopped a moment. The faint sound of voice broke and shrieked out; but ",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B captures a more traditional Gothic sense of dread and suspense with the auditory disturbance and internal reaction, whereas A dissolves into incoherent, repetitive dialogue.",
+        "Continuation A maintains a more consistent sense of building dread and fits the Gothic prompt better, whereas B descends into disjointed, nonsensical dialogue.",
+        "Continuation B captures a sense of tension and physical action that feels more aligned with the Gothic genre than the disjointed and nonsensical dialogue in Continuation A."
+      ]
+    },
+    {
+      "prompt": "She opened the heavy gate and stepped inside.",
+      "lstm_text": ") \"Then it will come again.\" \"It is not much, ma'amselle!\" said she, recommending her gaze with a smile, \"I hope she is going to meet; I have some reason to believe that your enemy is gone.\" She took her hand to look at them, and went downstairs to the window, where the news had been overcast, and the coachman was gone. On her return, leaning against the window, came in, and, open",
+      "attn_text": "-The moment that I had just been brought out, must have found my spell, lest I reflect that night advanced into a sudden bound from the cottage which I inhabited. All the wind was ceased, and my heart beat fast, and the next moment I was unwilling to rouse my sensations, and vanished till the first moment I felt myself overpowered by it. I rose, and began to fear that the Count had taken place in the first day; and then",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B maintains a consistent sense of Gothic anxiety and internal dread, whereas A is a jumbled collection of disjointed dialogue and narrative incoherence.",
+        "Continuation A maintains a more consistent, albeit fragmented, Gothic tone of dread and internal agitation, whereas B is disjointed and lacks thematic alignment with the scene of entering a mysterious location.",
+        "Continuation B maintains a stronger sense of isolation and internal dread typical of Gothic fiction, whereas Continuation A is fragmented and lacks narrative clarity."
+      ]
+    },
+    {
+      "prompt": "The torches in the passage flickered and went out.",
+      "lstm_text": "-We are so intimate as to their mother and my own, and in order to find the occupants of the sacristan, some of your own house-meeting.\" \"What can I do, please? Remember that my whole thing is left for us too long ago.\" \"You cannot tell, gentlemen?\" \"Not one day, to-day. I have the only chance of giving me the thing on the first ",
+      "attn_text": "\"-\"Was it possible to see you?\" said Bertrand, \"that is possible.\" \"Ah! no, my dear, I am going to be married,\" said Emily, \"that the more thus are they repair, and why may we not meet them? They must be not solicited to think that if the Chevalier is no more! and, on horseback, will make me answer in your mind.\" Emily, ",
+      "lstm_wins": 0,
+      "attn_wins": 2,
+      "ties": 1,
+      "reasonings": [
+        "Continuation B features coherent character names and dialogue typical of Gothic tropes, whereas Continuation A is fragmented and nearly nonsensical.",
+        "Both continuations suffer from severe incoherence and disjointed syntax, making them equally poor in narrative quality and readability.",
+        "Continuation B retains more of the expected Gothic character-driven dialogue and structural style, whereas Continuation A is largely incoherent gibberish."
+      ]
+    },
+    {
+      "prompt": "He read the old letter by the light of the fire.",
+      "lstm_text": "-The impulse of Parisian had ceased to provide the farmership, no concealment to his authority, to be the ballet to whom He was chosen from Bartram-Haugh. These interests were prompted. He was excused to dispatch the remainder of the night in the Rue Scribe for a mere alarm. He then quitted the room, and while the Welsh Sal",
+      "attn_text": "* (*Note: The General's Secret-Observe were haunted by the South Worm which her own life was in the Persian of the Courier with her. Almost self-possessed, and it would be impossible to force her eyes for the unusual way of recognition and console themselves all night in September. Unless I had known in one single conclusions that my father ",
+      "lstm_wins": 3,
+      "attn_wins": 0,
+      "ties": 0,
+      "reasonings": [
+        "Continuation A maintains a slightly more cohesive sentence structure and narrative movement compared to B, which descends into incoherent strings of words.",
+        "Both continuations are nonsensical and exhibit the typical incoherence of small LSTM models, but Continuation B flows slightly more like a narrative segment before it breaks down.",
+        "Continuation A maintains a slightly more cohesive narrative structure and grammatical flow compared to the entirely disjointed and nonsensical clauses in B."
+      ]
+    },
+    {
+      "prompt": "The mountains rose dark and steep on every side.",
+      "lstm_text": "-On the other, the Countess (a frame of mind had so often set him at dinner) was wrapped in her pocket-book, and putting off a piece of gown. The driver had followed his master's ears. \"But I'll not go there. Good-bye, Bessy.\" \"It is a week,\" said Bianca, \"and I will leave you.\" Emily tried to observe the Signor's C",
+      "attn_text": "\"-\"How do you know of Villain?\" asked Emily, \"it is a proper doubt, that my sufferings could not move you with your private conduct. I will not now leave you with what I have to say, but I am so unhappy, but this circumstance, for I loved the more affection of manner than I undertake to me.\" \"Indeed!\" \"But now I never saw such a child of death,\" said the youth, \"but yet I ",
+      "lstm_wins": 2,
+      "attn_wins": 1,
+      "ties": 0,
+      "reasonings": [
+        "Continuation A maintains a slightly better connection to the Gothic tradition of names and dialogue, whereas B descends into incoherent sentence structures.",
+        "Continuation A maintains a slightly more cohesive, albeit melodramatic, Gothic tone while B feels disjointed and nonsensical with its abrupt shifts in character and setting.",
+        "Continuation A maintains a more consistent narrative tone and feels more reminiscent of the prose found in 19th-century Gothic novels compared to the disjointed and nonsensical dialogue of B."
+      ]
+    },
+    {
+      "prompt": "She heard a sound in the room above her.",
+      "lstm_text": "-No! she could see her face in the kitchen. The stranger was not moving again. Lady Montbarry shook her head. \"Why not? What is it? Why?\" \"Only a handsome man, very well-it is his opinion with inferiority to us now; and it is a living for everything! Harry, I'm only going to the Tomb.\" \"Oh, I will be hanged because he's going to see him when you returned home,",
+      "attn_text": "-\"What is it?\" \"She was going to call you both! O Emily!\" exclaimed Emily, in a low voice, \"It will do. She may not leave me!\" cried Manfred. \"Oh! what do you mean?\" cried Manfred; \"I have suffered aloud, often and fear, I have often wound here. Begone, I have no idea of the treasure,\" said Matilda; \"this is my only chance of proceeding to your future conduct to me; Yet I reveriably ",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B captures a slightly more consistent Gothic tone and dramatic flair typical of 19th-century romances, whereas A descends into incoherent and jarring modern-sounding dialogue.",
+        "Continuation A maintains a more consistent sense of dramatic, albeit confused, Gothic dialogue and intensity, whereas Continuation B devolves into modern-sounding, nonsensical social commentary.",
+        "Continuation B captures a more traditional Gothic tone through its dialogue and references to suffering and hidden treasure, whereas A descends into nonsensical and disjointed conversational fragments."
+      ]
+    },
+    {
+      "prompt": "The garden was overgrown and the paths long forgotten.",
+      "lstm_text": "-We had begun to go to the great house, where we heard a figure of Mrs. Clements in putting out her hand to sleep, and at the school-door, and that they were removed; the door was opened, and on secondly, Doroth\u00e9e looked round, in a chair, overcome by the faint sound of the admiral; \"but you see the doctor's face is not tired.\" \"The hair is broken, and the master is ",
+      "attn_text": "\"-\"Then I have mentioned this,\" said Emily, in a tone which appeared so much benevolent, and while Emily was again composed, she considered to be a danger to ask, or her aunt's room, when Valancourt was in a state of excitement which refused to perceive, that her trembling countenance was unable to support, but she took it in a little shore. Her countenance was entirely flushed, her eyes fixed on the glory below, that Valancourt ",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B maintains a slightly more consistent tone and grammatical structure, whereas Continuation A devolves into nonsensical phrasing very quickly.",
+        "Continuation A maintains a slightly better flow of character interaction and internal dread, whereas B descends into disjointed, incoherent fragments.",
+        "Continuation B maintains a better sense of character and narrative flow, whereas Continuation A is fragmented and nearly incoherent."
+      ]
+    },
+    {
+      "prompt": "He rode through the valley as the sun was setting.",
+      "lstm_text": "-Some cases of Sunday Staircase continued to send upon a Closet, and Prudence was square-hushed Shorthouse; and had she succeeded in my castle, when He was rejoiced, He would find him a Step-mania from Child for an instant, was tempted to divert his heart and quitted Bridget",
+      "attn_text": "-Her voice was so sweet and so sweet, that she could scarcely distinguish where the mellow voice of the scene was now restored to her eyes. Her thoughts looked strange to her mind, and she perceived, that she could not depend upon it, that Madame Montoni had dismissed Emily, and, when she sought she would go further alone, till she saw herself understood that she might not speak to Montoni; but she trembled at the casements, and, looking round",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B retains a stronger connection to the Gothic genre through its thematic references to Madame Montoni and Emily, whereas Continuation A dissolves into nonsensical word combinations.",
+        "Continuation A retains the vocabulary and sentence structure of classic Gothic literature, whereas Continuation B is nonsensical and incoherent.",
+        "Continuation B retains a semblance of Gothic prose style and narrative structure, whereas Continuation A is largely nonsensical and disjointed."
+      ]
+    },
+    {
+      "prompt": "The door at the end of the corridor stood open.",
+      "lstm_text": "-We are not to be able to find out and so many weeks and shadows will be heard some three slanders in the vaulted road.\"  \"And now, Mr. Chillingworth,\" thought Mr. Dawson. \"I don't know that I don't know what to do with so much details as if you do not think that we had left us back, even if I have no right to keep me out.\" \"Do you mean to take the house?\" I asked. \"Nothing could I do ",
+      "attn_text": "-That sound was so odd as that, that the Count had not been so long since married. St. Aubert, he had been a rotten Languedoc, had been immediately surrounded by Carlo, who had formerly been avoided; but, while he perceived he had been struck by several persons who wished to see his sisters, whomever he had been during the preceding day, were the persons of whom he might have been the name of the stranger, who was to be communic",
+      "lstm_wins": 3,
+      "attn_wins": 0,
+      "ties": 0,
+      "reasonings": [
+        "Continuation A maintains a slightly more consistent conversational tone and internal mystery, whereas Continuation B devolves into a repetitive and nonsensical list of characters.",
+        "Continuation B presents a semblance of dialogue and a clearer, if slightly disjointed, narrative situation compared to A's nonsensical list of names and repetitive clauses.",
+        "Continuation A, while nonsensical, maintains a slightly more consistent focus on a dialogue and scene, whereas Continuation B devolves into a disjointed list of names and repetitive clauses that lack any narrative progression."
+      ]
+    },
+    {
+      "prompt": "She climbed the winding stairs in the dark tower.",
+      "lstm_text": "-He had already found it impossible to decide for the patient. \"Whatever is it I meant? That is the proof. She has returned to her Bartram-Haugh in our life in London, saying that he might claim his duty to follow the past.' 'Yes,' I said, 'and we know that Uncle Silas's wife is square, and a week's lady has spent it in order to prepar",
+      "attn_text": "-The momentary voice of Agnes was obliged to pass the night before, and, while the Fr\u00e4ulein entered, was heard to the top of the staircase, till they heard a small person in the chamber door, where the faint sound of the sounds fell upon her mind. She heard the tremendous sound of thunder, that stole over her and Emily, who, on further enquiries soon, she distinguished she saw something of the same fig",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B maintains a better sense of gothic tension and atmosphere by describing the sounds and setting of the tower, whereas Continuation A dissolves into nonsensical dialogue.",
+        "Continuation A maintains a better connection to the prompt's setting of a dark tower and creates a more appropriately ominous atmosphere than the disjointed domestic dialogue in B.",
+        "Continuation B maintains a better sense of atmospheric dread and environmental storytelling, whereas Continuation A dissolves into incoherent, non-sequitur dialogue."
+      ]
+    },
+    {
+      "prompt": "The village lay quiet beneath a moonless sky.",
+      "lstm_text": "-From this place and dismounted among the rocks, rising at a distance from the staircase, which summed the chamber in the dull and cobweb which they surrounded the building, was lowered by every party, which scraped tremendous craft, and Emily returned to her chamber, that had formerly passed the windows of the apartment. The song was suddenly surrounded by the silence of night, to which",
+      "attn_text": ") 'Tis well you are right.' And so she came at once or two, but she wished not to see her until I was stopping at her door, and took the breakfast-hand to put it out again. 'We can hardly be a bad woman, Maud.' 'Where is he?' I inquired. 'There is no pulse in the house.' 'And now,' he remarked, 'and it may not be very good.' \"'But I won't ",
+      "lstm_wins": 3,
+      "attn_wins": 0,
+      "ties": 0,
+      "reasonings": [
+        "Continuation A attempts to build a setting and atmosphere consistent with Gothic tropes, whereas Continuation B is a fragmented, nonsensical dialogue that fails to connect to the prompt.",
+        "Continuation B maintains a more consistent, albeit dreamlike, Gothic descriptive style, whereas A collapses into disjointed and incoherent dialogue.",
+        "Continuation A attempts to evoke a Gothic setting with descriptions of chambers and silence, whereas Continuation B is disjointed, lacks atmosphere, and reads like a collection of non-sequitur dialogue."
+      ]
+    },
+    {
+      "prompt": "He paused at the threshold and listened.",
+      "lstm_text": "-\"But why does she not know whether you are? He was quite a lapt in the evening.\" \"What! They are the only reasons that I forgot to tell you that one word is so much in your time, but I never wept with him for an hour or more. I have some claims of your father's life. I am in no fight for it, my friend; I have no idea of being exposed, with that all may be sur",
+      "attn_text": "-The marquis instantly quitted the cottage, which would almost have enabled her to retrace the neighbouring wood, while it served their satisfaction, being the consequence of the dread of Madame Montoni's death, and her sister was unable to speak. The subject of alarm was totally unexpected by the suspicion of his mind. The muleteer appeared made to sooth speechless to the declarations of her new friends might observe ",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B utilizes classic Gothic tropes and vocabulary, such as the marquis and Madame Montoni, which provides a more atmospheric and coherent narrative experience than the fragmented and nonsensical sentences in A.",
+        "Continuation A maintains a more consistent Gothic tone and vocabulary, even if the sentence structure is disjointed, whereas B becomes entirely nonsensical dialogue.",
+        "Continuation B utilizes a vocabulary and sentence structure that aligns significantly better with the requested 19th-century Gothic genre, whereas Continuation A dissolves into incoherent modern dialogue."
+      ]
+    },
+    {
+      "prompt": "The wind moved through the trees like a whisper.",
+      "lstm_text": "-'But there is a strange air! Tell him you mean! what has happened when I done, you know it?\" \"There, you have something to say to you,\" said Jack. \"No, no, no!\" \"Yes, I shouldn't hear it. Such seems as if he may go there.\" \"My dear friend, you will be so kind and angry, sir; it is a good opportunity to me that you have quite forgotten the proof that I have taken place by ",
+      "attn_text": "\"-\"And now,\" cried the Count, \"what could you say of?\" \"I do not know, but what sort of man he is?\" \"Because I wanted to speak to him.\" \"You know that?\" \"I do, indeed.\" \"Since there is no moonlight, but they have no fear, for we are not so good as to favour ourselves.\" Mr. Chillingworth felt quite certain that Sir Francis Varney was as much inclined as a present, certainly a ",
+      "lstm_wins": 0,
+      "attn_wins": 3,
+      "ties": 0,
+      "reasonings": [
+        "Continuation B introduces specific characters and a more coherent, albeit fragmented, dialogue that aligns better with the Gothic tradition than the nonsensical rambling of A.",
+        "Continuation A maintains a more consistent Gothic tone by name-dropping traditional figures like the Count and Varney, whereas B descends into repetitive and incoherent dialogue.",
+        "Continuation B is slightly more coherent and maintains a stronger sense of character and narrative setting compared to the nonsensical, disjointed dialogue in Continuation A."
+      ]
+    }
+  ]
+}

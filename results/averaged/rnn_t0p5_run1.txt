@@ -1,0 +1,78 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 100
+bleu_1: 0.12165705296283454
+bleu_2: 0.029379271501842236
+bleu_3: 0.005082449888215303
+bleu_4: 1.001522063395454e-05
+bleu_4_smoothed: 0.001976360676653966
+bert_score_f1: 0.8103398084640503
+bigram_overlap: 0.008354325544895019
+trigram_overlap: 0.00014043844196515954
+distinct_1: 0.1290733388268784
+distinct_2: 0.482074118801419
+trigram_repetition_rate: 0.008019821713038573
+spelling_accuracy: 0.9274957139554826
+ttr: 0.6395462406032204
+generated_perplexity: 20.223208773116877
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Prompt:
+What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par
+
+Generated:
+is's one who have died before you go, you, sir! And now we have no reason why you do, I suppose, your uncle has no fear of it may be, Miss Ruthyn, dear Flora." "Well, then, you'll be hanged?" I repeated. "The poor girl was not likely to be removed; but what you did you hear the most beautiful young lady's child?" "Yes, sir." "But how do you call it you in love to my mother." "Be my feelings upon me? The most part of this ornament and torture of your wife, do you do, Harry? What can you do my best," said Jack; "I am quite sure of." "Sir, ma'am-I-I do this, I should not like to make the best of my destruction to me. I dare say she is true, what has happened? It 
+
+Reference:
+ bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking déshabille to show herself knocking at the window.
+--------------------------------------------------------------------------------
+
+Example 2
+Prompt:
+It appears to me un cimetière!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken
+
+Generated:
+, from Thornfield, looking out his handkerchief and closed the door, and begun to stool the glass; but he looked over again, and said  'Yes, he is an old woman who is not to be done, or not." "Oh, no! how he will not believe that she is not to be already forgiven to your own life. You must have known hers," said Jack; "he did not like it? Herezzi was not tired and wiped his head, and made his own heart and dispatching the late on which she was too much for one who was so much forgiveness and her sister's bagemotion of her father. "Dear Anderson's weather, Hotah is coming up in his age for women, and make it means to you for an eB
+
+Reference:
+ eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions.
+--------------------------------------------------------------------------------
+
+Example 3
+Prompt:
+The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her
+
+Generated:
+ thoughts were now unable to speak, and endeavoured to sit up in the vast extent, leaving the great hall, on which they had already produced no usion of his character. The two men were written by some of the Mimi, Dicker, an old gentleman who had just now left him in his-door-smoking society; my mind was so much better than I ought to have the most unpleasantly living; and what I knew it would make some of the most unwilling to do so; and if you will be able to give you a good deal in your mind, dear, you know, now," she answered, withdrew, And she put her hand on the forehead and winked in front. 'He is very good." "It is very well-" "You've not so, oh, don't you hear me my uncle,' 
+
+Reference:
+ exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption.
+--------------------------------------------------------------------------------
+
+Example 4
+Prompt:
+Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but
+
+Generated:
+ there I never have done my duty to you." "The vampyre, ma'am, Jane, I'll tell you what you know your friend is now to any harm to fill you. I don't want to know the whole world." "Is he me," I replied. "What do you mean?" "Ah!" said the admiral, "I mean, Charles," said Henry. "Is there it? He was not too much for the first time for it a cowardice in your affairs." Emily was silent, from the slightest of joy of many man in black, evening, however, that I felt the whole of the very of the estating scene from the Cottage. Even him at the door was opened one of the two office, was far from ital, and by the light of the candle of the cliffs, as we sat the door of the room. The next morning it was only what I could
+
+Reference:
+ som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, "Might I speak a word wi' ye, please, on the lobby?" 'Mr.
+--------------------------------------------------------------------------------
+
+Example 5
+Prompt:
+But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she
+
+Generated:
+er costley issued all days, when I was not only forgiven to him in the present state of health, and had never been in no proposition and make the soft hands and shadowy dashed and crushed back, and in a few moments they saw the knife in the corner, it was very unusual subjected brow, leaning over her head and bright light of its gasped door, and which she turned round a look of voice, and he saw it out, and withdrew, leaving him in a dream, shutting him over the window-soft chair, and looking round and low, creaks and groaned round the room. The second floor was wrapt down to stop it. "And what do you think that you have seen a good deal of something like that sorry 
+
+Reference:
+ searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest.
+--------------------------------------------------------------------------------
