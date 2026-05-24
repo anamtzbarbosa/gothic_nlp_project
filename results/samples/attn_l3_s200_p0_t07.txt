@@ -1,0 +1,4 @@
+Device: mps
+Loaded: 3-layer attention LSTM | K=20 | val_loss recorded in checkpoint
+Prompt: 
+--------------------------------------------------------------------------------

@@ -70,7 +70,7 @@ Each epoch sees the entire 2.8M-token training set regardless of batch or sequen
 ## Source Code (`src/`)
 
 | File | Description |
-|------|-------------|
+| ---- | ----------- |
 | `models.py` | `VanillaRNN`, `DeepLSTM`, `SelfAttentionLSTM` definitions |
 | `train.py` | Core training loop, evaluation, checkpointing |
 | `train_final_rnn_lstm.py` | Final RNN and LSTM runs (best configs from grid search v3) |
@@ -499,3 +499,72 @@ Reference-overlap and semantic similarity metrics for all 7 models at conservati
 Diversity metrics (Distinct-2, TTR) increase markedly from T=0.5 to T=0.7 across all models, while spelling accuracy drops slightly. Generated PPL (model confidence on its own output) is notably lower for Multi-Head Self-Attention LSTM models at T=0.5, indicating more focused and confident distributions compared to plain LSTM.
 
 ![Diversity and fluency metrics](results/plots/fig7_eval_diversity.png)
+
+---
+
+## Sample Generations
+
+Three Gothic prompts evaluated across the best models. Each sample was selected for atmospheric coherence and Gothic tone.
+
+---
+
+### Sample 1 — LSTM 3-layer | T=0.7, top-p=0.9
+
+> **Prompt:** *She heard footsteps in the corridor above.*
+>
+> Soon after a step she approached: the sweetness of her voices withdrew to her own chamber. She endeavoured to open the avenue, a plump which was a tall figure of her shiver. Her countenance was filled with extreme and melancholy manner. She now heard the distant staircase, a faint murmur of despair to which she heard, waving its waves till the splendour of the great same, to the foot of the staircase at the scene of a long grace, which seemed to prevent them with this shriek, and now and then, still unable to support herself from the castle, she looked forward without comparison, but she could not remember what she called the subject. "Because we might have suffered to think?" said Emily, with an appearance of joy, intimate as to these thoughts, concerning the physicians, which sometimes became to those
+
+```bash
+PYTHONPATH=src python src/evaluation/generate.py \
+  --checkpoint checkpoints/final_rnn_lstm/final_lstm_l3_b32_s100_h256_d0p2_lr0p001.pt \
+  --tokenizer data/gothic_tokenizer.json \
+  --prompt "She heard footsteps in the corridor above." \
+  --max-new-tokens 180 --temperature 0.7 --top-p 0.9
+```
+
+---
+
+### Sample 2 — Attention LSTM 3-layer (seq=200) | T=0.7, top-p=0.9
+
+> **Prompt:** *Something moved in the darkness below.*
+>
+> The very moment was disclosed to me. Suppose the first bound of this bodily grief was more horrible and mysterious than I could see, I suddenly saw the broad sky at me, but the envelope of the Table-door was uncertain. I could almost find myself out to bed. The new sounds were so many of our interested visitors that as well as I could do with it, if it were not there on my temper. I thought that the circumstances of my mind was only a trifle incidents, my skin and melody, the iron door, and my strength sunk by the hole which I had heard, was at last resting on the ground. I was relieved. I was now determined to keep up my own situation. When I recovered myself I found myself in a stately vault, two men's tables, opening arms in the road. I recognised the echoes of the trees; I was certain that the light was as in a manner as well. The wind was open upon the hill-side, on which the skylight had fallen
+
+```bash
+PYTHONPATH=src python src/evaluation/generate_attention.py \
+  --checkpoint checkpoints/attention_lstm_v2_s200/v2_attn_lstm_3layer_K20_S200_B64_ls.pt \
+  --tokenizer data/gothic_tokenizer.json \
+  --prompt "Something moved in the darkness below." \
+  --max-new-tokens 220 --temperature 0.7 --top-p 0.9
+```
+
+---
+
+### Sample 3 — Attention LSTM 3-layer (seq=100) | T=0.7, top-p=0.9
+
+> **Prompt:** *No one spoke of what had happened in the east tower.*
+>
+> The hour was not so strongly as to be left for the days of that testimony of the cottagers, and the stations of environment which the scene which the peasants were frequently enabled to find their movements. While the mules were pursued, and the air was sweet and low; she saw, and listened to the sweetness of distant murmurs that terminated her terrors, and she was silently interrupted by Emily's chamber. The terrible sound of step was approaching from the dark rays of the terrace, where the bright light of the lamps leading to the trees, seemed to have the effect of its prospects and horrors. The moonlight rays shone through the shores. The appearance of the landscape was seen by its sides, and when they saw Valancourt heard the voice of the preceding evening, and awakening the lower part of the woods, they perceived that the wind was already swiftly awaited Emily; and Emily's companion
+
+```bash
+PYTHONPATH=src python src/evaluation/generate_attention.py \
+  --checkpoint checkpoints/attention_lstm_new/multihead_3layer_K20.pt \
+  --tokenizer data/gothic_tokenizer.json \
+  --prompt "No one spoke of what had happened in the east tower." \
+  --max-new-tokens 200 --temperature 0.7 --top-p 0.9
+```
+
+
+### Sample 3 — Attention LSTM 3-layer (seq=100) | T=0.7, top-p=0.9
+
+> **Prompt:** *He had not slept since the night the stranger came to the door.*
+>
+> "Hush!" cried Henry, "and what has happened to my father?" "My Lord," cried Blanche, "he must not lose a family since we ought to tell you of justice." "There is no light in them," said Emily; "but what are you here?" "Oh! why, how came you, sir?" said Emily, "and I shall do no more." Annette was not so much affected, as if she could distinguish Montoni, or could not, and bade her go out, and then obeyed her aunt, who might hear the fatigues of a story, who had also terrified the late hours, were very seldom, happily enough to think, but the lute she had travelled along into the woods, Emily was glad to show her in the chamber. The Count had left the cottage, for an instant she had heard Ludovico on the preceding night, and, as the Countess, having begged her to walk alone. After some time, Emily started up to her apartment, and threw herself into a chair, and began to conceal the circumstances of the gallery, with Dorothée in the same manner, alarmed her
+
+```bash
+PYTHONPATH=src python src/evaluation/generate_attention.py \
+  --checkpoint checkpoints/attention_lstm_new/multihead_3layer_K20.pt \
+  --tokenizer data/gothic_tokenizer.json \
+  --prompt "He had not slept since the night the stranger came to the door." \
+  --max-new-tokens 220 --temperature 0.7 --top-p 0.9
+```

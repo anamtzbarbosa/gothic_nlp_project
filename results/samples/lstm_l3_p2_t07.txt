@@ -1,0 +1,7 @@
+Using device: mps
+Loaded model: lstm
+Prompt: She had not slept in three nights, and still the shadow followed her wherever she went.
+Temperature: 0.7
+Top-p: 0.9
+--------------------------------------------------------------------------------
+She had not slept in three nights, and still the shadow followed her wherever she went.-Never mind of it had been a miserable night in the wood, now, almost that she was not in the daylight of the ladies, when a little man had opened the table and took up the shadows, and all was still; while she looked down like her. Her hand was careful to go and open the door, and heard a chattering voice, and turning towards him. "My dear Basil," said Mrs. Grose with no need for anxiety. "Let us go back to the door, and some of them seen it." "Can you go away with your master?" I asked. "Who's that?" As soon as he got on, I went up again to see that afternoon, no one knew of it, or rather at least know whether she would leave her so much to keep her in London. She was thinking of leaving us with me, and that she might have managed to go out to search for the night, to return, and her eyes were fixed under her hand, and closed her eyes. I couldn't speak to her if I had not before heard you so much sound, for it was not quite plain, but I could not sleep. But she was thinking of my old laden sitting posture, and she was looking for something in what she had seen in the wood-chamber-placed chairs

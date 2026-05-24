@@ -1,0 +1,6 @@
+Using device: mps
+Loaded model: lstm
+Prompt: 
+Temperature: 0.8
+Top-p: 0.92
+--------------------------------------------------------------------------------

@@ -1,0 +1,78 @@
+Generation Evaluation Results
+================================================================================
+
+Metrics
+--------------------------------------------------------------------------------
+num_samples: 100
+bleu_1: 0.25241528478736464
+bleu_2: 0.07513913877177111
+bleu_3: 0.01704963368361188
+bleu_4: 0.005198748719694744
+bleu_4_smoothed: 0.00587439926816275
+bert_score_f1: 0.8166435360908508
+bigram_overlap: 0.02750234276392212
+trigram_overlap: 0.001050518996637962
+distinct_1: 0.16308579668348955
+distinct_2: 0.6222222222222222
+trigram_repetition_rate: 0.004627356429167444
+spelling_accuracy: 0.9223782049218839
+ttr: 0.6363568898123774
+generated_perplexity: 21.395833557799765
+
+Generated Examples
+--------------------------------------------------------------------------------
+
+Example 1
+Prompt:
+What was it to you? Why do you persecute me? What good can you gain by my ruin?' 'Rueen! Par
+
+Generated:
+o foolish kind! And you might not show you that such words told me the sacrifice, if not, to do my name, or is so far from this motionless doom, become a favourite. And never mind me; they never always have done one moment, and where I live, would not betray you; do not marry you, madam, a pityful revival, perhaps, I am under so much for my own sake and wenthinnine, for many months I presume to give you a flame. I am not as well as the world.' 'It will be a dog of things' route, my dear Madam Mina!' I turned and wept and, leaning against the wall of the house, a series of grey flowers from the beast, in his hand, hung with tapest
+
+Reference:
+ bleu! ma chère, you talk too fast. Did not a you see it, Mary Queence? It was the doctor's carriage, and Mrs. Jolks, and that eempudent faylow, young Jolks, staring up to the window, and Mademoiselle she come in soche shocking déshabille to show herself knocking at the window. 'Twould be very nice thing, Mary Queence, don't you think?' I was sitting now on the bedside, crying in mere despair. I did not care to dispute or to resist. Oh! why had rescue come so near, only to prove that it could not reach me? So I went on crying, with a clasping of my hands and turning up of my eyes, in incoherent prayer.
+--------------------------------------------------------------------------------
+
+Example 2
+Prompt:
+It appears to me un cimetière!' 'Yes, I should like to leave it,' I said, sitting up, with a great sigh and sunken
+
+Generated:
+ as fast as the soft face of Joseph's lips. 'And he is a-horse don't come, Ellen,' she continued, 'he does not know her, for she wants care for as much people who are not when he's right.' "'It is he! I don't know,' she replied, 'and I can't love you.' 'Ah, well, I am afraid he does not go, except me at your betrothed: and you are a better fool at least, and never mind your patois.' 'I quite know what to say it.' She shook her head, and drew up a couple of yards, thrown on her knees, and spent the spreading up a corner of the river. It looked like an old woman's quality, nor afterwards, dust than before; she was a gun or cro
+
+Reference:
+ eyes. It seemed to me that I had quite lost all sense of resentment towards Madame. A debility of feeling had supervened the fatigue, I suppose, and prostration of the passions. 'I weel make excuse to go into his room again,' said Madame; 'and I weel endeavor to learn something more from him, and I weel come back again to you in half an hour.' She departed. But in half an hour did not return. I had a dull longing to leave Bartram-Haugh. For me, since the departure of poor Milly, it had grown like the haunt of evil spirits, and to escape on any terms from it was a blessing unspeakable.
+--------------------------------------------------------------------------------
+
+Example 3
+Prompt:
+The drops and the sal-volatile is here, Miss, by your hand.' And with an anxious look at me, she made her
+
+Generated:
+ a sad change in her bud and furious frame: for her fingers moaned like a woman who would display the medicine in her white snow. All her eyes were fixed on the window; Before tripped like a sock-coat pocket, slid down on the stairs, and found out, close to the window, and trying to make any noise. The bodies therefore uttered a word and prospects. We were soon in the chimney-corner, having nearest the book of the house, and wiped the door, which was standing near a single room to shake the fire. The door was opened: no further spaces came through the window. They started the vessel, which contained a word, and I learned to run into dark and gladest and torment of small side of 
+
+Reference:
+ exit, softly, and did not immediately return, by which I concluded that she had found the way clear, and had gained the upper story without interruption. This little anxiety ended, its subsidence was followed by a sense of loneliness, and with it, of vague insecurity, which increased at last to such a pitch, that I wondered at my own madness in sending my companion away; and at last my terrors so grew, that I drew back into the farthest corner of the bed, with my shoulders to the wall, and my bed-clothes huddled about me, with only a point open to peep at. At last the door opened gently.
+--------------------------------------------------------------------------------
+
+Example 4
+Prompt:
+Well, like that, they were as mute as mice; three pairs of eyes were on me. I don't know what made me so study like, but
+
+Generated:
+ a lunch, you know as I was alive. Perhaps it was the fact that there was nothing to fit. I had a great deal of business to drink; if the misfortune, me, a large bright day-picked up of diffidence before me: the sea was not like me for each, and bought me: it was a very bad man; they flew asleep in a silent-and-piece of work, and showed the old woman in the modern little room-a great deal from her work, but the kitchen-door was open. It was a locked window: my father did not seem flattered and very good, but he did not see her, and he was either in the house and old master, made his way, and made some noise alarmed, as well as he could, could see nothing but slight and c
+
+Reference:
+ som'at told me I should not make as though I knew any but Madame; and so I made a courtesy, as well as I could, and I said, "Might I speak a word wi' ye, please, on the lobby?" 'Mr. Dudley was making belief be this time to look out at window, wi' his back to me, and I kept looking straight on Madame, and she said, "They're mendin' my broken glass, Mary," walking between them and me, and coming close up to me very quick; and so she marched me backward out o' the door, prating all the time.
+--------------------------------------------------------------------------------
+
+Example 5
+Prompt:
+But morning came, and with its light some reassurance. Early, Madame de la Rougierre made her appearance; she
+
+Generated:
+ep and gambling gleams from the bright moonlight of the white moors, its dusky spells; the air was like a wild shrinking hill, leaving their plagues, which sports out together and dashed down over it; the shadows rose and left it for a little while. When I gave the scorch, I felt my body in the light of the film of flames; I could see no gambling road in the rock: there the monster of my footing came in deep sleeps, and rising heavy lights and dripping birds waved and softened like a circle of social foil. The flames stole into the garden, each of which was really a long interval, and unrestrained; there had been seen 
+
+Reference:
+ searched my eyes darkly and shrewdly, but made no allusion to Mary Quince's visit. Perhaps she expected some question from me, and, hearing none, thought it as well to leave the subject at rest. She had merely come in to say that she had heard nothing since, but was now going to make my uncle's chocolate; and that so soon as her interview was ended she would see me again, and let me hear anything she should have gleaned. In a little while a knock came to my door, and Mary Quince was ordered by old Wyat into my uncle's room.
+--------------------------------------------------------------------------------
